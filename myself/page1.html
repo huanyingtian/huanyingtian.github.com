@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            width: 100%;
+            background: #000;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background: #f00;
+            position: absolute;
+            left: 100px;
+            bottom: 100px;
+            -webkit-border-radius:50%;
+            -moz-border-radius:50%;
+            border-radius:50%;
+            -webkit-box-shadow: 0 0 100px rgba(255,0,0,0.5);
+            -moz-box-shadow: 0 0 100px rgba(255,0,0,0.5);
+            box-shadow: 0 0 400px rgba(255,0,0,0.5);
+
+        }
+    </style>
+    <script>
+        window.onload=function (){
+            var oDate = new Date();
+            var h = oDate.getHours();
+            alert(h)
+            var oDiv = document.getElementsByTagName('div')[0];
+            if(h>=6&&h<=18){
+                oDiv.style.left=
+            }
+        }
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>
