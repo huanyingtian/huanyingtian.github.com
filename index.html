@@ -1,15 +1,187 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
-    <style>*{padding:0;margin:0}div{width:200px;height:200px;background:#f00;position:absolute;left:50%;top:50%;margin-left:-100px;margin-top:-100px;color:#fff;text-align:center;line-height:200px;font-size:50px}span{width:50px;height:50px}input{width:40px;height:20px;position:absolute;left:50%;top:30%;margin-left:-20px}</style>
+    <title>Title</title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/self.css"/>
+    <style>
+        body{
+            background: url(image/background.jpg) no-repeat;
+            width: 100%;
+            height: 100%;
+            background-size: 1366px 662px;
+        }
+        .page1{
+            width: 100%;
+            height: 662px;
+        }
+
+        .page1 h2{
+            box-shadow: 10px 5px 10px #0ff;
+            margin-left: -263px;
+            width: 526px;
+            height: 57px;
+            color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 100px;
+            font-size: 50px;
+            -webkit-transition: 1s all ease;
+            -moz-transition: 1s all ease;
+            -ms-transition: 1s all ease;
+            -o-transition: 1s all ease;
+            transition: 1s all ease;
+        }
+        .page1 h2:active{
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+        .page1 .loading{
+            width: 80px;
+            height: 80px;
+            border: 1px solid #fff;
+            position: absolute;
+            left: 50%;
+            top: 180px;
+            border-bottom-color:transparent;
+            margin-left: -41px;
+            border-radius: 50%;
+            -webkit-transition: 1s all;
+            -moz-transition: 1s all;
+            -ms-transition: 1s all;
+            -o-transition: 1s all;
+            transition: 1s all;
+        }
+        .page1 .loading:hover{
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);;
+        }
+        .page1 .loading .div{
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -31px 0 0 -31px;
+            border: 1px solid #fff;
+            border-top-color: transparent;
+            border-radius: 50%;
+        }
+        .page1 .div div{
+             width: 30px;
+             height: 30px;
+             border-radius: 50%;
+             border: 1px solid #fff;
+             border-right-color: transparent;
+             position: absolute;
+             left: 50%;
+             top: 50%;
+             margin: -16px 0 0 -16px;
+         }
+        .page1 .time{
+             box-shadow: 10px 10px 50px #000;
+             width: 600px;
+             height: 200px;
+             background: rgba(255,255,255,0.3);
+             font-size: 50px;
+             text-align: center;
+             position: absolute;
+             left: 50%;
+             margin-left: -300px;
+             top: 300px;
+         }
+        .page1 .time img{
+             border:none;
+             -webkit-transition: 1s all ease;
+             -moz-transition: 1s all ease;
+             -ms-transition: 1s all ease;
+             -o-transition: 1s all ease;
+             transition: 1s all ease;
+        }
+        .page1 .time img:hover{
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    </style>
+    <script src="js/self.js"></script>
+    <script src="js/ZQuery-1.0.1.js"></script>
     <script>
-        function getStyle(obj,sName){return(obj.currentStyle||getComputedStyle(obj,false))[sName]}function move(obj,json,options){options=options||{};options.duration=options.duration||1500;options.easing=options.easing||"ease-out";clearInterval(obj.timer);var start={};var dis={};for(var name in json){start[name]=parseFloat(getStyle(obj,name));dis[name]=json[name]-start[name]}var count=Math.floor(options.duration/30);var n=0;obj.timer=setInterval(function(){n++;for(var name in json){switch(options.easing){case"linear":var cur=start[name]+dis[name]*n/count;break;case"ease-in":var a=n/count;var cur=start[name]+dis[name]*Math.pow(a,3);break;case"ease-out":var a=1-n/count;var cur=start[name]+dis[name]*(1-Math.pow(a,3));break}if(name=="opacity"){obj.style.opacity=cur;obj.style.filter="alpha(opacity:"+cur*100+")"}else{obj.style[name]=cur+"px"}}if(n==count){clearInterval(obj.timer);options.complete&&options.complete()}},30)}window.onload=function(){var n=0;var timer=null;var oDiv=document.getElementsByTagName("div")[0];var oBtn=document.getElementById("btn");var str="唯爱你";var lock=false;oBtn.onclick=function(){if(lock){return}for(var i=0;i<str.length;i++){var oSpan=document.createElement("span");oSpan.innerHTML=str.charAt(i);oSpan.style.opacity=0;oSpan.style.filter="alpha(opacity:0)";oDiv.appendChild(oSpan)}var aSpan=document.getElementsByTagName("span");timer=setInterval(function(){move(aSpan[n],{opacity:1});n++;if(n==aSpan.length){clearInterval(timer)}},500);return lock=!lock}};
+        function toDou(n){
+            return n<10?'0'+n:''+n;
+        }
+        function Clock(id,obj){
+            function clock(){
+                var arr = ['seven','one','two','three','four','five','six']
+                var oDate = new Date();
+                var Y = oDate.getFullYear();
+                var M = oDate.getMonth()+1;
+                var D = oDate.getDate();
+                var w = oDate.getDay();
+                var h = oDate.getHours();
+                var m = oDate.getMinutes();
+                var s = oDate.getSeconds();
+                var str =''+Y+'y'+toDou(M)+'m'+toDou(D)+'d'+toDou(h)+'p'+toDou(m)+'p'+toDou(s)+'';
+                for(var i=0;i<aImg.length;i++){
+                    aImg[i].src='image/'+str.charAt(i)+'.png';
+                    aImg[aImg.length-1].src='image/'+arr[w]+'.png';
+                    aImg[aImg.length-2].src='image/week.png';
+                };
+            };
+            var oTime = document.getElementById(id);
+            var aImg = oTime.getElementsByTagName(obj);
+            clock();
+            setInterval(clock,1000);
+        }
+        window.onload=function(){
+            Clock('time','img');
+        };
     </script>
 </head>
 <body>
-<input type="button" value="开始" id="btn"/>
-<div></div>
+<div class="page1" id="page1">
+    <h2>Welcome To My Website</h2>
+    <div class="loading">
+        <div class="div">
+            <div></div>
+        </div>
+    </div>
+    <div class="time" id="time">
+        <img src="image/0.png" alt=""/>
+        <img src="image/0.png" alt=""/>
+        <img src="image/0.png" alt=""/>
+        <img src="image/0.png" alt=""/>
+        <img src="image/y.png" alt=""/>
+
+        <img src="image/0.png" alt=""/>
+        <img src="image/1.png" alt=""/>
+        <img src="image/m.png" alt=""/>
+
+        <img src="image/2.png" alt=""/>
+        <img src="image/0.png" alt=""/>
+        <img src="image/d.png" alt=""/><br />
+
+        <img src="image/1.png" alt=""/>
+        <img src="image/0.png" alt=""/>
+        <img src="image/p.png" alt=""/>
+        <img src="image/2.png" alt=""/>
+        <img src="image/3.png" alt=""/>
+        <img src="image/p.png" alt=""/>
+        <img src="image/1.png" alt=""/>
+        <img src="image/6.png" alt=""/><br />
+
+        <img src="image/week.png" alt=""/>
+        <img src="image/d.png" alt=""/>
+    </div>
+</div>
 </body>
 </html>
