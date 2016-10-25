@@ -11,7 +11,7 @@ window.onload=function(){
         var m = oDate.getMinutes();
         var h= H+m/60;
         if(h>=6&&h<=18){//白天
-            oPage1.style.backgroundImage='url(../image/lantianbaiyun.jpg)'';
+            oPage1.style.backgroundImage='url(../image/lantianbaiyun.jpg)';
             oPage1.style.backgroundSize='100%';
             oDiv.style.background='#ff0';
             oDiv.style.shadowColor='#ff0';
