@@ -18,7 +18,7 @@
         }
 
         .page1 h2{
-            box-shadow: 10px 5px 10px #0ff;
+
             margin-left: -263px;
             width: 526px;
             height: 57px;
@@ -27,18 +27,22 @@
             left: 50%;
             top: 100px;
             font-size: 50px;
-            -webkit-transition: 1s all ease;
-            -moz-transition: 1s all ease;
-            -ms-transition: 1s all ease;
-            -o-transition: 1s all ease;
-            transition: 1s all ease;
+            -webkit-transition: .5s all ease;
+            -moz-transition: .5s all ease;
+            -ms-transition: .5s all ease;
+            -o-transition: .5s all ease;
+            transition: .5s all ease;
+            text-shadow: 2px 2px 5px #fff;
         }
         .page1 h2:active{
-            -webkit-transform: rotate(360deg);
-            -moz-transform: rotate(360deg);
-            -ms-transform: rotate(360deg);
-            -o-transform: rotate(360deg);
-            transform: rotate(360deg);
+
+            -webkit-transform: rotateX(360deg) rotateZ(360deg);
+            -moz-transform: rotateX(360deg) rotateZ(360deg);
+            -ms-transform: rotateX(360deg) rotateZ(360deg);
+            -o-transform: rotateX(360deg) rotateZ(360deg);
+            transform: rotateX(360deg) rotateZ(360deg);
+            box-shadow: 10px 5px 10px #0ff;
+
         }
         .page1 .loading{
             width: 80px;
@@ -50,11 +54,12 @@
             border-bottom-color:transparent;
             margin-left: -41px;
             border-radius: 50%;
-            -webkit-transition: 1s all;
-            -moz-transition: 1s all;
-            -ms-transition: 1s all;
-            -o-transition: 1s all;
-            transition: 1s all;
+            -webkit-transition: 1s all ease;
+            -moz-transition: 1s all ease;
+            -ms-transition: 1s all ease;
+            -o-transition: 1s all ease;
+            transition: 1s all ease;
+
         }
         .page1 .loading:hover{
             -webkit-transform: rotate(360deg);
@@ -105,12 +110,12 @@
              -o-transition: 1s all ease;
              transition: 1s all ease;
         }
-        .page1 .time img:hover{
-            -webkit-transform: rotate(360deg);
-            -moz-transform: rotate(360deg);
-            -ms-transform: rotate(360deg);
-            -o-transform: rotate(360deg);
-            transform: rotate(360deg);
+        .page1 .time img:active{
+            -webkit-transform: rotateX(360deg);
+            -moz-transform: rotateX(360deg);
+            -ms-transform: rotateX(360deg);
+            -o-transform: rotateX(360deg);
+            transform: rotateX(360deg);
         }
     </style>
     <script src="js/self.js"></script>

@@ -32,10 +32,12 @@
         window.onload=function (){
             var oDate = new Date();
             var h = oDate.getHours();
-            alert(h)
+            //alert((18-h)/18);
             var oDiv = document.getElementsByTagName('div')[0];
             if(h>=6&&h<=18){
-                oDiv.style.left=
+                oDiv.style.left=''+((18-h)/18*100)+'%';
+                oDiv.style.top=''+(1-(18-h)/9)*100+'%';
+
             }
         }
     </script>
