@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            width: 100%;
+            background: #000;
+        }
+        .box{
+            width: 80%;
+            height: 90%;
+            border:1px solid #fff;
+            margin: 50px auto;
+            position: relative;
+        }
+        .box div{
+            width: 100px;
+            height: 100px;
+            background: #ff0;
+            margin-left: -100px;
+            margin-bottom: -100px;
+            position: absolute;
+            left: 100px;
+            bottom: 100px;
+            -webkit-border-radius:50%;
+            border-radius:50%;
+            box-shadow: 0 0 200px yellow;
+            -webkit-transition: 1s all ease;
+            -moz-transition: 1s all ease;
+            -ms-transition: 1s all ease;
+            -o-transition: 1s all ease;
+            transition: 1s all ease;
+        }
+    </style>
+    <script>
+
+        window.onload=function (){
+            var oBox = document.querySelector('.box');
+            oBox.style.width=document.documentElement.clientWidth*0.9+'px';
+            oBox.style.height=document.documentElement.clientHeight*0.9+'px';
+
+            var oDiv = oBox.querySelector('div');
+            function clock(){
+                var oDate = new Date();
+                var s = oDate.getSeconds();
+                if(s<=30){
+                    oDiv.style.bottom = (s / 30) * 100 + '%';
+                }else{
+                    oDiv.style.bottom = ((60-s) / 30) * 100 + '%';
+                }
+                oDiv.style.left = (s/60)*100+'%';
+            }
+            clock();
+            setInterval(clock,1000);
+
+        }
+    </script>
+</head>
+<body>
+<div class="box">
+    <div></div>
+</div>
+</body>
+</html>
