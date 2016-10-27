@@ -126,6 +126,18 @@ html,body{
     left: 50%;
     margin-left: -300px;
     top: 300px;
+    -webkit-transition: 1s all ease;
+    -moz-transition: 1s all ease;
+    -ms-transition: 1s all ease;
+    -o-transition: 1s all ease;
+    transition: 1s all ease;
+}
+.page2 .time:active{
+    -webkit-transform: rotateX(45deg) rotateY(45deg);
+    -moz-transform: rotateX(45deg) rotateY(45deg);
+    -ms-transform: rotateX(45deg) rotateY(45deg);
+    -o-transform: rotateX(45deg) rotateY(45deg);
+    transform: rotateX(45deg) rotateY(45deg);
 }
 .page2 .time img{
     border:none;
@@ -134,11 +146,4 @@ html,body{
     -ms-transition: 1s all ease;
     -o-transition: 1s all ease;
     transition: 1s all ease;
-}
-.page2 .time img:active{
-    -webkit-transform: rotateX(360deg);
-    -moz-transform: rotateX(360deg);
-    -ms-transform: rotateX(360deg);
-    -o-transform: rotateX(360deg);
-    transform: rotateX(360deg);
 }
