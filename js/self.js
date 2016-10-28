@@ -19,9 +19,9 @@ window.onload=function() {
             aImg[aImg.length-2].src='image/week.png';
         };
     };
-    var oPage2 = document.querySelector('.page2');
+    var oPage1 = document.querySelector('.page1');
 
-    var oTime = oPage2.querySelector('.time');
+    var oTime = oPage1.querySelector('.time');
     var aImg = oTime.querySelectorAll('img');
     clock();
     setInterval(clock,1000);

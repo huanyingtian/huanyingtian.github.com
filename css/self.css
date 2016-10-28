@@ -9,33 +9,6 @@ html,body{
     background-size:100%;
 }
 .page1{
-    width: 100%;
-    height: 100%;
-    background: url('../image/lantianbaiyun.jpg') no-repeat;
-    background-size: 100%;
-    position: relative;
-
-}
-.page1 .box div{
-    width: 100px;
-    height: 100px;
-
-    background: rgb(255, 255, 0);
-    /*margin-left: -100px;
-    margin-bottom: -100px;*/
-    position: absolute;
-    left: 100px;
-    bottom: 100px;
-    -webkit-border-radius:50%;
-    -moz-border-radius:50%;
-    border-radius:50%;
-    -webkit-box-shadow: 0 0 50px rgba(255, 255, 0, 1);
-    -moz-box-shadow: 0 0 50px rgba(255, 255, 0, 1);
-    box-shadow: 0 0 50px rgba(255, 255, 0, 1);
-
-}
-
-.page2{
     background: url(../image/background.jpg) no-repeat;
     width: 100%;
 
@@ -44,7 +17,16 @@ html,body{
     height: 662px;
     position: relative;
 }
-.page2 h2{
+@-webkit-keyframes demo{
+    from{
+        top: -200px;
+    }
+    to{
+        top: 100px;
+    }
+
+}
+.page1 h2{
 
     margin-left: -263px;
     width: 526px;
@@ -60,40 +42,53 @@ html,body{
     -o-transition: .5s all ease;
     transition: .5s all ease;
     text-shadow: 2px 2px 5px #fff;
+    -webkit-animation:demo 1s linear alternate;
+    -o-animation:demo 1s linear alternate;
+    animation:demo 1s linear alternate;
 }
-.page2 h2:active{
-    -webkit-transform: rotateY(360deg);
-    -moz-transform: rotateY(360deg);
-    -ms-transform: rotateY(360deg);
-    -o-transform: rotateY(360deg);
-    transform: rotateY(360deg);
+.page1 h2:active{
+    -webkit-transform: rotateX(360deg);
+    -moz-transform: rotateX(360deg);
+    -ms-transform: rotateX(360deg);
+    -o-transform: rotateX(360deg);
+    transform: rotateX(360deg);
     box-shadow: 10px 5px 10px #0ff;
 }
-.page2 .loading{
+@-webkit-keyframes loading {
+    from{
+        right: -100px;
+    }
+    to{
+        right: 50%;
+    }
+}
+.page1 .loading{
     width: 80px;
     height: 80px;
     border: 1px solid #fff;
     position: absolute;
-    left: 50%;
+    right: 50%;
     top: 180px;
     border-bottom-color:transparent;
-    margin-left: -41px;
+    margin-right: -41px;
     border-radius: 50%;
     -webkit-transition: 1s all ease;
     -moz-transition: 1s all ease;
     -ms-transition: 1s all ease;
     -o-transition: 1s all ease;
     transition: 1s all ease;
-
+    -webkit-animation:loading 1s linear alternate;
+    -o-animation:loading 1s linear alternate;
+    animation:loading 1s linear alternate;
 }
-.page2 .loading:hover{
+.page1 .loading:hover{
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
     -o-transform: rotate(360deg);
     transform: rotate(360deg);;
 }
-.page2 .loading .div{
+.page1 .loading .div{
     width: 60px;
     height: 60px;
     position: absolute;
@@ -104,7 +99,7 @@ html,body{
     border-top-color: transparent;
     border-radius: 50%;
 }
-.page2 .div div{
+.page1 .div div{
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -115,7 +110,15 @@ html,body{
     top: 50%;
     margin: -16px 0 0 -16px;
 }
-.page2 .time{
+@-webkit-keyframes time {
+    from{
+        left: -800px;
+    }
+    to{
+        left: 50%;
+    }
+}
+.page1 .time{
     box-shadow: 10px 10px 50px #000;
     width: 600px;
     height: 200px;
@@ -131,15 +134,18 @@ html,body{
     -ms-transition: 1s all ease;
     -o-transition: 1s all ease;
     transition: 1s all ease;
+    -webkit-animation: time 1s linear alternate;
+    -o-animation: time 1s linear alternate;
+    animation: time 1s linear alternate;
 }
-.page2 .time:active{
-    -webkit-transform: rotateX(45deg) rotateY(45deg);
-    -moz-transform: rotateX(45deg) rotateY(45deg);
-    -ms-transform: rotateX(45deg) rotateY(45deg);
-    -o-transform: rotateX(45deg) rotateY(45deg);
-    transform: rotateX(45deg) rotateY(45deg);
+.page1 .time:active{
+    -webkit-transform: rotateX(45deg) ;
+    -moz-transform: rotateX(45deg) ;
+    -ms-transform: rotateX(45deg) ;
+    -o-transform: rotateX(45deg) ;
+    transform: rotateX(45deg) ;
 }
-.page2 .time img{
+.page1 .time img{
     border:none;
     -webkit-transition: 1s all ease;
     -moz-transition: 1s all ease;
