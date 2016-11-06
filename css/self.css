@@ -1,14 +1,97 @@
-*{
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
 html,body{
+    height: 100%;
+    width: 100%;
+}
+header {
+    background: url(../image/bj1.png) no-repeat;
+    background-size: 100%;
     width: 100%;
     height: 100%;
-    background-size:100%;
 }
-.page1{
+header div{
+    height: 100px;
+    background: rgba(38, 200, 186, 0.5);
+    position: relative;
+}
+header div h1{
+    overflow: hidden;
+    width: 138px;
+    height: 100px;
+    float: left;
+    font-size: 50px;
+    line-height: 100px;
+    text-indent: -999em;
+}
+header div h1 a{
+    display: block;
+    width: 100%;
+    background: url(../image/logo.png) no-repeat;
+    background-size: 100%;
+}
+header div ul{
+    margin-right: 50px;
+}
+header div ul,header div ol{
+    float: right;
+}
+header div ul li{
+    float: left;
+    font-size: 25px;
+    line-height: 100px;
+    padding: 0 20px;
+
+}
+header div ol li{
+    float: left;
+    padding-right: 5px;
+    height: 50px;
+    font-size: 30px;
+}
+header div ol li{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 100px;
+    display: none;
+    text-align: center;
+}
+header div ol li a{
+    display: block;
+    font-size: 10px;
+}
+header div ol li:nth-child(1){
+    right: 485px;
+}
+header div ol li:nth-child(2){
+    right: 390px;
+}
+header div ol li:nth-child(3){
+    right: 280px;
+    height: 50px;
+}
+header div ol li:nth-child(4){
+    right: 140px;
+    width: 230px;
+}
+header div ol li:nth-child(5){
+    right: 10px;
+}
+header div ol li img{
+    width: 200px;
+}
+header div ol li a {
+    background: rgba(28, 255, 246, 0.5);
+    line-height: 50px;
+    color: #00f;
+    font-size: 18px;
+}
+
+section.time{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+section.time .page1{
     background: url(../image/background.jpg) no-repeat;
     width: 100%;
 
@@ -26,10 +109,9 @@ html,body{
     }
 
 }
-.page1 h2{
-
+section.time .page1 h2{
     margin-left: -263px;
-    width: 526px;
+    width: 600px;
     height: 57px;
     color: #fff;
     position: absolute;
@@ -46,7 +128,7 @@ html,body{
     -o-animation:demo 1s linear alternate;
     animation:demo 1s linear alternate;
 }
-.page1 h2:active{
+section.time .page1 h2:active{
     -webkit-transform: rotateX(360deg);
     -moz-transform: rotateX(360deg);
     -ms-transform: rotateX(360deg);
@@ -62,7 +144,23 @@ html,body{
         right: 50%;
     }
 }
-.page1 .loading{
+@-webkit-keyframes loaded {
+    from{
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+section.time .page1 .loading{
     width: 80px;
     height: 80px;
     border: 1px solid #fff;
@@ -72,23 +170,18 @@ html,body{
     border-bottom-color:transparent;
     margin-right: -41px;
     border-radius: 50%;
-    -webkit-transition: 1s all ease;
-    -moz-transition: 1s all ease;
-    -ms-transition: 1s all ease;
-    -o-transition: 1s all ease;
-    transition: 1s all ease;
-    -webkit-animation:loading 1s linear alternate;
-    -o-animation:loading 1s linear alternate;
-    animation:loading 1s linear alternate;
+    -webkit-animation:loaded 1s linear infinite;
+    -o-animation:loaded 1s linear infinite;
+    animation:loaded 1s linear infinite;
 }
-.page1 .loading:hover{
+section.time .page1 .loading:hover{
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
     -o-transform: rotate(360deg);
     transform: rotate(360deg);;
 }
-.page1 .loading .div{
+section.time .page1 .loading .div{
     width: 60px;
     height: 60px;
     position: absolute;
@@ -99,7 +192,7 @@ html,body{
     border-top-color: transparent;
     border-radius: 50%;
 }
-.page1 .div div{
+section.time .page1 .div div{
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -118,7 +211,7 @@ html,body{
         left: 50%;
     }
 }
-.page1 .time{
+section.time .page1 .clock{
     box-shadow: 10px 10px 50px #000;
     width: 600px;
     height: 200px;
@@ -138,14 +231,14 @@ html,body{
     -o-animation: time 1s linear alternate;
     animation: time 1s linear alternate;
 }
-.page1 .time:active{
+section.time .page1 .clock:active{
     -webkit-transform: rotateX(45deg) ;
     -moz-transform: rotateX(45deg) ;
     -ms-transform: rotateX(45deg) ;
     -o-transform: rotateX(45deg) ;
     transform: rotateX(45deg) ;
 }
-.page1 .time img{
+section.time .page1 .clock img{
     border:none;
     -webkit-transition: 1s all ease;
     -moz-transition: 1s all ease;

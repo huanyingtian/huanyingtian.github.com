@@ -1,6 +1,20 @@
-window.onload=function() {
-    function toDou(n){
-        return n<10?'0'+n:''+n;
+function toDou(n){
+    return n<10?'0'+n:''+n;
+}
+window.onload=function(){
+    var aLi = document.querySelectorAll('header div ul li');
+    var aLi1 = document.querySelectorAll('header div ol li');
+    /*
+     top列表
+     */
+    for(var i=0;i<aLi.length;i++){
+        aLi[i].index = i;
+        aLi[i].onmouseover=function(){
+            aLi1[this.index].style.display='block';
+            this.onmouseout=function(){
+                aLi1[this.index].style.display='none';
+            }
+        }
     }
     function clock(){
         var arr = ['seven','one','two','three','four','five','six']
@@ -19,18 +33,10 @@ window.onload=function() {
             aImg[aImg.length-2].src='image/week.png';
         };
     };
-    var oPage1 = document.querySelector('.page1');
+    var oPage1 = document.querySelector('section.time .page1');
 
-    var oTime = oPage1.querySelector('.time');
+    var oTime = oPage1.querySelector('.clock');
     var aImg = oTime.querySelectorAll('img');
     clock();
     setInterval(clock,1000);
-};
-
-
-
-
-
-
-
-
+}
