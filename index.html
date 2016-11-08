@@ -7,11 +7,125 @@
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="css/self.css"/>
     <style>
+        section.banner{
+            width: 100%;
+            height: 100%;
+        }
+        section.banner div{
+            padding-top: 100px;
+            width: 500px;
+            height: 300px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            -webkit-transition: 1s all ease;
+            -moz-transition: 1s all ease;
+            -ms-transition: 1s all ease;
+            -o-transition: 1s all ease;
+            transition: 1s all ease;
+        }
+        section.banner div a{
+            position: absolute;
+            top: calc(50% + 50px);
+            width: 50px;
+            height: 50px;
+            background: #ccc;
+            -margin-top: 75px;
+            font-size: 50px;
+            color: #000;
+            z-index: 1;
+            opacity: 0.5;
+        }
+        section.banner div a:nth-child(1){
+            left: 0;
+        }
+        section.banner div a:nth-child(2){
+            right: 0;
+        }
+        section.banner div ul{
+            width: 2500px;
+            position: absolute;
 
+            -webkit-transition: 1s all ease;
+            -moz-transition: 1s all ease;
+            -ms-transition: 1s all ease;
+            -o-transition: 1s all ease;
+            transition: 1s all ease;
+            -webkit-transform: translateX(0px);
+            -moz-transform: translateX(0px);
+            -ms-transform: translateX(0px);
+            -o-transform: translateX(0px);
+            transform: translateX(0px);
+
+            left: 0;
+            top: 100px;
+            margin: 0 auto;
+        }
+        section.banner div ul li{
+            width: 500px;
+            height: 300px;
+            background: #ccc;
+            float: left;
+        }
+        section.banner div ul li img{
+            width: 100%;
+            height: 100%;
+        }
+        section.banner div ol{
+            width: 140px;
+            height: 20px;
+            position: absolute;
+            left: 50%;
+            margin-left: -70px;
+            bottom: 10px;
+
+        }
+        section.banner div ol li.active{
+            background: #f00;
+        }
+        section.banner div ol li{
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            background: #e9eb3c;
+            float: left;
+            -webkit-border-radius:50%;
+            -moz-border-radius:50%;
+            border-radius:50%;
+        }
+        section.banner div ol li:nth-child(5){
+            margin-right: -10px;
+        }
 
     </style>
     <script src="js/self.js"></script>
     <script>
+        window.onload=function(){
+            ;(function(){
+                var oUl = document.querySelector('.banner div ul');
+                var oOl = document.querySelector('.banner div ol');
+                var n = 0;
+                var aLi = document.querySelectorAll('.banner div ul li');
+                var aBtn = document.querySelectorAll('.banner div ol li')
+                var timer = null;
+                var oLeft = document.querySelectorAll('.banner div a')[0];
+                var oRight = document.querySelectorAll('.banner div a')[1];
+                for(var i=0;i<aLi.length;i++){
+                    aBtn[i].index = i;
+                    for(var i=0;i<aBtn,length;i++){
+                        aBtn[i].className = ''
+                    };
+                    this.className='active';
+                    oOl.style.transform='translateX('+(i*aLi.offsetWidth)+'px)'
+                }
+
+
+//                timer = setInterval(function(){
+//                    n++;
+//
+//                },2000);
+            })();
+        }
 
     </script>
 </head>
@@ -76,6 +190,29 @@
 </section>
 <section class="clock">
 
+</section>
+
+<section class="banner">
+    <div>
+        <a href="javascript:;">←</a>
+        <a href="javascript:;">→</a>
+        <ul class="clearfix">
+            <li><img src="image/4.jpg" alt=""/></li>
+            <li><img src="image/0.jpg" alt=""/></li>
+            <li><img src="image/1.jpg" alt=""/></li>
+            <li><img src="image/2.jpg" alt=""/></li>
+            <li><img src="image/3.jpg" alt=""/></li>
+            <li><img src="image/4.jpg" alt=""/></li>
+            <li><img src="image/0.jpg" alt=""/></li>
+        </ul>
+        <ol class="clearfix">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
 </section>
 </body>
 </html>
