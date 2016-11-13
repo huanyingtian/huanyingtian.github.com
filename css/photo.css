@@ -1,0 +1,14 @@
+div {
+  width: 700px;
+  height: 400px;
+  margin: 100px auto;
+  overflow: hidden; }
+  div ul {
+    width: 3500px;
+    height: 400px; }
+    div ul li {
+      float: left;
+      width: 700px;
+      height: 100%; }
+
+/*# sourceMappingURL=photo.css.map */

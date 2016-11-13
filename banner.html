@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/banner.css">
+    <script src="js/banner.js"></script>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+            var oBox = $('.box');
+            var aA = $('a');
+            var oUl = $('ul');
+            var aBtn = $('ol li');
+            oBox.mouseover(function(){
+                aA.show();
+                oBox.mouseout(function(){
+                    aA.hide();
+                });
+            });
+            var n = 1;
+            aA.eq(0).click(function(){
+                n--;
+                oUl.css("transform","translateX("+-(n)*700+"px)");
+                oUl.addEventListener('transitionend',function(){
+                    if(n<0){
+                        n=aBtn.length-2;
+                    }
+                },false)
+            })
+            aA.eq(1).click(function(){
+                n++;
+                oUl.css("transform","translateX("+-(n+1)+"px)");
+
+                oUl.addEventListener('transtionend',function(){
+                    if(n>=aBtn.length){
+                        n=1;
+                    }
+                },false)
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="box">
+    <a href="javascript:;">prev</a>
+    <a href="javascript:;">next</a>
+    <ul class="clearfix banner">
+        <li><img src="image/4.jpg" alt=""/></li>
+        <li><img src="image/0.jpg" alt=""/></li>
+        <li><img src="image/1.jpg" alt=""/></li>
+        <li><img src="image/2.jpg" alt=""/></li>
+        <li><img src="image/3.jpg" alt=""/></li>
+        <li><img src="image/0.jpg" alt=""/></li>
+    </ul>
+    <ol class="clearfix button">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+</div>
+</body>
+</html>

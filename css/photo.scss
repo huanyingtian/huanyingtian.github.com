@@ -1,0 +1,15 @@
+div{
+  width: 700px;
+  height: 400px;
+  margin: 100px auto;
+  overflow: hidden;
+  ul{
+    width: 3500px;
+    height: 400px;
+    li{
+      float: left;
+      width: 700px;
+      height: 100%;
+    }
+  }
+}
