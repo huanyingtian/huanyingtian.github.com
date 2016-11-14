@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,GAAG;EACD,KAAK,EAAE,IAAI;EACX,QAAQ,EAAE,QAAQ;EAClB,MAAM,EAAE,CAAC;EACT,IAAI,EAAE,CAAC;EACP,UAAU,EAAE,MAAM;EAClB,OAAG;IACD,KAAK,EAAE,IAAI;IACX,MAAM,EAAE,IAAI",
+"sources": ["apple.scss"],
+"names": [],
+"file": "apple.css"
+}
