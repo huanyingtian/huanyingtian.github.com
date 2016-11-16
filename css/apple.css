@@ -1,3 +1,6 @@
+html {
+  font-size: 20px; }
+
 div {
   width: 100%;
   position: absolute;
@@ -5,7 +8,7 @@ div {
   left: 0;
   text-align: center; }
   div img {
-    width: 64px;
-    height: 64px; }
+    width: 3.2rem;
+    height: 3.2rem; }
 
 /*# sourceMappingURL=apple.css.map */

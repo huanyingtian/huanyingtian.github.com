@@ -11,11 +11,46 @@
             height: 100%;
         }
     </style>
+    <!--<script src="js/website.js"></script>-->
     <script>
-
+        function myfun(){
+            ;(function(){
+                var oClock1 = document.querySelector('.clock1');
+                var oH = document.querySelector('.h');
+                var oM = document.querySelector('.m');
+                var oS = document.querySelector('.s');
+                for(var i=0;i<60;i++){
+                    var oSpan = document.createElement('span');
+                    oSpan.style.transform='rotate('+i*6+'deg)';
+                    oSpan.inner='<em></em>';
+                    oClock1.appendChild(oSpan);
+                    var oEm = document.createElement('em');
+                    if(i%5==0){
+                        oSpan.style.height='20px';
+                        oSpan.style.background='#63FF2D';
+                        oEm.style.transform='rotate('+-(i*6)+'deg)';
+                        oEm.innerHTML=(i/5||12)
+                    }
+                    oSpan.appendChild(oEm);
+                }
+                function clock(){
+                    var oDate = new Date();
+                    var h = oDate.getHours();
+                    var m = oDate.getMinutes();
+                    var s = oDate.getSeconds();
+                    var ms = oDate.getMilliseconds();
+                    oH.style.transform='rotate('+(h/12*30+m/60*30)+'deg)';
+                    oM.style.transform='rotate('+(m*6+s/60*6)+'deg)';
+                    oS.style.transform='rotate('+(s*6+ms/1000*6)+'deg)';
+                }
+                clock();
+                timer0=setInterval(clock,1);
+            })();
+        }
+        window.onload=myfun;
     </script>
 </head>
-<body>
+<body onload="myfunction()">
 <section class="head">
     <div class="header">
         <ul class="clearfix">
@@ -28,18 +63,20 @@
         </ul>
     </div>
     <div class="nav clearfix">
-        <a href="banner.html">banner图</a>
-        <a href="photo.html">图片的切换效果</a>
-        <a href="video.html">视频播放器</a>
-        <a href="audio.html">音乐播放器</a>
-        <a href="photoWar.html">照片墙</a>
-
-        <a href="windows.html">windows屏保</a>
-        <a href="fish.html">捕鱼达人</a>
-        <a href="clock.html">时钟</a>
-        <a href="3d_photo.html">3D图片环</a>
-        <a href="apple.html">苹果菜单效果</a>
+        <a href="code/photoWar.html">照片墙</a>
+        <a href="code/windows.html">windows屏保</a>
+        <a href="code/fish.html">捕鱼达人</a>
+        <a href="code/clock.html">时钟</a>
+        <a href="code/3d_photo.html">3D图片环</a>
+        <a href="code/apple.html">苹果菜单效果</a>
     </div>
+    <div class="clock1">
+        <div class="h"></div>
+        <div class="m"></div>
+        <div class="s"></div>
+        <div class="center"></div>
+    </div>
+    <a href="code/index2.html" class="list">我的简历</a>
 </section>
 </body>
 </html>

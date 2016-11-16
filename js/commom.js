@@ -6,7 +6,7 @@ function loadImage(json,success,loading){
 	for(var name in json){
 		total++;
 		var oImg = new Image();
-		oImg.src = 'image/'+json[name];
+		oImg.src = '../image/'+json[name];
 		images[name] = oImg;
 		oImg.onload = function(){
 			loaded++;

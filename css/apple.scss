@@ -1,3 +1,11 @@
+
+$default-font-size: 20px !default;
+html {
+  font-size: $default-font-size;
+}
+@function px2rem($px){//$px为需要转换的字号
+  @return $px / $default-font-size * 1rem;
+}
 div{
   width: 100%;
   position: absolute;
@@ -5,7 +13,7 @@ div{
   left: 0;
   text-align: center;
   img{
-    width: 64px;
-    height: 64px;
+    width: px2rem(64px);
+    height: px2rem(64px);
   }
 }
