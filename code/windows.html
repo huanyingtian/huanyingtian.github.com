@@ -32,7 +32,7 @@ window.onload = function(){
 		});
 	}
 	
-	var COUNT = 40;
+	var COUNT = 30;
 	var aOldPoint = [];
 	
 	
@@ -78,8 +78,7 @@ window.onload = function(){
 		gd.closePath();
 		gd.strokeStyle = '#fff';
 		gd.stroke();
-		
-		
+
 		var arr = [];
 		for(var i=0;i<aPoint.length;i++){
 			arr.push({
@@ -104,9 +103,6 @@ window.onload = function(){
 			gd.strokeStyle = 'rgba(255,255,255,'+(i/aOldPoint.length/3)+')';
 			gd.stroke();
 		}
-		
-		
-		
 	},16);
 	
 	function drawPoint(oPoint){

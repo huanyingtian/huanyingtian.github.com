@@ -79,16 +79,14 @@ body {
         transform: rotateX(360deg); }
 @-webkit-keyframes clock {
   from {
-    right: 2000px;
-    top: 800px; }
+    opacity: 0; }
   to {
-    right: 20px;
-    top: 150px; } }
+    opacity: 1; } }
   .head .clock1 {
     z-index: 20;
     position: absolute;
-    right: 20px;
-    top: 150px;
+    right: 50px;
+    top: 200px;
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -98,9 +96,9 @@ body {
     -ms-transition: 1s all ease;
     -o-transition: 1s all ease;
     transition: 1s all ease;
-    -webkit-animation: 2s clock;
-    -o-animation: 2s clock;
-    animation: 2s clock; }
+    -webkit-animation: clock 4s forwards;
+    -o-animation: clock 4s forwards;
+    animation: clock 4s forwards; }
     .head .clock1 .h {
       width: 16px;
       height: 40px;

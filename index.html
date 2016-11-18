@@ -13,7 +13,7 @@
     </style>
     <!--<script src="js/website.js"></script>-->
     <script>
-        function myfun(){
+        window.onload=function(){
             ;(function(){
                 var oClock1 = document.querySelector('.clock1');
                 var oH = document.querySelector('.h');
@@ -46,11 +46,10 @@
                 clock();
                 timer0=setInterval(clock,1);
             })();
-        }
-        window.onload=myfun;
+        };
     </script>
 </head>
-<body onload="myfunction()">
+<body>
 <section class="head">
     <div class="header">
         <ul class="clearfix">
