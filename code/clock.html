@@ -99,7 +99,7 @@
                     var m = oDate.getMinutes();
                     var s = oDate.getSeconds();
                     var ms = oDate.getMilliseconds();
-                    drawArc(120,0,(h*30+m/60*30),'orange');
+                    drawArc(120,0,(h%12*30+m/60*30),'orange');
                     drawArc(160,0,(m*6+s/60*6),'purple');
                     drawArc(200,0,(s*6+ms/1000*6),'aqua');
                     var str = toDou(h)+':'+toDou(m)+':'+toDou(s);
