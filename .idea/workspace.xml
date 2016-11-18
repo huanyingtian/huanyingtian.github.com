@@ -2,69 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="458911bb-a05e-4821-8c32-869e08d54811" name="默认的" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/.sass-cache/bfebb4b6750ab9348ce8139e34d32b0e1f35d357/slide.scssc" afterPath="$PROJECT_DIR$/css/.sass-cache/bfebb4b6750ab9348ce8139e34d32b0e1f35d357/slide.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/0.png" afterPath="$PROJECT_DIR$/image/0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/1.png" afterPath="$PROJECT_DIR$/image/1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/2.png" afterPath="$PROJECT_DIR$/image/2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/3.png" afterPath="$PROJECT_DIR$/image/3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/4.png" afterPath="$PROJECT_DIR$/image/4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/5.png" afterPath="$PROJECT_DIR$/image/5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/6.png" afterPath="$PROJECT_DIR$/image/6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/7.png" afterPath="$PROJECT_DIR$/image/7.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/8.png" afterPath="$PROJECT_DIR$/image/8.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/9.png" afterPath="$PROJECT_DIR$/image/9.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/apple1.png" afterPath="$PROJECT_DIR$/image/apple1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/apple2.png" afterPath="$PROJECT_DIR$/image/apple2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/apple3.png" afterPath="$PROJECT_DIR$/image/apple3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/apple4.png" afterPath="$PROJECT_DIR$/image/apple4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/apple5.png" afterPath="$PROJECT_DIR$/image/apple5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/bottom.png" afterPath="$PROJECT_DIR$/image/bottom.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/bullet.png" afterPath="$PROJECT_DIR$/image/bullet.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/cannon1.png" afterPath="$PROJECT_DIR$/image/cannon1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/cannon2.png" afterPath="$PROJECT_DIR$/image/cannon2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/cannon3.png" afterPath="$PROJECT_DIR$/image/cannon3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/cannon4.png" afterPath="$PROJECT_DIR$/image/cannon4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/cannon5.png" afterPath="$PROJECT_DIR$/image/cannon5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/cannon6.png" afterPath="$PROJECT_DIR$/image/cannon6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/cannon7.png" afterPath="$PROJECT_DIR$/image/cannon7.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/coinAni1.png" afterPath="$PROJECT_DIR$/image/coinAni1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/coinAni2.png" afterPath="$PROJECT_DIR$/image/coinAni2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/coinText.png" afterPath="$PROJECT_DIR$/image/coinText.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/d.png" afterPath="$PROJECT_DIR$/image/d.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/fish1.png" afterPath="$PROJECT_DIR$/image/fish1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/fish2.png" afterPath="$PROJECT_DIR$/image/fish2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/fish3.png" afterPath="$PROJECT_DIR$/image/fish3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/fish4.png" afterPath="$PROJECT_DIR$/image/fish4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/fish5.png" afterPath="$PROJECT_DIR$/image/fish5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/five.png" afterPath="$PROJECT_DIR$/image/five.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/four.png" afterPath="$PROJECT_DIR$/image/four.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/git.png" afterPath="$PROJECT_DIR$/image/git.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/logo.png" afterPath="$PROJECT_DIR$/image/logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/m.png" afterPath="$PROJECT_DIR$/image/m.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/mouse.png" afterPath="$PROJECT_DIR$/image/mouse.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/number_black.png" afterPath="$PROJECT_DIR$/image/number_black.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/one.png" afterPath="$PROJECT_DIR$/image/one.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/p.png" afterPath="$PROJECT_DIR$/image/p.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/qq.png" afterPath="$PROJECT_DIR$/image/qq.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/qq_face.png" afterPath="$PROJECT_DIR$/image/qq_face.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/seven.png" afterPath="$PROJECT_DIR$/image/seven.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/shark1.png" afterPath="$PROJECT_DIR$/image/shark1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/shark2.png" afterPath="$PROJECT_DIR$/image/shark2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/sina.png" afterPath="$PROJECT_DIR$/image/sina.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/six.png" afterPath="$PROJECT_DIR$/image/six.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/three.png" afterPath="$PROJECT_DIR$/image/three.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/two.png" afterPath="$PROJECT_DIR$/image/two.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/web.png" afterPath="$PROJECT_DIR$/image/web.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/week.png" afterPath="$PROJECT_DIR$/image/week.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/wei.png" afterPath="$PROJECT_DIR$/image/wei.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/weichat.png" afterPath="$PROJECT_DIR$/image/weichat.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/y.png" afterPath="$PROJECT_DIR$/image/y.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/zhihu.png" afterPath="$PROJECT_DIR$/image/zhihu.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/clock.html" afterPath="$PROJECT_DIR$/code/clock.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/index2.html" afterPath="$PROJECT_DIR$/code/index2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/slide.css" afterPath="$PROJECT_DIR$/css/slide.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/slide.css.map" afterPath="$PROJECT_DIR$/css/slide.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/slide.scss" afterPath="$PROJECT_DIR$/css/slide.scss" />
     </list>
     <ignored path="huanyingtian.github.com.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -84,7 +22,18 @@
     <favorites_list name="huanyingtian.github.com" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="index2.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/code/index2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6462882">
+              <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -101,8 +50,8 @@
       <list>
         <option value="$PROJECT_DIR$/code/clock.html" />
         <option value="$PROJECT_DIR$/css/slide.scss" />
-        <option value="$PROJECT_DIR$/code/index2.html" />
         <option value="$PROJECT_DIR$/js/slide.js" />
+        <option value="$PROJECT_DIR$/code/index2.html" />
       </list>
     </option>
   </component>
@@ -233,8 +182,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="716" y="20" width="640" height="688" extended-state="1" />
-    <editor active="false" />
+    <frame x="716" y="20" width="640" height="688" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -267,6 +216,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -307,8 +257,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/index2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65502185">
-          <caret line="63" column="24" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.6462882">
+          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
