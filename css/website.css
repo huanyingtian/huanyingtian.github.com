@@ -187,7 +187,7 @@ body {
         left: 0;
         margin-left: -10px;
         font-size: 20px; }
-  .head .list {
+  .head .resume {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -201,5 +201,19 @@ body {
     border-radius: 40px;
     color: #fff;
     background: -webkit-linear-gradient(left, #58ffe1, #ff81ea, #e9eb3c); }
+  .head .list {
+    width: 80px;
+    text-align: center;
+    line-height: 40px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    height: 40px;
+    font-size: 30px;
+    overflow: hidden;
+    background: rgba(0, 0, 255, 0.43);
+    position: absolute;
+    right: 100px;
+    bottom: 100px; }
 
 /*# sourceMappingURL=website.css.map */
