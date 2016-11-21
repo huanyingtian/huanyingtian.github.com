@@ -1,0 +1,337 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    vertical-align: top;
+    font-style: normal;
+}
+html{font-size:20px;}
+.warp header{
+    width: 16rem;
+    height: 2.525rem;
+    background: -webkit-linear-gradient(#fff,#ebebeb);
+    position: relative;
+    text-align: center;
+}
+header a{
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+    width: 3.25rem;
+    height:1.6rem;
+    background: url("../img/fh.png") no-repeat;
+    background-size: 100%;
+    text-indent: -9999rem;
+}
+header img{
+    margin-top: 0.175rem;
+    width: 9.4rem;
+    height: 2.2rem;
+}
+.banner{
+    height: 8.475rem;
+    overflow: hidden;
+}
+.banner ul{
+    overflow: hidden;
+    height:6.675rem;
+    width:80rem;
+}
+.banner ul li{
+    width:16rem;
+    height:6.675rem;
+    float: left;
+}
+.banner ul li img{
+    width: 100%;
+    height: 100%;
+}
+.banner ol{
+
+    overflow: hidden;
+    text-align: center;
+    margin-left: 7.05rem;
+    margin-top: 0.525rem;
+}
+.banner ol li{
+    width: 0.25rem;
+    height: 0.25rem;
+    background: #a9a9a9;
+    border-radius: 50%;
+    float: left;
+    text-indent: -9999rem;
+    margin-right: 0.25rem;
+}
+.banner ol li.on{
+    background: #ff4300;
+}
+.fl_box{
+    height: 8.65rem;
+    width: 16rem;
+    overflow: hidden;
+}
+.fl{
+    width: 16rem;
+    overflow: hidden;
+    padding: 0 1.325rem;
+
+}
+.fl li{
+    float: left;
+    width: 2rem;
+    text-align: center;
+    margin-right: 1.8rem;
+}
+.fl li a{
+    display:inline-block;
+}
+.fl li a img{
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 0.3rem;
+
+}
+.fl li span{
+    font-size:0.6rem;
+    color:#bfbfbf;
+}
+.fl li.mt{
+    margin-top: 1rem;
+}
+.ph_box{
+    width: 15rem;
+    margin: 0 0.5rem;
+    overflow: hidden;
+}
+.ph_box .hot{
+    float: left;
+    color: #333333;
+    font-size: 0.7rem;
+    border-left:0.1rem solid #d51938;
+    padding-left: 0.3rem;
+}
+.ph_box .top{
+    float: right;
+    color: #333333;
+    font-size: 0.7rem;
+}
+.ph_box .xian{
+    height: 1.3rem;
+    border-bottom: 0.1rem solid #dcdcdc;
+    margin-bottom: 0.275rem;
+}
+.ph_lb{
+    width: 15rem;
+}
+.ph_lb li{
+    margin-top: 0.5rem;
+    height: 3rem;
+    width: 100%;
+    background: #f4f4f4;
+    overflow: hidden;
+}
+.ph_lb li .num{
+    display: inline-block;
+    width: 1.5rem;
+    height: 3rem;
+    text-align: center;
+    color: #fff;
+    line-height: 3rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    float: left;
+
+}
+.ph_lb li:nth-child(1) em:nth-child(1){background: #e00202;}
+.ph_lb li:nth-child(2) em:nth-child(1){background: #ff4800;}
+.ph_lb li:nth-child(3) em:nth-child(1){background: #ff7300;}
+.ph_lb li:nth-child(4) em:nth-child(1){background: #ff9d00;}
+.ph_lb li:nth-child(5) em:nth-child(1){background: #ffa800;}
+.ph_lb li:nth-child(6) em:nth-child(1){background: #ffb400;}
+.ph_lb li:nth-child(7) em:nth-child(1){background: #ffba00;}
+.ph_lb li:nth-child(8) em:nth-child(1){background: #fcd000;}
+.ph_lb li:nth-child(9) em:nth-child(1){background: #ffd719;}
+.ph_lb li:nth-child(10) em:nth-child(1){background: #ffe152;}
+
+.ph_lb li img{
+    width: 4.5rem;
+    height:3rem;
+    float: left;
+}
+.ph_lb .xssl{
+    width: 3.55rem;
+    height:1.55rem;
+    float: left;
+    font-family: Î¢ÈíÑÅºÚ;
+    font-size: 0.6rem;
+    color: #999999;
+    margin:0.725rem 0.55rem;
+}
+.ph_lb .xssl .zhx{
+    text-decoration:line-through;
+}
+.ph_lb .qian{
+    width: 3.4rem;
+    height: 3rem;
+    text-align: right;
+    line-height: 3rem;
+    float: left;
+    color: #d51938;
+    font-size: 0.8rem;
+    font-family: Î¢ÈíÑÅºÚ;
+}
+.ph_lb .qian a{
+    display: inline-block;
+    background: url("../img/jt.png") no-repeat;
+    width: 0.325rem;
+    height: 0.55rem;
+    margin-top: 1.32rem;
+    background-size: 100%;
+}
+.spt_box{
+    width: 15rem;
+    margin:0.5rem 0.5rem 0 0.5rem;
+
+    height: 11.325rem;
+
+    overflow: hidden;
+}
+.spt_box .gdhs{
+    height: 2rem;
+    background: #f5f5f5;
+    margin-bottom: 0.5rem;
+    width: 15rem;
+    font-size: 0.7rem;
+    font-family: ËÎÌå;
+    color: #666666;
+    text-align: center;
+    line-height: 2rem;
+    float: left;
+}
+.spt_box .spt{
+    width: 3.75rem;
+    height: 8.8rem;
+    float: left;
+}
+.spt_box .spt img{
+    width: 100%;
+    height: 100%;
+}
+.spt_box .fl_ul{
+    float: left;
+    width: 11.25rem;
+    height: 8.8rem;
+}
+.spt_box .fl_ul li{
+    width: 3.75rem;
+    height: 2.2rem;
+    float: left;
+    box-sizing:border-box;
+    border: 1px solid #eeeeee;
+    text-align: center;
+    line-height: 2.225rem;
+    font-size: 0.63rem;
+    color: #999999;
+}
+.spt_box .fl_ul li a{
+    color: #999999;
+    text-decoration: none;
+}
+.spt_box .fl_ul li a.red{
+    color: #d51942;
+}
+.ppzk_box{
+    width: 15rem;
+    margin:0.5rem 0.5rem 0 0.5rem;
+}
+.ppzk_box .gdhs{
+    height: 2rem;
+    background: #f5f5f5;
+    margin-bottom: 0.5rem;
+    width: 15rem;
+    font-size: 0.7rem;
+    font-family: ËÎÌå;
+    color: #666666;
+    text-align: center;
+    line-height: 2rem;
+
+}
+.ppzk_box .khd{
+    height: 4.025rem;
+    width: 15rem;
+    border: 1px solid #eeeeee;
+    overflow: hidden;
+}
+.ppzk_box .khd li{
+    box-sizing: border-box;
+    border-right: 1px solid #eeeeee;
+    width: 5rem;
+    height: 4.025rem;
+    float: left;
+    position: relative;
+}
+.ppzk_box .khd li a{
+    font-size: 0.7rem;
+    color: #999999;
+    text-decoration: none;
+    margin-top: 2.8rem;
+    display: block;
+    text-align: center;
+}
+.ppzk_box .khd li img{
+    position: absolute;
+    top: 0.925rem;
+    left:2.15rem;
+}
+.ppzk_box .khd .clear_r{
+    border-right: none;
+}
+.footer{
+    width: 15rem;
+    margin:0.5rem 0.5rem 0 0.5rem;
+    height: 10.75rem;
+}
+.footer .login{
+    background: #f8f8f8;
+    height: 2.15rem;
+    width: 15rem;
+    line-height: 2.15rem;
+    overflow: hidden;
+}
+.footer .login a{
+    color: #333333;
+    font-size: 0.7rem;
+    font-family: ËÎÌå;
+    text-decoration: none;
+    margin-left: 0.225rem;
+    float: left;
+}
+.footer .login .top{
+    background: url("../img/top.png") no-repeat 1.8rem 0.9rem;
+    float: right;
+    width: 2.875rem;
+}
+.footer .db{
+    width: 15rem;
+    height: 8.6rem;
+    background: #eeeeee;
+    text-align: center;
+}
+.footer .db .bb{
+    padding-top: 1rem;
+}
+.footer .db .bb a{
+    color: #333333;
+    font-size: 0.7rem;
+    font-family: ËÎÌå;
+    text-decoration: none;
+}
+.footer .db .bbh{
+    color:#999999;
+    font-size:0.55rem;
+}
+.footer .db img{
+    margin-top: 0.65rem;
+    width: 13rem;
+    height: 4.45rem;
+}
