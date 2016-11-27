@@ -72,7 +72,6 @@ window.onload=function(){
                     gd.fillStyle = lg;
                     gd.fillText(str,cx,cy);
 
-                    console.log(loading);
                     if(loading==arr[_this.index]){
                         clearInterval(timer);
                     };
