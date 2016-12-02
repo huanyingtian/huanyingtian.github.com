@@ -1,82 +1,218 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>NiShengYang</title>
-    <link rel="stylesheet" href="css/website.css">
+    <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,minimum-scale=1,initial-scale=1"/>
+    <title>Title</title>
     <link rel="stylesheet" href="css/base.css">
-    <style>
-        body, html {
-            width: 100%;
-            height: 100%;
-        }
-    </style>
-    <!--<script src="js/website.js"></script>-->
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/zepto.min.js"></script>
     <script>
-        window.onload=function(){
-            ;(function(){
-                var oClock1 = document.querySelector('.clock1');
-                var oH = document.querySelector('.h');
-                var oM = document.querySelector('.m');
-                var oS = document.querySelector('.s');
-                for(var i=0;i<60;i++){
-                    var oSpan = document.createElement('span');
-                    oSpan.style.transform='rotate('+i*6+'deg)';
-                    oSpan.inner='<em></em>';
-                    oClock1.appendChild(oSpan);
-                    var oEm = document.createElement('em');
-                    if(i%5==0){
-                        oSpan.style.height='20px';
-                        oSpan.style.background='#63FF2D';
-                        oEm.style.transform='rotate('+-(i*6)+'deg)';
-                        oEm.innerHTML=(i/5||12)
-                    }
-                    oSpan.appendChild(oEm);
-                }
-                function clock(){
-                    var oDate = new Date();
-                    var h = oDate.getHours();
-                    var m = oDate.getMinutes();
-                    var s = oDate.getSeconds();
-                    var ms = oDate.getMilliseconds();
-                    oH.style.transform='rotate('+(h/12*30+m/60*30)+'deg)';
-                    oM.style.transform='rotate('+(m*6+s/60*6)+'deg)';
-                    oS.style.transform='rotate('+(s*6+ms/1000*6)+'deg)';
-                }
-                clock();
-                timer0=setInterval(clock,1);
+        ;(function(win,doc){
+            var rem = 20/375*doc.documentElement.clientWidth;
+            doc.documentElement.style.fontSize=rem+'px';
+            win.addEventListener('resize',function(){
+                rem = 20/375*doc.documentElement.clientWidth;
+                doc.documentElement.style.fontSize=rem+'px';
+            },false)
+        })(window,document);
+        document.addEventListener('DOMContentLoaded',function(ev){
+            //列表
+            (function(){
+                var oBtn = document.querySelector('header span');
+                var oIndex = document.querySelector('section.index');
+                var oN = document.querySelector('section.index span');
+                oBtn.addEventListener('click',function(){
+                    oIndex.style.display='block';
+                },false);
+                oN.addEventListener('click',function(){
+                    oIndex.style.display='none';
+                },false);
+                var aBtn = document.querySelectorAll('section.index ul li.to');
+
+                aBtn[1].addEventListener('click',function(ev){
+                    oIndex.style.display='none';
+                },false);
             })();
-        };
+            //video
+            (function(){
+                var oV = document.querySelector('section.yuan video');
+                var oP = document.querySelector('section.yuan span.play');
+                var n = 0;
+                oP.addEventListener('click',function(){
+                    oV.controls=true;
+                    oV.play();
+                    oP.style.display='none';
+                },false);
+                oV.addEventListener('click',function(){
+                    n++;
+                    if(n>1){
+                        n=0;
+                    }
+                    if(n){
+                        oV.controls=true;
+                        oV.play();
+                        oP.style.display='none';
+                    }else{
+                        oV.controls=false;
+                        oV.pause();
+                        oP.style.display='block';
+                    }
+                },false);
+            })();
+
+            //touch
+            (function(){
+                var oUl = document.querySelector('section.svg ul');
+                var aLi = document.querySelectorAll('section.svg ul li');
+                var x = 0;
+                var oldx = 0;
+                oUl.addEventListener('touchstart',function(ev){
+                    var oTouch=ev.targetTouches[0];
+                    var dix = oTouch.pageX -x;
+                    function fnMove(ev){
+                        var oTouch=ev.targetTouches[0];
+                        x = oTouch.pageX-dix;
+                        if(x>0){
+                            x=0;
+                        }
+                        if(x<-1000){
+                            x=-1000;
+                        }
+                        oUl.style.transform='translate('+x/40+'rem)'
+                    }
+                    function fnEnd(){
+                        document.removeEventListener('touchmove',fnMove,false);
+                        document.removeEventListener('touchmove',fnEnd,false);
+                    }
+                    document.addEventListener('touchmove',fnMove,false);
+                    document.addEventListener('touchend',fnEnd,false);
+                     ev.preventDefault();
+                },false);
+            })();
+            ev.preventDefault();
+        },false);
     </script>
 </head>
 <body>
-<section class="head">
-    <div class="header">
-        <ul class="clearfix">
-            <li><a href="image/qq.png" title="1336114916"><img src="image/qq_face.png" alt="1336114916"></a></li>
-            <li><a href="image/wei.png"><img src="image/weichat.png" alt="幻神的使者"></a></li>
-            <li><a href="https://github.com/huanyingtian/"><img src="image/git.png" alt="huanyingtian"></a></li>
-            <li><a href="http://weibo.com/u/6047236745?refer_flag=1001030201_&is_all=1" title="幻神的使者"><img src="image/sina.png" alt="1336114916"></a></li>
-            <li><a href="javascript:;" title="手机号:18331160171"><img src="image/phone.jpg" alt="1336114916"></a></li>
-            <li><a href="https://www.zhihu.com/people/ni-sheng-yang-11" title="倪胜阳"><img src="image/zhihu.png" alt="倪胜阳"></a></li>
-        </ul>
-    </div>
-    <div class="nav clearfix">
-        <a href="code/photoWar.html">照片墙</a>
-        <a href="code/windows.html">windows屏保</a>
-        <a href="code/fish.html">捕鱼达人</a>
-        <a href="code/clock.html">时钟</a>
-        <a href="code/3d_photo.html">3D图片环</a>
-        <a href="code/apple.html">苹果菜单效果</a>
-    </div>
-    <div class="clock1">
-        <div class="h"></div>
-        <div class="m"></div>
-        <div class="s"></div>
-        <div class="center"></div>
-    </div>
-    <a href="code/index2.html" class="list">副页</a>
-    <a href="code/index1.html" class="resume">个人简历</a>
+<section class="index" id="top">
+    <span>X</span>
+    <ul>
+        <li class="to"><a href="index.html">首页</a></li>
+        <li><a href="product.html">产品介绍</a></li>
+        <li class="to"><a href="#add">联系我们</a></li>
+    </ul>
 </section>
+<header>
+    <span></span>
+    <h1>大数医达</h1>
+</header>
+<section class="banner">
+    <img src="img/banner.jpg" alt=""/>
+    <p>人工智能的一小步,</p>
+    <div>
+        <span>医疗健康</span>
+        一大步
+    </div>
+</section>
+<section class="content">
+    <span class="first">01</span>
+    <h2>关于我们</h2>
+    <span class="last"></span>
+    <p>
+        北京大数医达科技有限公司是一家在人工智能、大数据、云计算方面拥有国际领先水平的高科技企业，专注于多源异构医疗数据处理、深度挖掘与机器学习。
+    </p>
+</section>
+<section class="svg">
+    <ul>
+        <li>
+            <img src="img/elite.svg" alt=""/>
+            <div class="bottom">
+                <span>顶尖团队</span>
+                <p>Elite</p>
+                <p>team</p>
+            </div>
+        </li>
+        <li>
+
+            <img src="img/medical.svg" alt=""/>
+
+            <div class="bottom">
+                <span>医学专家</span>
+                <p>Medical</p>
+                <p>experts</p>
+            </div>
+        </li>
+        <li>
+            <img src="img/leading.svg" alt=""/>
+            <div class="bottom">
+                <span>国际领先</span>
+                <p>Leading</p>
+                <p>international</p>
+            </div>
+        </li>
+        <li>
+            <img src="img/acs.svg" alt=""/>
+            <div class="bottom">
+                <span>实战派</span>
+                <p>Actual</p>
+                <p>combat</p>
+            </div>
+        </li>
+        <li>
+            <img src="img/ais.svg" alt=""/>
+
+            <div class="bottom">
+                <span>人工智能</span>
+                <p>Artificial</p>
+                <p>interlligence</p>
+            </div>
+        </li>
+        <li>
+            <img src="img/bigData.svg" alt=""/>
+            <div class="bottom">
+                <span>大数据</span>
+                <p>Big</p>
+                <p>data</p>
+            </div>
+        </li>
+        <li>
+            <img src="img/cloud.svg" alt=""/>
+            <div class="bottom">
+                <span>云计算</span>
+                <p>Cloud</p>
+                <p>computing</p>
+            </div>
+        </li>
+    </ul>
+</section>
+<section class="team">
+    <span class="first">02</span>
+    <h2>团队领袖——邓侃CTO</h2>
+    <span class="last"></span>
+    <p>团队领袖邓侃博士是网络互联网领域著名技术专家，是从大数据学科创始人——美国卡内基梅隆大学(CMU)计算机学院院长Andrew Moore教授，专业从事机器学习和数据挖掘，曾Oracle主任架构师、百度搜索高级技术总监等职务。</p>
+</section>
+<section class="yuan">
+    <span class="first">03</span>
+    <h2>我们的愿景</h2>
+    <span class="last"></span>
+    <p>大数医达拥有自主知识产权的医疗大数据系统，该系统把超大规模的云计算系统，深度学习和数据挖掘等大数据算法。应用到医疗领域，自动化、智能化融汇多源异构的医疗数据，把自然语言的非结构化病历，自动转化为结构化的病历，从中挖掘出医生的临床诊断和治疗经验，助理医疗大数据产业发展，促进医疗卫生叫康事件进步，服务社会，造福人类。</p>
+    <video src="video/hd.mp4"></video>
+    <span class="play"></span>
+</section>
+<section class="add" id="add">
+    <span class="first">04</span>
+    <h2>联系我们</h2>
+    <span class="last"></span>
+    <p>地址：北京市海淀区东北旺西路8号中关软件园一期3号楼3B区1206室</p>
+    <div>公司邮箱：service@iycudoctor</div>
+    <div>公司地址：www.youdoctor.com</div>
+</section>
+<footer>
+    <div id="allmap"></div>
+
+    <p>京ICP备16013105号-1</p>
+</footer>
+
 </body>
 </html>
