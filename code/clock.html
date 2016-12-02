@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/clock.css">
+    <style>
+
+    </style>
+    <script>
+        function toDou(n){
+            return n<10?'0'+n:''+n;
+        }
+        function d2a(n){
+            return n*Math.PI/180;
+        }
+        window.onload=function(){
+            var aBtn = document.querySelectorAll('.btn input');
+            var oClock = document.querySelector('.clock');
+            var aC = oClock.children;
+            var timer1 = null;
+            var timer2 = null;
+            var timer3 = null;
+            ;(function(){
+                for(var i=0;i<aBtn.length;i++){
+                    aBtn[i].index = i;
+                    aBtn[i].onclick=function(){
+                        for(var i=0;i<aBtn.length;i++){
+                            aC[i].style.display='none';
+                        }
+                        aC[this.index].style.display='block';
+                    }
+                }
+            })();
+            ;(function(){
+                var oClock1 = document.querySelector('.clock1');
+                var oH = document.querySelector('.h');
+                var oM = document.querySelector('.m');
+                var oS = document.querySelector('.s');
+                for(var i=0;i<60;i++){
+                    var oSpan = document.createElement('span');
+                    oSpan.style.transform='rotate('+i*6+'deg)';
+                    oSpan.inner='<em></em>';
+                    oClock1.appendChild(oSpan);
+                    var oEm = document.createElement('em');
+                    if(i%5==0){
+                        oSpan.style.height='20px';
+                        oSpan.style.background='#0f0';
+                        oEm.style.transform='rotate('+-(i*6)+'deg)';
+                        oEm.innerHTML=(i/5||12)
+                    }
+                    oSpan.appendChild(oEm);
+                }
+                function clock(){
+                    var oDate = new Date();
+                    var h = oDate.getHours();
+                    var m = oDate.getMinutes();
+                    var s = oDate.getSeconds();
+                    var ms = oDate.getMilliseconds();
+                    oH.style.transform='rotate('+(h/12*30+m/60*30)+'deg)';
+                    oM.style.transform='rotate('+(m*6+s/60*6)+'deg)';
+                    oS.style.transform='rotate('+(s*6+ms/1000*6)+'deg)';
+                }
+                clock();
+                timer0=setInterval(clock,1);
+            })();
+            ;(function(){
+                var aImg = document.querySelectorAll('.clock img');
+                var arr = ['seven','one','two','three','four','five','six'];
+                function clock(){
+                    var oDate = new Date();
+                    var Y = oDate.getFullYear();
+                    var M = oDate.getMonth()+1;
+                    var D = oDate.getDate();
+                    var oW = oDate.getDay();
+                    var h = oDate.getHours();
+                    var m = oDate.getMinutes();
+                    var s = oDate.getSeconds();
+                    var str = ''+Y+'y'+toDou(M)+'m'+D+'d'+'-'+oW+''+toDou(h)+'p'+toDou(m)+'p'+toDou(s)+'';
+                    for(var i=0;i<aImg.length;i++){
+                        aImg[i].src = '../image/'+str[i]+'.png';
+                        aImg[11].src = '../image/week.png';
+                        aImg[12].src = '../image/'+arr[oW]+'.png';
+                    };
+                };
+                clock();
+                timer1=setInterval(clock,1000)
+            })();
+            ;(function(){
+                var oC = document.querySelector('canvas');
+                var gd = oC.getContext('2d');
+                var cx = oC.width/ 2,
+                    cy = oC.height/2;
+                function clock(){
+                    gd.clearRect(0,0,oC.width,oC.height);
+                    var oDate = new Date();
+                    var h = oDate.getHours();
+                    var m = oDate.getMinutes();
+                    var s = oDate.getSeconds();
+                    var ms = oDate.getMilliseconds();
+                    drawArc(120,0,(h%12*30+m/60*30),'orange');
+                    drawArc(160,0,(m*6+s/60*6),'purple');
+                    drawArc(200,0,(s*6+ms/1000*6),'aqua');
+                    var str = toDou(h)+':'+toDou(m)+':'+toDou(s);
+                    gd.font = '40px 微软雅黑';
+                    gd.textAlign = 'center';
+                    gd.textBaseline = 'middle';
+                    gd.fillText(str,cx,cy);
+                }
+                clock();
+                timer2=setInterval(clock,1);
+                function drawArc(r,s,e,color){
+                    color = color || 'black';
+                    gd.beginPath();
+                    gd.arc(cx,cy,r,d2a(s-90),d2a(e-90),false);
+                    gd.strokeStyle = color;
+                    gd.lineWidth = 40;
+                    gd.stroke();
+                }
+            })();
+        }
+    </script>
+</head>
+<body>
+    <div class="btn">
+        <input type="button" value="指针式时钟"/>
+        <input type="button" value="数字时钟"/>
+        <input type="button" value="饼状时钟"/>
+    </div>
+    <div class="clock">
+        <div class="clock1">
+            <div class="h"></div>
+            <div class="m"></div>
+            <div class="s"></div>
+            <div class="center"></div>
+        </div>
+        <div class="clock2">
+            <img src="../image/0.png" alt="">
+            <img src="../image/0.png" alt="">
+            <img src="../image/0.png" alt="">
+            <img src="../image/0.png" alt="">
+            <img src="../image/y.png" alt=""><!--年-->
+            <img src="../image/0.png" alt="">
+            <img src="../image/0.png" alt="">
+            <img src="../image/m.png" alt=""><!--月-->
+            <img src="../image/0.png" alt="">
+            <img src="../image/0.png" alt="">
+            <img src="../image/d.png" alt=""><!--日--><br/>
+            <img src="../image/week.png" alt="">
+            <img src="../image/0.png" alt=""><!--星期--><br />
+            <img src="../image/0.png" alt="">
+            <img src="../image/0.png" alt="">
+            <img src="../image/p.png" alt=""><!--时-->
+            <img src="../image/0.png" alt="">
+            <img src="../image/0.png" alt="">
+            <img src="../image/p.png" alt=""><!--分-->
+            <img src="../image/0.png" alt="">
+            <img src="../image/0.png" alt=""><!--秒-->
+        </div>
+        <div class="clock3">
+            <canvas width="500" height="500"></canvas>
+        </div>
+    </div>
+</body>
+</html>

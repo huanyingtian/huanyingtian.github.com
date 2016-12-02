@@ -1,0 +1,72 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+
+html {
+  font-size: 20px; }
+
+.box {
+  width: 35rem;
+  height: 20rem;
+  margin: 5rem auto;
+  position: relative;
+  overflow: hidden; }
+  .box a {
+    position: absolute;
+    top: 50%;
+    width: 5rem;
+    margin-top: -1.25rem;
+    text-align: center;
+    line-height: 5rem;
+    text-decoration: none;
+    font-size: 2rem;
+    height: 5rem;
+    background: rgba(255, 255, 255, 0.5);
+    color: #00FFFF;
+    z-index: 2;
+    display: none; }
+    .box a:nth-child(1) {
+      left: 0; }
+    .box a:nth-child(2) {
+      right: 0; }
+  .box ul {
+    width: 175rem;
+    height: 400px;
+    /*-webkit-transition: 1s all ease;
+    -moz-transition: 1s all ease;
+    -ms-transition: 1s all ease;
+    -o-transition: 1s all ease;
+    transition: 1s all ease;*/
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+    position: absolute;
+    left: 0;
+    top: 0; }
+    .box ul li {
+      width: 700px;
+      height: 100%;
+      float: left; }
+      .box ul li img {
+        width: 100%;
+        height: 100%; }
+  .box ol {
+    width: 150px;
+    height: 20px;
+    position: absolute;
+    right: 100px;
+    bottom: 10px; }
+    .box ol li {
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      float: left;
+      margin-right: 10px;
+      border-radius: 50%; }
+      .box ol li.active {
+        background: #f00; }
+
+/*# sourceMappingURL=banner.css.map */

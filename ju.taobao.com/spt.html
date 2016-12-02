@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            vertical-align: top;
+            font-style: normal;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        html{font-size:20px;}
+        .warp{
+            font-family: 宋体;
+        }
+        .warp header{
+            width: 16rem;
+            height: 2.525rem;
+            background: -webkit-linear-gradient(#fff,#ebebeb);
+            position: relative;
+            text-align: center;
+            line-height: 2.525rem;
+        }
+        header a{
+            text-indent: -9999rem;
+        }
+        header img{
+            margin-top: 0.175rem;
+            width: 9.4rem;
+            height: 2.2rem;
+        }
+        .warp header a:nth-child(1){
+            position: absolute;
+            left: 0.5rem;
+            top: 0.5rem;
+            width: 3.25rem;
+            height:1.6rem;
+            background: url("img/fh.png") no-repeat;
+            background-size: 100%;
+        }
+        .warp header .fl{
+            position: absolute;
+            left: 12.575rem;
+            top: 0.5rem;
+            width: 2.45rem;
+            height:1.45rem;
+            background: url("img/fl.png") no-repeat;
+            background-size: 100%;
+        }
+        .warp header span{
+            font-size:0.8rem ;
+        }
+        .warp .fl{
+            height: 2rem;
+            width: 16rem;
+            border-bottom: 1px solid #dcdcdc;
+            overflow: hidden;
+            line-height: 2rem;
+        }
+        .warp .fl li{
+            float: left;
+            text-align: center;
+            width: 25%;
+            border-left: 1px solid #dcdcdc;
+            box-sizing: border-box;
+        }
+        .warp .fl .red a{
+            color: #e50055;
+        }
+        .warp .fl li a{
+            color: #b2b2b2;
+            font-size: 0.75rem;
+        }
+        .warp .main .lb{
+            width: 15.5rem;
+            margin-left: 0.5rem;
+            overflow: hidden;
+        }
+        .warp .main .lb li{
+            width: 15.5rem;
+            height: 4.475rem;
+            border-bottom: 1px solid #dcdcdc;
+            overflow: hidden;
+            margin: 0.45rem 0.875rem 0.45rem 0;
+        }
+        .warp .main .lb .img{
+            float: left;
+            width: 5.975rem;
+            height: 3.95rem;
+            border:1px solid #dcdcdc;
+            text-align: center;
+        }
+        .warp .main .lb .img img{
+            width: 5.6rem;
+            height: 3.6rem;
+            margin-top:0.175rem;
+        }
+        .warp .main .lb .count{
+            float: left;
+            width: 7.975rem;
+            margin-left: 0.7rem;
+        }
+        .warp .main .lb .text{
+            font-size: 0.66rem;
+        }
+        .warp .main .lb .num{
+            color: #c3213c;
+            display: inline-block;
+            font-size: 0.9rem;
+            margin-top: 0.55rem;
+        }
+        .warp .main .lb .num2{
+            color: #999999;
+            font-size: 0.7rem;
+            display: inline-block;
+            margin-top: 0.7rem;
+            margin-left: 0.4rem;
+            text-decoration:line-through;
+        }
+        .warp .main .lb .ygm{
+            color: #9f9f9f;
+            font-size: 0.4rem;
+            margin-top: 0.5rem;
+        }
+        .fl_box{
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 13.05rem;
+            background: #333333;
+            height: 23.7rem;
+            padding: 0 0.475rem;
+            overflow: hidden;
+            display: none;
+        }
+        .fl_box .box1{
+            float: left;
+            width: 5.58rem;
+        }
+        .fl_box .box2{
+            float: left;
+            width: 7rem;
+        }
+        .fl_box .ym{
+            width: 7rem;
+            height: 2.425rem;
+            text-align: center;
+            line-height: 2.425rem;
+            color: #cdcdcd;
+            font-size: 0.65rem;
+            box-sizing: border-box;
+            border-bottom: 0.02rem solid #aaaaaa;
+            float: left;
+        }
+        .fl_box .zm{
+            width: 5.58rem;
+            height: 2.425rem;
+            text-align: center;
+            line-height: 2.425rem;
+            color: #cdcdcd;
+            font-size: 0.65rem;
+            box-sizing: border-box;
+            border-bottom: 0.02rem solid #aaaaaa;
+            float: left;
+        }
+        .fl_box .bt{
+            border-bottom: 0.12rem solid #aaaaaa;
+        }
+        .fl_box .left{
+            color: #aaa;
+            font-size: 0.65rem;
+
+        }
+        .fl_box .left li{
+            margin-top: 0.975rem;
+            margin-left: 1rem;
+        }
+        .fl_box .ymbox{
+            display: none;
+        }
+        .fl_box .box2 .qx a{
+            color: #aaa;
+        }
+        .opac{
+            width: 16rem;
+            height: 38rem;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="js/js.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            var oFl=document.querySelector('.fl');
+            var oYm=document.querySelector('.ym');
+            var oZm=document.querySelector('.zm');
+            var oFlBox=document.querySelector('.fl_box');
+            var oYmBox=document.querySelector('.ymbox');
+            var oZmBox=document.querySelector('.zmbox');
+            var oQx=document.querySelector('.qx');
+            var oBack=document.querySelector('.back');
+            var oSh=document.querySelector('.sh');
+            var oPpt=document.querySelector('.ppt');
+            var oJbp=document.querySelector('.jbp');
+            var oOpac=document.querySelector('.opac');
+
+            oFl.addEventListener('touchend',function(){
+                oFlBox.style.display='block';
+                oOpac.style.display='block';
+            },false);
+            oOpac.addEventListener('click',function(){
+                if(oOpac.style.display='block'){
+                    oOpac.style.display='none';
+                    oFlBox.style.display='none';
+                }else{
+                    oFlBox.style.display='none';
+                    oOpac.style.background='rgba(0,0,0,0)';
+                }
+            },false);
+
+            oPpt.addEventListener('touchend',function(){
+                oFlBox.style.display='none';
+                oOpac.style.display='none';
+            },false);
+            oYm.addEventListener('touchend',function(){
+                oZmBox.style.display='none';
+                oYmBox.style.display='block';
+                oZm.className='zm';
+                oYm.className='ym bt'
+            },false);
+            oZm.addEventListener('touchend',function(){
+                oZmBox.style.display='block';
+                oYmBox.style.display='none';
+                oZm.className='zm bt';
+                oYm.className='ym'
+            },false);
+            oQx.addEventListener('touchend',function(){
+                window.open('csqh.html','_self');
+            },false);
+            oBack.addEventListener('touchend',function(){
+                window.open('index.html','_self');
+            },false);
+            oSh.addEventListener('touchend',function(){
+                window.open('sht.html','_self');
+            },false);
+            oPpt.addEventListener('touchend',function(){
+                window.open('ppt.html','_self');
+            },false);
+            oJbp.addEventListener('touchend',function(){
+                window.open('jbp.html','_self');
+            },false);
+        },false);
+    </script>
+</head>
+<body>
+<section class="warp">
+    <header>
+        <a href="javascript:;" class="back">返回</a>
+        <img src="img/jhs.png">
+        <a href="javascript:;" class="fl">分类</a>
+    </header>
+    <ul class="fl">
+        <li class="red"><a href="javascript:;">商品</a> </li>
+        <li class="sh"><a href="javascript:;">生活</a></li>
+        <li class="ppt"><a href="javascript:;">品牌</a></li>
+        <li class="jbp"><a href="javascript:;">聚宝盆</a></li>
+    </ul>
+    <section class="main">
+        <ul class="lb">
+            <li>
+                <div class="img">
+                    <img src="img/jd.png">
+                </div>
+                <div class="count">
+                    <p class="text">全网超低价，近25.9元抢市场价69元荣庆和正宗···</p>
+                    <span class="num">￥25.9</span><span class="num2">￥59.8</span>
+                    <p class="ygm">1240 人已购买</p>
+                </div>
+            </li>
+            <li>
+                <div class="img">
+                    <img src="img/jl.png">
+                </div>
+                <div class="count">
+                    <p class="text">香港九龙东智假日酒店高级房1晚+2份自助早餐</p>
+                    <span class="num">￥770.00</span><span class="num2">￥3088.00</span>
+                    <p class="ygm">1240 人已购买</p>
+                </div>
+            </li>
+            <li>
+                <div class="img">
+                    <img src="img/yyj.png">
+                </div>
+                <div class="count">
+                    <p class="text">最美新娘婚纱套餐：共12套服装变换美丽身子搭···</p>
+                    <span class="num">￥2380.00</span><span class="num2">￥33.4.00</span>
+                    <p class="ygm">140 人已购买</p>
+                </div>
+            </li>
+            <li>
+                <div class="img">
+                    <img src="img/xm.png">
+                </div>
+                <div class="count">
+                    <p class="text">【厦门热门】 【厦门旺季双人自由行，前五名返</p>
+                    <span class="num">￥1210.00</span><span class="num2">￥2234.00</span>
+                    <p class="ygm">1240 人已购买</p>
+                </div>
+            </li>
+            <li>
+                <div class="img">
+                    <img src="img/hs.png">
+                </div>
+                <div class="count">
+                    <p class="text">最美新娘婚纱套餐：共12套服装变换美丽身子搭···</p>
+                    <span class="num">￥2380.00</span><span class="num2">￥33.4.00</span>
+                    <p class="ygm">140 人已购买</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+</section>
+<!--透明层-->
+<div class="opac"></div>
+<section class="fl_box">
+    <p class="zm bt">分类</p>
+    <p class="ym ">地区</p>
+    <div class="zmbox">
+        <div class="box1">
+            <ul class="left">
+                <li>全部</li>
+                <li>美食</li>
+                <li>休闲</li>
+                <li>电源</li>
+                <li>生活服务</li>
+                <li>丽人</li>
+                <li>卡券</li>
+                <li>房产汽车</li>
+            </ul>
+        </div>
+        <div class="box2">
+            <ul class="left">
+                <li>全部</li>
+                <li>美食</li>
+                <li>休闲</li>
+                <li>电源</li>
+                <li>生活服务</li>
+                <li>丽人</li>
+                <li>卡券</li>
+                <li>房产汽车</li>
+            </ul>
+        </div>
+    </div>
+    <div class="ymbox">
+        <div class="box1">
+            <ul class="left">
+                <li>杭州</li>
+                <li>全部</li>
+                <li>上城区</li>
+                <li>下城区</li>
+                <li>江干区</li>
+                <li>拱墅区</li>
+                <li>西湖区</li>
+                <li>滨江区</li>
+                <li>萧山区</li>
+                <li>余杭区</li>
+            </ul>
+        </div>
+        <div class="box2">
+            <ul class="left">
+                <li class="qx"><a href="javascript:;">切换城市 ></a> </li>
+                <li>建德市</li>
+                <li>富阳市</li>
+                <li>临安市</li>
+                <li>桐庐县</li>
+                <li>淳安县</li>
+                <li>其他区</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

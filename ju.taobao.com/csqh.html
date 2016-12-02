@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            vertical-align: top;
+            font-style: normal;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        html{font-size:20px;}
+        .warp{
+            font-family: 宋体;
+        }
+        .warp header{
+            width: 16rem;
+            height: 2.525rem;
+            background: -webkit-linear-gradient(#fff,#ebebeb);
+            position: relative;
+            text-align: center;
+            line-height: 2.525rem;
+        }
+        header a{
+            text-indent: -9999rem;
+        }
+        .warp header a:nth-child(1){
+            position: absolute;
+            left: 0.5rem;
+            top: 0.5rem;
+            width: 3.25rem;
+            height:1.6rem;
+            background: url("img/fh.png") no-repeat;
+            background-size: 100%;
+        }
+        .warp .dw{
+            height: 2.175rem;
+            width: 16rem;
+            font-size: 0.75rem;
+            line-height: 2.175rem;
+            background: url("img/dw.png") no-repeat 0.475rem 0.7rem;
+            background-size: 0.55rem 0.65rem;
+        }
+        .warp .dw .dqcs{
+            margin-left: 1.5rem;
+        }
+        .warp .dw img{
+            width: 0.6rem;
+            height: 0.65rem;
+            margin-top: 0.75rem;
+            margin-left: 5.75rem;
+        }
+        .warp .main .rmcs{
+            font-size:0.675rem ;
+        }
+        .warp .main .rmbt{
+            width: 15.46rem;
+            background: #eeeeee;
+            color: #aeaeae;
+            height: 1.5rem;
+            line-height: 1.5rem;
+            padding-left: 0.45rem;
+        }
+        .warp .rmcs li{
+            height: 2.175rem;
+            width: 14.4rem;
+            line-height: 2.175rem;
+            border: 0.025rem solid #dedede;
+            padding-left: 1.5rem;
+        }
+    </style>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="js/js.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            var oBack=document.querySelector('.back');
+            oBack.addEventListener('touchend',function(){
+                window.open('sht.html','_self');
+            },false);
+        },false);
+    </script>
+</head>
+<body>
+<section class="warp">
+    <header>
+        <a href="javascript:;" class="back">返回</a>
+        <span>切换城市</span>
+    </header>
+    <section class="main">
+        <p class="dw"><span class="dqcs">当前城市-</span><span>杭州</span><img src="img/dh.png"> </p>
+        <ul class="rmcs">
+            <li class="rmbt">热门城市</li>
+            <li><a href="javascript:;">南京</a> </li>
+            <li><a href="javascript:;">福州</a> </li>
+            <li><a href="javascript:;">武汉</a> </li>
+            <li><a href="javascript:;">天津</a> </li>
+        </ul>
+        <ul class="rmcs">
+            <li class="rmbt">A</li>
+            <li><a href="javascript:;">鞍山</a> </li>
+            <li><a href="javascript:;">安庆</a> </li>
+            <li><a href="javascript:;">澳门</a> </li>
+            <li><a href="javascript:;">南京</a> </li>
+            <li><a href="javascript:;">福州</a> </li>
+            <li><a href="javascript:;">武汉</a> </li>
+            <li><a href="javascript:;">天津</a> </li>
+        </ul>
+    </section>
+</section>
+</body>
+</html>
