@@ -20,11 +20,11 @@ document.addEventListener("DOMContentLoaded", function (ev) {
                     aBtn[i].classList.remove("active")
                 }
                 aBtn[this.index].classList.add("active");
-                oUl.style.transform = "translateX(" + -aLi[0].offsetWidth * this.index + "px)";
-                oUl.style.WebkitTransform = "translateX(" + -aLi[0].offsetWidth * this.index + "px)";
-                oUl.style.MozTransform = "translateX(" + -aLi[0].offsetWidth * this.index + "px)";
-                oUl.style.MsTransform = "translateX(" + -aLi[0].offsetWidth * this.index + "px)";
-                oUl.style.OTransform = "translateX(" + -aLi[0].offsetWidth * this.index + "px)";
+                oUl.style.transform = "translateX(" + -aLi[0].offsetWidth * n + "px)";
+                oUl.style.WebkitTransform = "translateX(" + -aLi[0].offsetWidth * n + "px)";
+                oUl.style.MozTransform = "translateX(" + -aLi[0].offsetWidth * n + "px)";
+                oUl.style.MsTransform = "translateX(" + -aLi[0].offsetWidth * n + "px)";
+                oUl.style.OTransform = "translateX(" + -aLi[0].offsetWidth * n + "px)";
             }, false)
         }
         var x = 0;
