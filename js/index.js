@@ -24,13 +24,7 @@ document.addEventListener("DOMContentLoaded", function (ev) {
     })();
     (function () {
         var oV = document.querySelector("section.yuan video");
-        var oP = document.querySelector("section.yuan span.play");
         var n = 0;
-        oP.addEventListener("click", function () {
-            oV.controls = true;
-            oV.play();
-            oP.style.display = "none"
-        }, false);
         oV.addEventListener("click", function () {
             n++;
             if (n > 1) {
