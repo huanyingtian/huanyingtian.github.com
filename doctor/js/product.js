@@ -20,11 +20,11 @@ document.addEventListener("DOMContentLoaded", function (ev) {
                     aBtn[i].classList.remove("active")
                 };
                 aBtn[this.index].classList.add("active");
-                oUl.style.transform = "translateX(" + -aLi[0].offsetWidth * n + "px)";
-                oUl.style.WebkitTransform = "translateX(" + -aLi[0].offsetWidth * n + "px)";
-                oUl.style.MozTransform = "translateX(" + -aLi[0].offsetWidth * n + "px)";
-                oUl.style.MsTransform = "translateX(" + -aLi[0].offsetWidth * n + "px)";
-                oUl.style.OTransform = "translateX(" + -aLi[0].offsetWidth * n + "px)";
+                oUl.style.transform = "translate3d(" + -aLi[0].offsetWidth * n + "px,0,0)";
+                oUl.style.WebkitTransform = "translate3d(" + -aLi[0].offsetWidth * n + "px,0,0)";
+                oUl.style.MozTransform = "translate3d(" + -aLi[0].offsetWidth * n + "px,0,0)";
+                oUl.style.MsTransform = "translate3d(" + -aLi[0].offsetWidth * n + "px,0,0)";
+                oUl.style.OTransform = "translate3d(" + -aLi[0].offsetWidth * n + "px,0,0)";
             }, false);
         };
         var x = 0;
