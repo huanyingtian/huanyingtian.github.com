@@ -68,17 +68,17 @@ document.addEventListener("DOMContentLoaded", function (ev) {
                         };
                     };
                 };
-                x = -n * aLi[0].offsetWidth;
+
                 oUl.style.transform = ".5s all ease";
                 oUl.style.WebkitTransition = ".5s all ease";
                 oUl.style.MozTransform = ".5s all ease";
                 oUl.style.MsTransition = ".5s all ease";
                 oUl.style.OTransition = ".5s all ease";
-                oUl.style.transform = "translate3d(" + x + "px,0,0)";
-                oUl.style.WebkitTransform = "translate3d(" + x + "px,0,0)";
-                oUl.style.MozTransform = "translate3d(" + x + "px,0,0)";
-                oUl.style.MsTransform = "translate3d(" + x + "px,0,0)";
-                oUl.style.OTransform = "translate3d(" + x + "px,0,0)";
+                oUl.style.transform = "translate3d(" + -n * aLi[0].offsetWidth + "px,0,0)";
+                oUl.style.WebkitTransform = "translate3d(" + -n * aLi[0].offsetWidth + "px,0,0)";
+                oUl.style.MozTransform = "translate3d(" + -n * aLi[0].offsetWidth + "px,0,0)";
+                oUl.style.MsTransform = "translate3d(" + -n * aLi[0].offsetWidth + "px,0,0)";
+                oUl.style.OTransform = "translate3d(" + -n * aLi[0].offsetWidth + "px,0,0)";
                 for (var i = 0; i < aBtn.length; i++) {
                     aBtn[i].classList.remove("active")
                 };
