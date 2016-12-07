@@ -22,6 +22,11 @@ document.addEventListener('DOMContentLoaded',function(ev){
                 };
                 aBtn[n].classList.add('active');
                 x = -aLi[0].offsetWidth*n;
+                oUl.style.transition='1s all ease';
+                oUl.style.WebkitTransition='1s all ease';
+                oUl.style.MozTransition='1s all ease';
+                oUl.style.MsTransition='1s all ease';
+                oUl.style.OTransition='1s all ease';
                 oUl.style.transform='translate3d('+-aLi[0].offsetWidth*n+'px,0,0)';
                 oUl.style.WebkitTransform='translate3d('+-aLi[0].offsetWidth*n+'px,0,0)';
                 oUl.style.MozTransform='translate3d('+-aLi[0].offsetWidth*n+'px,0,0)';
