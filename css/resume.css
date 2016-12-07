@@ -164,7 +164,10 @@ section.dd_fullscreenslider {
     section.dd_fullscreenslider article.slide .project {
       width: 752px;
       overflow: hidden;
-      margin: 0 auto; }
+      margin: 0 auto;
+      color: #000;
+      font-weight: bold;
+      font-family: 'Microsoft Yahei'; }
       section.dd_fullscreenslider article.slide .project h2 {
         font-size: 40px;
         line-height: 50px;

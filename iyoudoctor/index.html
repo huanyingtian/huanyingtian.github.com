@@ -7,7 +7,92 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/index.css">
     <script src="js/zepto.min.js"></script>
-    <script src="js/index.js"></script>
+    <script>
+        ;(function(win,doc){
+            var rem = 20/375*doc.documentElement.clientWidth;
+            doc.documentElement.style.fontSize=rem+'px';
+            win.addEventListener('resize',function(){
+                rem = 20/375*doc.documentElement.clientWidth;
+                doc.documentElement.style.fontSize=rem+'px';
+            },false)
+        })(window,document);
+        document.addEventListener('DOMContentLoaded',function(ev){
+            //列表
+            (function(){
+                var oBtn = document.querySelector('header span');
+                var oIndex = document.querySelector('section.index');
+                var oN = document.querySelector('section.index span');
+                oBtn.addEventListener('click',function(){
+                    oIndex.style.display='block';
+                },false);
+                oN.addEventListener('click',function(){
+                    oIndex.style.display='none';
+                },false);
+                var aBtn = document.querySelectorAll('section.index ul li.to');
+
+                aBtn[1].addEventListener('click',function(ev){
+                    oIndex.style.display='none';
+                },false);
+            })();
+            //video
+            (function(){
+                var oV = document.querySelector('section.yuan video');
+                var oP = document.querySelector('section.yuan span.play');
+                var n = 0;
+                oP.addEventListener('click',function(){
+                    oV.controls=true;
+                    oV.play();
+                    oP.style.display='none';
+                },false);
+                oV.addEventListener('click',function(){
+                    n++;
+                    if(n>1){
+                        n=0;
+                    }
+                    if(n){
+                        oV.controls=true;
+                        oV.play();
+                        oP.style.display='none';
+                    }else{
+                        oV.controls=false;
+                        oV.pause();
+                        oP.style.display='block';
+                    }
+                },false);
+            })();
+
+            //touch
+            (function(){
+                var oUl = document.querySelector('section.svg ul');
+                var aLi = document.querySelectorAll('section.svg ul li');
+                var x = 0;
+                var oldx = 0;
+                oUl.addEventListener('touchstart',function(ev){
+                    var oTouch=ev.targetTouches[0];
+                    var dix = oTouch.pageX -x;
+                    function fnMove(ev){
+                        var oTouch=ev.targetTouches[0];
+                        x = oTouch.pageX-dix;
+                        if(x>0){
+                            x=0;
+                        }
+                        if(x<-1000){
+                            x=-1000;
+                        }
+                        oUl.style.transform='translate('+x/40+'rem)'
+                    }
+                    function fnEnd(){
+                        document.removeEventListener('touchmove',fnMove,false);
+                        document.removeEventListener('touchmove',fnEnd,false);
+                    }
+                    document.addEventListener('touchmove',fnMove,false);
+                    document.addEventListener('touchend',fnEnd,false);
+                     ev.preventDefault();
+                },false);
+            })();
+            ev.preventDefault();
+        },false);
+    </script>
 </head>
 <body>
 <section class="index" id="top">
@@ -113,6 +198,7 @@
     <span class="last"></span>
     <p>大数医达拥有自主知识产权的医疗大数据系统，该系统把超大规模的云计算系统，深度学习和数据挖掘等大数据算法。应用到医疗领域，自动化、智能化融汇多源异构的医疗数据，把自然语言的非结构化病历，自动转化为结构化的病历，从中挖掘出医生的临床诊断和治疗经验，助理医疗大数据产业发展，促进医疗卫生叫康事件进步，服务社会，造福人类。</p>
     <video src="video/hd.mp4"></video>
+    <span class="play"></span>
 </section>
 <section class="add" id="add">
     <span class="first">04</span>

@@ -1,0 +1,212 @@
+html {
+    font-size: 20px
+}
+
+header {
+    width: 16rem;
+    height: 2.2rem;
+    position: fixed;
+    top: 0;
+    left: 0
+}
+
+header span {
+    position: absolute;
+    left: 1.35rem;
+    top: .7rem;
+    width: 1.125rem;
+    height: .8rem;
+    background: url(../img/a1.png) no-repeat;
+    background-size: 100%
+}
+
+header h1 {
+    width: 100%;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    text-align: center;
+    background: #040404;
+    color: #f5f9fa;
+    font-size: .825rem
+}
+
+section.index {
+    display: none;
+    width: 16rem;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 50;
+    background: rgba(0, 0, 0, 0.5)
+}
+
+section.index span {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    border-radius: 50%;
+    background: rgba(69, 69, 69, 0.9);
+    position: absolute;
+    left: 1rem;
+    top: .5rem;
+    color: #fff;
+    font-size: 1.5rem
+}
+
+section.index ul {
+    width: 60%;
+    height: 100%;
+    margin: 5rem auto
+}
+
+section.index ul li {
+    width: 100%;
+    height: 2.5rem;
+    border-bottom: .025rem solid #fafafa
+}
+
+section.index ul li a {
+    display: block;
+    line-height: 2.5rem;
+    color: #fff;
+    text-align: center;
+    font-size: 1.25rem
+}
+
+.b_header {
+    width: 16rem;
+    margin-top: 2.2rem;
+    z-index: 5
+}
+
+.b_header img {
+    width: 16rem;
+    height: 8rem
+}
+
+.b_nav {
+    width: 16rem;
+    height: 7rem;
+    background: #fafafa
+}
+
+.b_nav .active .intr-svg .st0 {
+    fill: red
+}
+
+.b_nav a {
+    display: block;
+    width: 3.5rem;
+    height: 4.5rem;
+    float: left;
+    margin: 2rem 0 2rem .5rem
+}
+
+.b_nav a.active {
+    color: #f00
+}
+
+.b_nav a .intr-svg {
+    width: 3rem;
+    height: 2rem;
+    margin-bottom: .6rem
+}
+
+.b_nav a p {
+    width: 3.2rem
+}
+
+.b_nav a p em {
+    display: block;
+    font-size: .6rem;
+    width: 3.2rem;
+    height: .9rem;
+    line-height: .9rem;
+    text-align: center
+}
+
+.b_main {
+    width: 16rem;
+    height: 16rem;
+    margin-top: 1rem;
+    overflow: hidden;
+    z-index: 1
+}
+
+.b_main ul {
+    width: 64rem;
+    height: 100%;
+    position: relative;
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+.b_main ul li {
+    width: 13.7rem;
+    padding: 0 1.15rem;
+    float: left
+}
+
+.b_main ul .show {
+    display: block
+}
+
+.b_main ul li h2 {
+    display: block;
+    height: 4rem;
+    line-height: 4rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: red;
+    text-indent: .4em;
+    background: url("../img/b5.png") no-repeat 0;
+    background-size: .2rem 1.2rem
+}
+
+.b_main ul li .ol1 {
+    margin-top: .5rem;
+    height: 2.7rem
+}
+
+.b_main ul li .ol1 dd {
+    width: 2.5rem;
+    height: 2.7rem;
+    float: left
+}
+
+.b_main ul li .ol1 dd img {
+    width: 1.7rem;
+    height: 1.7rem
+}
+
+.b_main ul li .ol2 {
+    height: 2.7rem
+}
+
+.b_main ul li .ol2 dd {
+    width: 4.5rem;
+    height: 2rem;
+    text-align: center;
+    line-height: 2rem;
+    float: left
+}
+
+.b_main ul li .ol2 dd img {
+    width: 1.4rem;
+    height: 1rem;
+    float: left;
+    margin-right: .1rem
+}
+
+.b_main ul li p {
+    margin-top: .1rem;
+    font-size: .7rem;
+    line-height: 1rem;
+    color: #464646
+}
