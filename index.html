@@ -2,63 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
     <title>NiShengYang</title>
-    <link rel="stylesheet" href="css/website.css">
     <link rel="stylesheet" href="css/base.css">
-    <style>
-        body, html {
-            width: 100%;
-            height: 100%;
-        }
-    </style>
-    <!--<script src="js/website.js"></script>-->
-    <script>
-        window.onload=function(){
-            ;(function(){
-                var oClock1 = document.querySelector('.clock1');
-                var oH = document.querySelector('.h');
-                var oM = document.querySelector('.m');
-                var oS = document.querySelector('.s');
-                for(var i=0;i<60;i++){
-                    var oSpan = document.createElement('span');
-                    oSpan.style.transform='rotate('+i*6+'deg)';
-                    oSpan.inner='<em></em>';
-                    oClock1.appendChild(oSpan);
-                    var oEm = document.createElement('em');
-                    if(i%5==0){
-                        oSpan.style.height='20px';
-                        oSpan.style.background='#63FF2D';
-                        oEm.style.transform='rotate('+-(i*6)+'deg)';
-                        oEm.innerHTML=(i/5||12)
-                    }
-                    oSpan.appendChild(oEm);
-                }
-                function clock(){
-                    var oDate = new Date();
-                    var h = oDate.getHours();
-                    var m = oDate.getMinutes();
-                    var s = oDate.getSeconds();
-                    var ms = oDate.getMilliseconds();
-                    oH.style.transform='rotate('+(h/12*30+m/60*30)+'deg)';
-                    oM.style.transform='rotate('+(m*6+s/60*6)+'deg)';
-                    oS.style.transform='rotate('+(s*6+ms/1000*6)+'deg)';
-                }
-                clock();
-                timer0=setInterval(clock,1);
-            })();
-        };
-    </script>
+    <link rel="stylesheet" href="css/website.css">
+    <script src="js/website.js"></script>
+
 </head>
 <body>
 <section class="head">
     <div class="header">
         <ul class="clearfix">
-            <li><a href="image/qq.png" title="1336114916"><img src="image/qq_face.png" alt="1336114916"></a></li>
-            <li><a href="image/wei.png"><img src="image/weichat.png" alt="幻神的使者"></a></li>
-            <li><a href="https://github.com/huanyingtian/"><img src="image/git.png" alt="huanyingtian"></a></li>
-            <li><a href="http://weibo.com/u/6047236745?refer_flag=1001030201_&is_all=1" title="幻神的使者"><img src="image/sina.png" alt="1336114916"></a></li>
-            <li><a href="javascript:;" title="手机号:18331160171"><img src="image/phone.jpg" alt="1336114916"></a></li>
             <li><a href="https://www.zhihu.com/people/ni-sheng-yang-11" title="倪胜阳"><img src="image/zhihu.png" alt="倪胜阳"></a></li>
+            <li class="phone"><a href="javascript:;" title="手机号:17600136762"><img src="image/phone.jpg" alt="1336114916"></a></li>
+            <li><a href="http://weibo.com/u/6047236745?refer_flag=1001030201_&is_all=1" title="幻神的使者"><img src="image/sina.png" alt="1336114916"></a></li>
+            <li><a href="https://github.com/huanyingtian/"><img src="image/git.png" alt="huanyingtian"></a></li>
+            <li><a href="image/wei.png"><img src="image/weichat.png" alt="幻神的使者"></a></li>
+            <li><a href="image/qq.png" title="1336114916"><img src="image/qq_face.png" alt="1336114916"></a></li>
+            <li class="information">17600136762</li>
         </ul>
     </div>
     <div class="nav clearfix">

@@ -1,9 +1,9 @@
+html {
+  font-size: 20px; }
+
 html, body {
   width: 100%;
   height: 100%; }
-
-html {
-  font-size: 20px; }
 
 body {
   overflow: hidden;
@@ -20,63 +20,79 @@ body {
   background-size: 100% 100%;
   position: relative; }
   .head .header {
-    margin-top: 20px;
+    margin-top: 1rem;
     width: 100%;
-    height: 100px;
+    height: 2.5rem;
     background: rgba(250, 250, 250, 0.5);
     position: fixed;
     left: 0;
     top: 0; }
     .head .header ul {
-      width: 720px;
-      height: 100px;
+      width: 100%;
+      height: 2.5rem;
       position: absolute;
       right: 0;
       top: 0; }
       .head .header ul li {
-        float: left;
-        width: 100px;
-        height: 100px;
-        margin-right: 20px;
+        float: right;
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-right: 0.5rem;
         -webkit-border-radius: 50%;
         -moz-border-radius: 50%;
         border-radius: 50%;
         overflow: hidden; }
+        .head .header ul li img {
+          width: 100%;
+          height: 100%; }
+        .head .header ul li:nth-last-child(1) {
+          display: none;
+          font-size: 1rem;
+          position: absolute;
+          top: 3rem;
+          margin: 0;
+          line-height: 2.5rem;
+          -webkit-border-radius: 0.5rem;
+          -moz-border-radius: 0.5rem;
+          border-radius: 0.5rem;
+          background: rgba(255, 255, 255, 0.5);
+          right: 1.5rem;
+          width: 6rem; }
   .head .nav {
-    width: 400px;
-    height: 500px;
+    width: 10rem;
+    height: 25rem;
     position: absolute;
-    left: 50px;
-    top: 200px; }
+    left: -7rem;
+    top: 10rem; }
     .head .nav a {
       display: block;
-      margin-right: 20px;
-      margin-bottom: 10px;
-      padding-left: 10px;
-      -webkit-border-radius: 20px;
+      width: 7rem;
+      height: 1.5rem;
       background: -webkit-linear-gradient(left, #58ffe1, #ff81ea, #e9eb3c);
+      font-size: 1rem;
+      text-align: center;
+      line-height: 1.5rem;
+      color: #fff;
+      border: 0.1rem solid #000;
+      font-family: 'Microsoft Yahei';
+      margin-right: 1rem;
+      margin-bottom: 0.5rem;
+      padding: 0 0.5rem;
       font-weight: bold;
-      border-radius: 20px;
-      float: left;
+      border-radius: 1rem;
+      -webkit-border-radius: 1rem;
       -webkit-transition: 1s all ease;
       -moz-transition: 1s all ease;
       -ms-transition: 1s all ease;
       -o-transition: 1s all ease;
-      transition: 1s all ease;
-      width: 200px;
-      color: #fff;
-      height: 50px;
-      font-size: 30px;
-      line-height: 50px;
-      text-decoration: none;
-      border: 2px solid #000;
-      font-family: Microsoft Yahei; }
-      .head .nav a:active {
-        -webkit-transform: rotateX(360deg);
-        -moz-transform: rotateX(360deg);
-        -ms-transform: rotateX(360deg);
-        -o-transform: rotateX(360deg);
-        transform: rotateX(360deg); }
+      transition: 1s all ease; }
+      .head .nav a:hover {
+        left: 7rem;
+        -webkit-transform: translate(11.1rem, 0) scale(2, 2);
+        -moz-transform: translate(11.1rem, 0) scale(2, 2);
+        -ms-transform: translate(11.1rem, 0) scale(2, 2);
+        -o-transform: translate(11.1rem, 0) scale(2, 2);
+        transform: translate(11.1rem, 0) scale(2, 2); }
 @-webkit-keyframes clock {
   from {
     opacity: 0; }
@@ -85,12 +101,12 @@ body {
   .head .clock1 {
     z-index: 20;
     position: absolute;
-    right: 50px;
-    top: 200px;
-    width: 200px;
-    height: 200px;
+    right: 2.5rem;
+    top: 10rem;
+    width: 10rem;
+    height: 10rem;
     border-radius: 50%;
-    border: 5px solid #1cfff6;
+    border: 0.25rem solid #1cfff6;
     -webkit-transition: 1s all ease;
     -moz-transition: 1s all ease;
     -ms-transition: 1s all ease;
@@ -100,13 +116,13 @@ body {
     -o-animation: clock 4s forwards;
     animation: clock 4s forwards; }
     .head .clock1 .h {
-      width: 16px;
-      height: 40px;
+      width: 0.8rem;
+      height: 2rem;
       background: #000;
       margin-left: -8px;
       position: absolute;
       left: 50%;
-      top: 60px;
+      top: 3rem;
       border-top-left-radius: 50%;
       border-top-right-radius: 50%;
       z-index: 1;
@@ -117,14 +133,14 @@ body {
       transform: rotate(10deg);
       transform-origin: bottom; }
     .head .clock1 .m {
-      width: 10px;
-      height: 60px;
+      width: 0.5rem;
+      height: 3rem;
       background: #00f;
-      margin-left: -5px;
+      margin-left: -0.25rem;
       position: absolute;
       z-index: 2;
       left: 50%;
-      top: 40px;
+      top: 2rem;
       border-top-left-radius: 50%;
       border-top-right-radius: 50%;
       -webkit-transform: rotate(20deg);
@@ -134,14 +150,14 @@ body {
       transform: rotate(20deg);
       transform-origin: bottom; }
     .head .clock1 .s {
-      width: 6px;
-      height: 90px;
+      width: 0.3rem;
+      height: 4.5rem;
       background: #f00;
-      margin-left: -3px;
+      margin-left: -0.15rem;
       position: absolute;
       z-index: 3;
       left: 50%;
-      top: 10px;
+      top: 0.5rem;
       border-top-left-radius: 50%;
       border-top-right-radius: 50%;
       -webkit-transform: rotate(30deg);
@@ -151,23 +167,23 @@ body {
       transform: rotate(30deg);
       transform-origin: bottom; }
     .head .clock1 .center {
-      width: 10px;
-      height: 10px;
+      width: 0.5rem;
+      height: 0.5rem;
       background: #1bffdd;
       position: absolute;
       left: 50%;
       top: 50%;
-      margin: -5px 0 0 -5px;
+      margin: -0.25rem 0 0 -0.25rem;
       border-radius: 50%;
       z-index: 5; }
     .head .clock1 span {
-      width: 6px;
-      height: 10px;
+      width: 0.3rem;
+      height: 0.5rem;
       background: #ff42ee;
       position: absolute;
       left: 50%;
       top: 0;
-      margin-left: -3px;
+      margin-left: -0.15rem;
       -webkit-transform: rotate(0deg);
       -moz-transform: rotate(0deg);
       -ms-transform: rotate(0deg);
@@ -175,45 +191,64 @@ body {
       transform: rotate(0deg);
       transform-origin: 3px 100px;
       text-align: center;
-      font-size: 20px; }
+      font-size: 1rem; }
       .head .clock1 span em {
-        width: 20px;
-        height: 25px;
+        width: 1rem;
+        height: 1.25rem;
         text-align: center;
-        line-height: 25px;
+        line-height: 1.25rem;
         color: #000;
         position: absolute;
-        top: 20px;
+        top: 1rem;
         left: 0;
-        margin-left: -10px;
-        font-size: 20px; }
+        margin-left: -0.5rem;
+        font-size: 1rem; }
   .head .resume {
     position: absolute;
     left: 50%;
     top: 50%;
-    margin: -100px 0 0 -200px;
-    width: 400px;
-    height: 200px;
-    line-height: 200px;
+    margin: -2.5rem 0 0 -5rem;
+    -webkit-transition: .5s all ease;
+    -moz-transition: .5s all ease;
+    -ms-transition: .5s all ease;
+    -o-transition: .5s all ease;
+    transition: .5s all ease;
+    width: 10rem;
+    height: 5rem;
+    line-height: 5rem;
     text-align: center;
-    font-size: 50px;
+    font-size: 1.25rem;
     font-weight: bold;
-    border-radius: 40px;
+    border-radius: 2rem;
     color: #fff;
     background: -webkit-linear-gradient(left, #58ffe1, #ff81ea, #e9eb3c); }
+    .head .resume:hover {
+      -webkit-transform: scale(2, 2);
+      -moz-transform: scale(2, 2);
+      -ms-transform: scale(2, 2);
+      -o-transform: scale(2, 2);
+      transform: scale(2, 2); }
   .head .list {
-    width: 80px;
-    text-align: center;
-    line-height: 40px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    height: 40px;
-    font-size: 30px;
+    width: 9rem;
+    text-align: left;
+    line-height: 2rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    border-radius: 0.5rem;
+    height: 2rem;
+    font-size: 1.5rem;
     overflow: hidden;
     background: rgba(0, 0, 255, 0.43);
     position: absolute;
-    right: 100px;
-    bottom: 100px; }
+    right: -6rem;
+    bottom: 5rem;
+    -webkit-transition: 1s all ease;
+    -moz-transition: 1s all ease;
+    -ms-transition: 1s all ease;
+    -o-transition: 1s all ease;
+    transition: 1s all ease; }
+    .head .list:hover {
+      right: 0;
+      text-align: center; }
 
 /*# sourceMappingURL=website.css.map */
