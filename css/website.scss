@@ -51,7 +51,7 @@ body{
           width: 100%;
           height: 100%;
         }
-        &:nth-last-child(1){
+        &.information{
           display: none;
           font-size: px2rem(20px);
           position: absolute;
@@ -62,8 +62,20 @@ body{
           -moz-border-radius: px2rem(10px);
           border-radius: px2rem(10px);
           background: rgba(255, 255, 255, 0.5);
-          right: px2rem(30px);
+        }
+        &:nth-child(7){
           width: px2rem(120px);
+          right: px2rem(30px);
+        }
+        &:nth-child(8){
+          right: px2rem(230px);
+          width: px2rem(100px);
+          height: px2rem(100px);
+        }
+        &:nth-child(9){
+          right: px2rem(285px);
+          width: px2rem(100px);
+          height: px2rem(100px);
         }
       }
     }

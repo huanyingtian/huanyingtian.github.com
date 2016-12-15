@@ -32,13 +32,16 @@ window.onload=function(){
         setInterval(clock,1);
     })();
     ;(function(){
-        var oPhone = document.querySelector('.phone a img');
-        var oInformation = document.querySelector('.information');
-        oPhone.onmouseover=function(){
-            oInformation.style.display='block';
-            oPhone.onmouseout=function(){
-                oInformation.style.display='none';
-            }
-        }
+        var aLi = document.querySelectorAll('ul li.information');
+        var aBtn = document.querySelectorAll('ul li.btn')
+        for(var i=0;i<aBtn.length;i++){
+            aBtn[i].index = i;
+            aBtn[i].onmouseover=function (){
+                aLi[this.index].style.display='block';
+            };
+            aBtn[i].onmouseout = function (){
+                aLi[this.index].style.display='none';
+            };
+        };
     })();
 };
