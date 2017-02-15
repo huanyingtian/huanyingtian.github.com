@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded',function(ev){
         var aLi = document.querySelectorAll('.b_main ul li');
         var n = 0;
         var x = 0;
+        var Lock = false;
         for(var i=0;i<aBtn.length;i++){
             aBtn[i].index = i;
             aBtn[i].addEventListener('click',function(){
@@ -35,6 +36,8 @@ document.addEventListener('DOMContentLoaded',function(ev){
             },false);
         };
         oUl.addEventListener('touchstart',function(ev){
+            if(Lock)return;
+            Lock = true;
             oUl.style.WebkitTransition = 'none';
             oUl.style.transition = 'none';
             oUl.style.MozTransition = 'none';
@@ -99,6 +102,11 @@ document.addEventListener('DOMContentLoaded',function(ev){
                     aBtn[i].classList.remove('active');
                 };
                 aBtn[n].classList.add('active');
+                function tranEnd(){
+                    oUl.removeEventListener('transitionend',tranEnd,false);
+                    Lock = false;
+                };
+                oUl.addEventListener('transitionend',tranEnd,false);
             };
             document.addEventListener('touchmove',fnMove,false);
             document.addEventListener('touchend',fnEnd,false);
