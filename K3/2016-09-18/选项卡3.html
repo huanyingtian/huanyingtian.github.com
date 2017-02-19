@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			padding:0;
+			margin:0;
+		}
+		input.active{
+			background: #f00;
+			height: 50px;
+		}
+		div{
+			width: 200px;
+			height: 200px;
+			background: #00f;
+			text-align:center;
+			line-height: 200px;
+			color: #fff;
+			display: none;
+			font-size: 50px;
+		}
+		div.on{
+			display: block;
+		}
+	</style>
+	<script src="jquery.min.js"></script>
+	<script>
+		$(function(){
+			var oBtn = $('input');
+			var oDiv = $('div');
+			oBtn.each(function(i){
+				$(this).click(function(){
+					oBtn.removeClass('active');
+					oDiv.removeClass('on');
+					$(this).addClass('active');
+					oDiv.eq(i).addClass('on');
+				})
+			})
+		})
+	</script>
+</head>
+<body>
+	<input type="button" class="active" value="111" />
+	<input type="button" value="222" />
+	<input type="button" value="333" />
+	<div class="on">111</div>
+	<div>222</div>
+	<div>333</div>
+</body>
+</html>

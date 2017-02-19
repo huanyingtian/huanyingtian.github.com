@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<meta name="description" content="智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。" />
+<title>智能社— http://www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+var arr = [];
+arr.length = 10;
+var count = 0;
+function hashAdd(n){
+	var pos = n%arr.length;
+	if(arr[pos]){
+		while(arr[pos]){
+			if(arr[pos]==n){
+				return;
+			}
+			pos++;
+			if(pos==arr.length){
+				pos = 0;
+			}
+		}
+		arr[pos] = n;
+	}else{
+		arr[pos] = n;
+	}
+	count++;
+	if(count==arr.length){
+		var oldArr = arr;
+		arr = [];
+		arr.length = 2*count;
+		count = 0;
+		for(var i=0;i<oldArr.length;i++){
+			hashAdd(oldArr[i]);
+		}
+	}
+}
+hashAdd(6);
+hashAdd(26);
+hashAdd(3);
+hashAdd(18);
+hashAdd(37);
+hashAdd(9);
+hashAdd(8);
+hashAdd(34);
+hashAdd(71);
+hashAdd(5);
+hashAdd(31);
+document.write(arr);
+</script>
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+
+
+
+
+

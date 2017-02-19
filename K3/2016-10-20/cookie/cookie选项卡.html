@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .tab div{width:200px;
+            height:200px;
+            background:#ccc;
+            display: none;}
+        .tab div.on{
+            display: block;}
+
+        input.on{background: red;}
+    </style>
+    <script>
+        window.onload=function(){
+            var oTab=document.getElementById('tab');
+            var aBtn=oTab.getElementsByTagName('input');
+            var aDiv=oTab.getElementsByTagName('div');
+            for(var i=0;i<aBtn.length;i++){
+                aBtn[i].index=i;
+                aBtn[i].onclick=function(){
+                    for(var i=0;i<aBtn.length;i++){
+                        aBtn[i].className='';
+                        aDiv[i].className='';
+                    }
+                    this.className='on';
+                    aDiv[this.index].className='on';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="tab" id="tab">
+    <input type="button" value="111" class="on"/>
+    <input type="button" value="111"/>
+    <input type="button" value="111"/>
+    <div class="on">111</div>
+    <div>222</div>
+    <div>333</div>
+</div>
+</body>
+</html>

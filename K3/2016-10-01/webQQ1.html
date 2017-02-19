@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="WebQQ.css"/>
+    <script>
+        function addWheel(obj,sEv,fn){
+            if(obj.addEventListener){
+                obj.addEventListener(sEv,fn,false);
+            }else{
+                obj.attachEvent('on'+sEv,fn);
+            };
+        };
+        function addWheel(obj,fn){
+            function fnDir(ev){
+                var dir = true;
+                var oEvent = ev || event;
+                dir = oEvent.wheelDelta?oEvent.wheelDelta<0:oEvent.wheelDelta>0;
+                fn&&fn(dir);
+                oEvent.preventDefault&&oEvent.preventDefault();
+                return false;
+            };
+            if (navigator.userAgent.indexOf('Firefox')!=-1){
+                addEvent(obj,'DOMMouseScroll',fnDir);
+            }else{
+                addEvent(obj,'mousewheel',fnDir);
+            };
+        };
+        function toDou(iNom){
+            return iNom<10?'0'+iNow:''+iNow;
+        };
+        function getTime(ms){
+            var oDate = new Date();
+            oDate.setTime(ms);
+            return oDate.getFullYear()+'-'+toDou(oDate.getMonth())+'-'+toDou(oDate.getDate())+' '+toDou(oDate.getHours())+':'+toDou(oDate.getMinutes())+':'+toDou(oDate.getSeconds());
+        };
+        window.onload=function(){
+            var oFace = document.getElementById('face');
+            var oPrev = document.getElementById('prev');
+            var oNext = document.getElementById('next');
+            var oImg = oFace.children[0];
+            var iNow = 1;
+            var oAdd = document.getElementById('add_btn');
+            var oLoginBtn = document.getElementById('login_btn');
+            var oCenter = document.getElementById('center');
+            var oF = oCenter.getElementsByTagName('span')[0];
+            var oClose = document.getElementById('close');
+            var oChat = document.getElementById('chat');
+            var oLogin = document.getElementById('login');
+            var oUser = document.getElementById('user');
+            var oPass = document.getElementById('pass');
+            var URL = 'http://zhinengshe.com/exercise/im/api.php';
+            var n = 0;
+            //登录页
+            //
+            oFace.onmouseover=function(){
+                oPrev.style.display='block';
+                oNext.style.display='block';
+                oFace.onmouseout=function(){
+                    oPrev.style.display='none';
+                    oNext.style.display='none';
+                };
+            };
+
+            oPrev.onclick=function(){
+                iNow--;
+                if(iNow==0){
+                    iNow=8;
+                }
+                oImg.src = 'WebQQ/img/'+iNow+'.jpg'
+            };
+            oNext.onclick=function(){
+                iNow++;
+                if(iNow>8){
+                    iNow=1;
+                }
+                oImg.src = 'WebQQ/img/'+iNow+'.jpg'
+            };
+            oAdd.onmousedown=function(){
+                oAdd.style.background='#f00';
+                oAdd.onmouseup=function(){
+                    oAdd.style.background='#ccc';
+                };
+            };
+            oLoginBtn.onmousedown=function(){
+                oLoginBtn.style.background='#ff0';
+                oLoginBtn.onmouseup=function(){
+                    oLoginBtn.style.background='#00f';
+                };
+            };
+            oAdd.onclick=function(){
+                if(oUser.value==''||oPass.value==''){
+                    alert('用户名和密码不能为空！');
+                    return;
+                };
+                jsonp({
+                    url:URL,
+                    data:{
+                        "a":'reg',
+                        'user':oUser.value,
+                        'pass':oPass.value,
+                        "face":iNow
+                    },
+                    success:function(res){
+                        if(res.err==0){
+                            alert(res.msg);
+                        }else{
+                            alert(res.msg);
+                        }
+                    },
+                    error:function(){
+                        alert('错误：'+err);
+                    }
+                });
+            };
+            oLogin.onclick=function(){
+                if(oUser.value==''||oPass.value==''){
+                    alert('用户名和密码不能为空！');
+                    return;
+                };
+                jsonp({
+                    url:URL,
+                    data:{
+                        "a":"lgn",
+                        "user":oUser.value,
+                        "pass":oPass.value
+                    },
+                    success:function(res){
+                        if(res.err==0){
+                            token = res.token;
+                            oLoginPage.style.display = 'none';
+                            oChatPage.style.display = 'block';
+                            oFace.src = 'img/'+res.face+'.jpg';
+                            getUser();
+                            getMsg();
+
+                            clearInterval(timer);
+                            timer = setInterval(function(){
+                                jsonp({
+                                    url:URL,
+                                    data:{
+                                        "a":"get_msg_n",
+                                        "n":maxID,
+                                        "token":token
+                                    },
+                                    success:function(res){
+                                        if(res.err==0){
+                                            oPass.value = '';
+                                            var arr = res.data;
+                                            for(var i=0;i<arr.length;i++){
+                                                var oLi = document.createElement('li');
+                                                oLi.innerHTML='<h2><strong>'+arr[i].username+'</strong><span>'+getYearTime(arr[i].post_time*1000)+'</span></h2><p>'+arr[i].content+'</p>';
+                                                oChatList.appendChild(oLi);
+                                                maxID = arr[i].ID;
+                                            }
+                                            oChatList.style.top = -(oChatList.scrollHeight-oChatBox.offsetHeight)+'px';
+                                            oChatBar.style.top = oChatBarBox.offsetHeight-oChatBar.offsetHeight+'px';
+                                        }else{
+                                            alert('失败');
+                                        }
+                                    },
+                                    error:function(err){
+                                        alert('错误:'+err);
+                                    }
+                                });
+                            },1000);
+
+                        }else{
+                            alert(res.msg);
+                        }
+                    },
+                    error:function(err){
+                        alert('错误:'+err);
+                    }
+                });
+            };
+            //聊天页
+//            oF.onclick=function(){
+//                n++;
+//                if(n%2==0){
+//                    .style.display='none';
+//                }else{
+//                    .style.display='block';
+//                }
+//            };
+            oClose.onclick=function(){
+                oChat.style.display='none';
+                oLogin.style.display='block';
+            };
+        };
+    </script>
+</head>
+<body>
+    <div id="login">
+        <div id="face">
+            <img src="WebQQ/img/1.jpg" alt="">
+            <a href="javascript:;" id="prev">&lt;</a>
+            <a href="javascript:;" id="next">&gt;</a>
+        </div>
+        <ul>
+            <li id="word"></li>
+            <li><input type="text" name="" id="user"/></li>
+            <li><input type="password" name="" id="pass"></li>
+            <li>
+                <a href="javascript:;" id="add_btn">账号注册</a>
+                <a href="javascript:;" id="login_btn">登陆聊天室</a>
+            </li>
+        </ul>
+    </div>
+    <div id="chat">
+        <div id="chat_head">
+            <div id="chat_face">
+                <img src="WebQQ/img/1.jpg" alt="">
+            </div>
+            <span>
+                JavaScript交流房间
+            </span>
+            <em></em>
+            <strong id="close">X</strong>
+        </div>
+        <div id="chat_foot">
+            <div id="left">
+                <div id="top">
+                    <ul>
+                        <li>
+                            <h3>
+                                <span>123</span>
+                                <span>2016-10-03&nbsp;16:05:16</span>
+                            </h3>
+                            <p>啦速度加快分解地方</p>
+                        </li>
+                    </ul>
+                    <div id="scroll_top">
+                        <div id="drag"></div>
+                    </div>
+                </div>
+                <div id="center">
+                    <span></span>
+                    <strong></strong>
+                    <a href="javascript:;">
+                        <em></em>
+                        在线列表
+                    </a>
+                </div>
+                <div id="bottom">
+                    <textarea id="inp"></textarea>
+                    <input type="button" value="发送" id="btn"/>
+                </div>
+            </div>
+            <div id="right">
+                <ul>
+
+                </ul>
+                <div id="scroll_right">
+                    <div id="drag_right"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="foot"></span>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style></style>
+    <script>
+        window.onload=function(){
+            var oBtn = document.getElementById('btn');
+            var oT = document.getElementById('txt');
+            var oSpan = document.getElementsByTagName('span')[0];
+            oT.onkeydown=function(){
+                if(oT.value==''){
+                    oSpan.innerHTML='';
+                };
+            };
+            oBtn.onclick=function(){
+                if(oT.value=='')return;
+                var result = /^(http:\/\/www\.\w+\.[a-zA-Z0-9]{2,8})$/.test(oT.value);//(http://)?(\w+\.)(\w+\.)(\w+)(/\w+)*/?(.html)?|http://\w+\.\w+/\w+|[《》【】（）()★※@~#]|\s{2,}
+                if(result){
+                    oSpan.innerHTML='网址的格式正确！';
+                }else{
+                    oSpan.innerHTML='网址的格式有误！';
+                    timer = setTimeout(function(){
+                        oSpan.innerHTML='';
+                        oT.value='';
+                    },1000);
+                };
+            };
+        };
+    </script>
+</head>
+<body>
+<input type="text" name="" id="txt">
+<input type="button" value="校验" id="btn">
+<br>
+<span></span>
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #itembar{
+            width:100%;
+            height: 50px;
+            background: #f60;;
+        }
+        #itembar2{
+            width:100%;
+            height: 50px;
+            background: #f60;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oItem = document.getElementById('itembar');
+            var oItem2 = document.getElementById('itembar2');
+            var top = oItem.offsetTop;
+            window.onscroll=function(){
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                if(scrollTop>top){
+                    oItem.style.position='fixed';
+                    oItem.style.top='0';
+                    oItem.style.left='0';
+                    oItem2.style.display='block';
+
+                }else{
+                    oItem.style.position='static';
+                    oItem2.style.display='none';
+                }
+            };
+        };
+    </script>
+</head>
+<body>
+<div class="head">
+    <div class="h_con">
+        <div class="conLeft">
+            <h3>智能社就是前端开发培训，北京最具深度和口碑的JavaScript、HTML5培训，专注于让学员获得快乐的学习体验并找到高薪工作的培训</h3>
+        </div>
+        <div class="payToDiv">
+            <a href="http://weibo.com/zhinengshe" target="_blank"><em class="payTo_sina"></em>新浪微博<br /><span>@智能社</span></a>
+            <a href="http://t.qq.com/bj_zhinengshe" target="_blank"><em class="payTo_tencent"></em>腾讯微博<br /><span>@智能社</span></a>
+            <a><em class="payTo_qq"></em>QQ群<br /><span ng-cloak>{{q_qun_name}} {{q_qun_number}}</span></a>
+        </div>
+    </div>
+</div>
+<div class="nav">
+    <div class="logo">
+        <a href="http://www.zhinengshe.com/"><img src="images/logo.png" alt="智能社——专注前端 培训专家" /></a>
+    </div>
+    <div class="navTxt">
+        <div class="hover" style="left:238px"></div>
+        <a href="index.html">首&nbsp;页</a><span></span><a href="css01_desc.html" target="_blank">CSS课程</a><span></span><a href="js02_desc.html" target="_blank">JS课程</a><span></span><a href="html5_01_desc.html" target="_blank">HTML5课程</a><span></span><a href="video.html" target="_blank">视频教程</a><span></span><a href="works.html" target="_blank">课程案例</a><span></span><a href="contact.html" target="_blank">联系方式</a> </div>
+</div>
+<div class="clear"></div>
+<!--end公用头部-->
+<!--专题js-->
+<div class="zns_zt" id="zns_zt_content">
+    <div class="zt_head">
+        <p class="zt_title">
+            <span class="zt_title_ico"></span>
+            <a href="index.html">首页</a><span>&gt;</span><a href="train_list.html">培训课程</a><span>&gt;</span><em>精通JavaScript开发</em>
+        </p>
+        <div class="hr_20"></div>
+        <p class="goTop"><a href="train_list.html">&gt;&nbsp;返回</a></p>
+        <div class="black" style="display:none;">返回课程列表</div>
+    </div>
+    <div class="zt_cen mar_1_ie6">
+        <div class="content_newKc">
+            <!-- 左侧导航 -->
+            <div class="kcArea_l_new">
+                <a href="javascript:;" class="btn_leftBlue_new"></a>
+                <ul class="newKcNavLeft">
+                    <li class="bor_mar" href="0#180">
+                        <a href="javascript:;" class="newLink">课程介绍</a>
+                        <a href="javascript:;" class="newLiThis">课程介绍</a>
+                    </li>
+                    <li href="1#180">
+                        <a href="javascript:;" class="newLink">课程详情</a>
+                        <a href="javascript:;" class="newLiThis">课程详情</a>
+                    </li>
+                    <li href="2#180">
+                        <a href="course_outline.html#k2_course" class="newLink">课程大纲</a>
+                        <a href="course_outline.html#k2_course" class="newLiThis">课程大纲</a>
+                    </li>
+                    <li href="0#3550">
+                        <a href="javascript:;" class="newLink">常见问题</a>
+                        <a href="javascript:;" class="newLiThis">常见问题</a>
+                    </li>
+                </ul>
+                <div class="hr_25"></div>
+                <div class="txtTop_new">
+                    <div class="txtBot_new">
+                        <div class="txtCen_new">
+                            <div class="hr_25"></div>
+                            <a href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzkzODA2ODI3NV80MTk4MjdfNDAwMDAwMzE1NF8yXw" class="txtLink_new mb10" id="zns_free" target="_blank">申请免费试听</a>
+                            <a href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzkzODA2ODI3NV80MTk4MjdfNDAwMDAwMzE1NF8yXw" class="txtLink_new mb40" id="zns_rc" target="_blank">我要咨询报名</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="txtTop_new">
+                    <div class="txtBot_new">
+                        <div class="txtCen_new">
+                            <a href="html5_01_desc.html" class="txtLink2_new" target="_blank">HTML5+CSS3课程</a>
+                            <a href="css01_desc.html" class="txtLink2_new" target="_blank">精通XHTML+CSS课程</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <!-- endof 左侧导航 -->
+
+            <!-- 课程介绍 -->
+            <div class="kcArea_r_move course_big">
+                <div class="kc_tl">
+                    <div class="kc_tr">
+                        <div class="kc_tc"></div>
+                    </div>
+                </div>
+                <div class="kc_cl">
+                    <div class="kc_cr">
+                        <div class="kc_cc">
+
+
+                            <div id="itembar"></div>
+                            <div id="itembar2"></div>
+
+
+                            <!--内容从这里开始-->
+                            <h2 class="kcTit">精通JavaScript开发 — 课程介绍</h2>
+                            <p class="xxCon">本课程适合想成为专业前端工程师的你，我们做的是培养专家.^_^</p>
+                            <div class="hr_40"></div>
+                            <div class="course_titleSm">
+                                <h3 class="course_titleSm_txt">近期学员就业——学完拿高薪，才是好课程</h3>
+                            </div>
+                            <div class="hr_15"></div>
+                            <div class="studentListBox">
+                                <dl class="studentList">
+                                    <dt><a href="javascript:;"><img src="images/studentImg/qiuxiong.png" /></a><p></p><a href="javascript:;" class="links">课程：JavaScript高级课程</a></dt>
+                                    <dd>
+                                        <p><em>姓　　名：</em><span>*雄</span></p>
+                                        <p>所学课程：精通JS开发</p>
+                                        <p>学前工作：1年左右</p>
+                                        <p>学前月薪：5-6K</p>
+                                        <p>就职公司：*度</p>
+                                        <p>就职月薪：14K-20K</p>
+                                    </dd>
+                                </dl>
+                                <dl class="studentList">
+                                    <dt><a href="javascript:;"><img src="images/studentImg/qinliuye.png" /></a><p></p><a href="javascript:;" class="links">课程：JavaScript高级课程</a></dt>
+                                    <dd>
+                                        <p><em>姓　　名：</em><span>覃*叶</span></p>
+                                        <p>所学课程：精通JS开发</p>
+                                        <p>学前工作：半年左右</p>
+                                        <p>学前月薪：5-6K</p>
+                                        <p>就职公司：*度</p>
+                                        <p>就职月薪：14K-20K</p>
+                                    </dd>
+                                </dl>
+                                <dl class="studentList">
+                                    <dt><a href="javascript:;"><img src="images/studentImg/wangpengfei.png" /></a><p></p><a href="javascript:;" class="links">课程：JavaScript高级课程</a></dt>
+                                    <dd>
+                                        <p><em>姓　　名：</em><span>王*飞</span></p>
+                                        <p>所学课程：精通JS开发</p>
+                                        <p>学前工作：半年左右</p>
+                                        <p>学前月薪：5-7K</p>
+                                        <p>就职公司：*艺科技</p>
+                                        <p>就职月薪：16K-20K</p>
+                                    </dd>
+                                </dl>
+                                <dl class="studentList">
+                                    <dt><a href="javascript:;"><img src="images/studentImg/wulongfei.png" /></a><p></p><a href="javascript:;" class="links">课程：JavaScript高级课程</a></dt>
+                                    <dd>
+                                        <p><em>姓　　名：</em><span>武*龙</span></p>
+                                        <p>所学课程：精通JS开发</p>
+                                        <p>学前工作：1年左右</p>
+                                        <p>学前月薪：7-8K</p>
+                                        <p>就职公司：*创科技</p>
+                                        <p>就职月薪：14K-20K</p>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="hr_10"></div>
+                            <div class="course_titleSm">
+                                <h3 class="course_titleSm_txt course_titleSalary">凭什么智能社的学员能拿高薪</h3>
+                            </div>
+                            <div class="hr_40"></div>
+                            <div class="infoDuction infoDuction_black">
+                                <em class="info_number info_color_blue">1</em>
+
+                                <h3>
+                                    <strong class="info_color_yellow">课程</strong><span class="info_color_blue">- 为就业而生</span>
+                                </h3>
+                                <p class="infoDuc_txt info_color_white">
+                                    -谁出来学习，也不是为了玩，所以智能社的课程就是为了就业而生的，课程内容完全以公司用人要求为最低标准，智能社教的就是你在工作中用的东西。<br><br>
+                                    -课程进化从未停止，每一天，我们都在根据公司和学员反馈信息，不断调整课程，确保大家学到的永远是最新、最实用的东西。<br><br>
+                                    -课程体系全面而系统，涵盖从基础知识到大型应用的各类知识，让你从容应对工作中出现的各类JS问题。<br>
+                                    <br>
+                                    <a href="javascript:;" onclick="var obj=getEle('.newKcNavLeft li')[2]; if(obj)obj.onclick();">&gt;&gt;查看2.0课程大纲</a>
+                                </p>
+                            </div>
+                            <div class="comPromptTxt">如果你想学完找份高薪的工作，那智能社的JavaScript高级课程正是你需要的</div>
+                            <div class="infoDuction infoDuction_blue">
+                                <em class="info_number info_color_white">2</em>
+                                <h3>
+                                    <strong class="info_color_white">深度</strong><span class="info_color_yellow">- 北京最专业的JS培训课程</span>
+                                </h3>
+                                <p class="infoDuc_txt info_color_black">
+                                    -智能社的JS课程——由前淘宝核心开发工程师Blue倾力打造，将其近10年程序经验、领悟投入到本课程上——只求将一线宝贵工作经验传授给学员，打造国内一流的JS培训课程。<br><br>
+                                    -课程内容够深入，直接深入核心，剖析本质，绝非点到即止——如果课程内容浅，学员学着轻松，可到了公司依然什么都不会——这，可不是智能社的作风。<br><br>
+                                    -课程内容量大大超出公司用人标准——如果公司对人的要求是10分，那智能社就教到20分，这才是智能社的风格。<br><br>
+                                    -你需要的东西，都在智能社的课程里：<strong>后台交互、模块化、程序思想、JS优化与调试、大型项目实例，还有更多......</strong><br><br>
+                                    <br>
+                                    <a href="javascript:;" onclick="var obj=getEle('.newKcNavLeft li')[2]; if(obj)obj.onclick();">&gt;&gt;查看2.0课程大纲</a>
+                                </p>
+                            </div>
+                            <div class="comPromptTxt">如果你发现居然有比智能社更专业、更具深度的JS课程，请立刻与我们联系，必有重谢 ^_^</div>
+                            <div class="infoDuction infoDuction_black">
+                                <em class="info_number info_color_blue">3</em>
+                                <h3>
+                                    <strong class="info_color_yellow">讲师</strong><span class="info_color_blue">- 智能社金牌JS讲师Blue亲自主讲</span>
+                                </h3>
+                                <p class="infoDuc_txt info_color_white">
+                                    -公认最好的JavaScript视频教程，此视频成为JS爱好者必备的最佳JS入门学习视频，如果你还没有看过，机会来了 :) <a href="video.html" target="_blank">&gt;&gt;点击进入视频列表</a><br><br>
+                                    -公认最好的JavaScript讲师，课程讲解通俗易懂，开放而兼具互动，堪称JS最佳学习体验之旅，想来试试吗 <a href="http://wpa.qq.com/msgrd?v=3&uin=1839006349&site=qq&menu=yes" target="_blank">&gt;&gt;点击报名免费试听</a> <strong>注意！是免费的哦</strong><br><br>
+                                    -我就是Blue，我在智能社——前淘宝核心开发工程师，先后亲历多次大型项目开发，涉足前端交互、用户体验、数据挖掘等多个领域，具备极其深厚的程序功底，拥有近10年程序开发经验，喜好钻研技术问题，离开淘宝后转战教育事业，现成立智能社，力求传播先进技术，解决人才鸿沟，为JS培训行业做些贡献<br><br>
+                                </p>
+                            </div>
+                            <div class="comPromptTxt">来智能社享受一流的课程体验</div>
+                            <div class="infoDuction infoDuction_blue">
+                                <em class="info_number info_color_white">4</em>
+                                <h3>
+                                    <strong class="info_color_white">思想</strong><span class="info_color_yellow">- 你想成为JS高手吗，方法在这里</span>
+                                </h3>
+                                <p class="infoDuc_txt info_color_black">
+                                    -是否觉得写程序时不知如何入手？对于一个问题觉得明白了，但一写东西就不知道怎么办了？是否想要成为JS高手，又不知如何做到？这些问题，其实都是缺少程序思想。<br><br>
+                                    -思想是关键，真正的高手，遇到任何问题都知道如何解决；真正的高手，在写出代码之前，程序的大体结构已经心中有数，绝非写一点想一点；能够做到这些，都因为思想，当然，这种东西也有别的叫法——“思路”、“算法”、“经验”、“方法”......<br><br>
+                                    -思想这东西书本上没有，书本里只有一个个函数，一个个知识点。这些思想全部来源于实际工作中遇到的问题，被智能社的讲师提炼出来，贯穿于整个课程之中，让大家快速吸收，高速成长。<br><br>
+                                    -智能社的JS课程，在讲解知识的同时，还会帮助大家掌握思考问题的方法，这才是重点，让大家真正明白问题是要怎么去思考，如何去解决的。<br>
+                                </p>
+                            </div>
+
+</body>
+</html>

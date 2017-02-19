@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<meta name="description" content="智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。" />
+<title>智能社— http://www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0; list-style:none;}
+ul{ width:300px;}
+ul li{ line-height:30px; height:30px; overflow:hidden; border-bottom:1px dashed #000;}
+ul li a{float:left;}
+ul li strong{float:right;}
+</style>
+<script src="ajax.js"></script>
+<script>
+window.onload = function(){
+	var oBtn = document.getElementById('btn1');
+	var oList = document.getElementById('list');
+	
+	function getData(){
+		ajax('data.txt',function(result){
+			var arr = eval('('+result+')');
+			
+			oList.innerHTML = '';
+			arr.sort(function(){
+				return Math.random()-0.5;
+			});
+			for(var i=0;i<6;i++){
+				var oLi = document.createElement('li');
+				oLi.innerHTML = '<a href="'+arr[i].href+'">'+arr[i].title+'</a><strong>'+arr[i].count+'</strong>';
+				oList.appendChild(oLi);
+			}
+			
+		},function(){
+			alert('失败乃成功之母');
+		});
+	}
+	getData();
+	
+	oBtn.onclick = function(){
+		getData();
+	};
+};
+</script>
+</head>
+
+<body>
+	<input type="button" value="换一换" id="btn1" />
+	<ul id="list">
+	</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

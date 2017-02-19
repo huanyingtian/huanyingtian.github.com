@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tilte</title>
+	<link href="zns_style.css" rel="stylesheet" type="text/css" />
+	<script>
+		window.onload=function(){
+			//获取提交按钮
+			var oBtn=document.getElementById('btn');
+			//获取输入框
+			var oT=document.getElementById('text');
+			//获取留言区
+			var oBox=document.getElementById('box');
+			//获取未添加留言时显示的文字
+			var oEm=oBox.children[0];
+			var n=0;
+			//当提交按钮点击时
+			oBtn.onclick=function(){
+				//判断输入框的内容是否为空
+				if(oT.value==''){
+					alert('内容为空,不能提交');
+					return;
+				}
+				//提交一条加一次
+				n++;
+				//创建留言标签
+				var oP=document.createElement('p');
+				//将输入框的内容添加到p标签中
+				oP.innerHTML=n+'.'+oT.value;
+				//将创建的标签插入到留言区
+				oBox.appendChild(oP);
+
+				emShow();
+				//提交完成后清空输入框的value
+				oT.value='';
+				//给删除按钮添加移入事件
+				oP.onmouseover=function(){
+					this.style.background='yellow';
+					var oSpan=document.createElement('span');
+					oSpan.innerHTML='确定要删除<strong style="color:red">'+oP.innerHTML+'</strong>么?';
+					this.appendChild(oSpan);
+				};
+				//给删除按钮添加移出事件
+				oP.onmouseout=function(){
+					this.style.background='#f1f1f1';
+					this.removeChild(this.children[0]);
+				};
+				//给删除按钮添加点击事件
+				oP.onclick=function(){
+					oBox.removeChild(this);
+					emShow();
+				};
+			};
+			function emShow(){
+				//判断留言区是否有留言
+				if(oBox.children.length==1){
+					oEm.style.display='block';
+					n=0;
+				}else{
+					oEm.style.display='none';
+				}
+			}
+		};
+	</script>
+</head>
+
+<body>
+
+<div id="parent">
+	<h4>留言内容：</h4>
+	<div id="box"><em>这里会显示留言内容……</em></div>
+	<textarea id="text"></textarea><br />
+	<input id="btn" type="button" value="发表留言" />
+</div>
+
+</body>
+</html>

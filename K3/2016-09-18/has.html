@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background: #000;
+        }
+        p{
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+            background: #f00;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('div:has(p)').css('background','blue');
+        })
+    </script>
+</head>
+<body>
+<div><p></p></div>
+</body>
+</html>

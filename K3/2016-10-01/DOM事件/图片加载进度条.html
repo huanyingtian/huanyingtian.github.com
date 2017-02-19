@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 500px;
+            height: 50px;
+            margin: 100px auto;
+            background: #ccc;
+        }
+        #item{
+            width: 0px;
+            height: 50px;
+            background: red;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oItem=document.getElementById('item');
+            var oBox=document.getElementById('box');
+
+            var n=0;
+            for(var i=0;i<77;i++){
+
+                var oImg=new Image();
+                oImg.src='img3/'+i+'.jpg';
+                oImg.onload=function(){
+                    n++;
+                    var scale=n/77;
+                    oItem.style.width=scale*oBox.offsetWidth+'px';
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+<div id="box">
+    <div id="item"></div>
+</div>
+</body>
+</html>

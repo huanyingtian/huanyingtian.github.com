@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body { background: #ecfaff; }
+
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #box{
+            width: 470px;
+            height: 150px;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        ul{
+            position: absolute;
+            left:0;
+            top:0;
+            /*width: 470px;
+            height:150px;
+*/
+        }
+        li{
+            width: 470px;
+            height: 150px;
+            list-style: none;
+            float: left;
+        }
+        img{
+            border: none;
+            float: left;
+            width: 470px;
+            height: 150px;
+
+        }
+        #son{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            z-index: 1;
+        }
+        input{
+            outline: none;
+            width: 20px;
+            height: 20px;
+            background: #f00;
+            border-radius:50%;
+            border:none;
+            cursor: pointer;
+        }
+        .active{
+            background: #fff;
+        }
+    </style>
+    <!--<script src="move"></script>-->
+    <script src="sea.js"></script>
+    <script>
+        seajs.use('tob.js',function(b){
+            b.init();
+        })
+    </script>
+    <!--<script src="move4.js"></script>
+    <script>
+        window.onload=function(){
+            var oBox = document.getElementById('box');
+            var oSon = oBox.children[0];
+            var aBtn = oSon.children;
+            var oUl = document.getElementsByTagName('ul')[0];
+            var aLi = oUl.children;
+            for(var i=0;i<aBtn.length;i++){
+                (function(index){
+                    aBtn[i].onclick=function(){
+                        for(var i=0;i<aBtn.length;i++){
+                            aBtn[i].className='';
+                        }
+                        this.className='active';
+                        move(oUl,{top:-index*aLi[0].offsetHeight})
+                    }
+                })(i)
+            }
+        }
+    </script>-->
+    <!--<script>
+        window.onload=function(){
+            var oBox = document.getElementById('box');
+            var oSon = oBox.children[0];
+            var aBtn = oSon.children;
+            var oUl = document.getElementsByTagName('ul')[0];
+            var aLi = oUl.children;
+            for(var i=0;i<aBtn.length;i++){
+                aBtn[i].index=i;
+                aBtn[i].onclick=function(){
+                    for(var i=0;i<aBtn.length;i++){
+                        aBtn[i].className='';
+                    }
+                    this.className='active';
+                    move(oUl,{top:-this.index*aLi[0].offsetHeight})
+                }
+            }
+        }
+    </script>-->
+</head>
+<body>
+<div id="box">
+    <div id="son">
+        <input type="button" class="active" value=""/>
+        <input type="button" value=""/>
+        <input type="button" value=""/>
+        <input type="button" value=""/>
+        <input type="button" value=""/>
+    </div>
+    <ul>
+        <li><img src="images/1.jpg" alt=""/></li>
+        <li><img src="images/2.jpg" alt=""/></li>
+        <li><img src="images/3.jpg" alt=""/></li>
+        <li><img src="images/4.jpg" alt=""/></li>
+        <li><img src="images/5.jpg" alt=""/></li>
+    </ul>
+</div>
+</body>
+</html>

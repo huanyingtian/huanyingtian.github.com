@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        input.on{
+            height: 50px;
+            width: 50px;
+            background: #f00;
+        }
+        div{
+            display: none;
+        }
+        div.active{
+            margin:5px;
+            width: 200px;
+            height: 200px;
+            background: #00f;
+            text-align: center;
+            line-height: 200px;
+            color: #fff;
+            display: block;
+            font-size: 50px;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            var oBtn = $('input');
+            var oDiv = $('div');
+            oBtn.each(function(i){
+                $(this).click(function(){
+                    oBtn.removeClass('on');
+                    oDiv.removeClass('active');
+                    oBtn.eq(i).addClass('on');
+                    oDiv.eq(i).addClass('active');
+                })
+            })
+
+        })
+    </script>
+</head>
+<body style="margin: 0 auto; width: 500px;">
+<input type="button" value="111" class="on"/>
+<input type="button" value="222"/>
+<input type="button" value="333"/>
+<div class="active">111</div>
+<div>222</div>
+<div>333</div>
+</body>
+</html>

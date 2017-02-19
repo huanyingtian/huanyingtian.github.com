@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            color: #fff;
+        }
+        #box{
+            margin:100px auto;
+            width: 683px;
+            height: 384px;
+            position: relative;
+            overflow: hidden;
+            border:2px solid #000;
+        }
+        .next,.prev{
+            width: 100px;
+            height: 100px;
+            opacity:0.5;
+            background: #000;
+            position: absolute;
+            /*left:0;*/
+            top:50%;
+            margin-top:-25px;
+            z-index: 2;
+            text-align: center;
+            line-height: 100px;
+            display: none;
+            font-size: 20px;
+        }
+        .next{
+            right:0;
+        }
+        .prev{
+            left:0;
+        }
+        #photo{
+            width: 3415px;
+            height: 384px;
+            position: absolute;
+            left: 0;
+            top:0;
+        }
+        #photo li{
+            list-style:none;
+            width: 683px;
+            height: 384px;
+            float: left;
+        }
+        img{
+            width: 683px;
+            height: 384px;
+            border:none;
+        }
+        #dot{
+            width: 150px;
+            height: 20px;
+            position: absolute;
+            left:50%;
+            margin-left: -75px;
+            bottom: 10px;
+        }
+        #dot li{
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background: #f00;
+            border-radius:50%;
+            float: left;
+            margin-right:10px;
+            z-index:5;
+        }
+        #dot .active{
+            background: #fff;
+        }
+        #brothers{
+            color: #000;
+            position: absolute;
+            left:48%;
+            top:500px;
+        }
+        #left,#right{
+            color: #000;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script src="sea.js"></script>
+    <script>
+        seajs.use('tab',function(a){
+            a.init
+        });
+    </script>
+    <script src="jquery.min.js"></script>
+    <script>
+
+    </script>
+    <!--<script>
+        $(function(){
+            var oBox = $('#box');
+            var oPrev = $('.prev');
+            var oNext = $('.next');
+            var oUl = $('#photo');
+            var aLi = $('#photo li');
+            var aLi1 = $('#dot li');
+            var oBrothers = $('#brothers');
+            var oL = $('#left');
+            var oR = $('#right');
+            aLi.clone().prependTo('#photo');
+            var offset = oUl.position().left;
+            //oUl.html;
+            //$("#photo li").clone().prependTo("#photo");
+            oUl.width(aLi.width()*aLi.length*2);
+            oBox.mouseover(function(){
+                oPrev.css('display','block');
+                oNext.css('display','block');
+                oPrev.mouseover(function(){
+                    oPrev.css('background','red');
+                });
+                oPrev.mouseout(function(){
+                    oPrev.css('background','#000');
+                });
+                oNext.mouseover(function(){
+                    oNext.css('background','red');
+                });
+                oNext.mouseout(function(){
+                    oNext.css('background','#000');
+                });
+                oBox.mouseout(function(){
+                    oPrev.css('display','none');
+                    oNext.css('display','none');
+                })
+            });
+            aLi1.each(function(i){
+                $(this).mouseover(function(){
+                    if(($(this)%5+5)%5==aLi.index()){
+
+                    }
+                    //var off=-offset*i;
+                    aLi1.removeClass('active');
+                    $(this).addClass('active');
+                    //var offset = p.offset();
+                    oUl.stop().animate({left:-aLi.width()*i},1000);
+
+                });
+
+            });
+            aLi.each(function(i){
+                aLi.click(function(){
+                    if((n%5==4 || n%5==-1)&&$(this).index()==0){
+                        n++;
+                    };
+                    if(n%5==0&&$(this).index()==aLi.length-1){
+                        n&#45;&#45;;
+                    };
+                    n=Math.floor(n/aLi.length)*aLi.length+$(this).index();
+                    tab();
+                });
+            });
+//            aLi1.each(function(i){
+//                var n=i;
+//                oPrev.click(function(){
+//                    n&#45;&#45;;
+//                    //alert(offset);
+//
+//                    var ou=oUl.position().left;
+//                    aLi1.removeClass('active');
+//                    aLi1.eq([(n%5+5)%5]).addClass('active');
+//                    //var offset = p.offset();
+//                    oUl.animate({left:-(n%5)*683},1000);
+//                });
+//                oNext.click(function(){
+//                    n++;
+//                    var off=oUl.position().left;
+//                    aLi1.removeClass('active');
+//                    aLi1.eq((n%5+5)%5).addClass('active');
+//                    oUl.animate({left:-(n%5)*683},1000);
+//
+//                });
+//            });
+//            function tab(){
+//                aLi1.each(function(){
+//                    aLi1.removeClass('active');
+//                    aLi1.eq((n%5+5)%5).addClass('active');
+//
+//                });
+//
+//            }
+            var n=0;
+
+            function tab(){
+                aLi.each(function(i){
+                    aLi.removeClass('active');
+                    aLi.eq((n%5+5)%5).addClass('active');
+                    oUl.position().left=-n*aLi.eq(0).offsetWidth;
+                });
+            };
+            oPrev.click(function(){
+                n&#45;&#45;;
+                tab();
+            });
+            oNext.click(function(){
+                n++;
+                tab();
+            });
+
+
+        });
+    </script>-->
+
+</head>
+<body>
+<div id="box">
+    <ul id="photo">
+        <li><a href="javascript:;"><img src="img/0.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="img/1.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="img/2.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="img/3.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="img/4.jpg" alt=""></a></li>
+    </ul>
+    <ul id="dot">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+</body>
+</html>

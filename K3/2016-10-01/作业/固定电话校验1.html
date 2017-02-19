@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        body{
+            width: 500px;
+            margin: 0 auto;
+        }
+        div{
+            font-size: 50px;
+            color: #f00;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oBtn =document.getElementById('btn');
+            var oT = document.getElementById('txt');
+            var oSpan = document.getElementsByTagName('span')[0];
+            oT.onkeyup=function(){
+                if(oT.value==''){
+                    oSpan.innerHTML='';
+                };
+            };
+            oBtn.onclick=function(){
+                if(oT.value=='')return;
+                var result = /^0[1-9]\d{1,2}\-[1-9]\d{6,7}$/.test(oT.value);
+                if(result){
+                    oSpan.innerHTML='固定电话的格式正确！';
+                }else{
+                    oSpan.innerHTML='固定电话的格式错误！';
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+<div>固定电话校验</div>
+<input type="text" name="" id="txt"/>
+<span></span>
+<br>
+<input type="button" value="校验" id="btn"/>
+</body>
+</html>

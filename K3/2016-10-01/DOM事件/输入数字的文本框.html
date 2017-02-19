@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var oT=document.getElementById('txt');
+            oT.onkeydown=function(ev){
+                var oEvent=ev||event;//48 0 57 9 8
+                if(oEvent.keyCode>=48&&oEvent.keyCode<=57||oEvent.keyCode==8){
+                }else{
+                    return false;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" name="" id="txt"/>
+</body>
+</html>

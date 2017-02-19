@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oBox = document.getElementById('box');
+            oBox.onmousedown=function(ev){
+                var oEvent = ev || event;
+                var disX = oEvent.clientX-oBox.offsetLeft;
+                var disY = oEvent.clientY-oBox.offsetTop;
+                var newDiv = oBox.cloneNode(true);
+                newDiv.style.opacity=0.5;
+                newDiv.removeAttribute('id');
+                oBox.parentNode.appendChild(newDiv);
+                document.onmousemove=function(ev){
+                    var oEvent = ev || event;
+                    newDiv.style.left=oEvent.clientX-disX+'px';
+                    newDiv.style.top=oEvent.clientY-disY+'px';
+                };
+                document.onmouseup=function(){
+                    document.onmousemove=null;
+                    document.onmouseup=null;
+                    oBox.style.left=newDiv.style.left;
+                    oBox.style.top=newDiv.style.top;
+                    oBox.parentNode.removeChild(newDiv);
+                    oBox.releaseCapture && oBox.releaseCapture()
+                };
+                oBox.setCapture && oBox.setCapture();
+                return false;
+            };
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <h3>jdlfkas;lkd</h3>
+        <h3>'ak'pfosadk</h3>
+        <h3>加啊四；发送</h3>
+        <h3>泼开水的风格；是否</h3>
+        <h3>配送的泼妇苏东坡</h3>
+        <h3>上来看地方；楼上的士大夫</h3>
+        <h3>迫使对方立刻收到</h3>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

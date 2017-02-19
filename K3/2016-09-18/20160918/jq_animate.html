@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{ margin: 0; padding: 0;}
+div{position: relative; left: 0; top:0; width: 100px; height: 50px; background-color: darkred;}
+</style>
+<body>
+	<div></div>
+</body>
+</head>
+<script type="text/javascript" src="js/jquery.min.js" ></script>
+<script>
+	$(function(){
+		$('div').animate({'left':'1000'},3000,'linear',function(){
+			alert(1);
+		});
+	});
+</script>

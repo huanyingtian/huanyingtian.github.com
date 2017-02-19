@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tilte</title>
+	<link href="zns_style.css" rel="stylesheet" type="text/css" />
+	<script>
+		window.onload=function(){
+			//获取提交按钮
+			var oBtn = document.getElementById('btn');
+
+			//获取输入框
+			var oT = document.getElementById('text');
+			//获取留言区
+			var oBox = document.getElementById('box');
+			//获取未添加留言时显示的文字
+			var oEm = oBox.children[0];
+			var n = 0;
+			//当提交按钮点击时
+			oBtn.onclick=function (){
+				if(oT.value==''){
+					retuen;
+				};
+				n++;
+				var oP = document.createElement('p');
+				oP.innerHTML=n+'.'+oT.value;
+				oBox.appendChild(oP);
+				EmShow();
+				oT.value='';
+				oP.onmouseover=function (){
+					var oSpan = document.createElement('span');
+					oSpan.innerHTML='确定要删除<strong style="color: #f00;">'+oP.innerHTML+'</strong>么？';
+					oP.appendChild(oSpan);
+					this.style.background='yellow';
+				};
+				oP.onmouseout=function (){
+					this.style.background='#f1f1f1';
+					this.removeChild(this.children[0]);
+				};
+				oP.onclick=function (){
+					oBox.removeChild(this);
+					EmShow();
+
+				};
+
+			};
+
+				//给删除按钮添加点击事件
+
+				//判断留言区是否有留言
+			function EmShow(){
+				if(oBox.children.length==1){
+					oEm.style.display='block';
+					n=0;
+				}else{
+					oEm.style.display='none';
+				}
+			}
+		};
+	</script>
+</head>
+
+<body>
+
+<div id="parent">
+	<h4>留言内容：</h4>
+	<div id="box"><em>这里会显示留言内容……</em></div>
+	<textarea id="text"></textarea><br />
+	<input id="btn" type="button" value="发表留言" />
+</div>
+
+</body>
+</html>

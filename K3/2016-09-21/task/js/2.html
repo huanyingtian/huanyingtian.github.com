@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background: #f00;
+            display: none;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('input').toggle(function(){
+                $('div').stop().fadeIn()
+            },function(){
+                $('div').stop().fadeOut()
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="按钮"/>
+<div>
+
+</div>
+</body>
+</html>

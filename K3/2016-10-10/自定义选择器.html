@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<meta name="description" content="智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。" />
+<title>智能社— http://www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+function getEle(str){
+	var arr = str.replace(/^\s+|\s+$/g,'').split(/\s+/);
+	var aParent = [document];
+	var aChild = [];
+	for(var i=0;i<arr.length;i++){
+		aChild = getByStr(aParent,arr[i]);
+		//这一次获取到的子级，是下一次获取的父级
+		aParent = aChild;
+	}
+	return aChild;
+}
+window.onload = function(){
+	var aInp = getEle('    #box ul .on   input     ');
+	for(var i=0;i<aInp.length;i++){
+		aInp[i].style.background = 'red';
+	}
+};
+</script>
+</head>
+
+<body>
+<div id="box">
+	<ul>
+		<li class="on"><input type="text" value="aaa" /></li>
+		<li class="active"><input type="button" value="按钮" /></li>
+		<li class="on"><input type="text" value="aaa" /></li>
+		<li class="active"><input type="button" value="按钮" /></li>
+	</ul>
+	<ol>
+		<li class="on"><input type="text" value="aaa" /></li>
+		<li class="active"><input type="button" value="按钮" /></li>
+		<li class="on"><input type="text" value="aaa" /></li>
+		<li class="active"><input type="button" value="按钮" /></li>
+	</ol>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

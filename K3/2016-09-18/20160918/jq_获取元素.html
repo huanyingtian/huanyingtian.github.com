@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{padding: 0; margin: 0;}
+div{
+	width: 500px;
+	height: 500px;
+	background-color: #f00;
+}
+</style>
+<script type="text/javascript" src="js/jquery.min.js" ></script>
+<script></script>
+<body>
+	<div id="div1"></div>
+	<div id="div2"></div>
+	<div id="div3"></div>
+</body>
+</head>
+<script>
+	window.onload=function(){
+		var oDiv=document.getElementById('div1');
+//		alert(oDiv);
+		var aDiv=document.getElementsByTagName('div');
+		//alert(aDiv[0]);
+	};
+
+$(function(){
+	var oDiv=$('#div1');
+	//alert(oDiv);
+	var aDiv=$('div');
+	alert(aDiv);
+});
+</script>

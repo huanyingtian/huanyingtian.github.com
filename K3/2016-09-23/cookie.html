@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var oDate= new Date();
+        oDate.setDate(oDate.getDate()+4);
+        oDate.setHours(0,0,0,0);
+        document.cookie='a=10;path=/;expires='+oDate;
+        var arr=document.cookie.split('=');
+        setInterval(function(){
+            alert(arr[0]);
+            alert(arr[1]);
+
+        },10);
+    </script>
+    <!--<script>
+        var oDate=new Date();
+        oDate.setDate(oDate.getDate()+5);
+        oDate.setHours(0,0,0,0);
+        document.cookie='a=0;expires='+oDate;
+        alert(document.cookie);
+    </script>-->
+</head>
+<body>
+
+</body>
+</html>

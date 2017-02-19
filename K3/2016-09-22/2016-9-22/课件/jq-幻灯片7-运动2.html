@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	*{ padding:0; margin:0; list-style:none;}
+	.tab{ width:300px; height:300px; border:1px solid red; margin:50px auto; position:relative; overflow:hidden;}
+	input{ width:100px; height:30px; background:#ccc; border:none; float:left; cursor:pointer;}
+	.active{ background:yellow; color:red;}
+	li{ height:270px; background:#EEE; font-size:50px; text-align:center; width:300px; line-height:270px; float:left;}
+	img{ width:100%; height:100%;}
+	a{ font-size:50px; border:1px solid blue; position:absolute; top:50%; margin-top:-25px; text-decoration:none;}
+	.prev{ left:20px;}
+	.next{ right:20px;}
+	.tab ul{ width:400%;}
+	.clearfix:after{ clear:both; display:block; content:'';}
+	.clearfix{ zoom:1;}
+</style>
+<script src="js/jquery-1.7.2.js"></script>
+<script>
+	$(function(){
+		//设置当前索引值变量
+		var iNow=0;
+		
+		$('.tab input').click(function(){
+			//获取索引值
+			iNow=$(this).index();
+			tab(iNow);
+		});
+		
+		function tab(index){
+			$('.tab input').removeClass('active');
+			$('.tab input').eq(index%3).addClass('active');	
+			$('.tab ul').animate({'margin-left':-300*index},function(){
+				if(iNow==3){
+					
+					$(this).css('margin-left',0);
+					iNow=0;
+					
+				}	
+			});
+		}
+		
+		var timer=setInterval(next,3000);
+		
+		function next(){
+			iNow++;
+			tab(iNow);		
+		}
+		
+		//上一个切换
+		$('.prev').click(function(){
+			iNow--;
+			if(iNow==-1){iNow=2};
+			tab(iNow);
+		});
+		//下一个切换
+		$('.next').click(next);
+		
+		//控制定时器
+		$('.tab').hover(function(){
+			clearInterval(timer);	
+		},function(){
+			timer=setInterval(next,3000);	
+		});
+		
+	});
+</script>
+</head>
+
+<body>
+	<div class="tab">
+    	<a href="javascript:;" class="prev">&lt;</a>
+        <a href="javascript:;" class="next">&gt;</a>
+    	<div class="clearfix">
+        	<input type="button" value="新闻" class="active" />
+            <input type="button" value="图片" />
+            <input type="button" value="体育" />
+        </div>
+        <ul>
+        	<li><img src="img/1.jpg" /></li>
+            <li><img src="img/2.jpg" /></li>
+            <li><img src="img/3.jpeg" /></li>
+            <li><img src="img/1.jpg" /></li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

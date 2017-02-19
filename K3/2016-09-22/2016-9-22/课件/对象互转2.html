@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="js/jquery-1.7.2.js"></script>
+<script>
+	$(function(){
+		$('input').click(function(){
+			//$(this).css('background','blue');	
+			//this.style.background='blue';
+			
+			var oDiv=document.getElementsByTagName('div')[0];
+			
+			$(oDiv).css('background','blue');
+		});	
+	})
+</script>
+<style>
+	div{ width:200px; height:200px; background:red;}
+</style>
+</head>
+
+<body>
+	<input type="button" value="按钮" />
+	<div></div>
+</body>
+</html>

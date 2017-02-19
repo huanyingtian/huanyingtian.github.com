@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="js/jquery-1.7.2.js"></script>
+<script>
+	$(function(){
+		
+		$.ajax({
+			url:'data/demo.data',
+			success:function(str){
+				var arr=eval('('+str+')');
+				var aLi=null;
+				$.each(arr,function(index,json){
+					var str='<li><h2><a href="'+json.href+'">'+json.tit+'</a></h2></li>';
+					$('.list').append(str);
+					aLi=$('.list').children();	
+				});
+				
+				aLi.each(function(index,element){
+					
+			//arr[$(element).index()]['s-tit'];
+			
+					//alert(arr[$(element).index()]['s-tit'][0].tit);
+					
+					
+					
+				})
+				
+				
+			}	
+			
+		});
+		
+	})
+</script>
+</head>
+
+<body>
+	<ul class="list">
+    	
+    
+    </ul>
+</body>
+</html>
+
+
+
+
+
+
+
+

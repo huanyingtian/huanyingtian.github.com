@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        *{ margin:0; padding:0; list-style:none;}
+        #box{ width:534px; height:300px; position:relative; margin:50px auto;}
+        #box ul{ position:absolute; left:0; top:0; }
+        #box ul li{ float:left; width:534px; height:300px;}
+        #box ul li img{ height:300px;}
+
+        #box a{ transition:.2s all ease;}
+        #box .prev,#box .next{position:absolute;  top:50%; z-index:2; height:80px; line-height:80px; background:rgba(0,0,0,0.6); color:#fff; width:80px; text-align:center; margin-top:-40px; display:none;}
+        #box .prev{ left:0;}
+        #box .next{ right:0;}
+        #box a:hover{ background:rgba(255,0,0,0.4);}
+
+        #box ol{ position:absolute; width:120px; left:50%; margin-left:-60px; bottom:10px;}
+        #box ol li{ width:20px; height:20px; background:#f60; float:left; margin:2px; text-align:center; text-indent:-9999px; border-radius:50%;}
+        #box ol li.active{ background:#fff;}
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            var oBox=$('#box');
+            var oPre=$(".prev");
+            var oNex=$(".next");
+            var oUl=$("ul");
+            var aLi=$("ul li");
+            var aBtn=$("ol li");
+            var n=0;
+            function tab(){
+                aBtn.removeClass('active');
+               aBtn.eq([(n%5 + 5) % 5]).addClass('active');
+                oUl.stop().animate({left: -aLi.width()*n}, 500);
+            }
+            $(aLi).clone().prependTo(oUl);
+            oUl.width(oUl.width()*10);
+            aBtn.each(function(i){
+
+                    $(this).click(function(){
+                        n=i;
+                        if((n%5==4||n%5==-1)&&i==0){
+                            n++;
+                        }
+                        if(n%5==0&&i==aBtn.length-1){
+                            n--;
+                        }
+                        n=Math.floor(n/aBtn.length)*aBtn.length+i;
+                        tab();
+                    })
+
+            });
+            oBox.mouseover(function(){
+                oPre.css("display","block");
+                oNex.css("display","block");
+            });
+            oBox.mouseout(function(){
+                oPre.css("display","none");
+                oNex.css("display","none");
+            });
+            oPre.click(function(){
+              n--;
+                if(n<0){
+                    n=$(this);
+                }
+                tab();
+            });
+            oNex.click(function(){
+                n++;
+                if(n>$(this)){
+                    n=0;
+                }
+                tab();
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="box">
+    <a href="javascript:;" class="prev">prev</a>
+    <a href="javascript:;" class="next">next</a>
+    <ul>
+        <li><img src="img/0.jpg"></li>
+        <li><img src="img/1.jpg"></li>
+        <li><img src="img/2.jpg"></li>
+        <li><img src="img/3.jpg"></li>
+        <li><img src="img/4.jpg"></li>
+    </ul>
+    <ol>
+        <li class="active">0</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ol>
+</div>
+</body>
+</html>

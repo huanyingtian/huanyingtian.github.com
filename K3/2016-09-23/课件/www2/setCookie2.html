@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+	function setCookie(name,val,iDay){
+		if(iDay){
+			var oDate=new Date();
+			oDate.setDate(oDate.getDate()+iDay);
+			oDate.setHours(0,0,0,0);	
+		}
+		document.cookie=name+'='+val+';path=/;expires='+oDate;
+	}
+	
+	//1. name
+	//2. value
+	//3. time 过期时间
+	setCookie('王老五','王老吉');
+	
+	alert(document.cookie);
+	
+</script>
+</head>
+
+<body>
+</body>
+</html>

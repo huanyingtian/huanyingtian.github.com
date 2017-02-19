@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{ margin: 0; padding: 0;}
+body{width: 500px; margin: 50px auto;}
+input{width: 100px;}
+div{ display:none;width: 200px; height: 200px; border: 1px solid #0FF;}
+</style>
+<body>
+	<input type="button" value="ttt" />
+	<div></div>
+</body>
+</head>
+<script src="js/jquery.min.js"></script>
+<script>
+	$(function(){
+		$('input').click(function(){
+			$('div').slideDown('normal','linear',function(){
+				$('input').fadeOut();
+			});
+		});
+	});
+</script>

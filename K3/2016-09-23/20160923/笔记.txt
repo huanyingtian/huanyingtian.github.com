@@ -1,0 +1,225 @@
+animate
+声明插件 调用插件 +3
+作业
+on/off 事件委托 +2 
+对象互转
+-------------------------------------------
+move(obj,{width:100,height:200},{duration:1000,easing:'linear',complete:function(){
+	//运动完毕时执行
+}});
+
+------------------------------------------
+开关
+	bReady
+
+	if(!bReady)return;
+	bReady=false;
+
+	if(条件满足){
+		bReady=true;	
+	}
+---------------------------------------
+jq特性：
+	可以拓展插件 可以采用jq内部方法去做自己想做的功能，然后封装，直接通过jq调用
+
+	jq 所有的事件 都是用事件绑定添加上的！
+
+
+	drag();
+
+==========================================
+接口地址：
+	http://www.zhinengshe.com/data/1.php
+
+	ajax 去调取接口里头的数据
+
+	$.ajax({
+		url:'http://www.zhinengshe.com/data/1.php',
+		success:function(str){
+			1. 将字符串转成数据
+				eval('('+str+')');
+
+				会遇到一个问题：json格式的情况下 会报错，语法错误，改变写法
+
+				直接记住 ajax进来就eval上面加括号！
+
+
+				操作数据
+			2. [] {}
+			for
+			for(in)
+
+			$.each(arr,function(index,val){
+
+			});
+
+		}
+	});
+	
+解析数据：
+	var arr=eval('('+str+')');
+
+	看数据格式！
+------------------------------------------------
+undefined != null
+未定义       空
+	
+----------------------------------------------
+事件委托
+	事件
+	委托 ： 让别人帮你做事
+
+	on 有俩个功能
+		1. 事件绑定
+		$('div').on('click',function(){
+			$(this).css('background','yellow');	
+		});
+
+		2. 事件委托
+		$(document).on('click','div',function(){
+			$(this).css('background','yellow');
+		});
+----------------------------------------------
+对象互转
+
+js转jq
+	var oBtn=document.getElementById('box');
+			
+	$(oBtn).css('background','yellow');
+
+jq转js
+	$('#box')[0].style.background='yellow';
+	$('#box').get(0).style.background='yellow';
+====================================================
+cookie 饼干
+	浏览器中保存网站数据的一个小屋子
+
+	上网 登录
+	保存用户状态 
+
+cookie 默认的过期时间 时当前会话窗口关闭时 自动消失!
+
+
+设置cookie
+	document.cookie='name=val';
+
+	记住设置过期时间：
+		var oDate=new Date();
+		oDate.setDate(oDate.getDate()+10);
+		oDate.setHours(0,0,0,0);
+
+	document.cookie='name=val;expires='+oDate;
+
+	path 路径
+
+		path=/  根目录
+
+	记住设置cookie
+		需要三个值
+
+			name=val;
+			path=/;
+			expires=oDate (过期时间)
+
+	封装函数：
+		function setCookie(name,val,iDay){
+			if(iDay){
+				var oDate=new Date();
+				oDate.setDate(oDate.getDate()+iDay);
+				oDate.setHours(0,0,0,0);	
+			}
+			document.cookie=name+'='+val+';path=/;expires='+oDate;
+		}
+
+获取cookie
+	getCookie();
+
+
+	function getCookie(name){
+		//alert(document.cookie);
+		var arr=document.cookie.split('; ');
+		
+		for(var i=0; i<arr.length;i++){
+			var arr2=arr[i].split('=');
+			if(name==arr2[0]){
+				return arr2[1];	
+			}
+		}
+	}
+
+
+删除cookie
+	只需要把过期时间写成 以前的时间
+	function removeCookie(name){
+		var oDate=new Date();
+		oDate.setDate(oDate.getDate()-1);
+		oDate.setHours(0,0,0,0);
+		document.cookie=name+'=abc;path=/;expires='+oDate;
+	}
+
+cookie
+	特点：
+		1. 不能保存重复的名 是唯一的！
+		2. 随着域名保存的
+		3. 大小限制 4K
+		4. 存的是字符串
+--------------------------------------------
+拖拽 记录拖拽位置
+
+换肤 
+
+================================================
+模块化定义
+	一个功能就是一个文件
+
+	1. 加快页面的加载速度
+	2. 避免命名冲突
+	3. "便于维护"
+
+	依赖外部的js文件 
+		require.js
+
+	官网：
+		http://www.requirejs.cn/
+
+	 怎么使用require
+
+	 	所有的功能 都应该模块化
+	 		             分开文件单独保存！
+
+	 1. 引入require.js
+	 	<script src="require.js"></script>
+
+	 2. 调用模块
+	 	require(['a'],function(mod1){
+			mod1();	
+		});
+	 3. 定义模块
+	 	define(function(require,exports,module){
+	 		//require 导入其他模块
+			//exports 导出模块
+			//module  批量导出模块
+
+	 	});
+初始化模块化js
+	<script src="require.js" data-main="init"></script>
+
+	data-main="init" 自定义属性 调用初始化js
+------------------------------------------------
+灵魂回想 
+	动态化 页面 ajax 
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+

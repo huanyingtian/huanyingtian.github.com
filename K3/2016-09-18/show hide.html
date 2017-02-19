@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            width: 500px;
+            margin: 0 auto;
+        }
+        div{
+            width: 200px;
+            border-radius:50%;
+            height: 200px;
+            background: #000;
+            display: block;
+        }
+        p{
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+            background: #f00;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            //$('div:has(p)').css('background','blue');
+            var oDiv = $('div');
+            $('#btn').click(function(){
+                if(oDiv.attr('sh')==0){
+                    oDiv.hide();
+                    oDiv.attr('sh',1)
+                }else{
+                    oDiv.show();
+                   oDiv.attr('sh',0)
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+<input type="button" value="变换" id="btn"/>
+<div sh="0"></div>
+</body>
+</html>

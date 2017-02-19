@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	*{padding:0;margin:0;}
+	textarea{
+	width:200px;
+	height:500px;
+	font-size:24px;	
+		}
+		#btn{}
+</style>
+<script>
+	//var str = 'welcom234sd65f6e tf6o z989823hinengshe'
+	//document.write(str.match(/\d+/g));
+	//document.write(str.match(/\d+/g));
+	//敏感词汇过滤
+	window.onload=function(){
+		var oBtn = document.getElementById('btn');
+		var oT1 = document.getElementById('t1');
+		var oT2 = document.getElementById('t2');
+		oBtn.onclick=function(){
+				oT2.value = oT1.value.replace(/水|国/g,'a')
+		}
+	}[\1\8-\1\0\0]
+</script>
+</head>
+
+<body>
+<textarea id="t1">离开家举案说法史蒂芬孙 水电费金额 是的开发巨额偶打飞机哦宽案发为按实际的发生地方撒旦积分奥迪就大佛所说的开发Joe覅额积极方法地方撒啊水豆腐额水电费静安寺打</textarea>
+<input type="button" value="按钮" id="btn" />
+<textarea id="t2"></textarea>
+</body>
+</html>

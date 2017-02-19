@@ -1,0 +1,49 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<meta name="description" content="智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。" />
+<title>智能社— http://www.zhinengshe.com</title>
+<style>
+</style>
+<script src="angular.js"></script>
+<script>
+var app = angular.module('app',[]);
+
+app.filter('getCnDay',function(){
+	return function(input){
+		var oDate = new Date(input);
+		/*
+		var arr = ['日','一','二','三','四','五','六'];
+		return '星期'+arr[oDate.getDay()];
+		*/
+		return '星期'+('日一二三四五六'.charAt(oDate.getDay()));
+	};
+});
+
+app.controller('main',function($scope){
+	$scope.a = Date.now();
+});
+</script>
+</head>
+
+<body ng-controller="main">
+	{{a|getCnDay}}
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

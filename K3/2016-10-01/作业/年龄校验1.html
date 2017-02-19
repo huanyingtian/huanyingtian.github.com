@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        body{
+            width: 300px;
+            margin: 0 auto;
+        }
+        div{
+            font-size: 50px;
+            color: #f00;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oBtn = document.getElementById('btn');
+            var oT = document.getElementById('txt');
+            var oSpan = document.getElementsByTagName('span')[0];
+            oT.onkeyup=function(){
+                if(oT.value==''){
+                    oSpan.value='';
+                    return;
+                };
+            };
+
+            oBtn.onclick=function(){
+                if(oT.value=='')return;
+                var result = /^((1[89])|([2-6]\d)|(70))$/.test(oT.value);
+                if(result){
+                    oSpan.innerHTML='年龄格式正确！';
+                }else{
+                    oSpan.innerHTML='年龄格式错误！';
+                    setTimeout(function(){
+                        oSpan.innerHTML='';
+                        oT.value='';
+                    },1000);
+                };
+            };
+        };
+    </script>
+</head>
+<body>
+<div>有缘网</div>
+<input type="text" name="" id="txt"/>
+<span></span>
+<br>
+<input type="button" value="校验" id="btn"/>
+</body>
+</html>

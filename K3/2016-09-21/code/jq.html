@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: #000;
+        }
+    </style>
+    <script src="../js/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('div').click(function(){
+                $(this).css({width:'400',height:'800',background:'#00f'})
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>

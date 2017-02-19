@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<meta name="description" content="智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。" />
+<title>智能社— http://www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+var arr = [502,23,68,1,79,33,22,108,510];
+function findMin(arr,start){
+	var iMin = arr[start];
+	var iMinIndex = start;
+	for(var i=start;i<arr.length;i++){
+		if(arr[i]<iMin){
+			iMin = arr[i];
+			iMinIndex = i;
+		}
+	}
+	return iMinIndex;
+}
+function selectionSort(arr){
+	for(var i=0;i<arr.length;i++){
+		var index = findMin(arr,i);
+		var tmp = arr[i];
+		arr[i] = arr[index]
+		arr[index] = tmp;
+	}
+	return arr;
+}
+document.write(selectionSort(arr));
+</script>
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

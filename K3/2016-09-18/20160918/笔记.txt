@@ -1,0 +1,102 @@
+周磊    
+	服务器
+1、cookie
+	不知道怎么写？
+	存东西！  
+	不安全!!!
+	存东西、拿
+	
+2、jq   
+	1、方便写代码*****
+	dddd  d   $('#id')
+	2、 
+	用原生的js封装了一个jq （框架/库）
+	区别：
+		jq能实现的js一定能实现
+		jq不能实现的js也能实现
+		
+3、seajs
+	1、库 
+		写过选项卡 
+------------------------------------------------------
+jq: 
+	进入公司用：ready      jq:$();
+	$(); js:ready 
+	获取id
+	
+	jq 不能和js混着用******
+	项目中调错最好用console.log();
+		
+选项卡：先清空所有的，给当前的加
+----------下午-----------------
+伪类：
+:first
+	获取匹配的第一个元素
+:last
+	获取匹配的最后个元素
+:not(selector)
+	selector:用于筛选的选择器
+:even
+	匹配所有索引值为(偶数)的元素，从 0 开始计数
+	整数中,能被2整除的数是偶数(就是人们口头上说的双数),反之是奇数(人们口头叫单数).
+:odd
+	匹配所有索引值为(奇数)的元素，从 0 开始计数
+:eq(index)
+	index:从0开始计数	
+	匹配一个给定索引值的元素
+:gt(index)
+	匹配所有大于给定索引值的元素
+:lt(index)
+	匹配所有小于给定索引值的元素
+:contains(text)
+	text:用于查找的字符串
+:has(selector)
+	selector:一个用于晒选的选择器
+----------------------------------------------
+属性：
+	.val() 获取input里面value的值  
+	.html() 获取div、p、span..... 除了input
+	.attr();
+方法：
+	show(); 显示要操作的元素
+	hide(); 隐藏要操作的元素
+	fadeIn(); 淡入 
+	fadeOut(); 淡出 
+	slideDown([speed],[easing],[fn])
+		这个动画效果只调整元素的高度
+		speed[,fn](可选)Number/String,FunctionV1.0speed:三种预定速度之一的字符串("slow","normal", or "fast")或表示动画时长的毫秒数值(如：1000)
+
+			fn:在动画完成时执行的函数，每个元素执行一次。
+			
+			[speed],[easing],[fn](可选)Number/String,String,FunctionV1.4.3speed:三种预定速度之一的字符串("slow","normal", or "fast")或表示动画时长的毫秒数值(如：1000)
+			
+			easing(可选):(Optional) 用来指定切换效果，默认是"swing"，可用参数"linear"
+			
+			fn在动画完成时执行的函数，每个元素执行一次。
+		回调函数：前面的执行了，再执行回调函数里面的
+		
+	slideUp([speed,[easing],[fn]])
+	
+	animate(params,[speed],[easing],[fn]) ---> 运动
+		params必填 
+		其他的参数都是选填的
+--------------------事件-------------------
+click();
+	点击事件
+mouseover([[data],fn]);
+	会在鼠标移入对象时触发
+mouseout() :鼠标移除时触发
+
+
+
+
+
+
+
+
+
+
+	
+
+		
+		 

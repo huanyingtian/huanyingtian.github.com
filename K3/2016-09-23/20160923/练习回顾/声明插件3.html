@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	div{ width:300px; height:300px; background:red; position:absolute; top:200px;}
+	p{ width:100px; height:100px; background:blue; position:absolute;}
+</style>
+<script src="js/jquery-1.7.2.js"></script>
+<script>
+	$.fn.drag=function(){
+		//alert(this);
+		var _this=this;
+		
+		_this.mousedown(function(ev){
+			var disX=ev.clientX-$(this).offset().left;
+			var disY=ev.clientY-$(this).offset().top;
+			$(document).mousemove(function(ev){
+				var x=ev.clientX-disX;
+				var y=ev.clientY-disY;
+				_this.css({'left':x,'top':y});	
+			});
+			$(document).mouseup(function(){
+				$(document).off('mousemove');	
+				$(document).off('mouseup');
+			});
+			return false;
+		});	
+	};
+
+	$(function(){
+		
+		$('p').drag();
+		
+		$('div').drag();
+	})
+</script>
+</head>
+
+<body>
+	<p></p>
+	<div></div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<meta name="description" content="智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。" />
+<title>智能社— http://www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+textarea{ width:300px; height:400px; font-size:20px;}
+</style>
+<script>
+window.onload = function(){
+	var oTxt1 = document.getElementById('txt1');
+	var oTxt2 = document.getElementById('txt2');
+	var oBtn = document.getElementById('btn1');
+	oBtn.onclick = function(){
+		oTxt2.value = oTxt1.value.replace(/亿|国|大|今天/g,function(str){
+			var tmp = '';
+			for(var i=0;i<str.length;i++){
+				tmp+='*';
+			}
+			return tmp;
+		});
+	};
+};
+</script>
+</head>
+
+<body>
+	<textarea id="txt1">亿欧8月25日消息：今天上午，2016中国民营企业500强发布会在北京召开。榜单显示，华为控股有限公司以营收总额3590.09亿排名第一，苏宁控股、山东魏桥集团分别以3502.88亿、3332.38亿分列二三位。联想、正威国际、大连万达、中国华信、恒力集团、江苏沙钢、万科，分列四至十位。此外，全国工商联经济部部长谭林发布了《2016中国民营企业500强发布报告》。报告显示，2015年
+	</textarea>
+	<input type="button" value="过滤" id="btn1" />
+	<textarea id="txt2"></textarea>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style></style>
+    <script>
+        window.onload = function () {
+            var oBtn = document.getElementById('btn');
+            var oT = document.getElementById('txt');
+            var oSpan = document.getElementsByTagName('span')[0];
+            var timer = null;
+            oT.onkeydown = function () {
+                if (oT.value == '') {
+                    oSpan.innerHTML = '';
+                }
+                ;
+            };
+            oBtn.onclick = function () {
+                if (oT.value == '')return;
+                var result = /^[1-9]\d{13}([0-9xX]|(\d{3}[0-9xX]))$/.test(oT.value);
+                if (result) {
+                    oSpan.innerHTML = '   的格式正确！';
+                } else {
+                    oSpan.innerHTML = '   的格式错误！';
+                    timer = setTimeout(function () {
+                        oSpan.innerHTML = '';
+                        oT.value = '';
+                    }, 1000);
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+<input type="text" name="" id="txt">
+<input type="button" value="校验" id="btn">
+<br>
+<span></span>
+
+</body>
+</html>

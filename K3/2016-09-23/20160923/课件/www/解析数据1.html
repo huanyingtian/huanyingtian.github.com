@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="js/jquery-1.7.2.js"></script>
+<script>
+	$(function(){
+		//$('ul')
+		
+		$.ajax({
+			url:'data/data.txt',
+			success:function(str){
+				var arr=eval('('+str+')');
+				
+				$.each(arr,function(index,val){
+					var str='<li><h3>'+val.name+'</h3><p>'+val.age+'</p><p>'+val.info+'</p><p>'+val.message+'</p></li>';
+					
+					$('ul').append(str);
+				});
+			}	
+		});
+		
+	})
+</script>
+</head>
+
+<body>
+	<ul class="list">
+    </ul>
+</body>
+</html>
+
+
+
+
+
+
+
+

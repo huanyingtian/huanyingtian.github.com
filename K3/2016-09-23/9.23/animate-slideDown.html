@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            width: 0px;
+            height: 200px;
+            background: #f00;
+
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            var oD = $('div');
+            $('input').toggle(function(){
+                oD.stop().animate({width:'2000'},1000,'linear',function(){
+                    return;
+                });
+            },function(){
+                oD.stop().animate({width:0},1000,'linear',function(){
+                    return;
+                });
+            });
+        });
+    </script>
+</head>
+<body style="width: 500px;margin: 0 auto;">
+<input type="button" value="按钮"/>
+<div></div>
+</body>
+</html>

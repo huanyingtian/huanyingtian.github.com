@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>+
+    <link rel="stylesheet" href="zns_style.css"/>
+    <script>
+        window.onload=function (){
+            var oBtn = document.getElementById('btn');
+            var oT = document.getElementById('text');
+            var oBox = document.getElementById('box');
+            var oEm = oBox.children[0];
+            var n = 0;
+            oBtn.onclick=function (){
+                if(oT.value==''){
+                    return ;
+                };
+                n++;
+                var oP = document.createElement('p');
+                oP.innerHTML=n+'.'+oT.value;
+                oBox.appendChild(oP);
+                oT.value='';
+                oP.onmouseover = function (){
+                    this.style.background='yellow';
+                    var oSpan = document.createElement('span');
+                    oSpan.innerHTML='确定要删除<strong style="color: #f00;">'+this.innerHTML+'</strong>么？';
+                    oP.appendChild(oSpan);
+                };
+                oP.onmouseout=function (){
+                    this.style.background='#f1f1f1';
+                    this.removeChild(this.children[0]);
+                };
+                oP.onclick=function (){
+                    oBox.removeChild(this);
+                    oEmShow();
+                };
+            };
+            function oEmShow(){
+                if(oBox.children.length==1){
+                    oEm.style.display='block';
+                    n=0;
+                }else{
+                    oEm.style.display='none';
+                }
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+<div id="parent">
+    <h4>留言内容：</h4>
+    <div id="box"><em>这里会显示留言内容……</em></div>
+    <textarea id="text"></textarea><br />
+    <input id="btn" type="button" value="发表留言" />
+</div>
+</body>
+</html>

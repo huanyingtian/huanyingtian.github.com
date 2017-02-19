@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style:none;
+
+        }
+        .l{
+            background:#fff;
+            color:#000;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            var aLi = $('li');
+            aLi.each(function(i){
+                $(this).click(function(){
+
+                    if($(this).ClassName!='li'){
+                        aLi.css({background:'#fff',color:'#000'});
+                        $('li').eq(i).css({background:'green',color:'#f00'});
+                    }else{
+                        aLi.css({background:'#fff',color:'#000'});
+                        $("li:not('.l')").eq(i).css({background:'green',color:'#f00'});
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+<ul>
+    <li class="l">nlfjfkd</li>
+    <li>skdjfkjkdf</li>
+    <li>.dfngdfkjjd</li>
+    <li>kdfgkjdfldflk</li>
+    <li>dkfngdfkj</li>
+</ul>
+</body>
+</html>

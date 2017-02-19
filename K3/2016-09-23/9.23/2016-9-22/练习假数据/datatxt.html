@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            margin: 0 auto;
+            width: 500px;
+        }
+    </style>
+    <script src="js/jquery-1.7.2.js"></script>
+    <script>
+        $(function(){
+            $.ajax({
+                url:'data.txt',
+                success: function (a) {
+                    var arr=eval(a);
+                    $.each(arr,function(index,val){
+                        $('ul').append('<li style="color: #f00;margin: 50px 0 10px;">姓名：'+val.name+'</li>');
+                        $('ul').append('<li style="color: #00f; margin: 10px 0;">年龄：'+val.age+'</li>');
+                        $('ul').append('<li style="background: #ff0; margin: 10px 0;">人生格言：'+val.info+'</li>');
+                        $('ul').append('<li style="background: #ccc; color: #fff; line-height: 30px; margin: 10px 0;">简介：'+val.message+'</li>');
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<ul>
+
+</ul>
+</body>
+</html>

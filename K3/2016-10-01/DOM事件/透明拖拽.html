@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oBox=document.getElementById('box');
+            oBox.onmousedown=function(ev){
+                var oEvent=ev||event;
+                var dix=oEvent.clientX-oBox.offsetLeft;
+                var diy=oEvent.clientY-oBox.offsetTop;
+                var newDiv=oBox.cloneNode(true);
+                newDiv.style.opacity=0.5;
+                newDiv.removeAttribute('id');
+                oBox.parentNode.appendChild(newDiv);
+                document.onmousemove=function(ev){
+                    var oEvent=ev||event;
+                    newDiv.style.left=oEvent.clientX-dix+'px';
+                    newDiv.style.top=oEvent.clientY-diy+'px';
+                };
+                document.onmouseup=function(){
+                    document.onmousemove=null;
+                    document.onmouseup=null;
+                    oBox.style.left=newDiv.style.left;
+                    oBox.style.top=newDiv.style.top;
+                    oBox.parentNode.removeChild(newDiv);
+                    oBox.releaseCapture()&&oBox.releaseCapture()
+                };
+                oBox.setCapture&&oBox.setCapture();
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <h3>标题3333</h3>
+    <h3>标题3333</h3>
+    <h3>标题3333</h3>
+    <h3>标题3333</h3>
+
+</div>
+</body>
+</html>

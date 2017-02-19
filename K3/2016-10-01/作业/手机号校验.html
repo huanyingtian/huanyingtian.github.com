@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style:none;
+        }
+
+    </style>
+    <script>
+        window.onload=function(){
+            var oBtn = document.getElementById('btn');
+            var oT = document.getElementById('txt');
+            oBtn.onclick=function(){
+                var result =/^1[34578]\d{9}$/.test(oT.value);
+                alert(result);
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" name="" id="txt"/>
+<input type="button" value="校验" id="btn"/>
+</body>
+</html>

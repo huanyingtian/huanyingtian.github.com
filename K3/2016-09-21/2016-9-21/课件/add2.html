@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="js/jquery-1.7.2.js"></script>
+<style>
+	div{ width:300px; height:300px; background:blue;}
+	p{ background:red;}
+</style>
+<script>
+	$(function(){
+		var span='<span>这是span</span>';
+		$('body').append(span);
+		
+		//必须在dom节点渲染之后再添加事件
+		$('span').click(function(){
+			alert(2);	
+		});
+		
+		$('p').click(function(){
+			alert(1);	
+		});
+	});
+</script>
+</head>
+
+<body>
+	<p>Hello</p>
+</body>
+</html>

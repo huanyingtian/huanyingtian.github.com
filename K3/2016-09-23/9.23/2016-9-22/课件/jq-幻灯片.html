@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	*{ padding:0; margin:0; list-style:none;}
+	.tab{ width:300px; height:300px; border:1px solid red; margin:50px auto;}
+	input{ width:100px; height:30px; background:#ccc; border:none; float:left; cursor:pointer;}
+	.active{ background:yellow; color:red;}
+	li{ height:270px; background:#EEE; font-size:50px; text-align:center; line-height:270px; display:none;}
+	.show{ display:block;}
+	.clearfix:after{ clear:both; display:block; content:'';}
+	.clearfix{ zoom:1;}
+</style>
+<script src="js/jquery-1.7.2.js"></script>
+<script>
+	$(function(){
+		$('.tab input').click(function(){
+			$('.tab input').removeClass('active');
+			$(this).addClass('active');	
+			
+			//获取索引值
+			var i=$(this).index();
+			$('.tab li').hide();
+			$('.tab li').eq(i).show();
+		});
+	});
+</script>
+</head>
+
+<body>
+	<div class="tab">
+    	<div class="clearfix">
+        	<input type="button" value="新闻" class="active" />
+            <input type="button" value="图片" />
+            <input type="button" value="体育" />
+        </div>
+        <ul>
+        	<li class="show">新闻</li>
+            <li>图片</li>
+            <li>体育</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

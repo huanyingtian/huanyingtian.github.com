@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var oBtn = document.getElementById('btn');
+            var oT = document.getElementById('txt');
+            var oUl = document.getElementById('ul1');
+            oBtn.onclick=function(){
+                //创建一个li
+                var oLi = document.createElement('li');
+                //添加li的内容
+                oLi.innerHTML = '内容：'+oT.value+'<a href="javascript:;">删除</a>';
+                //添加到ul里
+                if(oUl.children.length){
+                    oUl.insertBefore(oLi,oUl.children[0]);
+                }else{
+                    oUl.appendChild(oLi);
+                }
+                //清空text框
+                oT.value='';
+                //获取到 a标签
+                var oA = oLi.children[0];
+                oA.onclick=function(){
+                    oA.parentNode.parentNode.removeChild(oA.parentNode);
+                };
+            };
+        };
+    </script>
+</head>
+<body>
+<input type="text" name="" id="txt"/>
+<input type="button" value="留言" id="btn"/>
+<ul id="ul1">
+
+</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

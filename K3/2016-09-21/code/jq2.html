@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            width: 200px;
+            height: 200px;
+            border:1px solid #ccc;
+            display: none;
+        }
+    </style>
+    <script src="../js/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('#btn').toggle(function(){
+                $('ul').show();
+            },function(){
+                $('ul').hide();
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="按钮" id="btn"/>
+<ul>
+    <li>dfljksd</li>
+    <li>kdfglkdf0</li>
+    <li>ldfjg;kld</li>
+</ul>
+</body>
+</html>

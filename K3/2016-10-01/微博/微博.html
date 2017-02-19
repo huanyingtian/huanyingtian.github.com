@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="weibo.css" rel="stylesheet"/>
+    <link href="base.css" rel="stylesheet"/>
+    <script src="new_ajax.js"></script>
+    <script>
+        window.onload=function(){
+//
+            var oSearch=document.getElementById('search');
+            var oSpan=oSearch.children[0];
+            var oInp=oSearch.children[1];
+//            //搜索框
+            oInp.onfocus=function(){
+                oSpan.style.display='none';
+            };
+            oInp.onblur=function(){
+                if(this.value==''){
+                    oSpan.style.display='block';
+                }
+            };
+            oSpan.onclick=function(){
+                oInp.focus()
+            };
+            //微博换一换
+            var oTop=document.getElementById('topic_1');
+            var oBtn=oTop.children[1];
+            var oList=document.getElementById('topic_2');
+            function getData(){
+                ajax({
+                    url:'data.txt',
+                    success:function(result){
+                        var arr=eval('('+result+')');
+                        oList.innerHTML='';
+                        arr.sort(function(){
+                            return Math.random()-0.5;
+                        });
+                        for(var i=0;i<9;i++){
+                            var oLi=document.createElement('li');
+                            oLi.innerHTML='<a href="'+arr[i].href+'">'+arr[i].title+'</a><span>'+arr[i].count+'</span>'
+                            oList.appendChild(oLi);
+                        }
+                    },error:function(err){
+                        alert('失败'+err)
+                    }
+                })
+            }
+            getData();
+            oBtn.onclick=function(){
+                getData();
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="top">
+
+<div class="top_1"></div>
+    <div class="clearfix gn_header">
+        <div class="logal fl">
+            <a href="javascript:;" class="logal_1"><span class="logal_2"></span></a>
+        </div>
+        <div class="search" id="search">
+            <span>大家正在搜:北京癌症旅馆</span>
+            <input type="text"/>
+            <a href="javascript:;">搜索</a>
+        </div>
+        <ol class="nav_flist fr">
+            <li><a href="javascript:;">注册</a></li>
+            <li class="aa"></li>
+            <li><a href="javascript:;">登陆</a></li>
+        </ol>
+        <ul class="nav_list fr">
+            <li><a href="javascript:;"><span>E</span>首页</a></li>
+            <li><a href="javascript:;"><span></span>视频</a></li>
+            <li><a href="javascript:;"><span>F</span>发现</a></li>
+            <li><a href="javascript:;"><span>G</span>游戏</a></li>
+        </ul>
+
+    </div>
+</div>
+<div class="amaa clearfix">
+<div class="main">
+    <div class="fame">
+        <!--左边导航-->
+        <div class="left_main">
+            <ul class="left_list">
+                <li><a href="javascript:;"><em></em>推荐</a></li>
+                <li><a href="javascript:;"><em></em>明星</a></li>
+                <li><a href="javascript:;"><em></em>视频</a></li>
+                <li><a href="javascript:;"><em></em>搞笑</a></li>
+                <li><a href="javascript:;"><em></em>情感</a></li>
+                <li><a href="javascript:;"><em></em>社会</a></li>
+                <li><a href="javascript:;"><em></em>综艺</a></li>
+                <li><a href="javascript:;"><em></em>美妆</a></li>
+                <li><a href="javascript:;"><em></em>美食</a></li>
+                <li><a href="javascript:;"><em></em>美女</a></li>
+                <li><a href="javascript:;"><em></em>更多</a></li>
+            </ul>
+        </div>
+        <!--右边导航-->
+        <div class="right_main">
+            <div class="right_main_1">
+                <ul class="right_main_list">
+                    <li>
+                        <div class="pic_txt clearfix">
+                            <div class="pic_box">
+                                <a href="javascript:;"><img src=""/></a>
+                            </div>
+                            <div class="right_box">
+                                <div class="txt_box">
+                                    <a href="javascript:;">1.微博视频</a>谁都会孤单，我们都害怕孤单，当你一个人的时候听一听这首歌，也许会给你一些治愈……
+                                    <a href="javascript:;">L秒拍视频</a>
+                                    <a href="javascript:;">#张杰会孤单MV#</a>
+                                </div>
+                                <div class="bot_box">
+
+                                       <span><img src=""/></span>
+                                    <span>@张杰</span>
+                                       <span>9月29日 11:37</span>
+
+                                    <span class="rights"><em></em>267529</span>
+                                        <span class="rights adsd"></span>
+                                    <span class="rights"><em></em>29095</span>
+                                        <span class="rights adsd"></span>
+                                    <span class="rights"><em></em>4004344</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic_txt clearfix">
+                            <div class="pic_box">
+                                <a href="javascript:;"><img src=""/></a>
+                            </div>
+                            <div class="right_box">
+                                <div class="txt_box">
+                                    <a href="javascript:;">1.微博视频</a>谁都会孤单，我们都害怕孤单，当你一个人的时候听一听这首歌，也许会给你一些治愈……
+                                    <a href="javascript:;">L秒拍视频</a>
+                                    <a href="javascript:;">#张杰会孤单MV#</a>
+                                </div>
+                                <div class="bot_box">
+
+                                    <span><img src=""/></span>
+                                    <span>@张杰</span>
+                                    <span>9月29日 11:37</span>
+
+                                    <span class="rights"><em></em>267529</span>
+                                    <span class="rights adsd"></span>
+                                    <span class="rights"><em></em>29095</span>
+                                    <span class="rights adsd"></span>
+                                    <span class="rights"><em></em>4004344</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic_txt clearfix">
+                            <div class="pic_box">
+                                <a href="javascript:;"><img src=""/></a>
+                            </div>
+                            <div class="right_box">
+                                <div class="txt_box">
+                                    <a href="javascript:;">1.微博视频</a>谁都会孤单，我们都害怕孤单，当你一个人的时候听一听这首歌，也许会给你一些治愈……
+                                    <a href="javascript:;">L秒拍视频</a>
+                                    <a href="javascript:;">#张杰会孤单MV#</a>
+                                </div>
+                                <div class="bot_box">
+
+                                    <span><img src=""/></span>
+                                    <span>@张杰</span>
+                                    <span>9月29日 11:37</span>
+
+                                    <span class="rights"><em></em>267529</span>
+                                    <span class="rights adsd"></span>
+                                    <span class="rights"><em></em>29095</span>
+                                    <span class="rights adsd"></span>
+                                    <span class="rights"><em></em>4004344</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="xiaolu">
+                            <div class="xiao_1">
+                                <p><em></em>生我的和我生的</p>
+                                <div class="xiao_2"><img src="img/5.jpg" alt=""/>
+                                    <img src="img/7.jpg" alt=""/>
+                                    <img src="img/8.jpg" alt=""/>
+                                </div>
+                                <div class="bot_box">
+
+                                    <span><img src=""/></span>
+                                    <span><em></em>@李小璐Super璐</span>
+                                    <span>9月29日 11:37</span>
+
+                                    <span class="rights"><em></em>267529</span>
+                                    <span class="rights adsd"></span>
+                                    <span class="rights"><em></em>29095</span>
+                                    <span class="rights adsd"></span>
+                                    <span class="rights"><em></em>4004344</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="xiaolu">
+                            <div class="xiao_1">
+                                <a href="javascript:;">该为你的爱车配一台Hi-Res播放器了</a>
+                                <p>根据市场调查，由于现代人生活节奏的加快和生活方式的改变，越来越少的人有时间在家里的客厅欣赏音乐了。取而代之的是在各种交通工具上时用音乐打发时间。</p>
+                                <div class="xiao_2 xiao_3 "><img src="img/9.jpg" alt=""/>
+                                    <img src="img/10.jpg" alt=""/>
+                                    <img src="img/11.jpg" alt=""/>
+                                </div>
+                                <div class="bot_box">
+
+                                    <span><img src=""/></span>
+                                    <span><em></em>@飞遨James</span>
+                                    <span>9月29日 11:37</span>
+
+                                    <span class="rights"><em></em>267529</span>
+                                    <span class="rights adsd"></span>
+                                    <span class="rights"><em></em>29095</span>
+                                    <span class="rights adsd"></span>
+                                    <span class="rights"><em></em>4004344</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="xiaolu">
+                            <div class="xiao_1">
+                                <a href="javascript:;">该为你的爱车配一台Hi-Res播放器了</a>
+                                <p>根据市场调查，由于现代人生活节奏的加快和生活方式的改变，越来越少的人有时间在家里的客厅欣赏音乐了。取而代之的是在各种交通工具上时用音乐打发时间。</p>
+                                <div class="xiao_2 xiao_3 "><img src="img/q.jpg" alt=""/>
+                                    <img src="img/w.jpg" alt=""/>
+                                    <img src="img/e.jpg" alt=""/>
+                                </div>
+                                <div class="bot_box">
+
+                                    <span><img src=""/></span>
+                                    <span><em></em>@飞遨James</span>
+                                    <span>9月29日 11:37</span>
+
+                                    <span class="rights"><em></em>267529</span>
+                                    <span class="rights adsd"></span>
+                                    <span class="rights"><em></em>29095</span>
+                                    <span class="rights adsd"></span>
+                                    <span class="rights"><em></em>4004344</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic_txt clearfix">
+                            <div class="pic_box">
+                                <a href="javascript:;"><img src=""/></a>
+                            </div>
+                            <div class="right_box">
+                                <div class="txt_box">
+                                    <a href="javascript:;">1.微博视频</a>谁都会孤单，我们都害怕孤单，当你一个人的时候听一听这首歌，也许会给你一些治愈……
+                                    <a href="javascript:;">L秒拍视频</a>
+                                    <a href="javascript:;">#张杰会孤单MV#</a>
+                                </div>
+                                <div class="bot_box">
+
+                                    <span><img src=""/></span>
+                                    <span>@张杰</span>
+                                    <span>9月29日 11:37</span>
+
+                                    <span class="rights"><em></em>267529</span>
+                                    <span class="rights adsd"></span>
+                                    <span class="rights"><em></em>29095</span>
+                                    <span class="rights adsd"></span>
+                                    <span class="rights"><em></em>4004344</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic_txt clearfix">
+                            <div class="pic_box">
+                                <a href="javascript:;"><img src=""/></a>
+                            </div>
+                            <div class="right_box">
+                                <div class="txt_box">
+                                    <a href="javascript:;">1.微博视频</a>谁都会孤单，我们都害怕孤单，当你一个人的时候听一听这首歌，也许会给你一些治愈……
+                                    <a href="javascript:;">L秒拍视频</a>
+                                    <a href="javascript:;">#张杰会孤单MV#</a>
+                                </div>
+                                <div class="bot_box">
+
+                                    <span><img src=""/></span>
+                                    <span>@张杰</span>
+                                    <span>9月29日 11:37</span>
+
+                                    <span class="rights"><em></em>267529</span>
+                                    <span class="rights adsd"></span>
+                                    <span class="rights"><em></em>29095</span>
+                                    <span class="rights adsd"></span>
+                                    <span class="rights"><em></em>4004344</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="you_main">
+                <div class="login">
+                    <div class="login_main">
+                        <div class="login_1 clearfix">
+                            <a href="javascript:;" class="acti active">账号登陆</a>
+                            <a href="javascript:;" class="acti">安全登陆</a>
+                        </div>
+                        <div class="pass">
+                            <input type="text" placeholder="邮箱/会员/账号/手机号"/>
+                        <input type="password" class="input2" placeholder="请输入密码"/>
+                        </div>
+                        <div class="login_2">
+                            <input type="checkbox"/>
+                            <span>记住我</span>
+                            <a href="javascript:;">忘记密码</a>
+                        </div>
+                        <a href="javascript:;" class="btn">登陆</a>
+                        <div class="login_3">
+                            <span>还没有微博？</span>
+                            <a href="javascript:;">立即注册!</a>
+                        </div>
+                        <span>其他登陆:</span><a href="javascript:;"></a>
+                    </div>
+                </div>
+                <div class="down">
+                    <a href="javascript:;">
+                        <em></em>
+                        <span>iphone</span><br/>
+                        <span>客户端下载</span>
+                    </a>
+                    <a href="javascript:;">
+                        <em></em>
+                        <span>iphone</span><br/>
+                        <span>客户端下载</span>
+                    </a>
+                </div>
+                <div class="topic clearfix">
+                    <div class="topic_1" id="topic_1">
+                       <span>热门话题</span>
+                        <a href="javascript:;">换一换</a>
+
+                    </div>
+                    <ul class="topic_2" id="topic_2">
+                        <!--<li><a href="javascript:;">#佟梦实直的骄傲#<span>3388.3万</span></a></li>-->
+                        <!--<li><a href="javascript:;">#佟梦实直的骄傲#<span>3388.3万</span></a></li>-->
+                        <!--<li><a href="javascript:;">#佟梦实直的骄傲#<span>3388.3万</span></a></li>-->
+                        <!--<li><a href="javascript:;">#佟梦实直的骄傲#<span>3388.3万</span></a></li>-->
+                        <!--<li><a href="javascript:;">#佟梦实直的骄傲#<span>3388.3万</span></a></li>-->
+                        <!--<li><a href="javascript:;">#佟梦实直的骄傲#<span>3388.3万</span></a></li>-->
+                        <!--<li><a href="javascript:;">#佟梦实直的骄傲#<span>3388.3万</span></a></li>-->
+                        <!--<li><a href="javascript:;">#佟梦实直的骄傲#<span>3388.3万</span></a></li>-->
+                    </ul>
+                </div>
+                <div class="banner">
+                    <a href="javascript:;"><img src=""/></a>
+                </div>
+                <div class="sinahead">
+                    <div class="headh">
+                        <h3>新浪头条</h3>
+                    </div>
+                    <ul class="shead_1 clearfix">
+                        <li><a href="javascript:;"><em>ê</em> 热榜要问</a></li>
+                        <li><a href="javascript:;"><em>ê</em> 我爱看图</a></li>
+                        <li><a href="javascript:;"><em>ê</em> 踩你喜欢</a></li>
+                        <li><a href="javascript:;"><em>ê</em> 精彩视频</a></li>
+                    </ul>
+                    <p><span>要问</span><a href="javascript:;">这些国庆档大片你必须看</a></p>
+                    <p><span>视频</span><a href="javascript:;">这些国庆档大片你必须看</a></p>
+                    <p><span>热图</span><a href="javascript:;">这些国庆档大片你必须看</a></p>
+                </div>
+                <div class="fined">
+                    <div class="fined_1 ">
+                        <h3>微博找人</h3>
+                    </div>
+                  <div class="mingren">
+                      <h3>名人</h3>
+                      <ul>
+                          <li><a href="javascript:;"><em></em>明星</a></li>
+                          <li><a href="javascript:;"><em></em>明星</a></li>
+                          <li><a href="javascript:;"><em></em>媒体经营</a></li>
+                          <li><a href="javascript:;"><em></em>作家</a></li>
+                          <li><a href="javascript:;"><em></em>政府官员</a></li>
+                      </ul>
+                  </div>
+                    <div>
+                        <h3>专家</h3>
+                        <ul>
+                            <li><a href="javascript:;"><em></em>医疗</a></li>
+                            <li><a href="javascript:;"><em></em>育儿</a></li>
+                            <li><a href="javascript:;"><em></em>IT互联网</a></li>
+                            <li><a href="javascript:;"><em></em>作家</a></li>
+                            <li><a href="javascript:;"><em></em>政府官员</a></li>
+                            <li><a href="javascript:;"><em></em>教育</a></li>
+                            <li><a href="javascript:;"><em></em>教育</a></li>
+                            <li><a href="javascript:;"><em></em>教育</a></li>
+                            <li><a href="javascript:;"><em></em>教育</a></li>
+                            <li><a href="javascript:;"><em></em>教育</a></li>
+                            <li><a href="javascript:;"><em></em>教育</a></li>
+                            <li><a href="javascript:;"><em></em>教育</a></li>
+                            <li><a href="javascript:;"><em></em>教育</a></li>
+                            <li><a href="javascript:;"><em></em>教育</a></li>
+                            <li><a href="javascript:;"><em></em>教育</a></li>
+                            <li><a href="javascript:;"><em></em>教育</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>兴趣</h3>
+                        <ul>
+                        <li><a href="javascript:;"><em></em>时尚</a></li>
+                        <li><a href="javascript:;"><em></em>时尚</a></li>
+                        <li><a href="javascript:;"><em></em>时尚</a></li>
+                        <li><a href="javascript:;"><em></em>时尚</a></li>
+                        <li><a href="javascript:;"><em></em>时尚</a></li>
+                        <li><a href="javascript:;"><em></em>时尚</a></li>
+                        <li><a href="javascript:;"><em></em>时尚</a></li>
+                        <li><a href="javascript:;"><em></em>时尚</a></li>
+                        <li><a href="javascript:;"><em></em>时尚</a></li>
+                        <li><a href="javascript:;"><em></em>时尚</a></li>
+                        <li><a href="javascript:;"><em></em>时尚</a></li>
+                        <li><a href="javascript:;"><em></em>时尚</a></li>
+                        <li><a href="javascript:;"><em></em>时尚</a></li>
+                        <li><a href="javascript:;"><em></em>时尚</a></li>
+                        <li><a href="javascript:;"><em></em>时尚</a></li>
+                        <li><a href="javascript:;"><em></em>时尚</a></li>
+                        <li><a href="javascript:;"><em></em>时尚</a></li>
+                        <li><a href="javascript:;"><em></em>时尚</a></li>
+                        <li><a href="javascript:;"><em></em>时尚</a></li>
+                        <li><a href="javascript:;"><em></em>时尚</a></li>
+                        </ul>
+                    </div>
+                    <div class="jigou">
+                        <h3>机构</h3>
+                        <ul>
+
+                        <li><a href="javascript:;"><em></em>政务</a></li>
+                            <li> <a href="javascript:;"><em></em>媒体</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+<div class="footer">
+    <div class="white_footer clearfixk">
+        <div class="white_1">
+        <div class="amazing">
+            <h2>微博精彩</h2>
+            <ul>
+                <li><a href="javascript:;">热门微博</a></li>
+                <li><a href="javascript:;">热门微博</a></li>
+                <li><a href="javascript:;">热门微博</a></li>
+                <li><a href="javascript:;">热门微博</a></li>
+                <li><a href="javascript:;">热门微博</a></li>
+                <li><a href="javascript:;">热门微博</a></li>
+                <li><a href="javascript:;">热门微博</a></li>
+            </ul>
+        </div>
+        <div class="phone">
+            <h2>手机玩微博</h2>
+            <a href="javascript:;"><img src="img/4.jpg" alt=""/> </a>
+            <span>扫码下载，更多版本戳这里</span>
+        </div>
+        <div class="hezuo">
+            <h2>认证&合作</h2>
+            <ul>
+                <li><a href="javascript:;">申请认证</a></li>
+                <li><a href="javascript:;">开放亭台</a></li>
+                <li><a href="javascript:;">热门微博</a></li>
+                <li><a href="javascript:;">热门微博</a></li>
+                <li><a href="javascript:;">热门微博</a></li>
+                <li><a href="javascript:;">热门微博</a></li>
+                <li><a href="javascript:;">热门微博</a></li>
+                <li><a href="javascript:;">热门微博</a></li>
+            </ul>
+        </div>
+        <div class="help">
+            <h2>微博帮助</h2>
+
+                <p><a href="javascript:;">常见问题</a></p>
+            <p><a href="javascript:;">自助服务</a></p>
+
+        </div>
+        </div>
+    </div>
+    <div class="block_footer">
+        <div class="div1"><a href="javascript:;">微博客服</a><a href="javascript:;">微博客服</a><a href="javascript:;">微博客服</a><a href="javascript:;">微博客服</a><a href="javascript:;">微博客服</a><a href="javascript:;">微博客服</a><a href="javascript:;">微博客服</a></div>
+        <div class="div2"><a href="javascript:;">京ICP证100780号</a><a href="javascript:;">互联网药品服务许可证</a><a href="javascript:;">互联网医疗保健许可证</a><a href="javascript:;">京ICP证100780号</a><a href="javascript:;">京ICP证100780号</a><a href="javascript:;">增值业务电信经营许可证B2-201404</a></div>
+        <div class="div3"><span>coasdip@120-23823WEIBO北京威猛创科网络技术有限公司</span><a href="javascript:;">京公网安备123100000001001919号</a></div>
+    </div>
+</div>
+</body>
+</html>

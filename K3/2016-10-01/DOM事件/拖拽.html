@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{position: absolute;
+            left:0;
+            top:0; background: red;
+            width:200px;
+            height:200px;}
+    </style>
+    <script>
+        window.onload=function(){
+            var oBox=document.getElementById('box');
+            oBox.onmousedown=function(ev){
+                var oEvent=ev||event;
+                var dix=oEvent.clientX-oBox.offsetLeft;
+                var diy=oEvent.clientY-oBox.offsetTop;
+                document.onmousemove=function(ev){
+                    var oEvent=ev||event;
+                    oBox.style.left=oEvent.clientX-dix+'px';
+                    oBox.style.top=oEvent.clientY-diy+'px';
+
+                };
+                document.onmouseup=function(){
+                    document.onmousemove=null;
+                    document.onmouseup=null;
+
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>

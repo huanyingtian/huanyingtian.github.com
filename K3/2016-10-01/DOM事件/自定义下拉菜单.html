@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            display: none;
+        }
+    </style>
+    <script>
+        window=function(){
+            var oBox=document.getElementById('box');
+            var oUl=document.getElementsByTagName('ul');
+            var aLi=oUl.children;
+            var Block=true;
+            oBox.onclick=function(ev){
+                var oEvent=ev||event;
+                oEvent.cancelBubble=true;
+                if(Block){
+                    oUl.style.display='block';
+                }else{
+                    oUl.style.display='none';
+                }
+                Block=!Block;
+            };
+            document.onclick=function(){
+                oUl.style.display='none';
+                Block=true;
+            };
+            for(var i=0;i<aLi.length;i++){
+                aLi[i].onclick=function(){
+                    oBox.innerHTML=this.innerHTML;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="box">请选择</div>
+<ul>
+    <li>北京</li>
+    <li>上海</li>
+    <li>广州</li>
+</ul>
+</body>
+</html>

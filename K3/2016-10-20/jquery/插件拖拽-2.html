@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width:100px;
+            height:100px;
+            background: #ccc;
+            position: absolute;
+            left:0;
+            top:0;}
+        p{ width:100px;
+            height:100px;
+            background: #ccc;
+            position: absolute;
+            left:200px;
+            top:0;}
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $.fn.extend({
+            drag:function(){
+                var _this=this;
+               console.log(_this);
+                _this.mousedown(function(ev){
+                    var dix=ev.clientX-$(this).offset().left;
+                    var diy=ev.clientY-$(this).offset().top;
+                    $(document).mousemove(function(ev){
+                        var x=ev.clientX-dix;
+                        var y=ev.clientY-diy;
+                        _this.css({'left':x,'top':y});
+                    });
+                    $(document).mouseup(function(){
+                        $(document).off('mousemove');
+                        $(document).off('mouseup');
+                    });
+                    return false;
+                });
+            }
+        });
+        $(document).ready(function(){
+            $('div').drag();
+        })
+    </script>
+</head>
+<body>
+<div></div>
+<p></p>
+</body>
+</html>

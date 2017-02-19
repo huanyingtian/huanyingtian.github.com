@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background: #f00;
+            position: absolute;
+
+        }
+    </style>
+    <script src="js/jquery-1.7.2.js"></script>
+    <script>
+        $(function(){
+            var oDiv = $('div');
+            var oD = $(document);
+
+            oDiv.mousedown(function(ev){
+                var disX = ev.clientX-oDiv.offset().left;//鼠标距离div的左边的距离
+                var disY = ev.clientY-oDiv.offset().top;//鼠标距离div的上边的距离
+                oD.mousemove(function(ev){
+                    var x = ev.clientX-disX;
+                    var y = ev.clientY-disY;
+                    oDiv.css({left:x,top:y});
+                    if(x<0){
+                        x=0
+                    }
+
+                    if(y<0){
+                        y=0;
+                    }
+
+                    oDiv.css({left:x,top:y});
+
+                    oD.mouseup(function(){
+                        oD.off();
+                    });
+                    return false;
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

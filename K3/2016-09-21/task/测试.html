@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: #000;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('span').clone().prependTo('div')
+            $('div').click(function(){
+                alert(1)
+            })
+        });
+    </script>
+</head>
+<body>
+<div>
+    <span>hfsdjkfkj</span>
+</div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<meta name="description" content="智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。" />
+<title>智能社— http://www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+var root = null;
+function btAdd(node,n){
+	if(root==null){
+		root = {
+			value:n,
+			l:null,
+			r:null
+		};
+	}else{
+		if(node.value==n){
+			return;
+		}else{
+			if(n<node.value){
+				if(node.l==null){
+					node.l = {
+						value:n,
+						l:null,
+						r:null
+					};
+				}else{
+					btAdd(node.l,n);
+				}
+			}else{
+				if(node.r==null){
+					node.r = {
+						value:n,
+						l:null,
+						r:null
+					};
+				}else{
+					btAdd(node.r,n);
+				}
+			}
+		}
+	}
+}
+function btFind(node,n){
+	if(root==null){
+		return false;
+	}else{
+		if(node.value==n){
+			return true;
+		}else{
+			if(n<node.value){
+				if(node.l==null){
+					return false;
+				}else{
+					return btFind(node.l,n);
+				}
+			}else{
+				if(node.r==null){
+					return false;
+				}else{
+					return btFind(node.r,n);
+				}
+			}
+		}
+	}
+}
+
+var N = 10000;
+var s = new Date().getTime();
+
+for(var i=0;i<N;i++){
+	btAdd(root,N*Math.random());
+}
+for(var i=0;i<N;i++){
+	btFind(root,N*Math.random());
+}
+
+document.write(new Date().getTime()-s);
+</script>
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

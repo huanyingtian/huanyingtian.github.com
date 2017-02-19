@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<meta name="description" content="智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。" />
+<title>智能社— http://www.zhinengshe.com</title>
+<style>
+*{ margin:0; padding:0; list-style:none;}
+a{ padding:0 15px;}
+</style>
+<script src="ajax.js"></script>
+<script>
+window.onload = function(){
+	var oUl = document.body.children[0];
+	ajax('data',function(res){
+		var arr = eval('('+res+')');
+		for(var i=0;i<arr.length;i++){
+			var oLi = document.createElement('li');
+			var oH2 = document.createElement('h2');
+			oH2.innerHTML = '<a href="'+arr[i].href+'">'+arr[i].title+'</a>';
+			oLi.appendChild(oH2);
+			var aChild = arr[i].child;
+			for(var j=0;j<aChild.length;j++){
+				var oA = document.createElement('a');
+				oA.href = aChild[j].href;
+				oA.innerHTML = aChild[j].title;
+				oLi.appendChild(oA);
+			}
+			oUl.appendChild(oLi);
+		}
+	},function(){
+		alert('失败');
+	});
+};
+</script>
+</head>
+
+<body>
+	<ul>
+		<!--<li>
+			<h2><a href="javascript:;">第一个大标题</a></h2>
+			<a href="javascript:;">第一个小标题</a>
+			<a href="javascript:;">第二个小标题</a>
+		</li>-->
+	</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

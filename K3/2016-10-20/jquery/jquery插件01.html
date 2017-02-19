@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width:200px;
+            height:200px; background: red}
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $.fn.changColor=function(){
+            this.css('background','blue')
+        };
+        $(document).ready(function(){
+            $('div').changColor('yellow')
+        })
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

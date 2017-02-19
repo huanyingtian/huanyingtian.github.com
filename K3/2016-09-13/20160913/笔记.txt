@@ -1,0 +1,80 @@
+裴睿
+qq:1170015014
+
+k3 课程大纲：
+
+	数据交互 占比比较大
+1.cookie 模块化 jquery 
+2.ajax  *** 数据交互
+3.jsonp
+4.面向对象 **
+5.数据结构 算法
+6.node,php
+
+常识：
+主流的操作系统： commander 命令行工具
+windows => 游戏 开发 dos
+linux => 高级开发 服务器 bash
+unix => apple bash
+
+切换目录
+cd 目标
+
+dos dir
+bash ls
+装机软件：
+
+1.git_bash
+2.windows => wamp 本地集成服务器环境   appServ
+  mac => xampp 本地集成服务器环境
+
+3.node => nodejs
+
+心态：
+	有可能会着急
+	js => 浏览器 chrome firefox ie => 宿主 环境
+	
+	哪个语言nb不nb 个人
+
+seajs requirejs 模块化框架
+解决 script 特别多互相依赖的问题 仅仅只做这一件事情
+
+RequireJS 遵循的是 AMD（异步模块定义）规范，
+SeaJS 遵循的是 CMD （通用模块定义）规范
+
+使用：
+1.定义模块 define(function(r,e,m){})
+2.使用模块 seajs.use('abc.js',function(abc){abc.....})
+
+问答：
+	amd cmd 
+工具 => 
+
+框架 肯定是简单
+
+程序员：
+1.语法
+2.程序设计 选项卡 拖拽 。。。
+
+web:职位
+	前端  前端页面 浏览器 -》页面
+	后台  服务端 
+
+nodejs 语法都是js
+var arr = [];
+var arr = new Array();
+var json = {};
+setInterval() 定时器 setTimeout()
+
+wamp appserv 服务器环境
+
+包管理工具
+npm 
+
+推荐 http-server 快速启动一个服务器环境
+
+npm install http-server -g
+
+
+
+

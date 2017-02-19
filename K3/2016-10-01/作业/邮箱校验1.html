@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var oBtn = document.getElementById('btn');
+            var oSpan = document.getElementsByTagName('span')[0];
+            var oT = document.getElementById('txt');
+            oT.onkeyup=function(){
+                if(oT.value==''){
+                    oSpan.innerHTML='';
+                };
+            };
+            oBtn.onclick=function(){
+                var result = /^\w+@[a-zA-Z0-9]+\.[a-zA-Z]{2,8}$/.test(oT.value);
+                if(result){
+                    oSpan.innerHTML='邮箱格式正确！'
+                }else{
+                    oSpan.innerHTML='邮箱格式错误！'
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" name="" id="txt"/>
+<span></span>
+<br />
+<input type="button" value="校验" id="btn"/>
+</body>
+</html>

@@ -1,0 +1,329 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    width: 1366px;
+    height: 622px;
+    background: url(WebQQ/img/bg.jpg) center center no-repeat;
+    background-size: 100% 140%;
+}
+/*登陆页*/
+#login{
+    display: block;
+    width: 450px;
+    height: 280px;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -140px 0  0 -225px;
+    border: 1px solid #333;
+}
+#face{
+    width: 120px;
+    height: 120px;
+    padding: 2px;
+    border: 3px solid #333;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin: -60px 0  0 -60px;
+    background: #fff;
+}
+#face img{
+    width: 120px;
+    height: 120px;
+}
+#face a{
+    display: none;
+    opacity:0.5;
+    width: 20px;
+    height: 40px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    line-height: 40px;
+    margin-top: -22px;
+}
+#prev{
+    left:0;
+}
+#next{
+    right:0;
+}
+#word{
+    width: 290px;
+    height: 23px;
+    background: url(WebQQ/img/regLoginBg.png)  0 0 no-repeat;
+    position: absolute;
+    left: 100px;
+    top: 80px;
+}
+#login input{
+    border: 1px solid #999;
+    width: 295px;
+    height: 30px;
+    margin:0 auto;
+    padding-left: 5px;
+    font-size: 20px;
+    position: absolute;
+    left: 100px;
+    border-radius:3px;
+}
+#user{
+
+    top: 130px;
+
+}
+#pass{
+
+    top: 180px;
+}
+#add_btn{
+    width: 107px;
+    height: 42px;
+    position: absolute;
+    right:170px;
+    background: #CCCCCC;
+    bottom: 20px;
+    border-radius: 7px;
+    color: #000;
+    text-align: center;
+    line-height: 42px;
+    font-size: 18px;
+    text-decoration: none;
+}
+#login_btn{
+    width: 107px;
+    border-radius: 7px;
+    background: #00f;
+    height: 42px;
+    position: absolute;
+    right:46px;
+    bottom: 20px;
+    color: #000;
+    text-align: center;
+    line-height: 42px;
+    font-size: 18px;
+    text-decoration: none;
+}
+/*聊天页*/
+#chat{
+    width: 680px;
+    height: 452px;
+    background: #fff;
+    border: 1px solid #999;
+    border-radius: 10px;
+    margin: -226px 0 0 -340px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: none;
+}
+#chat_head{
+    height: 40px;
+    border-bottom: 1px solid #999;
+    position: relative;
+}
+#chat_face{
+    width: 60px;
+    height: 60px;
+    padding: 2px;
+    border: 1px solid #333;
+    position: absolute;
+    left: 16px;
+    top: -34px;
+    cursor: pointer;
+}
+#chat_face img{
+    width: 60px;
+    height: 60px;
+}
+#chat_head span{
+    position: absolute;
+    left:100px;
+    top: 0px;
+    line-height: 40px;
+}
+#chat_head em{
+    width: 20px;
+    height: 20px;
+    border: 1px solid #333;
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    margin-top: -10px;
+    cursor: pointer;
+    border-top: 3px solid #333;
+}
+#chat_head strong{
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    margin-top: -10px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 20px;
+}
+#chat_foot{
+    float: left;
+    width: 678px;
+    height: 410px;
+    overflow: hidden;
+}
+#left{
+    width: 489px;
+    height: 410px;
+    border-right:1px solid #333;
+    float: left;
+}
+#top{
+    height: 264px;
+    position: relative;
+    padding-left: 5px;
+}
+#top h3{
+    color: #00f;
+}
+#top p{
+    color: #ff639d;
+}
+#top #scroll_top{
+    width: 20px;
+    height: 100%;
+    background: #f0f0f0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+#top #scroll_top #drag{
+    width: 20px;
+    height: 40px;
+    background: #333;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+}
+#center{
+    height: 35px;
+    background: #ccc;
+    position: relative;
+}
+#center span{
+    width: 18px;
+    height: 18px;
+    background: url(WebQQ/img/font.png) no-repeat;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    margin-top: -9px;
+    cursor: pointer;
+}
+#center span:hover{
+    background: url(WebQQ/img/font.png) no-repeat #fff;
+}
+#center strong{
+    width: 18px;
+    height: 18px;
+    background: url(WebQQ/img/expression.png) no-repeat;
+    position: absolute;
+    left: 55px;
+    top: 50%;
+    margin-top: -9px;
+    cursor: pointer;
+}
+#center strong:hover{
+    background: url(WebQQ/img/expression.png) no-repeat #fff;
+}
+#center a{
+    width: 95px;
+    color: #000;
+    height: 25px;
+    display: block;
+    position: absolute;
+    right: 10px;
+    border-radius: 5px;
+    top: 50%;
+    margin-top: -12px;
+    text-align: right;
+    line-height: 25px;
+    padding-right: 5px;
+}
+#center a:hover{
+    background: #fff;
+}
+#center a em{
+    width: 18px;
+    height: 18px;
+    background: url(WebQQ/img/zxlb.png) no-repeat;
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    margin-top: -9px;
+}
+#bottom{
+    height: 110px;
+    position: relative;
+}
+#bottom #inp{
+    width: 98%;
+    height: 60px;
+    border: none;
+    margin: 5px 0 0 2px;
+    text-decoration: none;
+    resize: none;
+    outline: none;
+}
+#bottom #btn{
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    position: absolute;
+    right: 5px;
+    bottom: 0;
+    border-radius: 5px;
+}
+#right{
+    width: 188px;
+    height: 410px;
+    float: left;
+    position: relative;
+}
+#right #scroll_right{
+    width: 20px;
+    height: 100%;
+    background: #f0f0f0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+
+}
+#right #scroll_right #drag_right{
+    width: 20px;
+    height: 40px;
+    background: #333;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+}
+.foot{
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    width:106px;
+    height: 16px;
+    background: url(WebQQ/img/ad.png) no-repeat;
+    margin: -8px 0 0 -53px;
+}

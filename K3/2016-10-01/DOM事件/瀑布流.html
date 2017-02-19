@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0; padding: 0;
+        }
+        ul{
+            width:280px;
+            border:2px solid #ccc;
+            float: left;
+            margin:10px;
+        }
+        li{
+            list-style: none;
+        }
+    </style>
+    <script>
+        function rnd(n,m){
+            return parseInt(Math.random()*(m-n))+n;
+        }
+        window.onload=function(){
+            var aUl=document.getElementsByTagName('ul');
+            function createLi(){
+                var oLi=document.createElement('li');
+                oLi.style.width='100%';
+                oLi.style.height=rnd(100,500)+'px';
+                var g=rnd(0,256);
+                var r=rnd(0,256);
+                var b=rnd(0,256);
+                oLi.style.background='rgb('+r+','+g+','+b+')';
+                return oLi;
+            }
+            function createLi20(){
+                for(var i=0;i<20;i++){
+                    var aLi=createLi();
+                    var arr=[];
+                    for(var j=0;j<aUl.length;j++){
+                        arr.push(aUl[j]);
+                    }
+                    arr.sort(function(ul1,ul2){
+                        return ul1.offsetHeight-ul2.offsetHeight;
+                    });
+                    arr[0].appendChild(aLi);
+                }
+            }
+            createLi20();
+            window.onscroll=function(){
+                var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+                var oH=document.documentElement.clientHeight;
+                var scrollBottom=oH+scrollTop;
+                var scrollHeight=document.documentElement.scrollHeight;
+                if(scrollBottom>=scrollHeight-300){
+                    createLi20();
+                }
+            }
+        }
+    </script>
+
+</head>
+<body>
+<div id="box">
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+</div>
+</body>
+</html>

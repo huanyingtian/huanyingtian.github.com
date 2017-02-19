@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+	function setCookie(name,val,iDay){
+		if(iDay){
+			var oDate=new Date();
+			oDate.setDate(oDate.getDate()+iDay);
+			oDate.setHours(0,0,0,0);	
+		}
+		document.cookie=name+'='+val+';path=/;expires='+oDate;
+	}
+
+	//设置cookie
+	setCookie('许智','啥都慢',5);
+	setCookie('高风','志同道合的朋友，是曹峥',60);
+	setCookie('李鑫','我是个好男人',10);
+	
+
+	var name=getCookie('name');
+	
+	function getCookie(name){
+		document.cookie
+	}
+	
+</script>
+</head>
+
+<body>
+</body>
+</html>

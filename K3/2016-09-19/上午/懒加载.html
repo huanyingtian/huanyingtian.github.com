@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        li{
+            height: 768px;
+            width: 1366px;
+            border:1px solid #ccc;
+        }
+        img{
+
+
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            var oImg = $('img');
+            var ksqT = $(window).height();
+            aimgshow();
+            $(window).scroll(function(){
+                aimgshow();
+            });
+            function　aimgshow(){
+                var gdjl=$(document).scrollTop();
+                oImg.each(function(){
+                    var top = $(this).position().top;
+                    if(top<=ksqT+gdjl){
+                        $(this).attr('src',$(this).attr('_src'));
+                    }
+                })
+            };
+        });
+    </script>
+</head>
+<body style="height: 3000px;">
+<ul>
+    <li><img _src="img/0.jpg" alt=""/></li>
+    <li><img _src="img/1.jpg" alt=""/></li>
+    <li><img _src="img/2.jpg" alt=""/></li>
+    <li><img _src="img/3.jpg" alt=""/></li>
+    <li><img _src="img/3.jpg" alt=""/></li>
+    <li><img _src="img/3.jpg" alt=""/></li>
+    <li><img _src="img/3.jpg" alt=""/></li>
+    <li><img _src="img/3.jpg" alt=""/></li>
+    <li><img _src="img/3.jpg" alt=""/></li>
+    <li><img _src="img/4.jpg" alt=""/></li>
+</ul>
+</body>
+</html>

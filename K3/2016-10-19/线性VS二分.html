@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<meta name="description" content="智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。" />
+<title>智能社— http://www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+//线性 		13068 	12500 	12800
+//二分 		44 		44 		44
+var arr = [1];
+var N = 100000;
+for(var i=1;i<N;i++){
+	arr[i]=arr[i-1]+Math.random()*i;
+}
+function find1(arr,item){
+	for(var i=0;i<arr.length;i++){
+		if(arr[i]==item){
+			return true;
+		}
+	}
+	return false;
+}
+function find2(n,s,e){
+	if(s>e){
+		return false;
+	}else if(s==e){
+		if(arr[s]==n){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	var c = Math.floor((s+e)/2);
+	if(arr[c]==n){
+		return true;
+	}else{
+		if(n<arr[c]){
+			return find2(n,s,c);
+		}else{
+			return find2(n,c+1,e);
+		}
+	}
+}
+
+var s = new Date().getTime();
+
+for(var i=0;i<N;i++){
+	var num = N*Math.random();
+	//find1(arr,num);
+	find2(num,0,arr.length-1);
+}
+
+document.write(new Date().getTime()-s);
+</script>
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

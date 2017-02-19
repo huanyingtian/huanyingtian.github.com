@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+	li{
+		list-style: none;
+		width: 100px;
+		border: 1px solid #FF0000;
+		margin-bottom: 10px;
+	}
+</style>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li class="li">4</li>
+	</ul>
+</body>
+</head>
+<script type="text/javascript" src="js/jquery.min.js" ></script>
+<script>
+	$(function(){
+		//$("li:not(:.li)").css('color','red');
+		var aLi=$('li');
+		aLi.each(function(i){
+			$(this).click(function(){
+				//alert(1);
+				aLi.css({'color':'black','background-color':'#fff'});
+				$("li:not(:.li)").eq(i).css({'color':'red','background-color':'green'});
+			});
+		});
+	});
+</script>

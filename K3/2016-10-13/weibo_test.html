@@ -1,0 +1,78 @@
+﻿<!doctype html>
+<html ng-app="weibo">
+<head>
+<meta charset="utf-8">
+<title>智能课堂 —— 微博ajax接口测试 - www.zhinengshe.com</title>
+<link href="style/weibo.css" rel="stylesheet" type="text/css" />
+<script src="angular.js"></script>
+<script>
+var app = angular.module('weibo',[]);
+app.controller('main',function($scope,$http){
+	var URL = 'weibo.php';
+	$scope.content = '';
+	$scope.arr = [];
+	$scope.send = function(){
+		if($scope.content==''){
+			alert('不能为空');
+			return;
+		}
+		$http.get(
+			URL,
+			{
+				params:{
+					act:'add',
+					content:$scope.content
+				}
+			}
+		).success(function(data){
+			$scope.arr.unshift({
+				id:data.id,
+				content:$scope.content,
+				time:data.time,
+				acc:0,
+				ref:0
+			});
+			$scope.content = '';
+		}).error(function(){
+			alert('失败');
+		});
+	};
+});
+</script>
+</head>
+
+<body>
+<div class="znsArea" ng-controller="main">
+<!--留言-->
+     <div class="takeComment">
+        <textarea name="textarea" class="takeTextField" id="tijiaoText" ng-model="content"></textarea>
+        <div class="takeSbmComment">
+            <input type="button" class="inputs" value="" ng-click="send()" />
+            <span>(可按 Enter 回复)</span>
+        </div>
+    </div>
+<!--已留-->
+    <div class="commentOn">
+        <div class="noContent" ng-show="arr.length==0">暂无留言</div>
+        <div class="messList">
+        	<div class="reply" ng-repeat="item in arr track by $index">
+                <p class="replyContent">{{item.content}}</p>
+                <p class="operation">
+                    <span class="replyTime">{{item.time*1000|date:'yyyy-MM-dd HH:mm:ss'}}</span>
+                    <span class="handle">
+                    	<a href="javascript:;" class="top">{{item.acc}}</a>
+                        <a href="javascript:;" class="down_icon">{{item.ref}}</a>
+                        <a href="javascript:;" class="cut">删除</a>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="page">
+        	<a href="javascript:;" class="active">1</a>
+        	<a href="javascript:;">2</a>
+        	<a href="javascript:;">3</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

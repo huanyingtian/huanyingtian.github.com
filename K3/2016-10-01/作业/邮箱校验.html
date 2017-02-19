@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var oT = document.getElementById('txt');
+            var oBtn = document.getElementById('aaa');
+            var oSpan = document.getElementsByTagName('span')[0];
+            oBtn.onclick=function() {
+                var result = /^\w+@[a-zA-Z0-9/-]+(\.[a-zA-Z]{2,6}){1,2}$/.test(oT.value);
+                if(result){
+                    oSpan.innerHTML = '格式正确！'
+                }else{
+                    oSpan.innerHTML = '邮箱的格式错误！'
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+<input type="text" name="" id="txt"/>
+<span></span>
+<br />
+<input type="button" value="校验" id="aaa"/>
+</body>
+</html>

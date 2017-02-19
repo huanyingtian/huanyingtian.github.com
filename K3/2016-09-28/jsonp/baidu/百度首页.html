@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<meta name="description" content="智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。" />
+<title>智能社— http://www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0; list-style:none;}
+h1{ width:300px; margin:100px auto; margin-bottom:0;}
+h1 img{ width:100%;}
+.search_box{ width:640px; height:36px; margin:10px auto; margin-bottom:0; overflow:hidden; }
+#inp{width:539px; height:34px; border:1px solid #b8b8b8; border-right:none; float:left;}
+.search_box a{float:right; width:100px; height:36px; background:#3385ff; text-align:center; line-height:36px; color:#fff; font-size:14px; text-decoration:none;}
+.down_list{ width:640px; margin:0 auto; display:none;}
+.down_list ul{ width:539px; border:1px solid #ccc;}
+.down_list ul li{ height:30px; line-height:30px; text-indent:10px;}
+.down_list ul li:hover{background:#f0f0f0; cursor:pointer;}
+</style>
+<script src="jsonp.js"></script>
+<script>
+window.onload = function(){
+	var oInp = document.getElementById('inp');
+	var oBtn = document.getElementsByTagName('a')[0];
+	var oDownList = document.getElementById('down_list');
+	var oUl = oDownList.children[0];
+	oInp.onkeyup = function(){
+		jsonp({
+			url:'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',
+			data:{
+				"wd":this.value
+			},
+			success:function(res){
+				var arr = res.s;
+				oUl.innerHTML = '';
+				if(arr.length==0){
+					oDownList.style.display='none';
+				}else{
+					oDownList.style.display='block';
+					for(var i=0;i<arr.length;i++){
+						var oLi = document.createElement('li');
+						oLi.innerHTML = arr[i];
+						oUl.appendChild(oLi);
+					}
+				}
+			},
+			error:function(err){
+				alert('错误:'+err);
+			}
+		});
+	};
+	oUl.onclick = function(ev){
+		var oEvent = ev||event;
+		var oSrc = oEvent.srcElement||oEvent.target;
+		if(oSrc.tagName!='LI')return;
+		window.open('https://www.baidu.com/s?wd='+oSrc.innerHTML,'_self');
+	};
+	oBtn.onclick = function(){
+		if(oInp.value=='')return;
+		window.open('https://www.baidu.com/s?wd='+oInp.value,'_self');
+	};
+};
+</script>
+</head>
+
+<body>
+	<h1>
+		<img src="bd_logo1.png" />
+	</h1>
+	<div class="search_box">
+		<input type="text" id="inp" />
+		<a href="javascript:;">百度一下</a>
+	</div>
+	<div class="down_list" id="down_list">
+		<ul>
+		</ul>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

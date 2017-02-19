@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var oBtn = document.getElementById('btn');
+            var oT  = document.getElementById('txt');
+            oBtn.onclick=function(){
+                var str = /^1[34578]\d{9}$/.test(oT.value);
+                alert(str);
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" name="" id="txt"/>
+<input type="button" value="校验" id="btn"/>
+</body>
+</html>

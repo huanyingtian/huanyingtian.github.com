@@ -1,0 +1,167 @@
+﻿<!doctype html>
+<html ng-app="weibo">
+<head>
+<meta charset="utf-8">
+<title>智能课堂 —— 微博ajax接口测试 - www.zhinengshe.com</title>
+<link href="style/weibo.css" rel="stylesheet" type="text/css" />
+<script src="angular.js"></script>
+<script>
+var app = angular.module('weibo',[]);
+app.controller('main',function($scope,$http){
+	var URL = 'weibo.php';
+	$scope.content = '';
+	$scope.arr = [];
+	$scope.page = 1;
+	$scope.pageCount = [];
+	$scope.send = function(){
+		if($scope.content==''){
+			alert('不能为空');
+			return;
+		}
+		$http.get(
+			URL,
+			{
+				params:{
+					act:'add',
+					content:$scope.content
+				}
+			}
+		).success(function(data){
+			$scope.arr.unshift({
+				id:data.id,
+				content:$scope.content,
+				time:data.time,
+				acc:0,
+				ref:0
+			});
+			if($scope.arr.length>6){
+				$scope.arr.pop();
+			}
+			$scope.content = '';
+		}).error(function(){
+			alert('失败');
+		});
+	};
+	
+	getPageData($scope.page);
+	function getPageData(n){
+		$scope.page = n;
+		$http.get(
+			URL,
+			{
+				params:{
+					act:'get',
+					page:n
+				}
+			}
+		).success(function(res){
+			$scope.arr = res;
+		}).error(function(){
+			alert('失败');
+		});
+	}
+	$scope.getPageData = getPageData;
+	
+	getPageCount();
+	function getPageCount(){
+		$http.get(
+			URL,
+			{
+				params:{
+					act:'get_page_count'
+				}
+			}
+		).success(function(res){
+			$scope.pageCount.length = res.count;
+		}).error(function(){
+			alert('失败');
+		});
+	}
+	$scope.acc = function(id,index){
+		$scope.arr[index].acc++;
+		$http.get(
+			URL,
+			{
+				params:{
+					act:'acc',
+					id:id
+				}
+			}
+		).success(function(res){
+			
+		}).error(function(){
+			alert('失败');
+		});
+	};
+	$scope.ref = function(id,index){
+		$scope.arr[index].ref++;
+		$http.get(
+			URL,
+			{
+				params:{
+					act:'ref',
+					id:id
+				}
+			}
+		).success(function(res){
+			
+		}).error(function(){
+			alert('失败');
+		});
+	};
+	$scope.del = function(id){
+		$http.get(
+			URL,
+			{
+				params:{
+					act:'del',
+					id:id
+				}
+			}
+		).success(function(res){
+			getPageData($scope.page);
+			getPageCount();
+		}).error(function(){
+			alert('失败');
+		});
+	};
+});
+</script>
+</head>
+
+<body>
+<div class="znsArea" ng-controller="main">
+<!--留言-->
+     <div class="takeComment">
+        <textarea name="textarea" class="takeTextField" id="tijiaoText" ng-model="content"></textarea>
+        <div class="takeSbmComment">
+            <input type="button" class="inputs" value="" ng-click="send()" />
+            <span>(可按 Enter 回复)</span>
+        </div>
+    </div>
+<!--已留-->
+    <div class="commentOn">
+        <div class="noContent" ng-show="arr.length==0">暂无留言</div>
+        <div class="messList">
+        	<div class="reply" ng-repeat="item in arr track by $index">
+                <p class="replyContent">{{item.content}}</p>
+                <p class="operation">
+                    <span class="replyTime">{{item.time*1000|date:'yyyy-MM-dd HH:mm:ss'}}</span>
+                    <span class="handle">
+                    	<a href="javascript:;" class="top" ng-click="acc(item.id,$index)">{{item.acc}}</a>
+                        <a href="javascript:;" class="down_icon" ng-click="ref(item.id,$index)">{{item.ref}}</a>
+                        <a href="javascript:;" class="cut" ng-click="del(item.id)">删除</a>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="page">
+			<a href="javascript:;" ng-class="{active:page==$index+1}" ng-repeat="item in pageCount track by $index" ng-click="getPageData($index+1)">{{$index+1}}</a>
+        	<!--<a href="javascript:;" class="active">1</a>
+        	<a href="javascript:;">2</a>
+        	<a href="javascript:;">3</a>-->
+        </div>
+    </div>
+</div>
+</body>
+</html>

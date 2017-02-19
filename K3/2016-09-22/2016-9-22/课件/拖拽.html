@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	div{ width:200px; height:200px; background:red; position:absolute;}
+</style>
+<script src="js/jquery-1.7.2.js"></script>
+<script>
+	$(function(){
+		$('div').mousedown(function(ev){
+			var doc=$(document);
+			var disX=ev.clientX-$(this).offset().left;
+			var disY=ev.clientY-$(this).offset().top;
+			doc.mousemove(function(ev){
+				var x=ev.clientX-disX;
+				var y=ev.clientY-disY;
+				$('div').css({'left':x,'top':y});
+			});
+			doc.mouseup(function(){
+				doc.off('mouseup');	
+				doc.off('mousemove');
+			});
+			return false;
+		});	
+	});
+</script>
+</head>
+
+<body>
+	<p>
+    	天王盖地虎，
+        小鸡炖蘑菇
+    </p>
+	<div></div>
+</body>
+</html>

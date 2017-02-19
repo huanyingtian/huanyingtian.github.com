@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="js/jquery-1.7.2.js"></script>
+<script>
+	$(function(){
+		$.ajax({
+			url:'2.txt',
+			success: function(a){
+				
+				var arr=eval(a);
+				
+				$.each(arr,function(index,val){
+					$('ul').append('<li>'+val+'</li>');	
+				});
+				
+				console.log(arr);
+			}
+		});
+		
+	});
+</script>
+</head>
+
+<body>
+	<ul>
+    	
+    </ul>
+</body>
+</html>
+
+
+
+
+
+
+

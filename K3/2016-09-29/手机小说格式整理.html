@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<meta name="description" content="智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。" />
+<title>智能社— http://www.zhinengshe.com</title>
+<style>
+textarea{ width:300px; height:500px; font-size:20px;}
+</style>
+<script>
+window.onload = function(){
+	var oTxt = document.getElementById('txt1');
+	var oBtn = document.getElementById('btn1');
+	oBtn.onclick = function(){
+		oTxt.value = oTxt.value.replace(/^/gm,'    ').replace(/$/gm,'\n');
+	};
+};
+</script>
+</head>
+
+<body>
+<textarea id="txt1">
+曾国藩，湖南湘乡人，1811年出身于一个山村地主家庭。从少年时代起，曾国藩即发愤图强。6岁入塾读书，8岁学习五经，14岁应童子试，22岁考中秀才，28岁中进士，35岁充任文渊阁学士，次年升任内阁学士兼礼部侍郎。十年之内连升十级，官至二品。如此惊人的提升速度，在官场上是极其罕见的。清政府称他“学本有源，器成远大，忠诚体国，节劲凌霜”，盛赞他为“中兴第一名臣”。
+一般认为，曾国藩的成功，关键在于他独特而刻苦的修身方式。在中国几千年的传统中，“修身、齐家、治国、平天下”是几乎所有读书人的最高理想，而能够实现这个理想的人如凤毛麟角，曾国藩是其中的佼佼者。
+</textarea>
+	<input type="button" value="按钮" id="btn1" />
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

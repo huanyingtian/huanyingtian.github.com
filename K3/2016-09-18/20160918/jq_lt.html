@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+	li{
+		list-style: none;
+		width: 100px;
+		border: 1px solid #FF0000;
+		margin-bottom: 10px;
+	}
+</style>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</body>
+</head>
+<script type="text/javascript" src="js/jquery.min.js" ></script>
+<script>
+	$(function(){
+		$("li:lt(3)").css('color','red');
+	});
+</script>

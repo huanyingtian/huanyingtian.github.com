@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<meta name="description" content="智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。" />
+<title>智能社— http://www.zhinengshe.com</title>
+<style>
+#box{width: 200px;height: 200px;background: red;position: absolute;left: 0;top:0;}
+</style>
+<script src="cookie.js"></script>
+<script>
+window.onload = function(){
+	var box = document.getElementById('box');
+	// var left = getCookie('left');
+	// var top = getCookie('top');
+	var pos = getCookie('position');
+	
+	if(pos){
+		var position = eval('('+pos+')');//?
+		box.style.left =position.left + 'px';
+		box.style.top =position.top + 'px';
+	}
+	
+	box.onmousedown = function(ev){
+		var event = ev || event;
+		var disX = event.clientX - box.offsetLeft;
+		var disY = event.clientY - box.offsetTop;
+		document.onmousemove = function(ev){
+			var event = ev || event;
+			box.style.left = event.clientX - disX + 'px';
+			box.style.top = event.clientY - disY + 'px';
+		};
+		document.onmouseup = function(){
+			// setCookie('left',box.offsetLeft);
+			// setCookie('top',box.offsetTop);
+			setCookie('position','{left:'+box.offsetLeft+',top:'+box.offsetTop+'}',3)
+			document.onmousemove = null;
+			document.onmouseup = null;
+			// ie
+			box.releaseCapture && box.releaseCapture()
+		};
+		// ie
+		box.setCapture && box.setCapture();
+		return false;
+	}
+}
+</script>
+</head>
+
+<body>
+<div id="box"></div>
+</body>
+</html>

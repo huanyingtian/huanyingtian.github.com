@@ -1,0 +1,273 @@
+
+.top{width: 100%;
+    height:50px;
+    background: #fff;
+    position:fixed;
+    left:0;
+    top:0;
+    z-index: 10;
+}
+.top_1{
+    width:100%;
+    height:2px;
+    background: #fa7d3c;}
+.gn_header{
+    width:1000px;
+    height:48px; margin: 0 auto; position: relative;}
+.logal{position: relative;  width: 140px;  height: 48px;    left: auto;  top: auto;  margin: 0;  background: none;
+}
+
+.logal .logal_1{position: absolute;left: -50px; top: 0;  width: 190px;  height: 48px;  cursor: pointer;
+}
+.logal .logal_2{background: url("img/1.jpg") no-repeat;     display: block;
+    margin-left: 50px;
+    width: 140px;
+    height: 48px;
+    cursor: pointer;}
+.search{    position: relative;  float: left;  height: 28px;  margin: 9px 0 0 10px;
+}
+.search input{
+    width:218px;
+    height:28px; background:#f2f2f5;padding: 4px 33px 4px 10px; box-shadow: none;
+    border:1px solid #ccc;}
+.search span{    position: absolute; top: 6px; left: 0;  width: 245px;  padding: 4px 33px 4px 10px;  height: 20px;
+    line-height: 20px;
+    box-shadow: none;
+    border: none;
+    color: #808080;
+    outline-style: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;}
+.search a{position: absolute;  top: 6px; right: 10px;color: #696e78;font-size: 18px; width: 36px}
+.nav_flist{margin: 11px 0 10px 0;}
+.nav_flist li{
+    float: left;  display: inline;  position: relative;  line-height: 26px;  margin: 0 15px;  white-space: nowrap}
+.nav_flist .aa{
+    border: 1px solid #ccc;
+    height:14px; margin-top: 4px;}
+.nav_flist li a{float: left; color: #333;}
+.nav_flist li a:hover{
+    color: #eb7350;}
+.nav_list{margin: 11px 20px 11px 0;}
+.nav_list li{float: left; margin-right:13px ;margin-left: 13px;}
+.nav_list li a{color: #333 ;font-family: "Microsoft Sans Serif";
+    height:26px;display: inline-block;line-height: 26px;
+    width:50px; }
+.nav_list li span{color: #696e78;font-size: 22px; width: 26px; line-height: 26px; vertical-align: top;    display: inline-block;}
+.nav_list li a:hover{color:#eb7350;}
+.nav_list li span:hover{color:#eb7350;}
+.main{
+    width:100%;
+    height:1929px;
+    -background: #d4d5e0;
+
+
+    background: url(img/body_bg.jpg) 100% 100%;
+    margin-top: 50px}
+.fame{
+    width:1000px;height:1929px;background:#a9b0bf; margin: 0 auto; }
+.left_main{
+    float: left;
+    width:150px;
+    margin: 16px 0 0 0 ;
+}
+.left_main ul{
+    position: fixed;
+    left: 0;
+    top: 66px;
+}
+.left_list li{
+    height:34px;
+    width:150px;
+    text-align: center;
+    line-height: 34px;
+    margin-bottom: 10px;
+}
+.left_list li a{
+    height:34px;
+    width:150px;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+}
+.left_list li a em{ font-size: 24px; margin-right: 16px;}
+.left_list li a:hover{ background: rgba(255,255,255,0.2)}
+.right_main{
+    width:840px;
+    float: left;
+    margin-top: 16px;
+}
+.right_main_1{
+    width:600px;
+    float: left;
+    margin-right:10px;}
+.right_main_list li{ background: #fff;
+    margin-bottom:10px;    padding: 20px 20px;
+    cursor: pointer;
+   }
+.pic_txt{
+   }
+.pic_box{
+    width:106px; height:70px; position: relative;float:left;overflow: hidden; background: #f2f2f5;  text-align: center; margin-right: 10px;}
+.right_box{ overflow: hidden;}
+.txt_box{ margin-top: 5px;
+    color: #333; font-family: "Microsoft Sans Serif";font-size: 14px; line-height: 20px}
+.txt_box a{color: #eb7350; font-family: "Microsoft Sans Serif"; font-size: 14px;}
+.bot_box{height:20px;line-height:20px; margin-left: 10px; margin-right: -8px; margin-top: 5px;  }
+.bot_box span{ float: left;margin-right: 10px;
+    color: #808080}
+.bot_box .rights{
+    float: right;}
+.bot_box .adsd{
+    height:10px;
+    border:1px solid #ccc; margin-top: 5px}
+.bot_box em{margin-right: 3px;font-size: 16px;
+    color: #808080;   line-height: 20px; display: inline-block;}
+.xiaolu{
+    height:232px; background: #fff;}
+.xiaolu p{margin-bottom: 10px;}
+.xiao_3 img{
+    width:182px;
+    height:122px;}
+.xiao_1 a{
+    color: #333333; font-size: 18px;}
+.xiao_1 p{width:560px;
+    color: #ccc; text-overflow:ellipsis;  overflow: hidden;white-space:nowrap;}
+.you_main{
+    width:230px; float: left;}
+.login{
+    width:200px;
+    height:280px; background: #fff; padding:0 15px 6px;}
+.login_mian{}
+.login_1{margin-bottom: 16px;  padding-top: 11px;  border-bottom: 1px solid #ccc; border-bottom-color: rgba(204,204,204,.5); }
+.login_1 .active{  border-bottom: 3px solid #fa7d3c;}
+.login_1 .acti{
+    color: #ccc; margin-top: 6px; margin-bottom: -1px;  font-weight: 700; font-size: 14px;
+    width:100px;
+    height:30px; display: inline-block; float:left;}
+.pass{ margin-top:16px;  margin-bottom: 13px;}
+.pass input{
+    width:198px;
+    height:32px; border: 1px solid #ccc;}
+.pass .input2{margin-top: 12px;}
+.login-2{
+    margin-bottom:14px; }
+.login_2 span{color:#ccc;}
+.login_2 a{
+    color: #ccc; float: right; }
+.btn{margin-top:14px;
+    width:200px;
+    height:34px; display: block; background: #ff8140; text-align: center;line-height: 34px; font-size: 15px;}
+.login_3{
+    margin-top:13px; border-bottom: 1px solid #e6e6e6;
+    height:24px;}
+.login_3 span{
+    color: #ccc;}
+.login_3 a{
+    color: #eb7350;}
+.login_main span{
+    color: #ccc;}
+.down{background: #fff;
+    width:218px;
+    height:50px; margin-top: 10px; padding:16px 0 0 12px;}
+.down a{
+    width:105px; display: inline-block;}
+.down a em{
+    font-size: 26px;display: inline-block;
+    color: #ee8c70;}
+.down a span{
+    color: #ccc;}
+.topic{
+    width:230px;
+    height:297px; background: #fff;margin-top: 10px;}
+.topic_1{
+    height:38px; border-bottom: 1px solid #f2f2f5; line-height: 38px}
+.topic_1 span{color:#333; margin-left: 16px; font-weight: bold;}
+.topic_1 a{color:#333; margin-left: 104px;}
+.topic_2{
+    width:198px;
+    margin-top:22px; margin-left: 16px}
+.topic_2 li{ margin-bottom: 12px;}
+.topic_2 li a{color:#333; overflow: hidden;}
+.topic_2 li span{float:right;}
+.topic_2 li a:hover{color:#eb7350;}
+.banner{
+    width:230px;height: 100px;
+    background: #fff; margin-top: 10px}
+.sinahead{
+    width:230px;
+    height:190px; margin-top: 10px; background: #fff;}
+.headh{
+    height:38px;
+    border-bottom:1px solid #ccc; line-height: 38px;}
+.headh h3{
+    color: #333;
+    margin-left:16px;}
+.shead_1{ margin:18px 0 0 17px;}
+.shead_1 li{
+    float: left; margin-right: 43px; margin-bottom: 12px;}
+.shead_1 li em{
+    color: #fa7d3c;}
+.sinahead a{color: #333;}
+.sinahead a:hover{color:#fa7d3c}
+.sinahead p{margin-left: 16px;
+    margin-bottom:14px;}
+.sinahead span{
+    color: #eb7350; margin-right: 8px;}
+.fined{width:230px;margin-top: 10px;background: #fff;}
+.fined .fined_1{
+    height:38px; border-bottom: 1px solid #ccc; line-height: 38px;margin-left: 0; margin-top: 0;}
+.fined_1 h3{
+    margin-left:16px;}
+/*.fined div{ margin-top: 19px;}*/
+.fined .mingren{margin-top:17px; }
+.fined h3{ margin-left: 16px; font-weight: bold; margin-top: 11px; margin-bottom: 6px;}
+.fined ul{overflow: hidden;}
+.fined li{float: left;
+    width:91px ;height:26px; line-height: 26px; margin-left: 16px; }
+.fined li a{color:#333;}
+.fined li a:hover{color:#eb7350;}
+.fined li em{display:inline-block;
+    width:14px;
+    height:14px;
+    margin:5px 5px 0 0 ; background: url("img/2.png")}
+.jigou ul{
+    height:35px;
+    }
+.footer{background: #fff;
+    width:100%;
+    height:297px;}
+.white_footer{
+    height:161px;}
+.white_1{
+    width:770px;margin:22px auto; }
+.white_1 h2{font-size: 15px;
+    color: #333;}
+.white_1 div{margin-right: 70px; float:left;}
+.white_1 .phone{margin-right: 70px;
+    width:196px;}
+.white_1 a{color:#808080;}
+.white_1 a:hover{color:#eb7350}
+.white_1 h2{font-size: 15px;color:#333; margin-bottom: 20px;}
+.white_1 ul{width:146px}
+.white_1 li{float: left;
+    width:48px; margin-right: 20px; margin-bottom: 12px;}
+.white_1 .hezuo{margin-right: 70px;}
+.white_1 .help{margin-right: 0;}
+.block_footer{
+    width:100%;
+    height:136px;
+    background: #f6f6f6; overflow: hidden}
+.block_footer .div1{
+    width:495px;margin: 24px auto 0;}
+.block_footer a{
+    color: #808080; margin-right: 20px}
+.block_footer .div2{
+    width:926px; margin: 16px auto 14px;}
+.block_footer .div3{
+    width:600px; margin: 0 auto;}
+.block_footer span{margin-right: 20px;
+    color: #808080;}
+.block_footer a:hover{color:#eb7350}

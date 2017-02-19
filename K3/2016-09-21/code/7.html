@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .f1{
+            background: #f00;
+            width: 100px;
+            height: 100px;
+        }
+        .f2{
+            width: 200px;
+            height: 200px;
+            background: #00f;
+        }
+    </style>
+    <script src="../js/jquery.min.js"></script>
+    <script>
+        $(function(){
+            var p = $("p:first");
+            var position = p.position();
+            $("p:last").html( "left: " + position.left + ", top: " + position.top );
+        });
+    </script>
+</head>
+<body>
+<p class="f1">Hello</p>
+<p class="f2">2nd Paragraph</p>
+</body>
+</html>

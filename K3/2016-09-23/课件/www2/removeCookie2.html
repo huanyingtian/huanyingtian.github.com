@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+
+	function removeCookie(name){
+		var oDate=new Date();
+		oDate.setDate(oDate.getDate()-1);
+		oDate.setHours(0,0,0,0);
+		document.cookie=name+'=abc;path=/;expires='+oDate;
+	}
+	
+	removeCookie('许智');
+	
+	alert(document.cookie);
+	
+</script>
+</head>
+
+<body>
+</body>
+</html>

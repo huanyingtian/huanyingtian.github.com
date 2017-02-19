@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #box{
+            width: 300px;
+            height: 300px;
+            background: #ccc;
+            overflow: hidden;
+            margin: 100px auto;
+            position: relative;
+            border: 1px solid #f00;
+        }
+        input{
+            width: 100px;
+            height: 50px;
+            background-color: #fff;
+            float: left;
+            border:none;
+        }
+        ul{
+            width: 1200px;
+            height: 250px;
+            position: absolute;
+            left: 0;
+            top: 50px;
+        }
+        #box li{
+            width: 300px;
+            height: 250px;
+            float: left;
+            list-style: none;
+        }
+        img{
+            border:none;
+            width: 100%;
+            height: 250px;
+
+        }
+        .active{
+            background: #ffff00;
+        }
+        .clearfix:after{ clear:both; display:block; content:'';}
+        .clearfix{ zoom:1;}
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            var aBtn = $('input');
+            var oUl = $('ul');
+            var n=0;
+            aBtn.each(function(i){
+                $(this).click(function(){
+                    n++;
+                    //n=$(this).index();
+                    aBtn.removeClass('active');
+
+                    $(this).addClass('active');
+                    oUl.stop().animate({left:-300*(n%4)},1000,function(){
+                        if(n%4==3){
+                            n=0;
+                            oUl.css({left:0});
+                        };
+                    });
+                    n=$(this).index();
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="box">
+    <div class="clearfix">
+        <input type="button" class="active" value="按钮1"/>
+        <input type="button" value="按钮2"/>
+        <input type="button" value="按钮3"/>
+    </div>
+    <ul>
+        <li><img src="img/1.jpg" alt=""/></li>
+        <li><img src="img/2.jpg" alt=""/></li>
+        <li><img src="img/3.jpeg" alt=""/></li>
+        <li><img src="img/1.jpg" alt=""/></li>
+    </ul>
+</div>
+</body>
+</html>

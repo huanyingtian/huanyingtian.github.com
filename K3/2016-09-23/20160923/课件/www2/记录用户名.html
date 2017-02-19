@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="cookie.js"></script>
+<script>
+	window.onload=function(){
+		
+		var oInp=document.getElementsByTagName('input')[0];
+		
+		oInp.value=getCookie('txt');
+		
+		oInp.onkeyup=function(){
+			setCookie('txt',oInp.value,10);
+		};
+		
+			
+	}
+</script>
+</head>
+
+<body>
+	<input type="text" />
+    
+</body>
+</html>

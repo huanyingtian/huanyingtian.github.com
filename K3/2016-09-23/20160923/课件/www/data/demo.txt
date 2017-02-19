@@ -1,0 +1,30 @@
+﻿[
+	{
+		title:'1习近平会见普京：相互支持 相互给力借力',
+		href:'http://news.xinhuanet.com/world/2014-09/11/c_1112448569.htm',
+		child:[
+			{title:'1称是“合作之旅”',href:'http://www.g.cn'},
+			{title:'媒体评：海洋色彩全方位外交',href:'http://www.g.cn'},
+			{title:'俄蒙三国元首会晤',href:'http://www.g.cn'}
+		]	
+	},
+	{
+		title:'2习近平会见普京：相互支持 相互给力借力',
+		href:'http://news.xinhuanet.com/world/2014-09/11/c_1112448569.htm',
+		child:[
+			{title:'2称是“合作之旅”',href:'http://www.g.cn'},
+			{title:'媒体评：海洋色彩全方位外交',href:'http://www.g.cn'},
+			{title:'俄蒙三国元首会晤',href:'http://www.g.cn'},
+			{title:'俄蒙三国元首会晤',href:'http://www.g.cn'}
+		]	
+	},
+	{
+		title:'3习近平会见普京：相互支持 相互给力借力',
+		href:'http://news.xinhuanet.com/world/2014-09/11/c_1112448569.htm',
+		child:[
+			{title:'3称是“合作之旅”',href:'http://www.g.cn'},
+			{title:'媒体评：海洋色彩全方位外交',href:'http://www.g.cn'},
+			{title:'俄蒙三国元首会晤',href:'http://www.g.cn'}
+		]	
+	}
+]

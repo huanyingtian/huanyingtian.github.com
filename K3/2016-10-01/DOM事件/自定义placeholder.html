@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input{
+        }
+        span{
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            font-size: 12px;
+            color: #ccc;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oT=document.getElementById('txt');
+            var oSpan=document.body.children[1];
+            oT.onfocus=function(){
+                oSpan.style.display='none';
+            };
+            oT.onblur=function(){
+                if(this.value==''){
+                    oSpan.style.display='block';
+                }
+            };
+            oSpan.onclick=function(){
+                oT.focus();
+            }
+        };
+    </script>
+</head>
+<body>
+<input type="text" value="" id="txt"/>
+<span>开学准备要做足</span>
+</body>
+</html>

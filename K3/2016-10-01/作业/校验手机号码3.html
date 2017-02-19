@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var oT = document.getElementById('txt');
+            var oSpan = document.getElementsByTagName('span')[0];
+            oT.onkeyup=function () {
+                //var result = /^1[34578]\d{9}$/.test(oT.value);
+                if (/^1$/.test(oT.value)){
+                    oSpan.innerHTML='';
+                }else if(/^1[34578]$/.test(oT.value)){
+                    oSpan.innerHTML='';
+                }else if(/^1[34578]\d{1}$/.test(oT.value)){
+                    oSpan.innerHTML='';
+                }else if(/^1[34578]\d{2}$/.test(oT.value)){
+                    oSpan.innerHTML='';
+                }else if(/^1[34578]\d{3}$/.test(oT.value)){
+                    oSpan.innerHTML='';
+                }else if(/^1[34578]\d{4}$/.test(oT.value)){
+                    oSpan.innerHTML='';
+                }else if(/^1[34578]\d{5}$/.test(oT.value)){
+                    oSpan.innerHTML='';
+                }else if(/^1[34578]\d{6}$/.test(oT.value)){
+                    oSpan.innerHTML='';
+                }else if(/^1[34578]\d{7}$/.test(oT.value)){
+                    oSpan.innerHTML='';
+                }else if(/^1[34578]\d{8}$/.test(oT.value)){
+                    oSpan.innerHTML='';
+                }else if(/^1[34578]\d{9}$/.test(oT.value)){
+                    oSpan.innerHTML='';
+                }else{
+                    oSpan.innerHTML='****手机号的格式错误'
+                };
+                if(oT.value==''){
+                    oSpan.innerHTML='';
+                };
+            };
+        };
+    </script>
+</head>
+<body>
+<input type="text" name="" id="txt"/>
+<span></span>
+</body>
+</html>

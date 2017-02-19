@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="js/jquery-1.7.2.js"></script>
+<script>
+	$(function(){
+		$('div').click(function(){
+			
+			$(this).attr({
+				'title':'来一个',
+				'style':'width:300px;',
+				'class':'bigBox'	
+			});
+			
+		});	
+	})
+</script>
+</head>
+
+<body>
+	<div title="我是一个div" style=" width:200px; height:200px; background:red;" class="box1" id="box"  abc="哈哈哈" aaa>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	裴睿
+	qq:1170015014
+
+
+	k3课程大纲
+数据交互   占比比较大
+
+	1.cookie   模块化    jQuery
+	2.ajax    ******    数据交互
+	3.jsonp
+	4.面向对象****
+	5.数据结构     算法
+	6.node ,php
+
+
+
+常识：
+主流的操作系统：commander   命令行工具
+windows=>游戏   开发    dos
+Linux    =>     高级开发   服务   bash
+
+Unix     =>     apple  bash
+切换目录
+cd   目标
+dos dir
+bash  ls
+
+装机软件：
+
+1.git_bash
+2.windows=>wamp     本地集成服务器环境   appServ
+	mac   =>  xampp  本地集成服务器环境
+3.node      =>nodejs
+    java  php   asp   .net
+
+    js   =>  浏览器   chrome  firefox   ie   =>宿主  环境
+
+seajs requirejs    模块化框架
+解决  script   特别多互相依赖 仅仅只做了这一件事
+RequireJS  遵循的是AMD（异步模块定义）规范；
+Seajs      遵循的是MCD（通用模块定义）规范；
+
+优点/好处：页面引入一个js就行了
+1.解决文件相互依赖
+2.金爵命名冲突
+3.自动引入js
+
+
+使用：
+1.定义模块：define(function(r,e,m)());
+2.使用模块：seajs:use('abc.js',function(){})
+			require()['路径'],function(a){})
+
+引入模块：
+	require       
+
+
+
+
+
+问答：
+		amd    cmd
+工具 => 
+框架   肯定是简单的
+
+
+
+程序员：
+1.语法
+2.程序设计    选项卡    拖拽。。。。
+
+web：职位
+			前端   前端页面    浏览器   ->   页面
+			后台    服务端
+nodejs   语法都是js
+var arr = [];
+var arr = new Array();
+var json = {};
+setInterval()  定时器     setTimeout()
+
+wamp appsere     服务器环境
+包管理环境
+npm    
+推荐    http-server   快速启动一个服务环境
+npm install http-server;
+
+****操作的东西  类型心中走 代码手上写
+this   函数的所属者
+
+事件绑定     当前发生事件的元素    ie  window
+addEventListener    this    当前发生的事件
+attachEventthis   window   
+
+
+
+
+
+
+
+
+<script>
+	seajs.use('JS名',function(b){
+		b.js里的experts后面的名();//experts。.init
+	})
+</script>
+tab.js文件里的
+define(function(require,experts,module){
+    var move = require('move.js').mov;
+    experts.init=function(){
+    ()()
+    }
+}
+move.js里的
+define(function(require,experts,module){
+	var getStyle = require('getStyle.js').getStyle;
+	experts.mov=function(obj,json,options){
+
+			options=options || {};
+			options.time=options.time || 700;
+			options.type=options.type || 'ease-out';
+
+			clearInterval(obj.timer);
+			var count=Math.floor(options.time/30);
+			var start={};
+			var dis={};
+
+			for(var name in json){
+				start[name]=parseFloat(getStyle(obj,name));
+
+				if(isNaN(start[name])){
+					switch(name){
+						case 'left':
+							start[name]=obj.offsetLeft;
+							break;
+						case 'top':
+							start[name]=obj.offsetTop;
+							break;
+						case 'width':
+							start[name]=obj.offsetWidth;
+							break;
+						case 'height':
+							start[name]=obj.offsetHeight;
+							break;
+						case 'opacity':
+							start[name]=1;
+							break;
+						case 'marginLeft':
+							start[name]=0;
+							break;
+						case 'fontSize':
+							start[name]=12;
+							break;
+					}
+				}
+				dis[name]=json[name]-start[name];
+			}
+
+
+			var n=0;
+			obj.timer=setInterval(function(){
+				n++;
+
+				for(var name in json){
+					switch(options.type){
+						case 'linear':
+							var a=n/count;
+							var cur=start[name]+dis[name]*a;
+							break;
+						case 'ease-in':
+							var a=n/count;
+							var cur=start[name]+dis[name]*Math.pow(a,3);
+							break;
+						case 'ease-out':
+
+							var a=1-n/count;
+
+							var cur=start[name]+dis[name]*(1-Math.pow(a,3));
+							break;
+					}
+
+					if(name=='opacity'){
+						obj.style.opacity=cur;
+						obj.style.filter='alpha(opacity:'+cur*100+')';
+					}else{
+						obj.style[name]=cur+'px';
+					}
+				}
+
+				if(n==count){
+					clearInterval(obj.timer);
+					options.end && options.end();
+				}
+			},30);
+
+	}
+})
+======================================================
+9.14
+
+======================================================
+cookie
+cookie是什么？存
+设置： document.cookie ='key0=value'  格式
+获取： document.cookie  多条   'name=1；name=2；name=3；'
+修改：document.cookie = 'name = 4' 
+删除：设置过期时间是之前的日子
+
+有效时间：key=value；expires=时间
+
+增加 删除  修改 
+
+注意的问题
+1.在服务器环境？    以域为单位的
+2.默认的cookie的有效时间   expries  session->会话
+3.都是字符串
+4.cookie的不安全性
+5.特别珍贵   4k-10k
+
+
+path:
+		|-path
+			setCookie   设置cookie
+		|-getcookie     获取
+------------------------------------------------------
+域->    域名    www.baidu.com
+				www.sina.com
+
+key   相同再进行设置 ->修改
+
+浏览器的会话：从开到关掉   完成一次会话
+eval() =>字符串 =>   js可执行的代码
+json =>eval() eval('('+str+')')
+
+========================================================
+jQuery
+库  框架 => 提供方便的操作
+window.onload   DOMReady(function(){})
+
+$(function(){
+	
+})
+选择器：字符串表达式
+$('#box') id
+$('.li') class
+$('div') tag
+$('#box ul li')
+$('ul li:eq(0)')
+属性选择器
+$('input[type=button').事件(function(){})
+伪类）：
+first
+last
+
+
+
+
+
+样式：
+css('','')    设置样式
+css('')       获取
+css({})       批量设置
+
+attr('属性','属性值')    设置属性
+attr('')       获取
+attr({})       批量设置
+
+fadIn()淡入
+fadeOut()淡出
+slideDown()   下滑     主要运动的
+slideUp()     上滑
+
+关于父级： 
+定位父级：$('').offsetParent();
+结构上的父级:$('').parent()
+
+
+
+
+
+标签里的内容：
+$().html()   =>   innerHTML  获取
+$().html('klsdl')    设置
+表单元素：
+		值：value()     获取
+		value('sdjksk') 设置
+
+
+
+
+运动：
+animate()    疯狂点击   .stop().animate(,,)
+事件：
+click(function(){})
+
+如果不好使
+事件绑定：
+$('0').bind('mouseWheel'，function(){})
+
+
+***jQuery里的事件都是绑定的     
+
+创建元素
+$('<div></div>')
+插入：
+		自己里从后插：$(要插入的东西).appendTo('#父级的id')
+		自己里从前插：$(要插入的东西).prependTo('#父级的id')
+		同级前插：insertBefore
+		同级后插：insertAfter
+删除：
+	DOM.remove();
+
+--------------------------------------------------------
+官网：http://jquery.com/
+版本：
+如何选择版本    1.7.2.js   1.7.2.min.js
+	***稳定
+1.x.x适用地区      亚非拉地区
+		兼容ie6
+2.x.x   欧美地区    
+		不兼容ie6
+
+=========================================================
+9.18
+
+周磊    
+jq 	
+jq能实现的就一定能实现
+jq不能实现的也能实现
+
+3.seajs
+	1.库
+		写过选项卡
+---------------------------------------------------------
+jq：
+	进入公司使用ready：     jq:$()加载快	
+	获取id
+	jq不能和js混用******
+	项目中调错用console.log()
+
+aBtn.eq(i).click(function(){})
+---------------------------------------------------------:first 获取第一个元素
+:last  获取最后个元素
+:not(selector)  去除所有与给定选择器匹配的元素
+$(function(){
+	$('li')
+})
+:even  匹配所有索引值为偶数的元素，从 0 开始计数
+:odd   匹配所有索引值为奇数的元素，从 0 开始计数
+
+:eq(index) 匹配一个给定索引值的元素
+:contains(text)    一个用以查找的字符串
+:has(selector)     给父级加相关样式
+	selector       一个用于筛选的选择器
+---------------------------------------------------------
+方法：
+.val('赋的值')   获取表单元素的value
+.html()  获取非表单的内容(div、p、span)
+.attr    属性
+show();
+hide();
+slideDown([speed],[easing],[fn])
+
+9.19
+---------------------------------------------------------
+$(this).index();
+图片懒加载：
+	滚动的距离+可视区的距离>某一img的offsetTop
+	滚动距离：$(window).scrollTop();
+	可视区的高度：
+	$(window).scrollTop()
+	$(window).innerHeight()
+	
+思路：
+1.先获取img和可视区的height
+2.添加滚动事件
+3.获取滚动距离
+4.eachfor循环
+5.获取当前的scrolltop
+6.判断当前的scrolltop是否小于可视区的高度和滚动距离的和
+7.替换src{$(this).attr('src',$(this).attr('_src'))}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

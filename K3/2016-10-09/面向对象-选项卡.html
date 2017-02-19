@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<meta name="description" content="智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。" />
+<title>智能社— http://www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+.tab{ width:200px;}
+.tab input{ background:#ccc;}
+.tab input.on{ background:#f90;}
+.tab div{ width:200px; height:200px; background:#f90; display:none;}
+.tab div.on{ display:block;}
+</style>
+<script>
+function Tab(id){
+	this.oTab = document.getElementById(id);
+	this.aBtn = this.oTab.getElementsByTagName('input');
+	this.aDiv = this.oTab.getElementsByTagName('div');
+	this.iNow = 0;
+	
+	this.init();
+}
+Tab.prototype.init = function(){
+	var _this = this;
+	for(var i=0;i<this.aBtn.length;i++){
+		this.aBtn[i].index = i;
+		this.aBtn[i].onclick = function(){
+			_this.iNow = this.index;
+			_this.tab();
+		};
+	}
+};
+Tab.prototype.tab = function (){
+	for(var i=0;i<this.aBtn.length;i++){
+		this.aBtn[i].className = '';
+		this.aDiv[i].className = '';
+	}
+	this.aBtn[this.iNow].className = 'on';
+	this.aDiv[this.iNow].className = 'on';
+}
+window.onload = function(){
+	new Tab('tab');
+};
+</script>
+</head>
+
+<body>
+<div id="tab" class="tab">
+	<input type="button" value="aaa" class="on" />
+	<input type="button" value="bbb" />
+	<input type="button" value="ccc" />
+	<div class="on">11111</div>
+	<div>22222</div>
+	<div>33333</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

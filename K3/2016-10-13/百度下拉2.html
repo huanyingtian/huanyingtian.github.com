@@ -1,0 +1,55 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<meta name="description" content="智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。" />
+<title>智能社— http://www.zhinengshe.com</title>
+<style>
+</style>
+<script src="angular.js"></script>
+<script>
+var app = angular.module('app',[]);
+app.controller('main',function($scope,$http){
+	$scope.wd = '';
+	$scope.arr = [];
+	
+	$scope.$watch('wd',function(str){
+		$http.jsonp(
+			'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',
+			{params:{
+				wd:str,
+				cb:'JSON_CALLBACK'
+			}}
+		).success(function(res){
+			$scope.arr = res.s;
+		}).error(function(){
+			alert('失败');
+		});
+	});
+});
+</script>
+</head>
+
+<body ng-controller="main">
+	<input type="text" ng-model="wd" />
+	<ul>
+		<li ng-repeat="item in arr track by $index">{{item}}</li>
+	</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

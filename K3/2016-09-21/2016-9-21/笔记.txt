@@ -1,0 +1,255 @@
+js K3讲师 
+	张志宝
+		志宝
+
+	普通话不准
+	爱扯
+	不要迟到
+
+	志宝
+-----------------------------------------------------
+jquery
+	开了个头
+
+sea.js
+
+require.js
+
+cookie
+
+====================================================
+jquery 官网：
+
+	js
+		1. 改样式
+		2. 改DOM
+		3. 交互
+-------------------------------------
+jquery  js简单化
+
+	不会js的人 也会jquery
+
+	$();
+
+	写法 兼容性 
+-------------------------------------
+API 说明书
+
+选择器：
+	浏览器都跟着它改
+
+	$('#id')     只能选择一个对象
+
+	$('.class')  可以选择多个对象 不用循环
+
+	$('div')     获取一组元素 不用循环
+
+	$('div','p','span','.class') 群组选择器
+
+	$('oParBox oBox')  包含选择器
+
+	css: div > p 直接子级选择器
+
+
+
+	$('label+input') 兄弟选择器
+
+	$("form ~ input") 同辈元素选择器
+
+	:first 
+	:last
+
+	$('div:not(.box)')  否定选择器
+
+	$("input[type='checkbox']") 属性选择器
+
+--------------------------------------------------
+css
+
+属性：
+	$(this).attr('title');   获取属性
+	$(this).attr('title','我不是Div'); 设置属性
+	$(this).attr('aaa','我是新增的内容');
+	$(this).removeAttr('abc'); 删除属性
+
+	多个属性设置
+	$(this).attr({
+		'title':'来一个',
+		'style':'width:300px;',
+		'class':'bigBox'	
+	});
+
+class操作：
+	$(this).addClass('box'); 添加一个class
+
+	$(this).addClass('box box2 box3'); 添加多个class
+
+	$(this).removeClass('oldbox'); 删除一个class
+
+	$(this).removeClass(); 删除所有class
+
+	$(this).hasClass('box') 判断是否存在这个class
+
+	alert($(this).hasClass('box a')); 多个class判断
+
+	$(this).toggleClass('box'); 切换class
+
+
+------------------------------------------------------
+设置HTML	
+	$('div').html('<p>这是一段文字</p>');
+
+获取html
+	$('div').html()
+
+设置文本：
+	$(obj).text();
+
+获取文本：
+	$('div').text()
+
+表单元素
+	
+	获取value
+	$(this).val()
+
+	设置value
+	$('#txt').val('请输入用户名');
+
+----------------------------------------------------------
+筛选：
+	eq(索引值); 获取一组元素中的某一个
+
+	first() 获取一组中的第一个元素
+
+	last()  获取一组中的最后一个元素
+
+	chidlren('筛选条件') 获取一组子元素/如果有参数，筛选其中的某一个
+
+	parent(); 父级 获取一个元素
+
+
+
+	find("#box") 筛选子级其中的某些/某个元素
+
+	next(); 获取元素的下一个兄弟节点
+
+	prev(); 获取元素的上一个兄弟节点
+
+	siblings(); 获取元素的同级元素
+
+	contents() 获取文本对象
+
+	.end() 找回原本的dom节点
+-----------------------------------------------------
+节点 元素 对象 标签 
+
+文档处理
+	$('p').append 添加子节点
+
+	$('div').prepend(oP);  向前添加
+
+	after() 在某个元素之后添加
+
+	before() 在某个元素之前添加
+
+	$('p').appendTo('div'); 将谁添加到谁之内
+
+	$('p').prependTo($('span')); 向前添加 将谁添加到谁之内
+
+	insertBefore(); 将谁放到谁之前
+
+	insertAfter(); 将谁放到谁之后
+
+	clone();  克隆节点
+
+-------------------------------------------------------
+css 操作
+	$("p").css("color"); 获取样式 结果样式
+
+	offset 自身位置的描述
+
+		x  $('div').offset().left
+		y  $('div').offset().top
+
+	设置位置：
+	$('div').offset({
+			left:200,
+			top:50	
+		});
+
+	一定要记得加绝对定位：position:absolute;
+
+
+	position() 获取相对于参照父级的位置	
+
+--------------------------------------------------
+scrollTop
+
+	$(document).scrollTop() 获取滚动条上部的距离
+
+	$(document).scrollLeft() 获取滚动条左部的距离
+
+	$('div').width();  
+
+	$('div').height();
+
+	$('div').outerHeight(); 包含盒子的border在内
+
+-----------------------------------------------
+事件绑定
+	加事件用绑定 
+
+	jquery:	 .on(fn);
+
+	事件解绑定 必须得是命名函数
+	$('input').off('click',fn2);
+
+-------------------------------------------------------
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+

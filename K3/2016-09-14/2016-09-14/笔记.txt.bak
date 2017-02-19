@@ -1,0 +1,135 @@
+file:///C:/Users/parry/Desktop/20160913/%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F1.html 本地路径
+https://www.baidu.com/  服务器路径
+http://www.zhinengshe.com/ 服务器路径
+
+window wamp appServ 本地集成服务器环境 www
+mac xampp 本地集成服务器环境 htdocs 
+
+检测服务环境是否开启：
+localhost
+
+cookie 
+
+cookie是什么 存
+
+设置：document.cookie = 'key=value' 格式
+获取：document.cookie 多条 'name=1; name2=2; name3=3'
+修改：document.cookie = 'name=4'
+删除：设置过期时间是之前的日子
+
+有效时间：
+key=value;expires=时间
+
+注意的问题：
+1.在服务器环境 ? 以域为单位的
+2.默认的cookie 的有效时间 expries session-> 会话
+3.都是字符串
+4.cookie 不安全
+5.特别珍贵 4k-10k
+
+path:
+	|-path
+		setCookie 设置cookie
+	|-getCookie 获取 
+-------------------------------------------
+域-》 域名 www.baidu.com 
+	   www.sina.com 
+
+浏览器的会话：从开到关掉 完成了一次会话
+
+eval() => 字符串 = > js可执行的代码
+json => eval() eval('('+str+')')
+-------------------------------------------
+jquery 
+库 框架   => 提供方便的操作
+window.onload   domReady(function(){body...})
+
+$(function(){
+	body...
+})
+选择器：字符串表达式 
+$('#box') id
+$('.li') class
+$('div') tag
+
+$('#box ul li')
+$('ul li:eq(0)')
+$('input[type=button]')
+
+伪类：
+first
+last
+
+
+样式：
+css('','') 设置样式
+css('') 获取
+css({}) 批量设置
+
+attr('','') 设置属性
+attr('') 获取
+attr({}) 批量设置
+
+关于父级：
+定位的父级：$('').offsetParent()
+结构的父级：$('').parent()
+
+标签里的内容：
+	$().html()   => innerHTML 获取
+	$().html('111') 设置
+表单元素：
+	值：val() 获取
+	    val('112233') 设置
+
+fadeIn() 淡入
+fadeOut() 淡出
+
+slideUp() 上滑   主要运动的 height
+slideDown() 下滑
+
+运动：
+animate() 疯狂点击 .stop().animate(,,)
+事件：
+click(function(){})
+mouseover(function(){})
+mousemove
+mousedown
+mouseout
+change
+keydown
+...
+
+如果不好使
+事件绑定：
+$('0').bind('mousewheel',function(){})
+
+** jquery里的事件都是绑定的
+
+onclick 
+onmouseover onmouseup onmousemove onmousedown onmouseout
+onchange onkeydown onkeyup onfocus onblur oninput 
+onload onscroll onresize oncontextmenu 
+onmouseWheel onreadystatechange onmouseenter onmouseleave
+...
+DOM:
+
+创建元素：
+	var dom = $('<div><div>')
+
+插入：
+	子级从后插：dom.appendTo('#box');
+	子级从前插：dom.prependTo('#box')
+	同级前插：insertBefore
+	同级后插：insertAfter
+删除：
+	DOM.remove()
+-------------------------------------------
+官网：http://jquery.com/
+版本：x.x.x 
+如何选择版本 1.7.2.js   压缩1.7.2.min.js
+	**稳定
+1.x.x 适用地区 亚非拉地区 发展中国家
+	兼容ie6 
+2.x.x 欧美地区
+	不兼容ie6 
+手册 -> 

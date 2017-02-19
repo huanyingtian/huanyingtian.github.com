@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 500px;
+            height: 100%;
+            margin: 10px auto;
+        }
+    </style>
+    <script src="js/jquery-1.7.2.js"></script>
+    <script>
+        $(function(){
+            $.ajax({
+                url:'demo.json1',
+                success:function(a){
+                    var arr = eval(a);
+
+                    $.each(arr,function(index,val){
+                        var arr1=eval(val.child);
+                        $('div').append('<h3>' +
+                                '<a href="'+val.href+'">'+val.title+'</a>' +
+                                '<h4><a href="'+val.child.href+'">'+val.child.title+'</a></h4></h3>'
+                        );
+
+                        //$('div').append('<a href="'+val.child+'"><h4>'+val.title+'</h4></a>');
+
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div>
+
+</div>
+</body>
+</html>

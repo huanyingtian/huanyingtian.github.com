@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            var aLi = $('li');
+            aLi.each(function(i){
+                $(this).click(function(){
+                    aLi.css({background:'#fff',color:'#000'});
+                    $("li:not('.l')").eq(i).css({background:'green',color:'#f00'});
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+<ul>
+    <li>nlfjfkd</li>
+
+    <li>skdjfkjkdf</li>
+    <li>.dfngdfkjjd</li>
+    <li>kdfgkjdfldflk</li>
+    <li class="l">dkfngdfkj</li>
+</ul>
+</body>
+</html>

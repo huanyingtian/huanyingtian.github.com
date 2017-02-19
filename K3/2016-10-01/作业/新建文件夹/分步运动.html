@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+
+        }
+        li{
+            list-style: none;
+            width: 100px;
+            height: 100px;
+            background: red;
+            float: left;
+            margin: 10px;
+            opacity: 0;
+        }
+        body{
+            font-size: 50px;
+            color: #fff;
+            background: #000;
+        }
+    </style>
+    <script src="move4.js"></script>
+    <script>
+        window.onload = function () {
+            var n =0;
+            var timer=null;
+            var str='西湖上的玉带桥历史久远，桥上重檐四角亭飞动有势。千百年来，“玉带晴虹”点缀着小桥流水的江南风光。随着杭州牵手二十国集团(G20)领导人峰会，玉带桥也作为原型，绘成峰会会标，从江南一景走入世界视野。风雨飘摇的过去，它是摆渡到彼岸的一段路。大国崛起的今天，它是一座连接中国与世界、历史与未来之桥，一座连接发达国家与发展中国家、实现合作共赢之桥。';
+            for(var i=0;i<str.length;i++){
+                var oSpan = document.createElement('span');
+                oSpan.innerHTML=str.charAt(i);
+                oSpan.style.opacity=0;
+                document.body.appendChild(oSpan);
+            }
+
+            timer=setInterval(function(){
+                move(document.body.children[n],{opacity:1});
+                n++;
+                if(n==document.body.children.length){
+                    clearInterval(timer);
+                }
+            },500)
+
+        };
+    </script>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

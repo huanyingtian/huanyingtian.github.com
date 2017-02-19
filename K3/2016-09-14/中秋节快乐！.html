@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        #box{
+            width: 500px;
+            height: 500px;
+            background: #f00;
+            margin: 0 auto;
+            color:#fff;
+            line-height: 250px;
+            text-align: center;
+            font-size:70px;
+        }
+
+    </style>
+    <script src="move4.js"></script>
+    <script>
+        function　rnd(n,m){
+            return parseInt(Math.random()*(m-n))+n;
+        }
+        window.onload=function(){
+            var oBox = document.getElementById('box');
+            var str ='祝中秋节快乐！倪胜阳';
+            var n=0;
+            var timer = null;
+            for(var i=0;i<str.length;i++){
+                var oSpan = document.createElement('span');
+                var r=rnd(0,256);
+                var g=rnd(0,256);
+                var b=rnd(0,256);
+                oSpan.style.opacity=0;
+                oSpan.style.background='rgb('+r+','+g+','+b+')';
+                oBox.appendChild(oSpan);
+                oSpan.style.width='20px';
+                oSpan.style.height='20px';
+            }
+            var aSpan = document.getElementsByTagName('span');
+            for(var i=0;i<str.length;i++){
+                aSpan[i].innerHTML=str.charAt(i);
+
+            };
+            document.onkeydown=function(ev){
+                var oEvent = ev || event;
+                if(oEvent.keyCode==32){
+                    timer=setInterval(function(){
+                        oBox.children[n].style.opacity=1;
+                        move(aSpan[n],{opacity:1});
+                        n++;
+                        if(n==aSpan.length){
+                            clearInterval(timer);
+                        }
+                    },500);
+                }
+                //alert()
+            }
+
+
+
+
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+
+</div>
+</body>
+</html>
