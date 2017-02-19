@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <script>
+        function rnd(n,m){
+            return parseInt(Math.random()*(m-n))+n;
+        }
+        function findInArray(n,arr){
+            for(var i=0;i<arr.length;i++){
+                if(arr[i]==n){
+                    return true;
+                }
+            }
+            return false;
+        }
+        arr=[]; //需要一个容器
+        //往里放
+        while(arr.length<6){
+            var num = rnd(1,34);
+            //看num 在不在arr中
+            if(findInArray(num,arr)){
+                //什么也不干
+            }else{
+                //放进数组里
+                arr.push(num);
+            }
+        }
+        document.write(arr);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

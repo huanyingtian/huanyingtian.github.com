@@ -1,0 +1,134 @@
+1.我在多练习吧
+2.今天感觉很不错 比以前大有长进 继续努力吧
+=======================================================
+复习
+	关于img
+		var oImg = new Image();
+		onload  图片加载成功
+		onerror 图片加载失败
+	表单
+		action  提交地址
+		method  提交方式
+				get   不安全  32k 有缓存 分享
+				post  相对安全  1G  没有缓存
+		name    
+	缓存：同一个url地址只访问一次
+
+	事件
+		定位根元素
+			body
+		结构根元素
+			document
+		事件对象
+			描述事件更加详细得信息
+			obtn.onclick=function(ev){
+				var oEvent =ev || event;
+				oEvent.clientX
+				oEvent.clientY
+			};
+		鼠标移动事件
+			onmousemove
+		事件冒泡
+			如果说他的父级有同样的事件 会被触发
+			如果没有继续往上找
+			document
+		阻止冒泡
+			oEvent.cancelBubble=true;
+=======================================================
+键盘事件
+	事件加给谁
+	onkeydown   当键盘按下的时候
+	想知道具体按哪个？
+	事件对象
+	oEvent.keyCode   键码
+	a   65
+	//上 38
+    //下 40
+    //左 37
+    //右 39
+    组合键
+    	辅助键
+    ctrl 
+    	oEvent.ctrlKey
+    shift
+    	oEvent.shiftKey
+    alt
+    	oEvent.altKey
+    右键
+    	oncontextmenu   右键（上下文菜单）;
+    浏览器自带的事件 行为
+    阻止浏览器默认的行为
+    	return false;
+拖拽 
+	onmousedown
+	onmousemove
+	onmouseup
+IE独有的
+	设置捕获
+	oBtn.setCapture();
+	oBtn.setCapture
+				高版本浏览器中  undefined
+				低版本ie  function
+	会把屏幕中所有的东西都抓过来变成oBtn
+	释放捕获
+	oBtn.releaseCapture();
+    2). 磁性拖拽
+    3). 带框拖拽
+    4). 透明拖拽
+    		1.创建一个跟原来一模一样的div
+    	obj 元素
+    	克隆一个div
+    	obj.cloneNode();
+    		只会克隆div
+    	obj.cloneNode(true);
+    		是否深度克隆
+    		div里面的子元素也会被带上
+
+事件绑定(事件监听)
+		1.事件冲突
+		同一个元素 添加同样的事件 处理不同的事情
+		obtn.onclick
+		obj.addEventListener(事件,函数,false);
+			**不能加on
+			兼容性：chrome  ff IE9+
+		obj.attachEvent('on'+事件,函数);
+			**事件必须加on
+			兼容性：ie低版本	
+		obj.addEventListener 
+			高版本 function
+			低版本 undefined
+解除绑定
+		
+		obj.removeEventListener(事件,函数,false);
+		obj.detachEvent('on'+事件,函数)
+
+事件流
+	捕获阶段
+	obj.removeEventListener(事件,函数,false);
+		false 是否捕获
+	冒泡阶段
+	谁先谁后？
+		捕获先 冒泡后
+碰撞检测
+	1.正面考虑
+		什么时候碰上了？
+	2.反面考虑
+		看碰不上
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 12.5%;
+            height: 200px;
+            color: #fff;
+            line-height: 200px;
+            font-size: 100px;
+            text-align: center;
+            float: left;
+        }
+    </style>
+    <script>
+        window.onresize=window.onload = function () {
+            var aDiv=document.getElementsByTagName('div');
+            var clientW=document.documentElement.clientWidth;
+
+            if(clientW>1600){
+                for(var i=0; i<aDiv.length; i++){
+                    aDiv[i].style.width='12.5%';
+                }
+            }else if(clientW>=1024 && clientW<=1600){
+                for(var i=0; i<aDiv.length; i++){
+                    aDiv[i].style.width='25%';
+                }
+            }else{
+                for(var i=0; i<aDiv.length; i++){
+                    aDiv[i].style.width='50%';
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+<div style="background:#1abc9c">1</div>
+<div style="background:#e67e22">2</div>
+<div style="background:#e74c3c">3</div>
+<div style="background:#34495e">4</div>
+<div style="background:#d4d4d4">5</div>
+<div style="background:#2ecc71">6</div>
+<div style="background:#2400cc">7</div>
+<div style="background:#cc2b46">8</div>
+</body>
+</html>

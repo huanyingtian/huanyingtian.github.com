@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+div {width:150px; height:150px; float:left; margin:10px; background:#CCC; border:1px solid black;}
+</style>
+<script>
+window.onload=function ()
+{
+	var oBtn=document.getElementById('btn1');
+	var aDiv=document.getElementsByTagName('div');
+	
+	oBtn.onclick=function ()
+	{
+		for(var i=0;i<aDiv.length;i++)
+		{
+			aDiv[i].style.background='red';
+		}
+	};
+};
+</script>
+</head>
+
+<body>
+<input type="button" id="btn1" value="变红" /><br>
+<div></div><div></div><div></div><div></div><div></div>
+</body>
+</html>

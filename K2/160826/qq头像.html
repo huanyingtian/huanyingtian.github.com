@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        #face {
+            width: 100px;
+            height: 100px;
+            background: #ccc;
+            float: left;
+        }
+        #info{
+            width: 200px;
+            height: 200px;
+            background: red;
+            float: left;
+            margin-left: 15px;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oFace =document.getElementById('face');
+            var oInfo =document.getElementById('info');
+            var timer=null;
+            oInfo.onmouseover=oFace.onmouseover=function(){
+                clearTimeout(timer);
+                oInfo.style.display='block';
+            };
+            oInfo.onmouseout=oFace.onmouseout=function(){
+                timer=setTimeout(function(){
+                    oInfo.style.display='none';
+                },300)
+            };
+
+        };
+    </script>
+</head>
+<body>
+    <div id="face"></div>
+    <div id="info"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

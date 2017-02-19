@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        div{
+            height: 200px;
+            background: red;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oBox = document.getElementById('box');
+            var timer = null;
+            timer = setTimeout(function(){
+                oBox.style.display='none';
+            },2000);
+            oBox.onmouseover=function(){
+                clearTimeout(timer);
+            };
+            oBox.onmouseout=function(){
+                var that = this;
+                timer = setTimeout(function(){
+                    that.style.display='none';
+                },1000);
+            };
+        };
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

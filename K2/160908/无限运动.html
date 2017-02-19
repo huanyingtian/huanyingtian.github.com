@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: #cc0301;
+            position: absolute;
+            left: 0;
+            top: 0px;
+        }
+    </style>
+    <script src="move4.js"></script>
+    <script>
+        window.onload = function () {
+            var oBtn = document.getElementById('btn');
+            var oBall = document.getElementById('ball');
+            var timer=null;
+            var arr=[
+                {left:100,top:100},
+                {left:200,top:200},
+                {left:300,top:300},
+                {left:400,top:400}
+            ];
+            var n = 0;
+            oBtn.onclick=function(){
+                next();
+            };
+            function next(){
+                setInterval(function(){
+                    move(oBall,{left:arr[n%arr.length].left,top:arr[n%arr.length].top},{complete:function(){
+                        next();
+                    }});
+                    n++;
+                },500)
+            }
+        };
+    </script>
+</head>
+<body>
+<input type="button" value="动" id="btn"/>
+    <div id="ball"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+        #box h2 a{
+            color: #000;
+        }
+        #box a{
+            color: #555;
+            margin-right: 20px;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            // 假数据
+            var arr=[
+                [
+                    {
+                        content: '习近平有关杭州G20的最新讲话',
+                        href: 'http://china.huanqiu.com/article/2016-09/9386013.html?from=bdwz'
+                    },
+                    {
+                        content: '治国理政',
+                        href: 'http://china.huanqiu.com/article/2016-04/8817671.html?from=bdwz'
+                    },
+                    {
+                        content: '会见加拿大总理',
+                        href: 'http://china.huanqiu.com/article/2016-04/8817194.html?from=bdwz'
+                    },
+                    {
+                        content: '沙特王储继承人',
+                        href: 'http://china.huanqiu.com/article/2016-04/8817194.html?from=bdwz'
+                    },
+                    {
+                        content: '国平',
+                        href: 'http://china.huanqiu.com/article/2016-04/8817194.html?from=bdwz'
+                    }
+                ],
+                [
+                    {
+                        content: '李克强同加拿大总理特鲁多举行会谈',
+                        href: 'http://china.huanqiu.com/article/2016-04/8817194.html?from=bdwz'
+                    },
+                    {
+                        content: '222',
+                        href: 'http://china.huanqiu.com/article/2016-04/8817671.html?from=bdwz'
+                    },
+                    {
+                        content: '3333',
+                        href: 'http://china.huanqiu.com/article/2016-04/8817194.html?from=bdwz'
+                    },
+                    {
+                        content: '444',
+                        href: 'http://china.huanqiu.com/article/2016-04/8817194.html?from=bdwz'
+                    },
+                    {
+                        content: '5555',
+                        href: 'http://china.huanqiu.com/article/2016-04/8817194.html?from=bdwz'
+                    }
+                ],
+                [
+                    {
+                        content: '直播：2016百度世界大会',
+                        href: 'http://china.huanqiu.com/article/2016-04/8817194.html?from=bdwz'
+                    },
+                    {
+                        content: 'bbbb',
+                        href: 'http://china.huanqiu.com/article/2016-04/8817671.html?from=bdwz'
+                    },
+                    {
+                        content: 'ccc',
+                        href: 'http://china.huanqiu.com/article/2016-04/8817194.html?from=bdwz'
+                    },
+                    {
+                        content: 'ddd',
+                        href: 'http://china.huanqiu.com/article/2016-04/8817194.html?from=bdwz'
+                    },
+                    {
+                        content: 'eee',
+                        href: 'http://china.huanqiu.com/article/2016-04/8817194.html?from=bdwz'
+                    }
+                ]
+            ];
+            //arr[dataarr1,dataarr2,dataarr3]
+            //dataarr1=[ {content:12313,href:link },{ },{ }, { }, { }]
+            //dataarr1[0].content:习大大
+            //var dataarr1=arr[0];
+            //var json1 = dataarr1[0];
+            //alert(json1.content);
+//            alert(arr[0][3].content)
+//            alert(arr[1][1].content)
+            var oBox =document.getElementById('box');
+            for(var i=0;i<arr.length;i++){
+                //创建一个div放一个大标题和四个小标题
+                var oDiv = document.createElement('div');
+                for(var j=0;j<arr[i].length;j++){
+                    if(j==0){
+                        //当j=0的时候代表的是第一个json 第一个json是大标题
+                        //创建h2
+                        var oH2 = document.createElement('h2');
+                        //h2中有个a标签
+                        oH2.innerHTML='<a href="'+arr[i][j].href+'">'+arr[i][j].content+'</a>';
+                        //把h2添加到div中
+                        oDiv.appendChild(oH2);
+                    }else{
+                        //当j不是0的时候是小标题 除了第一个json之外的json
+                        //创建一个a标签
+                        var oA = document.createElement('a');
+                        oA.innerHTML=arr[i][j].content;
+                        oA.href=arr[i][j].href;
+                        //把a添加到div中
+                        oDiv.appendChild(oA);
+                    }
+                }
+                oBox.appendChild(oDiv);
+            }
+
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+    </div>
+</body>
+</html>

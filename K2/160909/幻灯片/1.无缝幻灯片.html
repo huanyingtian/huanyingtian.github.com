@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        *{ margin:0; padding:0; list-style:none;}
+        #box{ width:534px; height:300px; position:relative; margin:50px auto; overflow:-hidden;}
+        #box ul{ position:absolute; left:0; top:0;}
+        #box ul li{ float:left; width:534px; height:300px;}
+        #box ul li img{ height:300px;}
+
+        #box a{ transition:.2s all ease;}
+        #box .prev,#box .next{position:absolute;  top:50%; z-index:2; height:80px; line-height:80px; background:rgba(0,0,0,0.6); color:#fff; width:80px; text-align:center; margin-top:-40px; display:none;}
+        #box .prev{ left:0;}
+        #box .next{ right:0;}
+        #box a:hover{ background:rgba(255,0,0,0.4);}
+
+        #box ol{ position:absolute; width:120px; left:50%; margin-left:-60px; bottom:10px;}
+        #box ol li{ width:20px; height:20px; background:#f60; float:left; margin:2px; text-align:center; text-indent:-9999px; border-radius:50%;}
+        #box ol li.active{ background:#fff;}
+    </style>
+    <script>
+        window.onload=function(){
+            var oBox=document.getElementById('box');
+            var oPrev=oBox.children[0];
+            var oNext=oBox.children[1];
+            var oUl=oBox.children[2];
+            var oOl=oBox.children[3];
+            var aLi=oUl.children;
+            var aBtn=oOl.children;
+            oUl.innerHTML+=oUl.innerHTML;
+            oUl.style.width=aLi[0].offsetWidth*aLi.length+'px';
+            oBox.onmouseover=function(){
+                oPrev.style.display='block';
+                oNext.style.display='block';
+            };
+            oBox.onmouseout=function(){
+                oPrev.style.display='none';
+                oNext.style.display='none';
+            };
+
+            for(var i =0;i<aBtn.length;i++){
+                (function(index){
+                    aBtn[i].onclick=function(){
+                        n=index;
+                        tab()
+                    };
+                })(i);
+            }
+            var n = 0;
+            function tab(){
+                for(var i =0;i<aBtn.length;i++){
+                    aBtn[i].className='';
+                }
+                aBtn[n].className='active';
+                oUl.style.left=-n*aLi[0].offsetWidth+'px';
+            }
+            oNext.onclick=function(){
+                n++;
+                tab();
+                document.title=n;
+            };
+            oPrev.onclick=function(){
+                n--;
+                tab();
+                document.title=n;
+            };
+
+
+
+
+
+
+
+
+        };
+    </script>
+</head>
+<body>
+<div id="box">
+    <a href="javascript:;" class="prev">prev</a>
+    <a href="javascript:;" class="next">next</a>
+    <ul>
+        <li><img src="img/0.jpg"></li>
+        <li><img src="img/1.jpg"></li>
+        <li><img src="img/2.jpg"></li>
+        <li><img src="img/3.jpg"></li>
+        <li><img src="img/4.jpg"></li>
+    </ul>
+    <ol>
+        <li class="active">0</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ol>
+</div>
+</body>
+</html>

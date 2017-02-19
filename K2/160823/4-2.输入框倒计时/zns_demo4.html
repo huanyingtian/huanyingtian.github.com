@@ -1,0 +1,102 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>倒计时 - 智能社 - www.zhinengshe.com</title>
+<!--[if lte IE 6]>
+<script src="js/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        DD_belatedPNG.fix('a');
+    </script>
+<![endif]-->
+<link href="style/zns_style.css" rel="stylesheet" type="text/css" />
+<script>
+    window.onload=function(){
+        var oBegin = document.getElementById('go');
+        var oY = document.getElementById('ty');
+        var oM = document.getElementById('tm');
+        var oD = document.getElementById('td');
+        var oH = document.getElementById('th');
+        var oF = document.getElementById('tf');
+        var oS = document.getElementById('ts');
+        var oTarget = document.getElementById('target');
+        var od = document.getElementById('day');
+        var oh = document.getElementById('hour');
+        var om = document.getElementById('min');
+        var os = document.getElementById('sec');
+        var timer = null;
+        oBegin.onclick=function(){
+            clearInterval(timer);
+            var ty = parseInt(oY.value);
+            var tm = parseInt(oM.value);
+            var td = parseInt(oD.value);
+            var th = parseInt(oH.value);
+            var tf = parseInt(oF.value);
+            var ts = parseInt(oS.value);
+            var oFDate = new Date();//未来的时间
+            oFDate.setFullYear(ty,tm-1,td);
+            oFDate.setHours(th,tf,ts,0);
+            var future = oFDate.getTime();
+
+            timer=setInterval(function(){
+                var oNDate = new Date();
+                var now = oNDate.getTime();
+                var s = parseInt((future-now)/1000);
+                var d = parseInt(s/86400);
+                s%=86400;
+                var h = parseInt(s/3600);
+                s%=3600;
+                var m = parseInt(s/60);
+                s%=60;
+                od.innerHTML=d;
+                oh.innerHTML=h;
+                om.innerHTML=m;
+                os.innerHTML=s;
+            },1000)
+
+
+        };
+    };
+</script>
+</head>
+<body>
+
+<div id="zhinengshe">
+    <div id="fill_in">
+        <span class="title">请输入：</span>
+        <input type="text" class="long_text" id="ty" value="2016" />
+        <span class="space1">年</span>
+        <input type="text" class="text" id="tm" value="6" />
+        <span class="space2">月</span>
+        <input type="text" class="text" id="td" value="1" />
+        <span class="space3">日</span><br />
+        <div id="box" style="position: absolute;left: 70px;top: 23px;">
+            <input type="text" class="text1" id="th" value="0" />
+            <span class="space4">时</span>
+            <input type="text" class="text1" id="tf" value="0" />
+            <span class="space5">分</span>
+            <input type="text" class="text1" id="ts" value="0" />
+            <span class="space6">秒</span>
+        </div>
+    </div>
+
+    <a href="javascript:;" id="go" class="go"></a>
+
+    <p id="target">
+        现在距离 -
+        <strong>2016年6月1日</strong>
+        - 还剩：
+    </p>
+
+    <div id="date">
+        <p id="day">00</p>
+        <p id="hour">00</p>
+        <p id="min">00</p>
+        <p id="sec">00</p>
+    </div>
+
+    <h1 title="智能社-www.zhinengshe.com"><a href="http://www.zhinengshe.com"></a></h1>
+</div>
+
+</body>
+</html>

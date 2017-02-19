@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+
+    </style>
+    <script src="addwheel.js"></script>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('box');
+            //韩梅梅
+
+            addwheel(oDiv,function(bDown){
+                if(bDown){
+                    oDiv.style.height=oDiv.offsetHeight+10+'px';
+                }else{
+                    oDiv.style.height=oDiv.offsetHeight-10+'px';
+                };
+            });
+            oDiv.onmousewheel=null;
+        };
+    </script>
+</head>
+<body style="height: 3000px">
+    <div id="box" style="width: 200px;height: 200px;background: red;"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

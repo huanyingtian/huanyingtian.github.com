@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        div{
+            width: 200px;
+            height: 50px;
+            background: #ccc;
+            margin:10px auto;
+        }
+        p{
+            width: 200px;
+            height: 50px;
+            background: #ccc;
+            margin:10px auto;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var arr = [];//容器
+            //获取所有标签
+            var aEle = document.body.getElementsByTagName('*');
+            //查看每一个标签的className 看他是否存在 'red'字符串
+            for(var i=0;i<aEle.length;i++){
+                if(aEle[i].className.indexOf('red')!=-1){
+                    arr.push(aEle[i]);
+                }
+            }
+            for(var i =0;i<arr.length;i++){
+                arr[i].style.background='red';
+            }
+        };
+    </script>
+</head>
+<body>
+    <div id="" class="red"></div>
+    <div id="" class="blue"></div>
+    <div id="" class="red hhh"></div>
+    <a href="" class="yellow black"></a>
+    <p class="red"></p>
+    <div id="" class="pink"></div>
+    <div id="" class="red2"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

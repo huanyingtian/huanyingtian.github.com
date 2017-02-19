@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+
+    </style>
+    <script>
+        window.onload = function () {
+            var oBox = document.getElementById('box');
+            var oBtn = document.getElementsByTagName('input')[0];
+            oBtn.onclick=function(){
+                var newDiv = oBox.cloneNode();
+                document.body.appendChild(newDiv);
+            };
+        };
+    </script>
+</head>
+<body>
+<input type="button" value="添加"/>
+<div id="box">
+    <h3>标题333</h3>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

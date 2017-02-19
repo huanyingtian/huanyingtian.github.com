@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        #face {
+            width: 100px;
+            height: 100px;
+            background: #ccc;
+            float: left;
+        }
+        #info{
+            width: 200px;
+            height: 200px;
+            background: red;
+            float: left;
+            margin-left: 15px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+           for(var i =0;i<2;i++){
+               function show(abc){
+                   setTimeout(function(){
+                       alert(abc)
+                   },0)
+               }
+//               function show(0){
+//                   setTimeout(function(){
+//                       alert(0)
+//                   },0)
+//               }
+//               function show(1){
+//                   setTimeout(function(){
+//                       alert(1)
+//                   },0)
+//               }
+               show(i);
+               //show(0);
+               //show(1);
+           }
+        };
+    </script>
+</head>
+<body>
+    <div id="face"></div>
+    <div id="info"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

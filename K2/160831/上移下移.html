@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+
+    </style>
+    <script>
+        window.onload=function(){
+            var oUl = document.getElementById('ul1');
+            var aA = oUl.getElementsByTagName('a');
+            for(var i=0;i<aA.length;i++){
+                if(i%2==0){
+                    aA[i].onclick=function(){
+                        alert('上移');
+                    };
+                }else{
+                    aA[i].onclick=function(){
+                        alert('下移');
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+<ul id="ul1">
+    <li><a href="javascript:;">上移</a>1111<a href="javascript:;">下移</a></li>
+    <li><a href="javascript:;">上移</a>2222<a href="javascript:;">下移</a></li>
+    <li><a href="javascript:;">上移</a>3333<a href="javascript:;">下移</a></li>
+    <li><a href="javascript:;">上移</a>4444<a href="javascript:;">下移</a></li>
+    <li><a href="javascript:;">上移</a>5555<a href="javascript:;">下移</a></li>
+</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

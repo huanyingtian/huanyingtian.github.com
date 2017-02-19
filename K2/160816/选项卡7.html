@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        #box div{
+            width: 200px;
+            height:200px;
+            border:1px solid #ccc;
+            display: none;
+        }
+        #box .on{
+            background:red;
+        }
+        #box .active{
+            display: block;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var aBtn = document.getElementsByTagName('input');
+            var oBox = document.getElementById('box');
+            var aDiv = oBox.getElementsByTagName('div');
+            //给每个btn加点击事件
+            aBtn[0].abc=0;
+            aBtn[1].abc=1;
+            aBtn[2].abc=2;
+            for(var i =0;i<aBtn.length;i++){
+                aBtn[i].onclick=function(){
+                    //清空所有按钮的class 清除div的样式
+                    for(var i=0;i<aBtn.length;i++){
+                        aBtn[i].className='';
+                        aDiv[i].style.display='none';
+                    }
+                    //当前的加class
+                    this.className='on';
+                    //需要0 1 2
+                    //aDiv[1].style.display='block'
+                    alert(this.abc);
+                };
+            }
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <input type="button" class="on" value="体育" abc="0"/>
+        <input type="button" value="新闻" abc="1"/>
+        <input type="button" value="娱乐" abc="2"/>
+        <div style="display:block;">111</div>
+        <div>222</div>
+        <div>333</div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

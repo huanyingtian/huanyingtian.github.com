@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        #div1{
+            width: 500px;
+            height: 500px;
+        }
+        #div2{
+            width: 300px;
+            height: 300px;
+        }
+        #div3{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script src="addEvent.js"></script>
+    <script>
+        window.onload = function () {
+            var oDiv3 = document.getElementById('div3');
+            var oDiv2 = document.getElementById('div2');
+            var oDiv1 = document.getElementById('div1');
+//            oDiv1.onclick=function(){
+//                alert(1);
+//            };
+//            oDiv2.onclick=function(){
+//                alert(2);
+//            };
+//            oDiv3.onclick=function(){
+//                alert(3);
+//            };
+            addEvent(oDiv1,'click',function(){alert(1)});
+            addEvent(oDiv2,'click',function(){alert(2)});
+            addEvent(oDiv3,'click',function(){alert(3)});
+        };
+    </script>
+</head>
+<body>
+<div id="div1" style="background:#f60;">
+    <div id="div2" style="background:#ccc;">
+        <div id="div3" style="background:#cc49a5;"></div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

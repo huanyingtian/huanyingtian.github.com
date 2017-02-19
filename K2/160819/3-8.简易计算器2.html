@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>简易计算器</title>
+<script>
+window.onload=function(){
+	var oS = document.getElementsByTagName('select')[0];
+	var oT1 = document.getElementById('t1');
+	var oT2 = document.getElementById('t2');
+	var oBtn = document.getElementById('btn');
+	oBtn.onclick=function(){
+		var n1 = Number(oT1.value);
+		var n2 = Number(oT2.value);
+		alert(eval(n1+oS.value+n2));
+		//看看输入的是不是有问题
+
+	};
+};
+</script>
+</head>
+
+<body>
+<input type="text" id="t1" />
+<select>
+	<option value="+">+</option>
+	<option value="-">-</option>
+	<option value="*">*</option>
+	<option value="/">/</option>
+</select>
+<input type="text" id="t2" />
+<input type="button" value="计算" id="btn" />
+</body>
+</html>

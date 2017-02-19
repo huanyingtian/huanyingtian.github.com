@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 800px;
+            height: 200px;
+            border:1px solid #000;
+            margin: 80px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        ul{
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        li{
+            list-style: none;
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oUl = document.getElementsByTagName('ul')[0];
+            var aLi = oUl.children;
+            var oL = document.getElementById('left');
+            var oR = document.getElementById('right');
+            oUl.innerHTML+=oUl.innerHTML;
+            oUl.style.width=aLi[0].offsetWidth*aLi.length+'px';
+            var n = 0;
+            left();
+            oR.onclick=function(){
+                clearInterval(timer);
+                right();
+            };
+            oL.onclick=function(){
+                clearInterval(timer);
+                left();
+            };
+            function right(){
+                timer=setInterval(function(){
+                    n+=10;
+                    if(n>=0){
+                        n=-oUl.offsetWidth/2;
+                    }
+                    oUl.style.left=n+'px'
+                },30)
+            }
+            function left(){
+                timer=setInterval(function(){
+                    n-=10;
+                    if(n<=-oUl.offsetWidth/2){
+                        n=0;
+                    }
+                    oUl.style.left=n+'px'
+                },30)
+            }
+
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li><img src="cat/1.jpg" alt=""/></li>
+            <li><img src="cat/2.jpg" alt=""/></li>
+            <li><img src="cat/3.jpg" alt=""/></li>
+            <li><img src="cat/4.jpg" alt=""/></li>
+        </ul>
+    </div>
+    <input type="button" value="左" id="left"/>
+    <input type="button" value="右" id="right"/>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

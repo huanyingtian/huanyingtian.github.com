@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #box{
+            width: 520px;
+            height: 280px;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        #box ul{
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #box ul li{
+            width: 520px;
+            height: 280px;
+            float: left;
+        }
+        #box ol{
+            width: 100px;
+            background: rgba(0,0,0,.5);
+            position: absolute;
+            left: 50%;
+            margin-left: -50px;
+            bottom: 10px;
+            text-align: center;
+            border-radius: 20px;
+        }
+        #box ol li{
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #B7B7B7;
+            display: inline-block;
+            cursor: pointer;
+        }
+        #box ol li.active{
+            background: #F40;
+        }
+        #box a{
+            width: 24px;
+            height: 36px;
+            position: absolute;
+            top: 50%;
+            margin-top: -18px;
+            background: rgba(0,0,0,.3);
+            color: #fff;
+            font-size: 20px;
+            line-height:36px;
+            text-align: center;
+            z-index: 999;
+            text-decoration: none;
+        }
+        #box #left{
+            left: 0;
+        }
+        #box #right{
+            right: 0;
+        }
+        #box a:hover{
+            background: rgba(0,0,0,.5);
+        }
+    </style>
+    <!--<script>
+       window.onload=function(){
+           var oBox = document.getElementById('box');
+           var oL = document.getElementById('left');
+           var oR = document.getElementById('right');
+           var oUl1 = document.getElementById('ul1');
+           var oUl2 = document.getElementById('ol1');
+           var aLi1 = oUl1.getElementsByTagName('li');
+           var aLi2 = oUl2.getElementsByTagName('li');
+           var iNow = 0;
+           var timer = null;
+           function tab(){
+               for(var i=0;i<aLi2.length;i++){
+                   aLi2[i].className='';
+                   aLi1[i].style.display='none';
+               }
+               aLi2[iNow].className='active';
+               aLi1[iNow].style.display='block'
+           }
+           for(var i=0;i<aLi2.length;i++){
+               aLi2[i].index=i;
+               aLi2[i].onclick=function(){
+                   iNow=this.index;
+                   tab();
+               };
+           };
+           oR.onclick=function(){
+               iNow++;
+               if(iNow==aLi2.length){
+                   iNow=0;
+               }
+               tab();
+           };
+           oL.onclick=function(){
+               iNow&#45;&#45;;
+               if(iNow<0){
+                   iNow=4;
+               }
+               tab();
+           };
+           timer=setInterval(function(){
+               iNow++;
+               if(iNow==aLi2.length){
+                   iNow=0;
+               }
+               tab();
+           },500);
+           oBox.onmouseover=function(){
+               clearInterval(timer);
+           };
+           oBox.onmouseout=function(){
+               timer=setInterval(function(){
+                   iNow++;
+                   if(iNow==aLi2.length){
+                       iNow=0;
+                   }
+                   tab();
+               },500);
+           };
+       };
+    </script>-->
+    <script>
+        window.onload=function(){
+            var oBox = document.getElementById('box');
+            var oL = document.getElementById('left');
+            var oR = document.getElementById('right');
+            var oUl1 = document.getElementById('ul1');
+            var oUl2 = document.getElementById('ol1');
+            var aLi1 = oUl1.getElementsByTagName('li');
+            var aLi2 = oUl2.getElementsByTagName('li');
+            var timer = null;
+            var iNow = 0;
+            function tab(){
+                for(var i=0;i<aLi2.length;i++){
+                    aLi1[i].style.display='none';
+                    aLi2[i].className='';
+                }
+                aLi1[iNow].style.display='block';
+                aLi2[iNow].className='active';
+            }
+            for(var i=0;i<aLi2.length;i++){
+                aLi2[i].index=i;
+                aLi2[i].onclick=function(){
+                    iNow=this.index;
+                    tab();
+                };
+
+            };
+            oL.onclick=function(){
+                iNow--;
+                if(iNow<0){
+                    iNow=aLi2.length-1;
+                }
+                tab();
+            };
+            oR.onclick=function(){
+                iNow++;
+                if(iNow==aLi2.length){
+                    iNow=0;
+                }
+                tab();
+            };
+            timer=setInterval(function(){
+                iNow++;
+                if(iNow==aLi2.length){
+                    iNow=0;
+                };
+                tab()
+            },500);
+            oBox.onmouseover=function(){
+                clearInterval(timer);
+            };
+            oBox.onmouseout=function(){
+                clearInterval(timer);
+                timer=setInterval(function(){
+                    iNow++;
+                    if(iNow==aLi2.length){
+                        iNow=0;
+                    }
+                    tab();
+                },500);
+            };
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <a href="javascript:;" id="left"><</a>
+        <a href="javascript:;" id="right">></a>
+        <ul id="ul1">
+            <li><img src="images/0.jpg"></li>
+            <li><img src="images/1.jpg"></li>
+            <li><img src="images/2.jpg"></li>
+            <li><img src="images/3.jpg"></li>
+            <li><img src="images/4.jpg"></li>
+        </ul>
+        <ol id="ol1">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+</body>
+</html>

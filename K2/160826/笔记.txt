@@ -1,0 +1,109 @@
+测评：
+	1.eval  一切尽在不言中....
+	2.js学的差不多了吧 还有什么别的内容？
+	3.有很多不明白 但是我知道 是我太懒惰
+	4.我什么都会。哈哈哈
+	5.学js找郝老师
+	6.if(good){
+		good
+	}else{
+		good
+	}！
+==============================================================
+1.数组去重
+	1)findInArr  比较原数组中的每一个在不在新数组中 不在就push
+	2)json		 利用json 的name 不重复
+	3)数组排序后 比较相邻的两个
+				 *** i--
+2.星星
+
+3.淘宝幻灯片
+
+4.上边下边	
+	onmousedown
+	onmouseup
+	//onmousemove  当鼠标移动的时候
+============================================================
+复习第二周
+
+图片时钟
+
+倒计时
+
+自动播放选项卡
+qq头像
+
+封闭空间
+	1.命名冲突
+		变成局部变量
+	2.i的问题
+封闭空间版本的选项卡
+
+
+i值的问题
+	执行时机：循环先执行完
+	1.循环中加事件事件中的i不能用
+
+	2.循环中加定时器 i不能用
+
+arguments
+	实参参数数组
+
+字符串方法
+	1.charAt()
+	2.indexOf()
+	3.lastIndexOf()
+	4.subString()
+	5.split()
+	6.toUpperCase()
+	7.toLowerCase()   
+数组方法
+	1.concat
+	2.push
+	3.unshift
+	4.pop
+	5.shift
+	6.splice
+	7.join
+	8.reverse
+	9.sort()	
+		排序
+			字母 字典序
+			数字 字典序
+		arr.sort(function(n1,n2){
+			return n1-n2
+		})
+		从小到大
+json
+	var json = {a:1};
+
+				数组          json
+下标			arr[0]       json.name/json[name]/json['name']
+length			有            undefined
+循环    		for           for in 
+顺序	        有             没有(name不重复);
+undefined
+	1. 声明变量不赋值
+	2. 访问一个不存在的属性
+	3.没有return 写了return 没写值
+
+getByClass
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

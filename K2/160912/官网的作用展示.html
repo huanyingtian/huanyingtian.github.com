@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 800px;
+            margin:10px auto;
+            height: 358px;
+            border: 1px solid #000;
+            position: relative;
+        }
+        ul{
+            position: absolute;
+            left: 0;
+            top: 25%;
+        }
+        li{
+            list-style: none;
+            width: 260px;
+            height: 179px;
+            float: left;
+        }
+        li img{
+            width: 260px;
+            height: 179px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oUl = document.getElementsByTagName('ul')[0];
+            var aLi = document.getElementsByTagName('li');
+            var oBox = document.getElementById('box');
+            oUl.style.width=aLi[0].offsetWidth*aLi.length+'px';
+            var divcenterline = oBox.offsetWidth/2;
+            oUl.onmousedown=function(ev){
+                var oEvent =ev || event;
+                var disX = oEvent.clientX-oUl.offsetLeft;
+                document.onmousemove=function(ev){
+                    var oEvent =ev || event;
+                    oUl.style.left=oEvent.clientX-disX+'px';
+                    //C = oBox.offsetWidth/2-( oUl.offsetLeft+oLi.offsetLeft+oLi.offsetWidth/2 )
+                    for(var i=0;i<aLi.length;i++){
+                        var c = divcenterline-(oUl.offsetLeft+aLi[i].offsetLeft+aLi[i].offsetWidth/2);
+
+                    }
+                };
+                document.onmouseup=function(){
+                    document.onmousemove=null;
+                    document.onmouseup=null;
+                    oUl.releaseCapture&&oUl.releaseCapture();
+                };
+                oUl.setCapture&&oUl.setCapture();
+                return false;
+            }
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li><img src="img3/1.jpg" alt=""/></li>
+            <li><img src="img3/2.jpg" alt=""/></li>
+            <li><img src="img3/3.jpg" alt=""/></li>
+            <li><img src="img3/4.jpg" alt=""/></li>
+            <li><img src="img3/5.jpg" alt=""/></li>
+            <li><img src="img3/6.jpg" alt=""/></li>
+            <li><img src="img3/7.jpg" alt=""/></li>
+            <li><img src="img3/8.jpg" alt=""/></li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

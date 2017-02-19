@@ -1,0 +1,63 @@
+分块运动
+
+iNow         num  0 1 2
+0             1
+1			  2
+2			  3  ??????
+3
+4
+5
+6
+box   span
+0		1
+1		2
+2		0
+0		1
+
+span
+1,1  1,2  1,3  1,4 1,5
+2,1  2,2  2,3  2,4 2,5
+3,1  3,2  3,3  3,4 3,5
+
+2     3    4     5   6
+3     4    5     6   7
+4     5    6     7   8
+
+苹果菜单
+ offsetTop
+ 到有定位的父级的距离
+
+
+比例
+n/固定的
+c/500;
+
+var scale = 1-c/500; 
+c 250   
+
+250
+感应距离
+
+官网作品展示
+
+求得距离
+C = oBox.offsetWidth/2-( oUl.offsetLeft+oLi.offsetLeft+oLi.offsetWidth/2 )
+
+让第一个li在中间
+1
+centerline - (1-0.5)*li.offsetWidth;
+2
+centerline - (2-0.5)*li.offsetWidth;
+3
+centerline - 2.5*li.offsetWidth;
+
+n
+centerline - (n-0.5)*li.offsetWidth;
+
+
+
+
+
+
+
+

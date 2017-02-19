@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            position: fixed;
+            _position: absolute;
+            background: red;
+            bottom: 0;
+            right: 0;
+            padding: 10px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oBox = document.getElementById('box');
+            function getStyle(obj,sClass){
+                return obj.currentStyle?obj.currentStyle[sClass]:getComputedStyle(obj,false)[sClass];
+            }
+            alert(getStyle(oBox,'height'));
+
+        };
+    </script>
+</head>
+<body style="height:3000px;">
+    <div id="box"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

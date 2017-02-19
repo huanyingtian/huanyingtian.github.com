@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+    </style>
+    <script>
+        window.onload=function(){
+            var oBtn = document.getElementById('btn');
+            var oT = document.getElementById('txt');
+            var oUl = document.getElementById('ul1');
+            function message(){
+                //创建一个li
+                var oLi = document.createElement('li');
+                //li的内容赋值
+                oLi.innerHTML = '内容：'+oT.value+'<a href="javascript:;">删除</a>';
+                //父级.insertBefore(要添加谁,谁的前边) //添加到ul里
+                if(oUl.children.length){
+                    oUl.insertBefore(oLi,oUl.children[0]);
+                }else{
+                    oUl.appendChild(oLi);
+                }
+                oT.value='';//清空text框
+                var oA = oLi.children[0]; //获取到 a标签
+                oA.onclick=function(){
+                    //让a标签的父级 li隐藏
+                    //oA.parentNode.style.display='none';
+                    //父级.removeChild(要删的元素)
+                    oA.parentNode.parentNode.removeChild(oA.parentNode);
+                };
+            };
+            oBtn.onclick=message
+            //回车 13
+            oT.onkeydown=function(ev){
+                var oEvent = ev || event;
+                if(oEvent.keyCode==13){
+                    message();
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+<input type="text" name="" id="txt"/>
+<input type="button" value="留言" id="btn"/>
+<ul id="ul1">
+    <!--<li>内容：xxx<a href="javascript:;">隐藏</a></li>-->
+</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

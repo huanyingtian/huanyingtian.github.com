@@ -1,0 +1,130 @@
+测评：
+	1、上移，下移
+	2、单词多
+	3、称赞讲师
+==========================================================
+
+复习
+	DOM
+		获取子级 父级.children
+		获取父级 子级.parentNode
+		下一个兄弟节点
+			nextElementSibling || next Sibling
+		上一个
+			previousElementSibling || previousSibling
+		首节点
+			父级.firstElementChild || op.firstChild
+			op.children[0]
+		尾节点
+			op.lastElementChild || op.lastChild
+			op.children[op.children.length-1]
+	DOM操作
+		document.createElement('标签名')
+		op.appendChild()  向后添加
+		op.insertBefore(添加谁，谁的前面)
+		op.removeChild()			
+	BOM
+		window.open(地址,方式)
+		window.close();
+		window.location.hash
+		window.location.search
+		window.location.href
+		window.location.reload();		
+	距离
+		滚动距离
+			body: document.body
+			html: document.documentElement
+			scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+			
+			scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+		可视区宽高
+			document.documentElement.clientWidth
+			document.documentElement.clientHeight
+		物体的宽高
+			obj.offsetWidth 盒子模型的宽
+			obj.offsetHeight 盒子模型的高
+
+			生效的样式的值
+			getStyle    offsetWidth
+			string		number
+			200px		0
+=========================================================
+childNodes
+	父级.childNodes  相比父级.children  会获取文本节点		
+=========================================================
+offsetWidth   盒子模型的宽
+offsetHeight  盒子模型的高
+ 
+
+ obj.offsetLeft 距离定位父级左边的距离
+ obj.offsetTop  距离定位父级上边的距离
+父级
+	parentNode    结构上的父级
+	offsetParent  定位父级
+定位父级 最高到body
+=====================================================
+图片延迟加载(图片懒加载)   网站优化
+	1.图片开始没加载
+	2.某个时机图片才加载
+		1).时机：scrollTop + clientHeight>=img绝对位置top
+		2).加载
+	看图片是否加载 F12 -> network 
+
+自定义属性
+获取自定义属性
+		obj.getAttribute(属性) obj.某个属性
+设置自定义属性
+		obj.setAttribute(属性,值) obj的属性等于值
+删除自定义属性
+		obj.removeAttribute(属性)
+**不管可以设置自定义属性  也可以设置已有属性
+自定义属性
+		obj.setAttribute(属性,值) 设置
+		obj.getAttribute(属性)  只能用这个获取
+========================================================
+瀑布流
+	1.宽度相等，高度不等
+	2.加载不完
+scrollHeight   内容高
+offsetHeight   盒子模型高
+offsetHeight>scrollHeight   有内容没超过盒子高 他俩是一样的  超过之后为内容高
+
+========================================================
+关于innerHTML的问题
+	innerHTML  是先清空再赋值 元素事件会消失
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

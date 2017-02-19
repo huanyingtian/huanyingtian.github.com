@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        div{
+            width:200px;
+            height:200px;
+            background:red;
+        }
+    </style>
+    <script>
+        function bianda(){
+            var oDiv = document.getElementById('div1');
+            oDiv.style.width='300px';
+            oDiv.style.height='300px';
+            oDiv.style.background='blue';
+        }
+
+        function bianxiao(){
+            document.getElementById('div1').style.width='200px';
+            document.getElementById('div1').style.height='200px';
+            document.getElementById('div1').style.background='red';
+        }
+    </script>
+</head>
+<body>
+<div id="div1" onmouseover="bianda()" onmouseout="bianxiao()"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

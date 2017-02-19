@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background: #afebff;
+        }
+        #box1{
+            width: 400px;
+            height: 400px;
+            background: #f72fff;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oBtn = document.getElementById('btn');
+            var oDiv = oBtn.parentNode;
+            var oDiv1 = oBtn.parentNode.parentNode;
+            oBtn.onclick=function(){
+                alert('btn');
+            };
+            oDiv.onclick=function(){
+                alert('div')
+            };
+            oDiv1.onclick=function(){
+                alert('div111111111111111111111111111111111')
+            };
+            document.onclick=function(){
+                alert('document')
+            };
+        };
+    </script>
+</head>
+<body>
+<div id="box1">
+    <div id="box">
+        <input type="button" value="按钮" id="btn"/>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

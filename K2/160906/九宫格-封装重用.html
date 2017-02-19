@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        #box{
+            width: 400px;
+            height: 400px;
+            background: #ccc;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+        .l{
+            width: 20px;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: green;
+        }
+        .r{
+            width: 20px;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: green;
+        }
+        .t{
+            width: 100%;
+            height: 20px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: green;
+        }
+        .b{
+            width: 100%;
+            height: 20px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background: green;
+        }
+        .lt,.lb,.rt,.rb{
+            width: 20px;
+            height: 20px;
+            background: red;
+            position: absolute;
+        }
+        .lt{
+            left: 0;
+            top: 0;
+        }
+        .lb{
+            left: 0px;
+            bottom: 0;
+        }
+        .rt{
+            right: 0px;
+            top: 0;
+        }
+        .rb{
+            right: 0;
+            bottom: 0px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oBox = document.getElementById('box');
+            function drag(obj1,obj2){
+                obj1.onmousedown=function(ev){
+                    var oEvent =ev || event;
+                    if(obj1.className.indexOf('l')!=-1){
+                        var oldX = oEvent.clientX;
+                        var oldW = obj2.offsetWidth;
+                        var oldL = obj2.offsetLeft;
+                    }
+                    if(obj1.className.indexOf('t')!=-1){
+                        var oldY = oEvent.clientY;
+                        var oldH = obj2.offsetHeight;
+                        var oldT = obj2.offsetTop;
+                    }
+                    if(obj1.className.indexOf('r')!=-1){
+                        var oldX = oEvent.clientX;
+                        var oldW = obj2.offsetWidth;
+                    }
+                    if(obj1.className.indexOf('b')!=-1){
+                        var oldY = oEvent.clientY;
+                        var oldH = obj2.offsetHeight;
+                    }
+                    document.onmousemove=function(ev){
+                        var oEvent =ev || event;
+                        if(obj1.className.indexOf('l')!=-1){
+                            var target = oldX-oEvent.clientX;
+                            var newW = oldW+target;
+                            var newL = oldL-target;
+                            obj2.style.width=newW+'px';
+                            obj2.style.left=newL+'px';
+                        }
+                        if(obj1.className.indexOf('t')!=-1){
+                            var target = oldY-oEvent.clientY;
+                            var newH = oldH+target;
+                            var newT = oldT-target;
+                            obj2.style.height=newH+'px';
+                            obj2.style.top=newT+'px';
+                        }
+                        if(obj1.className.indexOf('r')!=-1){
+                            var target = oEvent.clientX-oldX;
+                            var newW = oldW+target;
+                            obj2.style.width=newW+'px';
+                        }
+                        if(obj1.className.indexOf('b')!=-1){
+                            var target = oEvent.clientY-oldY;
+                            var newH = oldH+target;
+                            obj2.style.height=newH+'px';
+                        }
+                    };
+                    document.onmouseup=function(){
+                        document.onmousemove=null;
+                        document.onmouseup=null;
+                    };
+                    return false;
+                };
+            }
+//            drag(oBox.children[0],oBox);
+            for(var i = 0;i<oBox.children.length;i++){
+                drag(oBox.children[i],oBox);
+            }
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div class="l" id="l"></div>
+        <div class="r" id="r"></div>
+        <div class="t" id="t"></div>
+        <div class="b" id="b"></div>
+        <div class="lt" id="lt"></div>
+        <div class="lb" id="lb"></div>
+        <div class="rt" id="rt"></div>
+        <div class="rb" id="rb"></div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

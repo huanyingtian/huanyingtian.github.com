@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        .box div{
+            width:200px;
+            height:200px;
+            background: #CCCCCC;
+            display: none;
+        }
+        .box .on{
+            background: red;
+        }
+    </style>
+    <script>
+        function tab(sEv,id){
+            var oBox = document.getElementById(id);
+            var aBtn = oBox.getElementsByTagName('input');
+            var aDiv = oBox.getElementsByTagName('div');
+            for(var i=0;i<aBtn.length;i++){
+                aBtn[i].index=i;
+                aBtn[i][sEv]=function(){
+                    for(var i=0;i<aBtn.length;i++){
+                        aBtn[i].className='';
+                        aDiv[i].style.display='none';
+                    }
+                    this.className='on';
+                    aDiv[this.index].style.display='block';
+                };
+            }
+        }
+        window.onload=function(){
+            tab('onclick','box');
+            tab('onmouseover','box1');
+
+
+        };
+    </script>
+</head>
+<body>
+    <div class="box" id="box">
+        <input type="button" class="on" value="aaa"/>
+        <input type="button" value="bbb"/>
+        <input type="button" value="ccc"/>
+        <div style="display: block;">111</div>
+        <div>222</div>
+        <div>333</div>
+    </div>
+    <div class="box" id="box1">
+        <input type="button" class="on" value="aaa"/>
+        <input type="button" value="bbb"/>
+        <input type="button" value="ccc"/>
+        <div style="display: block;">111</div>
+        <div>222</div>
+        <div>333</div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

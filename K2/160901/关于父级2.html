@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            background: #9a38cc;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+        #boxparent{
+            width: 400px;
+            height: 400px;
+            background: #cc4573;
+            margin:100px;
+            position: relative;
+        }
+        #boxparent2{
+            width: 300px;
+            height: 300px;
+            background: #91cc59;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oBox = document.getElementById('box');
+            oBox.onclick=function(){
+                alert(this.offsetLeft+this.parentNode.offsetLeft+this.parentNode.parentNode.offsetLeft);
+            };
+        };
+    </script>
+</head>
+<body>
+<div id="boxparent">
+    <div id="boxparent2">
+        <div id="box"></div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oBox = document.getElementById('box');
+            oBox.onmousedown=function(ev){
+                var oEvent = ev || event;
+                var disX = oEvent.clientX-oBox.offsetLeft;
+                var disY = oEvent.clientY-oBox.offsetTop;
+                document.onmousemove=function(ev){
+                    var oEvent = ev || event;
+                    var l = oEvent.clientX-disX;
+                    var t = oEvent.clientY-disY;
+                    if(l<0){
+                        l=0;
+                    }
+                    if(l>document.documentElement.clientWidth-oBox.offsetWidth){
+                        l=document.documentElement.clientWidth-oBox.offsetWidth;
+                    }
+                    if(t<0){
+                        t=0;
+                    }
+                    if(t>document.documentElement.clientHeight-oBox.offsetHeight){
+                        t=document.documentElement.clientHeight-oBox.offsetHeight;
+                    }
+                    oBox.style.left=l+'px';
+                    oBox.style.top=t+'px';
+                };
+                document.onmouseup=function(){
+                    document.onmousemove=null;
+                    document.onmouseup=null;
+                    oBox.releaseCapture && oBox.releaseCapture()
+                };
+                oBox.setCapture &&oBox.setCapture();
+                return false;
+            };
+        };
+
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

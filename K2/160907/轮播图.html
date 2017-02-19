@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0px;
+        }
+        #box{
+            width: 500px;
+            margin: 200px auto;
+        }
+        #content{
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        ul{
+            width: 800px;
+            height: 200px;
+            overflow: hidden;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+
+        }
+        li{
+            list-style: none;
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+        .on{
+            background: red;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oBox = document.getElementById('box')
+            var aBtn = oBox.getElementsByTagName('input');
+            var aLi = oBox.getElementsByTagName('li');
+            var oUl = document.getElementById('ul1');
+            for(var i=0;i<aBtn.length;i++){
+                (function(index){
+                    aBtn[i].onclick=function(){
+                        for(var i=0;i<aBtn.length;i++){
+                            aBtn[i].className='';
+                        }
+                        this.className='on';
+                        oUl.style.left=-index*200+'px';
+                    };
+                })(i);
+            }
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div id="btnbox">
+            <input type="button" class="on" value="aaa"/>
+            <input type="button" value="bbb"/>
+            <input type="button" value="ccc"/>
+            <input type="button" value="ddd"/>
+        </div>
+        <div id="content">
+            <ul id="ul1">
+                <li><img src="img2/b1.jpg" alt=""/></li>
+                <li><img src="img2/b2.jpg" alt=""/></li>
+                <li><img src="img2/b3.jpg" alt=""/></li>
+                <li><img src="img2/b4.jpg" alt=""/></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

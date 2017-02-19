@@ -1,0 +1,470 @@
+测评问题
+	1.太多太乱
+	2.晕
+	3.绝望了
+==============================================================
+复习：	
+	1.字符串常用方法
+		str.charAt(位置) 返回指定位置的字符串
+		str.indexOf('小字符串')  返回指点小字符串的位置
+		str.lastIndexOf('') 从后边开始查找 查找字符串位置
+		找不到返回-1
+			window.navigator.userAgent;
+		str.substring(开始位置，结束位置) 截取字符串
+			包含开始位置不包含结束位置
+		str.substring(位置) 从这个位置截取到最后
+		str.split('') 分割字符串 数组
+			'?w=1&c=2&d=4&e=5';
+		str.toUpperCase()  转大写
+		str.toLowerCase()  转小写
+	2.数组常用方法
+		var arr=[1,2,3,4];
+		var arr=new Array(1,2,3,4);
+			小地方
+				arr = [10];
+				arr = new Array(10);
+		undefined出现的情况
+		1.var a; 声明变量不赋值 
+		2.函数没有写return  写了return 没给值
+		3.访问一个不存在的属性
+			aBtn.a
+			json.length
+		数组的小方法
+		添加
+			arr.push()  从后边添加
+			arr.unshift() 从前边添加
+		删除
+			arr.pop()  从后边删除
+			arr.shift() 从前边删除
+		替换
+			arr.splice(开始位置，删除个数，元素1，。。。)
+			添加
+				arr.splice(开始位置，0，要添加的)    
+		arr.join('')   把数组中的每一个 用什么符号链接成字符串
+			welcome to zhinengshe
+		arr.reverse()
+			[1,2,3,4,5]->[5,4,3,2,1]
+		arr.concat(要连接的数组，要连接的数组2，)
+		[1,2,3]
+		[3,4,5]
+		arr.sort()
+			1.字母 字典序
+			2.数字 把数字变成字符串 也按照字典序
+		arr.sort(function(n1,n2){
+			return n1-n2
+		})
+		从小到大
+		arr.sort(function(n1,n2){
+			return n2-n1
+		})
+		从大到小
+	如何清空一个数组
+		1.arr.length=0;
+		2.arr=[];
+		3.whlie
+		4.arr.splice()
+
+	3.json
+	var json = {a:1,b:2,c:3}
+	typeof json  ->  object
+	查看属性值
+		json.a=1;
+		json['a'];
+	     数组               json
+下标    arr[0]            json['a'];
+length    有              undefined
+
+新的循环  
+		for in  循环对象(json);
+		**能用普通for就用普通for 不能用采用forin
+
+for(var name in json){
+	alert(name)// a , b  ,c
+	alert(json[name])//1 2 3
+}
+json={"a":"hhh"}
+
+
+	4.getByClass
+
+	document.getElementsByClassName(类名);
+		在文档中 通过类名获取一组元素 length for()
+        兼容性：
+            高级浏览器
+
+    1). 获取整个页面当中所有元素  * 通配
+    2). 准备一个空数组，循环如果className=='red'
+        问题：className是这个元素所有的class
+    3). 使用indexOf();
+        问题：例如red -> red2也符合条件
+    4). 查找时候重复
+        findInArr(arr, str);
+        function findInArr(arr, str){
+            for(var i=0; i<arr.length; i++){
+                if(arr[i]==str){
+                	return true;
+                }
+            }
+            return false;
+        }
+    5). 封装getByClass函数
+        function getByClass(oParent, sClass){
+            var aEle=oParent.getElementsByTagName('*');
+            var arr=[];
+            for(var i=0; i<aEle.length; i++){
+                var tmp=aEle[i].className.split(' ');
+                if(findInArr(tmp, sClass)){
+                    arr.push(aEle[i]);
+                }
+            }
+            return arr;
+        }
+    6). 如果兼容getElementsByClassName()使用，否则自己写
+        function getByClass(oParent, sClass){
+            if(oParent.getElementsByClassName){
+
+            }else{
+
+            }
+        }
+=============================================================
+1.联动全选  详情见注释
+=============================================================
+日起对象深入
+var oDate = new Date();
+获取
+年 oDate.getFullYear()
+月 oDate.getMonth()    获取的时候加1 设置的时候减1 
+日 oDate.getDate()
+小时 oDate.getHours()
+分钟 oDate.getMinutes()
+秒  oDate.getSeconds()
+毫秒 oDate.getMilliSceonds();
+时间戳  oDate.getTime()
+				1970年1月1日0点0分0秒0毫秒到现在的毫秒数
+
+设置
+	年月日
+	var oDate = new Date
+	oDate.setFullYear(年，月，日);
+	时分秒
+	oDate.setHours(小时，分钟，秒，毫秒)
+	月
+	oDate.setMonth(月,日)
+	日
+	oDate.setDate(日)
+	分钟
+	oDate.setMinutes(分钟，秒，毫秒)
+	秒
+	oDate.setSeconds(秒,毫秒)
+
+setDate() 
+	会自动进位 32 -> 下个第一天
+				0 -> 上个月最后一天
+
+怎么知道当前月有多少天？
+	1.先获取当前日期
+	2.设置月份到下个月
+	3.设置日期为0
+	4.获取日期
+本月第一天是周几？ 
+	oDate.setDate(1)
+	oDate.getDay()
+========================================================
+Math 方法
+Math.random()  0-1  随机小数
+Math.abs()          绝对值
+Math.max()          最大值
+Math.min()			最小值
+Math.pow(谁，几次方)  求几次方
+Math.sqrt()         开平方
+
+Math.ceil()         向上取整
+Math.floor()        向下取整
+Math.round()        四舍五入
+===================================================
+eval
+		跟字符串打交道的
+
+		json={...}
+
+		if()({
+
+		})
+		for()({
+
+		})			
+		eval json有问题需要加括号
+
+		var str = '{a:1,b:2,c:3}';
+        alert(eval('('+str+')'));
+
+=========================================================
+
+第一阶段复习
+=========================================================
+获取元素
+	document.getElementById();
+函数
+	function show(){
+
+	}
+	show();
+事件
+	用户的操作
+	onclick
+	onmouseover
+	onmouseout
+	onchange
+	onload
+变量
+	var a = document.getElementById();
+判断
+	if(条件){
+		语句一
+	}else{
+		语句二
+	}
+	js操作的是行间事件
+	oDIV.style.width
+参数
+	function show(a){
+		alert(a)
+	}
+	show(12);
+操作属性的方式
+	. 的
+	= 赋值
+	. 可以操作已有属性
+	[] 方括号可以做到点做的一切 而且可以放变量
+提取行间事件
+	script 标签
+	window.onload
+		页面加载完毕
+			html css js 图片
+	var aDiv  = document.getElementsByTagName(标签名)
+	aDiv.length;
+循环
+	1.初始值
+	2.条件
+	3.自增
+	4.语句
+
+	初始值
+	while(条件成立){
+		语句
+		自增
+	}
+	for(var i=0;i<5;i++){
+		语句
+	}
+
+	条件永远是真的
+this	当前触发事件的元素
+		定时器中的this有问题
+		_this = this;
+选项卡
+
+非表单元素的内容
+	1.innerHTML 
+		obj.innerHTML='<span></span>';
+	2.arr
+		length
+		for
+		一种有序集合
+	3.字符串拼接
+		var str = '+B+'aaa'+B+'aaa'
+		两个单引 两个加好
+
+数据类型
+	string object function undefined number boolean
+	typeof obj
+	NaN     not a number
+		1.数据类型 number
+		2.NaN跟谁都不相等 包括它自己
+		3.检测是不是NaN  isNaN()
+类型转化
+	强制转化
+	parseInt(); 12px  -> 12
+	parsseFloat();  12.5px -> 12.5
+	Number()   12px -> NaN
+	隐示转化  js偷偷转的
+	+、
+	- * / > <     number++ 
+作用域
+	全局变量   		哪都能用
+	局部变量        函数内部使用
+	闭包			子函数可以使用父函数定义的局部变量
+	变量的遮蔽
+运算符
+	算术运算
+		+ - * / %
+		n%2 0 1 
+	比较运算
+		>=
+		<=
+		>
+		<
+		==    比较
+		===   严格的比较
+		!=    
+		!==   
+	逻辑运算
+		或 且 非
+		||  &&  ！
+	赋值运算
+		a+=1  a=a+1
+		a*=2
+		/=
+		%=
+		-=
+流程控制
+	if(){
+
+	}else if(){
+
+	}else{
+
+	}
+	if(){
+
+	}
+	a==1&&alert(1);
+	switch
+
+	switch(条件){
+		case 条件1：
+			语句
+			break;
+		case 条件1：
+			语句
+			break;
+		case 条件1：
+			语句
+			break;
+		default：
+			语句
+			break；
+	}
+break   	终止
+continue    跳过本次
+
+什么是真什么是假
+	
+真：true 非0数字 非空字符串 function object 
+假：false 0 '' null NaN  undefined
+
+获取非行间样式（getstyle）
+eval
+	跟字符串打交道 会把字符串解析成js能懂得程序
+返回值
+	return     只能在函数中用
+	function show(a){
+	alert(1);
+	 return 2;
+	}
+	//show()
+	//谁调用就返回给谁
+	var a = show();
+	*******//show是执行过一次的
+	alert(a)
+随机数封装
+	function rnd(n,m){
+		return parseInt(Math.random()*(m-n))+n;
+	}
+淘宝彩票
+	1.6个数
+	2.随机
+	3.不重复
+定时器
+	
+timer = setInterval(function(){   一直
+	语句
+},1000)
+clearInterval(timer);
+
+setTimeout(function(){            只执行一次
+	语句
+},1000)
+clearTimeout()
+
+*******用定时器 先清除定时器
+日期对象
+var oDate = new Date();
+年月日时分秒
+getFullYear()
+getMonth() 获取+1  设置的时候-1
+getDate()
+getHours()
+getMinutes()
+getSeconds()
+getDay()
+getTime()  时间戳
+
+数字时钟
+图片时钟
+倒计时
+自动播放选项卡
+qq头像
+
+封闭空间
+i值的问题
+arguments
+字符串方法
+数组方法
+json
+getByClass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

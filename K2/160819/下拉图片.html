@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下拉图片</title>
+    <style>
+
+    </style>
+    <script>
+        window.onload=function(){
+            var oImgBox = document.getElementById('box');
+            var oS = document.getElementById('sel');
+            var oDiv = document.getElementById('div1');
+            oS.onchange=function(){
+                var v1=this.value;
+                oImgBox.innerHTML='<img src="IMG_'+v1+'.JPG">';
+                oDiv.innerHTML='图片'+v1;
+            };
+
+
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <img src="IMG_1.JPG">
+</div>
+<div id="div1">图片1</div>
+<select id="sel">
+    <option value="1">图片图片1</option>
+    <option value="2">图片图片2</option>
+    <option value="3">图片图片3</option>
+</select>
+</body>
+</html>

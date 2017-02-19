@@ -1,0 +1,222 @@
+测评
+1、老师给我们讲一下前端工作的大概情况吧.
+2、获取字符串字节,for if套不明白,今天讲的不知道什么时候用
+3、循环知识点
+4、今天感觉不错,goodgood study daydayup.
+5、没毛病!也没瑕疵,
+6、翻页有点快,没时间记.
+==============================================================
+1.闲聊的时候可以说一些但是得先把上课额的东西学好
+2.这个讲课的时候说过 有的时候用户注册的时候回考虑用户名的字节长度问题 真正的时候不用那种方法 上课之所以用那种方法是让大家了解
+	1).字符串编码的一些东西
+	2).中文在不同编码下的字节个数
+	学新的例子要知道新的例子中重要的知识点
+3.   ？？？？？？？？？？？？？？？
+
+今天困得同学站后边听课
+==============================================================
+复习：
+预解析
+	预先解析 变量 函数
+	变量 函数的声明提升 本作用域最前边
+	变量提升声明  值留在原地
+try catch
+	try{
+		尝试执行代码
+	}catch(e){
+		//e错误对象
+		e.message
+	}
+	1.屏蔽报错
+	2.if
+	缺点：运行缓慢 性能差
+字符串
+	str.charAt(索引)
+	str.charCodeAt(索引) 10进制
+	十六进制
+		0x4e00 一
+		0x9fa5 yu
+	String.fromCharCode('0x4e00')  -> 一
+	utf-8 3字节
+	gbk gb2312 2字节
+，运算符
+	看最右边的
+if ||
+	|| 从左往右看 看见第一个真的返回  都是假的返回最后一个
+严格模式
+	'use strict'
+	开启严格模式
+		1.声明变量必须加 var
+		2.禁止在for while if 等语句中声明函数
+			写js 都加上
+引用
+	发生在对象身上
+	arr json oDate
+	var arr = arr2;
+js组成
+	1.ECMAScript js核心解释器
+		兼容性：基本都兼容
+	2.DOM
+		document object model
+		页面打交道的
+		兼容性：大部分兼容 不兼容可以处理
+	3.BOM
+		browser object model
+		跟浏览器打交道的
+		兼容性：没有兼容性问题  完全不兼容
+==================================================
+DOM
+	DOM树
+		表现出各个节点的关系
+		已知一个节点可以求出任意节点
+
+	子级(一层)
+		父级.children
+	父级
+		obj.parentNode
+	兄弟
+		下一个
+			var oNext = obj.nextElementSibling||obj.nextSibling;
+		上一个
+			var oPrev = obj.previousElementSibling||obj.previousSibling;
+	首尾节点
+		var oF = 父级.firstElementChild || 父级.firstChild
+		var first = 父级.children[0];
+		
+		var oL = 父级.lastElementChild || 父级.lastChild
+		var last = 父级.children[父级.children.length-1]
+========================================================
+DOM操作
+		动态创建元素
+			var obj = document.createElement(标签名)；
+					跟html中的标签没有任何区别
+		添加
+			父级.appendChild(要添加的元素)  从最后添加
+			父级.insertBefore(要添加谁,谁的前边)  从前面添加
+		删除
+			父级.removeChild(要删的元素)
+简易留言板
+====================================================
+appendChild   insertBefore 
+类似剪切的功能
+上移下移
+1.上移
+		1)添加到 上一个的前面
+2.下移
+		2)添加的 下一个的下一个的前面
+appendChild是往最后边添加
+===================================================
+BOM
+	Browser Object Model 浏览器对象模型
+	跟浏览器打交道的
+	兼容性:完全不兼容alert()
+	打开窗口
+		window.open(url地址，打开方式); 
+		打开方式：'_blank' '_self'
+			此参数可选 不填默认 '_blank'
+			chrome  拦截
+			FF      拦截
+			IE      打开了
+			用户体验
+		事件中
+			当用户操作让window.open打开的时候 
+
+			事件触发不会拦截
+			浏览器不会拦截
+			window.open()有返回值  返回值是下一个页面的window对象
+	关闭窗口
+		window.close();
+		chrome  好使
+		FF		不好使
+		IE      选择框
+	可以关闭 window.open()打开的
+========================================================
+window.location
+
+完整的地址
+http://localhost:63342/160831/BOM-location.html？a=1&b=2#1
+
+window.location.href 获取当前页面url(可以赋值)
+window.location.search 获取当前页面中的？后边的（可以复制）
+window.location.hash 获取当前页面中的锚点(可以赋值)
+window.location.reload() 刷新页面
+
+window.location.host//域名加端口
+window.location.hostname //域名
+window.location.port //端口号
+window.location.protocol//协议
+window.location.pathname 路径
+===================================================
+window.history
+			一定得有历史记录
+			window.history.forward()  前进
+			window.history.back()     后退
+
+			window.history.go(数字)   
+			window.history.go(1)      前进
+			window.history.go(-1)     后退   
+=========================================================
+右下角悬浮窗
+	1.滚动条滚动距离
+		body  html
+		body document.body
+		html document.documentElement
+		document.body.scrollTop 滚动距离
+			chrome  正常的
+			FF	    不好使
+			IE      不好使
+		document.documentElement.scrollTop 滚动距离
+			chrome  不好使
+			FF	    正常
+			IE      正常
+
+		var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+		var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+	2.可视区高度
+		高:
+			document.documentElement.clientHeight;
+		宽：
+			document.documentElement.clientWidth;
+	3.物体的高度（盒子模型的高）
+		 obj.offsetHeight  obj物体的高
+		 	1.number
+		 	2.盒子模型的高
+		 	3.对于none的元素 ->   0
+		 getStyle
+		 	1.string
+		 	2.height：； 生效的height 的值
+		 	3.对于none的元素 生效的height 的值
+		 obj.offsetWidth  obj物体的宽
+右下角悬浮窗
+	1.可视区高度
+	2.滚动距离
+	3.物体的高度
+	onscroll=onresize   top = 可视区高度+滚动距离-物体的高度;
+===================================================
+onload      当浏览器加载完毕的时候
+onresize    当浏览器缩放的时候
+onscroll    当滚动滚动条的时候
+onclick
+onmouseover
+onmouseout
+onchange
+onmousedown
+onmouseup
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,115 @@
+复习
+	键盘事件
+		onkeydown
+		oEvent.keyCode Unicode
+		oEvent.ctrlKey  altKey  shiftKey 
+	拖拽
+	事件绑定
+		事件冲突
+		给同一个元素添加相同事件 执行不同的内容
+		function addEvent(obj,fn){
+			if(obj.addEventListener){
+				obj.addEventListener(事件，函数，false)
+			}else{
+				obj.attachEvent('on'+事件,函数)
+			}
+		}
+	解除绑定
+		function remoevEvent(obj,fn){
+			if(obj.removeEventListener){
+				obj.removeEventListener(事件，函数，false)
+			}else{
+				obj.detachEvent('on'+事件,函数)
+			}
+		}
+		var a = function(){};
+		var b = function(){};
+		var a = new Function('a','b','alert(1)');
+	事件流
+		捕获
+		冒泡
+=======================================================
+自定义滚动条
+	滚轮事件
+		obj.onmousewheel
+			兼容性
+				chrome IE 好使
+				FF 不好使
+		DOMMouseScroll  DOM事件
+			添加必须用事件绑定
+
+		想知道滚动方向-> 事件更加详细的信息 ->事件对象
+		oEvent.wheelDelta
+			chrome IE 都好使
+			下 -120
+			上 120
+		oEvent.detail
+			FF
+			下 3
+			上 -3
+**return false 阻止浏览器的默认行为 碰见事件绑定不好使
+	oEvent.preventDefault();
+====================================================
+微博统计文字
+		onkeydown
+		onkeyup
+		oninput  当输入的时候
+				 高版本好使
+				 低版本ie不好使
+
+		onpropertychange	当属性值改变的时候
+				 ie系列好使
+
+		开定时器
+				ie9
+				其他浏览器
+				oninput=onpropertychange=
+=====================================================
+window.onload
+	当页面加载完毕的时候
+		html css js 图片...
+domready
+	DOM(html)加载完毕就执行
+	DOMContentLoaded DOM事件 必须事件绑定
+			高版本都支持
+
+	onreadystatechange		监控资源的情况
+
+	         readyState     此时加载的情况
+	         readyState=='complete' 加载完成
+
+事件委托(事件代理)
+		有些事情委托父母
+		
+		子元素的事件可以委托给父级
+					注意：父级不代表直接父级
+		事件对象
+
+		事件源-> oEvent.srcElement
+					chrome IE系列
+					FF undefined
+				 oEvent.target
+				 	chrome FF IE9+
+
+		oSrc = oEvent.srcElement || oEvent.target;
+		oSrc.tagName  标签名    都是大写的
+							判断比较的时候必须大写
+
+事件委托
+		1.性能高
+		2.给未来的元素添加事件
+
+this的问题
+		1.定时器
+		2.事件绑定 obj.attachEvent('on'+sEv,fn); this有问题
+		3.事件函数中多套了一层
+		4.
+
+
+
+
+
+
+
+
+

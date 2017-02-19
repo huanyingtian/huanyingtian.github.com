@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        div{
+            width: 200px;
+            height: 50px;
+            background: #ccc;
+            margin:10px auto;
+        }
+        p{
+            width: 200px;
+            height: 50px;
+            background: #ccc;
+            margin:10px auto;
+        }
+    </style>
+    <script>
+        //看字符串在不在数组中
+        function findInArr(str,arr2){
+            for(var i =0;i<arr2.length;i++){
+                if(arr2[i]==str){
+                    return true;
+                }
+            }
+            return false;
+        }
+        window.onload=function(){
+            var oBox =document.getElementById('box');
+
+            function getByClass(oParent,sClass){
+                if(document.getElementsByClassName){
+                    return oParent.getElementsByClassName(sClass);
+                }else{
+                    var arr = [];//容器
+                    //获取所有标签
+                    var aEle = oParent.getElementsByTagName('*');
+                    for(var i=0;i<aEle.length;i++){
+                        //把每一个元素的 className 用空格切分成数组
+                        var tmp = aEle[i].className.split(' ');
+                        //red -> 在不在数组里
+                        if(findInArr(sClass,tmp)){
+                            arr.push(aEle[i]);
+                        }
+                    }
+                    return arr;
+                }
+            }
+            var arr2 = getByClass(oBox,'red');
+            for(var i =0;i<arr2.length;i++){
+                arr2[i].style.background='red';
+            }
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div id="" class="red"></div>
+        <div id="" class="blue"></div>
+        <div id="" class="red hhh"></div>
+        <a href="" class="yellow black"></a>
+        <p class="red"></p>
+        <div id="" class="pink"></div>
+        <div id="" class="red2"></div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

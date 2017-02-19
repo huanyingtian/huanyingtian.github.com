@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        body{
+            background: maroon;
+        }
+        div{
+            text-align: center;
+            color: #fff;
+            font-size: 60px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oDiv =document.getElementById('div1');
+            var oFDate = new Date();//未来的时间
+            oFDate.setFullYear(2016,7,27);
+            oFDate.setHours(0,0,0,0);
+            //获取未来的时间戳
+            var future = oFDate.getTime();
+
+            setInterval(function(){
+                var oNDate = new Date();//现在的时间
+                var now = oNDate.getTime();
+                var ms = future-now;
+                var s = parseInt(ms/1000);
+                var d = parseInt(s/86400);
+                s=s%86400;
+                var h = parseInt(s/3600);
+                s=s%3600;
+                var m = parseInt(s/60);
+                s=s%60;
+                oDiv.innerHTML='还有'+d+'天'+h+'小时'+m+'分'+s+'秒';
+            },1000);
+        };
+    </script>
+</head>
+<body>
+
+<div>距离2016年8月27日</div>
+<div id="div1">还有0天0小时0分0秒</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

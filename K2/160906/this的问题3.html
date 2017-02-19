@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+
+    </style>
+    <script>
+        function addEvent(obj,sEv,fn){
+            if(obj.addEventListener){
+                obj.addEventListener(sEv,fn,false);
+            }else{
+                obj.attachEvent('on'+sEv,fn);
+            }
+        }
+        window.onload = function () {
+            var oBox = document.getElementById('box');
+
+            addEvent(oBox,'click',function(){
+                alert(this.id)
+            })
+        };
+    </script>
+</head>
+<body>
+    <div id="box" style="width: 200px;height: 200px;background: #ccc"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

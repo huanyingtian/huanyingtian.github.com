@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        div{
+            font-size: 80px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oBox = document.getElementById('box');
+            var oBox2 = document.getElementById('box2');
+            function toDou(n){
+                return n<10?'0'+n:''+n;
+            }
+            function clock(){
+                var oDate = new Date();
+                var h = oDate.getHours();
+                var m = oDate.getMinutes();
+                var s = oDate.getSeconds();
+                var y = oDate.getFullYear();
+                var M = oDate.getMonth();
+                var d = oDate.getDate();
+                var week = oDate.getDay();
+                oBox2.innerHTML=''+y+'年'+(M+1)+'月'+d+'日 星期'+week+'';
+                oBox.innerHTML=''+toDou(h)+':'+toDou(m)+':'+toDou(s)+'';
+            }
+            clock();
+            setInterval(clock,1000);
+        };
+    </script>
+</head>
+<body>
+    <div id="box2">2016年x月x日 星期x</div>
+    <div id="box">00:00:00</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        body{
+            background: maroon;
+            color: #fff;
+            font-size: 50px;
+        }
+        div{
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oBox = document.getElementById('box');
+            var aImg = oBox.getElementsByTagName('img');
+            function toDou(num){
+                return num<10?'0'+num:''+num;
+            }
+            function clock(){
+                var oDate = new Date();
+                var h = oDate.getHours();
+                var m = oDate.getMinutes();
+                var s = oDate.getSeconds();
+                str=''+h+''+m+''+s+'';
+                for(var i=0;i<aImg.length;i++){
+                    aImg[i].src='img/'+str[i]+'.png';
+                }
+            }
+            clock();
+            setInterval(clock,1000);
+
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <img src="img/0.png" alt=""/>
+        <img src="img/0.png" alt=""/>:
+        <img src="img/0.png" alt=""/>
+        <img src="img/0.png" alt=""/>:
+        <img src="img/0.png" alt=""/>
+        <img src="img/0.png" alt=""/>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+
+    </style>
+    <script>
+        function addEvent(obj,sEv,fn){
+            if(obj.addEventListener){
+                obj.addEventListener(sEv,fn,false);
+            }else{
+                obj.attachEvent('on'+sEv,fn);
+            }
+        }
+        window.onload = function () {
+            var oBox = document.getElementById('box');
+            function addwheel(obj,fn){
+                function wheel(ev){
+                    var oEvent = ev || event;
+                    var bDown =true;
+//                    if(oEvent.wheelDelta){
+////                        if(oEvent.wheelDelta<0){
+////                            bDown=true;
+////                        }else{
+////                            bDown=false;
+////                        }
+//                        bDown=oEvent.wheelDelta<0;
+//                    }else{
+////                        if(oEvent.detail>0){
+////                            bDown=true;
+////                        }else{
+////                            bDown=false;
+////                        }
+//                        bDown=oEvent.detail>0;
+//                    }
+                    bDown=oEvent.wheelDelta?oEvent.wheelDelta<0:oEvent.detail>0;
+                    //处理事情
+                    fn && fn(bDown);
+                    oEvent.preventDefault && oEvent.preventDefault();
+                    return false;
+                }
+                if(window.navigator.userAgent.toLowerCase().indexOf('firefox')!=-1){
+                    obj.addEventListener('DOMMouseScroll',wheel,false);
+                }else{
+//                    obj.onmousewheel=wheel;
+                    addEvent(obj,'mousewheel',wheel);
+                }
+            }
+            addwheel(oBox,function(bDown){
+                if(bDown){
+                    alert(1111)
+                }else{
+                    alert(222)
+                };
+            });
+
+        };
+    </script>
+</head>
+<body style="height: 3000px">
+    <div id="box" style="width: 200px;height: 200px;background: red;"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

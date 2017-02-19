@@ -1,0 +1,139 @@
+测评问题：
+1、一个大例子可以分几步讲,讲一步做一步,一口气讲完,蒙了.
+2、瀑布流听得懂,自己写不出来.
+3、例子太长,讲第一遍只记得前面的思路,第二遍只记住了最后面....希望下次例子太长时,一段段讲,不然...今天什么都没记住,忘性比记性大.
+4、感觉下午讲得有点快,有些没听懂.
+5、两个例子都没听懂,心好痛!!
+6、可以多给我们更多的练习题,增加我们的思路.多给我们的例子,可以不用一一讲,有时只需提供思路.
+7、知识点道理都懂,思路也清晰,就是写不出来.T.T
+8、老师讲的很棒!我已在Js中凌乱,好好学习吧还是
+==========================================================
+复习:
+1.offsetParent
+	到有定位的父级的位置
+2.getAttribute
+	获取自定义属性
+	removeAttribute
+	删除自定义属性
+	setAttribute(属性，属性值)
+	设置属性
+3.scrollHeight
+	内容高
+	offsetHeight比较
+4.innerHTML
+	先清空然后赋值
+	document.createElement没有问题
+=========================================================
+吸顶条
+	条的top window.onload获取 (window.onscroll)
+焦点
+	当获得焦点的时候
+		onfocus
+	当失去焦点的时候
+		onblur
+
+		obj.focus()   强制使obj获得焦点
+		obj.blur()	  强制使obj失去焦点
+
+onload onclick onmouseover onmouseout onmousedown onmouseup onchange onerror onscroll onresize onfocus onblur onmousemove 
+
+
+ondblclick oncontextmenu onkeyup onkeydown oninput onpropertychange
+
+img的事件
+	var oImg = new Image();
+	onload   当图片加载成功的时候
+	onerror  当图片加载失败的时候
+
+	img3/1.jpg
+图片预加载
+	偷偷的加载  看不见
+表单
+	向后台提交数据
+	******提交 submit  不是button
+	action  提交地址
+	name    名称
+		value 值
+	method  提交方式
+			get    不安全   32k  有缓存
+			post   相对安全  1G  没有缓存
+
+	https://www.baidu.com/?username=aaa&password=123
+
+缓存：
+	同一个url地址 只访问一次
+https://s.taobao.com/search?spm=a21bo.50862.201856-fline.9.plySt4&q=%E8%A1%8C%E8%BD%A6%E8%AE%B0%E5%BD%95%E4%BB%AA&refpid=420467_1006&source=tbsy&style=grid&tab=all&pvid=d0f2ec2810bcec0d5a16d5283ce59f69
+
+分享：
+	get 方便分享
+=========================================================
+事件：
+	1.parentNode   结构父级
+	2.offsetParent 定位父级
+	body: document.body
+	html: document.documentElement
+
+	定位祖宗(定位的根元素)：
+		body
+	结构祖宗(结构上根元素)：
+		document
+
+
+	事件：onclick onmouseover onscroll 
+事件对象：存储了(描述了)事件更加详细的信息
+	
+	event   事件
+		chrome IE系列  好使
+		FF  不好使
+	事件函数的参数：
+		chrom IE8+  FF都好使
+	var oEvent =ev || event;
+相对于浏览器窗口(可视窗口)
+	oEvent.clientX     横坐标
+	oEvent.clientY     纵坐标
+div跟随鼠标移动
+	onmousemove
+			事件中不要放大多的东西
+	事件加给谁？
+===============================================
+事件冒泡
+	给元素添加事件，元素会一层层向上找 如果父级有同样的事件也会被触发，如果没有继续往上找
+	一直找到document;
+阻止事件冒泡
+	oEvent.cancelBubble=true;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

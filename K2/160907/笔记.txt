@@ -1,0 +1,92 @@
+1、好乱好乱啊.T.T
+2、滚动条,滚轮中addwheel函数封装过程不清晰.
+3、早上有精力听课,下午完全没精力学习.
+4、崩溃了,Js都快给我玩坏了.
+5、万恶的IE让我很不爽.
+=============================================
+复习:
+鼠标滚轮事件
+	onmousewheel chrome ie
+			oEvent.wheelDelta
+				下 -120
+				上 120
+	DOMMouseScroll  DOM事件
+			oEvent.detail
+				下  3
+				上 -3
+			必须事件绑定
+输入事件
+	oninput 低版本ie 
+	onpropertychange ie没问题
+	setInterval()
+		onfocus
+		onblur
+domready
+	DOM加载完成
+	DOMContentLoaded
+	onreadystatechange  监控资源加载情况
+		readyState='complete';
+window.onload
+
+事件委托
+	把子元素的事件委托给父级
+					父级不一定是直接的结构父级
+		事件源- >真正触发事件的元素
+		var oTarget = oEvent.srcElement || oEvent.target
+		oTarget.tagname=='UL' 标枪名必须大写
+		oDiv.setAttribute('drag','ture');
+		oTarget.getAttribute('drag')=='true';
+				获取的是字符串
+=============================================
+运动前奏
+	left
+	margin-left
+	for
+定时器有一些问题
+	1.定时器不太稳定
+	2.越小越不稳定
+	3.定时器在多标签的浏览器中 当北京标签的时候 会很慢
+			**浏览器为了节约资源 把不是当前页的定时器变得很慢
+================================================
+运动
+	总距离  终点位置- 起点位置
+	总时间  （已知的）3000 1000
+
+	每次运动的时间 30
+
+	总次数  3000/30  100
+			1000/30  33.33
+			parseInt
+			Math.ceil
+			Math.floor **
+			Math.round
+
+	每次运动多少距离
+			总距离/总次数
+	当前运动的位置
+	n*总距离/总次数
+=======================================================
+
+链式运动
+	一个运动结束了再开始另一个运动
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        div{
+            width: 200px;
+            height: 50px;
+            background: #ccc;
+            margin: 10px auto;
+        }
+        p{
+            width: 200px;
+            height: 50px;
+            background: #ccc;
+            margin: 10px auto;
+        }
+        a{
+            display: block;
+            width: 200px;
+            height: 50px;
+            background: #ccc;
+            margin: 10px auto;
+        }
+    </style>
+    <script>
+        function findInArr(str,arr){
+            for(var i=0;i<arr.length;i++){
+                if(arr[i]==str){
+                    return true;
+                }
+            }
+            return false;
+        }
+        function getByClass(oParent,sClass){
+            if(oParent.getElementsByClassName){
+                return oParent.getElementsByClassName(sClass);
+            }else{
+                var arr=[]; //容器 装含有red类名的元素
+                var aEle = oParent.getElementsByTagName('*');
+                for(var i =0;i<aEle.length;i++){
+                    //aEle[0]  'red red2 red3'
+                    var tmp = aEle[i].className.split(' ');
+                    //tmp -> [red,red2,red3]
+                    if(findInArr(sClass,tmp)){
+                        arr.push(aEle[i])
+                    }
+                }
+                return arr;
+            }
+        }
+        window.onload=function(){
+            var arr2= getByClass(document.body,'red')
+            for(var i=0;i<arr2.length;i++){
+                arr2[i].style.cssText='background:red;'
+            }
+        };
+    </script>
+</head>
+<body>
+    <div class="red red2 red3"></div>
+    <div class="blue"></div>
+    <div class="red"></div>
+    <p class="yellow red2"></p>
+    <a href="javascript:;" class="pink"></a>
+    <div class="red"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

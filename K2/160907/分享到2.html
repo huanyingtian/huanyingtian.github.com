@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        #box{
+            width: 0px;
+            height: 200px;
+            background: #cccccc;
+            position: absolute;
+            top:200px;
+            right: 0px;
+        }
+        #item{
+            width: 30px;
+            height: 60px;
+            background: red;
+            position: absolute;
+            left: -30px;
+            top: 60px;
+            color: #fff;
+            text-align: center;
+        }
+        #content{
+            width: 100px;
+        }
+    </style>
+    <script src="move2.js"></script>
+    <script>
+        //move(obj,{width:100},800,complete);
+        window.onload = function () {
+            var oBox = document.getElementById('box');
+            var oItem = document.getElementById('item');
+            oItem.onmouseenter=function(){
+                move(oBox,{width:100},800);
+            };
+            oBox.onmouseleave=function(){
+                move(oBox,{width:0},800);
+            };
+        };
+    </script>
+</head>
+<body style="overflow:hidden;">
+    <div id="box">
+        <div id="item">分享到</div>
+        <div id="content">萨达哈卡斯达</div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

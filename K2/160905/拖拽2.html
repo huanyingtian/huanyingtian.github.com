@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oBox = document.getElementById('box');
+            oBox.onmousedown=function(ev){
+                var oEvent =ev || event;
+                var disX = oEvent.clientX-oBox.offsetLeft;
+                var disY = oEvent.clientY-oBox.offsetTop;
+                document.onmousemove=function(ev){
+                    var oEvent = ev || event;
+                    oBox.style.left=oEvent.clientX-disX+'px';
+                    oBox.style.top=oEvent.clientY-disY+'px';
+                };
+                document.onmouseup=function(){
+                    document.onmousemove=null;
+                    document.onmouseup=null;
+                };
+                return false;
+            };
+
+        };
+
+    </script>
+</head>
+<body>
+    <p>阿阿斯顿阿萨德卡技术的可适当可适当卡死打算考的话阿克苏好的</p>
+    <p>阿阿斯顿阿萨德卡技术的可适当可适当卡死打算考的话阿克苏好的</p>
+    <p>阿阿斯顿阿萨德卡技术的可适当可适当卡死打算考的话阿克苏好的</p>
+    <p>阿阿斯顿阿萨德卡技术的可适当可适当卡死打算考的话阿克苏好的</p>
+    <p>阿阿斯顿阿萨德卡技术的可适当可适当卡死打算考的话阿克苏好的</p>
+    <p>阿阿斯顿阿萨德卡技术的可适当可适当卡死打算考的话阿克苏好的</p>
+    <div id="box"></div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

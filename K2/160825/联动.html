@@ -1,0 +1,88 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="智能社 - zhinengshe.com" />
+    <meta name="copyright" content="智能社 - zhinengshe.com" />
+    <meta name="description" content="智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。" />
+    <title>智能社— http://www.zhinengshe.com</title>
+    <style>
+        input{ display:block; }
+    </style>
+    <script>
+        window.onload=function(){
+            var oCh = document.getElementById('ch');
+            var oBox =document.getElementById('box');
+            var aInp = oBox.getElementsByTagName('input');
+            //给上边的复选框添加点击事件
+            oCh.onclick=function(){
+                //判断上边的复选框 是否选中 选中了 下边的都选中 否则都不选中
+                if(oCh.checked==true){
+                    //下边所有得都选中
+                    for(var i =0;i<aInp.length;i++){
+                        aInp[i].checked=true;
+                    }
+                }else{
+                    //下边所有的都不选中
+                    for(var i =0;i<aInp.length;i++){
+                        aInp[i].checked=false;
+                    }
+                }
+            };
+            //下边
+            //每次点下边的 下边的选中的个数 跟复选框的总个数相等 上边的选中
+            for(var i=0;i<aInp.length;i++){
+                aInp[i].onclick=function(){
+                    //小本子
+                    var count = 0;
+                    //每次点击的时候都看一下所有的input 选中一个 小本子记一下
+                    for(var i=0;i<aInp.length;i++){
+                        if(aInp[i].checked==true){
+                            //如果有选中的小本子就加一
+                            count++;
+                        }
+                    }
+                    document.title=count;
+                    //如果选中个数 跟总数相等 上边的选中
+                    if(count==4){
+                        oCh.checked=true;
+                    }else{
+                        oCh.checked=false;
+                    }
+                };
+            }
+        };
+    </script>
+</head>
+
+<body>
+<input type="checkbox" id="ch" />
+<hr />
+<div id="box">
+    <input type="checkbox" />
+    <input type="checkbox" />
+    <input type="checkbox" />
+    <input type="checkbox" />
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

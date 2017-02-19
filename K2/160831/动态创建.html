@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        div{
+            width: 100%;
+            height: 50px;
+            background: red;
+            float: left;
+        }
+        .odd{
+            background: #ccc;
+        }
+        .even{
+            background: maroon;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            for(var i =0;i<100;i++){
+
+                var oDiv =  document.createElement('div');
+                if(i%2){
+                    oDiv.className='even';
+                }else{
+                    oDiv.className='odd';
+                }
+                document.body.appendChild(oDiv);
+
+
+            }
+        };
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

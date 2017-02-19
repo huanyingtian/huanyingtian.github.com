@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #box{
+            width: 500px;
+            height: 500px;
+            background: #f60;
+            margin: 80px auto;
+            position: relative;
+        }
+        #item{
+            width: 50px;
+            height: 60px;
+            background: #a28eff;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #left{
+            width: 450px;
+            height: 500px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+        }
+        #content{
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+
+        }
+        #right{
+            width: 50px;
+            height: 100%;
+            background: #cccccc;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    </style>
+    <script src="addwheel.js"></script>
+    <script>
+        window.onload = function () {
+            var oBox = document.getElementById('box');
+            var oC = document.getElementById('content')
+            var oItem = document.getElementById('item');
+            var oLeft = document.getElementById('left');
+            var oRight = document.getElementById('right');
+            oItem.onmousedown=function(ev){
+                var oEvent = ev || event;
+                var disY = oEvent.clientY-oItem.offsetTop;
+                document.onmousemove=function(ev){
+                    var oEvent = ev || event;
+                    var t = oEvent.clientY-disY;
+                    if(t<0){
+                        t=0;
+                    }
+                    if(t>oBox.offsetHeight-oItem.offsetHeight){
+                        t=oBox.offsetHeight-oItem.offsetHeight;
+                    }
+                    oItem.style.top=t+'px';
+                    var scale = t/(oRight.offsetHeight-oItem.offsetHeight);
+                    document.title=scale;
+                    oC.style.top=-scale*(oC.offsetHeight-oLeft.offsetHeight)+'px';
+                };
+                document.onmouseup=function(){
+                    document.onmousemove=null;
+                    document.onmouseup=null;
+                };
+                return false;
+            };
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div id="left">
+            <div id="content">各位同事：
+
+                我们用了一天半的时间，围绕会议主题和重点议题进行了热烈而富有成果的讨论，就加强政策协调、创新增长方式，全球经济金融治理，国际贸易和投资，包容和联动式发展等议题，以及影响世界经济的其他突出问题，深入交换看法，达成许多重要共识。
+
+                第一，我们决心为世界经济指明方向，规划路径。我们认为，当前世界经济增长仍然乏力，增长动力不足，国际和地区热点问题以及全球性挑战对世界经济的影响不容忽视。维护世界和平稳定，为促进全球经济增长创造良好环境至关重要。我们要继续加强宏观政策沟通和协调，发扬同舟共济、合作共赢的伙伴精神，凝聚共识，形成合力，促进世界经济强劲、可持续、平衡包容增长。我们通过了《二十国集团领导人杭州峰会公报》，进一步明确了二十国集团合作的发展方向、目标、举措，就推动世界经济增长达成了杭州共识，为构建创新、活力、联动、包容的世界经济描绘了愿景。
+
+                我们认为，面对当前世界经济的风险和挑战，需要标本兼治，综合施策，运用好财政、货币、结构性改革等多种有效政策工具，既要做好短期风险防范和应对，也要挖掘中长期增长潜力；既要保持总需求力度，也要改善供给质量。这将向国际社会传递二十国集团成员共促全球经济增长的积极信号，有助于提振市场信心，维护全球金融市场稳定。
+
+                第二，我们决心创新增长方式，为世界经济注入新动力。我们一致通过了《二十国集团创新增长蓝图》，决心从根本上寻找世界经济持续健康增长之道，紧紧抓住创新、新工业革命、数字经济等新要素新业态带来的新机遇，并制定一系列具体行动计划。我们支持以科技创新为核心，带动发展理念、体制机制、商业模式等全方位、多层次、宽领域创新，推动创新成果交流共享。我们决定大力推进结构性改革，制定了优先领域、指导原则、指标体系。《二十国集团创新增长蓝图》的达成，将使我们在理念上有共识、行动上有计划、机制上有保障，有助于为全球增长开辟新路径，全面提升世界经济中长期增长潜力。
+
+                第三，我们决心完善全球经济金融治理，提高世界经济抗风险能力。我们同意继续推动国际金融机构份额和治理结构改革，扩大特别提款权的使用，强化全球金融安全网，提升国际货币体系稳定性和韧性。我们决心加强落实各项金融改革举措，密切监测和应对金融体系潜在风险和脆弱性，深化普惠金融、绿色金融、气候资金领域合作，共同维护国际金融市场稳定。我们决定深化国际税收合作，通过税收促进全球投资和增长。我们就能源可及性、可再生能源、能效共同制定了行动计划，以提升全球能源治理有效性。我们就继续深化反腐败合作达成多项共识，决心让腐败分子在二十国乃至全球更大范围无处藏身、无所遁形。我们期待通过上述成果和举措，全面提升全球经济金融治理结构的平衡性、机制的可靠性、行动的有效性，为世界经济增长保驾护航。
+
+                第四，我们决心重振国际贸易和投资这两大引擎的作用，构建开放型世界经济。我们同意充分发挥贸易部长会和贸易投资工作组的作用。我们共同制定《二十国集团全球贸易增长战略》，促进包容协调的全球价值链发展，继续支持多边贸易体制，重申反对保护主义承诺，以释放全球经贸合作潜力，扭转全球贸易增长下滑趋势。我们制定了《二十国集团全球投资指导原则》，这是全球首个多边投资规则框架，填补了国际投资领域空白。期待在我们共同努力下，在强劲的国际贸易和投资推动下，世界经济将重新焕发活力，经济全球化进程将继续蓬勃发展。
+
+                第五，我们决心推动包容和联动式发展，让二十国集团合作成果惠及全球。我们第一次把发展问题置于全球宏观政策框架的突出位置，第一次就落实联合国2030年可持续发展议程制定行动计划，具有开创性意义。我们同意在落实气候变化《巴黎协定》方面发挥表率作用，推动《巴黎协定》尽早生效。我们发起《二十国集团支持非洲和最不发达国家工业化倡议》，制定创业行动计划，发起《全球基础设施互联互通联盟倡议》，决定在粮食安全、包容性商业等领域深化合作。这些行动计划和务实成果，将着力减少全球发展不平等、不平衡问题，为发展中国家人民带来实实在在的好处，为实现2030年可持续发展目标作出重要努力，为全人类共同发展贡献力量。</div>
+        </div>
+        <div id="right">
+            <div id="item"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        #box li {
+            width: 200px;
+            height: 200px;
+            background: #ccc;
+            display: none;
+            list-style: none;
+        }
+        #box .on{
+            background: red;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var aBtn = document.getElementsByTagName('input');
+            var aLi = document.getElementsByTagName('li');
+           for(var i =0;i<aBtn.length;i++){
+
+               (function(index){
+                   aBtn[i].onclick=function(){
+                       for(var i=0;i<aBtn.length;i++){
+                           aBtn[i].className='';
+                           aLi[i].style.display='none';
+                       }
+                       this.className='on';
+                       aLi[index].style.display='block';
+                   };
+               })(i);
+           }
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <input type="button" class="on" value="aaa"/>
+        <input type="button" value="bbb"/>
+        <input type="button" value="ccc"/>
+        <li style="display:block;">111</li>
+        <li>222</li>
+        <li>333</li>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+
+    </style>
+    <script>
+        var arr = [1,2,2,3,2,3,4,5,4,5,6,7,7,8,5];
+
+        var json={};
+        var arr2=[];
+        //json.a=1; ->  json= { 1:a,2:a,3:a};
+        for(var i=0; i<arr.length;i++){
+            json[arr[i]]='aaa';
+        }
+        //console.log(json);
+        //循环json  把json 的每一个name都拿出来
+        for(var name in json){
+            //alert(name);
+            arr2.push(name);
+        }
+        document.write(arr2)
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

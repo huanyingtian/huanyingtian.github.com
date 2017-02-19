@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+
+    </style>
+    <script>
+        var arr = [9,8,2,2,3,2,3,4,5,4,5,6,7,7,8,5];
+        //arr2 = [1,2,3....];
+        function findInArr(item,arr){
+            for(var i=0;i<arr.length;i++){
+                if(arr[i]==item){
+                    return true;
+                }
+            }
+            return false;
+        }
+        var arr2=[];
+        //arr2.push(?)
+        for(var i=0;i<arr.length;i++){
+//            if(findInArr(arr[i],arr2)){
+//
+//            }else{
+//                arr2.push(arr[i])
+//            }
+            if(!findInArr(arr[i],arr2)){
+                arr2.push(arr[i]);
+            }
+        }
+
+        document.write(arr2);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

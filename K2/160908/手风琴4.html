@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        ul{
+            width: 500px;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+            margin: 50px auto;
+        }
+        li{
+            list-style: none;
+            width: 500px;
+            height: 300px;
+            float: left;
+
+        }
+    </style>
+    <script src="move4.js"></script>
+    <script>
+        window.onload = function () {
+            var oUl = document.getElementById('ul1');
+            var aLi = oUl.children;
+            //布局转换
+            var aPos = [];
+            //aPos=[{li.left:300,li.top:200}]
+            for(var i = 0;i<aLi.length;i++){
+                aPos.push({left:aLi[i].offsetLeft})
+            }
+            for(var i = 0;i<aPos.length;i++){
+                aLi[i].style.position='absolute';
+                aLi[i].style.left=aPos[i].left+'px';
+            }
+            var w = 20;
+            for(var i =1;i<aLi.length;i++){
+                aLi[i].style.left=oUl.offsetWidth-w*(aLi.length-i)+'px';
+            }
+            //手风琴
+
+            for(var i=0;i<aLi.length;i++){
+                aLi[i].index=i;
+                aLi[i].onmouseover=function(){
+                    for(var i=0;i<aLi.length;i++){
+                        if(i<=this.index){
+//                            aLi[i].style.left=i*w+'px'
+                            move(aLi[i],{left:i*w})
+                        }else{
+//                            aLi[i].style.left=oUl.offsetWidth-w*(aLi.length-i)+'px';
+                            move(aLi[i],{left:oUl.offsetWidth-w*(aLi.length-i)});
+                        }
+                    }
+                };
+            }
+
+
+        };
+    </script>
+</head>
+<body>
+    <ul id="ul1">
+        <li style="background: #7aa9cc"></li>
+        <li style="background: #cc9f51"></li>
+        <li style="background: #3ecca0"></li>
+        <li style="background: #882dcc"></li>
+    </ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

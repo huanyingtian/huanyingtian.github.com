@@ -1,0 +1,258 @@
+﻿测评的问题
+1.不知道问什么问题
+2.有没有好一点的麦
+3.上午的懂 下午的懵
+4.无所谓
+5.乱了
+6.能有时间消化 并反复讲难点，很好
+7.不知道
+8.怎么会有这么郝的老师
+9.保存课件时尽量把2,3换汉字，讲完前一天的作业，先让自己练习一下 不要一下子都讲 之后全忘了
+10.所有的知识点 日积月累的忘记
+11.太多太杂 不知道哪个重要
+
+======================================
+复习:
+1.设置样式
+	obj.currentStyle
+	obj.style.cssText='width:200px;height:200px;......'
+2.i的问题
+	1.循环中加事件 事件里的i不好使
+		执行时机
+	2.循环中加定时器  定时器中的i不能用
+			定时器中this不能用  
+			在定时器外边 事件函数里边 
+				var _this = this;
+
+3.封闭空间(命名空间、函数的立即调用、自执行函数)
+	1).命名冲突
+		把全局变量 变成了局部变量
+	2).i的问题
+		(function(){
+
+		})();
+4.arguments
+	实参参数的数组
+	function show(a){
+		alert(a);
+		arguments[1]
+	}
+	show(1,2,3) 
+	[1,2,3]
+5.字符串的方法
+	1)str.charAt(位置)   返回指定位置的字符串;
+	2)str.indexOf('字符串') 返回字符串位置
+	3)str.lastIndexOf('字符串')  从右往左 查找 返回字符串位置
+		找不到返回 -1
+	window.navigator.userAgent  
+	4)str.substring(起始位置，结束位置);
+					包含起始不包含结束
+	  str.substring(起始位置) 截到最后
+	5)str.split()
+		var str='www-aaaa-bbb'
+		str.split('')  切了之后变成了数组
+		字符串转数组的一种方法
+	6)str.toUpperCase(); 大写
+	  str.toLowerCase(); 小写
+
+======================================
+1.数组
+	1)怎么创建一个数组？
+	var arr = [1,2,3,4,5];
+	var arr = new Array(1,2,3,4,5);
+			小差别
+				var arr = [10];
+				arr.length ->  1
+				var arr = new Array(10);
+				arr.length -> 10
+	2)数组的方法
+	添加
+		arr.push()   在数组后边添加一个元素
+		arr.unshift() 在数组前边添加一个元素 
+	删除
+		arr.pop()   从数组最后删除一个元素
+		arr.shift() 从数组前边删除一个元素
+
+	万能的方法
+		arr.splice(开始位置，删除个数，元素1，元素2。。)
+	添加
+		
+		arr.splice(开始位置，0，添加的元素1，添加的元素2..)
+	删除
+		arr.splice(开始位置，1);
+	替换
+		arr.splice(开始位置，修改的个数，替换的元素1，替换的元素2..);
+	模仿push
+		//arr.splice(开始位置，删除个数，元素1，元素2。。)
+		arr.splice(arr.length,0,要添加的元素..)
+	模仿pop
+		//arr.splice(开始位置，删除个数，元素1，元素2。。)
+		arr.splice(arr.length-1，1);
+	模仿unshift
+		arr.splice(0,0,添加的元素)
+	模仿shift
+		arr.splice(0,1);
+===============================================
+连接
+	arr.join('连接的符号')
+		用什么连接符号 将数组的每一项连接成字符串
+
+	str = 'welcome to zhinengshe'  *******必须会
+	-> 'Welcome To Zhinengshe';
+
+数组连接
+	var arr1=[1,2]
+	var arr2=[3,4]
+   arr1.concat(arr2);
+数组倒序
+	var arr = [1,2,3,4,5] -> [5,4,3,2,1]
+	var arr2 = arr.reverse()
+数组排序
+	arr.sort()
+		字母   排序顺序字典序
+		数字   按照字典序 比较第一个
+
+	排序高级用法
+		arr.sort(function(n1,n2){
+			return n1-n2;
+		});
+		从小到大排序
+		arr.sort(function(n1,n2){
+			return n2-n1;
+		})
+		小大到小排序
+
+数组的其他
+		1.数组可以随便放 但是建议大家只放一种数据类型
+		2.length可以赋值  赋值之后只保留到length个数的元素
+清空数组
+		1.arr.length=0；
+		2.arr=[];
+		3.while
+		4.splice(0,arr.length)
+==================================================
+2.json
+   是什么？类型是对象
+   相当于 变量集合    不可以有重复的name
+   var json = {name:value,name2:value2,.......namen:valuen}
+
+        数组    	json
+下边    索引    	name 加单引  json.name=value;
+length   有     	undefined
+操作    普通循环    for in
+顺序    有序        无序
+
+新的循环
+		1.for  while 普通循环
+		2.for  in    它是给(json)对象用的;
+
+添加
+	json.name = value;
+
+删除
+	delete json.name
+
+
+请用json描述一下这个人
+	有个人，他叫小明  家住杭州 今年15岁 是一个学生 他有两个姐姐 一个叫小美 是一个护士 今年21岁 另一个姐姐
+	叫韩梅梅 是一个空姐 今年25;
+
+		var 小明 = {
+				地址：杭州
+				年龄：15
+				工作：学生
+				亲属：{
+					小美：{工作：护士，年龄：21}
+					韩梅梅：{工作：空姐，年龄：25}
+				}
+		}
+json 真正的标准写法
+var json = {"a":1,"b":1};
+var json = {"a":"小美","b":"韩梅梅"}
+
+**点 操作已有属性
+**[] 里面可以放变量
+undefined出现的情况
+1.var a;声明变量不复制
+2.访问一个不存在的属性
+	aBtn.aa
+3.没有return  调用给谁 弹谁的时候
+写了return 没给值
+setStyle()
+============================================================
+getByclass()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3.通过class获取元素
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

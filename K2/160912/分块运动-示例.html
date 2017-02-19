@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        #box{
+            width: 700px;
+            height: 400px;
+            background:url(img/0.jpg) no-repeat;
+            margin:10px auto;
+            position: relative;
+        }
+        span{
+            position: absolute;
+            opacity: 0;
+        }
+    </style>
+    <script src="move.js"></script>
+    <script>
+        window.onload = function () {
+            var oBox = document.getElementById('box');
+            var oBtn = document.getElementById('btn');
+
+            var R = 4;
+            var C = 7;
+            for(var r =0;r<R;r++){
+                for(var c = 0;c<C;c++){
+                    var oSpan = document.createElement('span');
+                    oSpan.style.width=oBox.offsetWidth/C+'px';
+                    oSpan.style.height=oBox.offsetHeight/R+'px';
+                    oBox.appendChild(oSpan);
+
+                    oSpan.style.left=c*oSpan.offsetWidth+'px';
+                    oSpan.style.top=r*oSpan.offsetHeight+'px';
+                    oSpan.style.backgroundPosition=-c*oSpan.offsetWidth+'px'+' '+-r*oSpan.offsetHeight+'px';
+                }
+
+            }
+            var aSpan = oBox.children;
+            var iNow = 0;
+           oBtn.onclick=function(){
+               var i = 0;
+
+               iNow++;
+               if(iNow%3==0){
+                   oBox.style.backgroundImage='url(img/2.jpg)';
+               }else{
+                   oBox.style.backgroundImage='url(img/'+(iNow%3-1)+'.jpg)';
+               }
+
+               timer=setInterval(function(){
+//                   aSpan[i].style.opacity=0;
+
+                   aSpan[i].style.backgroundImage='url(img/'+iNow%3+'.jpg)';
+                   aSpan[i].style.opacity=0;
+                   move(aSpan[i],{opacity:1});
+                   i++;
+                   if(i==aSpan.length){
+                       clearInterval(timer);
+                   }
+               },100);
+           };
+
+
+
+        };
+    </script>
+</head>
+<body>
+<input type="button" value="换一张" id="btn"/>
+    <div id="box">
+
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

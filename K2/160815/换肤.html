@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <link rel="stylesheet" href=""/>
+    <style>
+        div{
+            width:200px;
+            height:200px;
+            background:gray;
+            border:10px solid #ccc;
+        }
+    </style>
+    <script>
+        function skin1(){
+            var oBody = document.getElementById('body1');
+            var oDiv = document.getElementById('div1');
+            oBody.style.background='red';
+            oDiv.style.background='yellow';
+        }
+        function skin2(){
+            var oBody = document.getElementById('body1');
+            var oDiv = document.getElementById('div1');
+            oBody.style.background='blue';
+            oDiv.style.background='pink';
+        }
+        function skin3(){
+            var oBody = document.getElementById('body1');
+            var oDiv = document.getElementById('div1');
+            oBody.style.background='green';
+            oDiv.style.background='red';
+        }
+    </script>
+</head>
+<body id="body1">
+<input type="button" value="皮肤1" onclick="skin1();"/>
+<input type="button" value="皮肤2" onclick="skin2();"/>
+<input type="button" value="皮肤3" onclick="skin3();"/>
+<div id="div1"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

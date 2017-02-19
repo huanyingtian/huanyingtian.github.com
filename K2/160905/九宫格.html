@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        #box{
+            width: 400px;
+            height: 400px;
+            background: #ccc;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+        .l{
+            width: 20px;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: green;
+        }
+        .r{
+            width: 20px;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: green;
+        }
+        .t{
+            width: 100%;
+            height: 20px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: green;
+        }
+        .b{
+            width: 100%;
+            height: 20px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background: green;
+        }
+        .lt,.lb,.rt,.rb{
+            width: 20px;
+            height: 20px;
+            background: red;
+            position: absolute;
+        }
+        .lt{
+            left: 0;
+            top: 0;
+        }
+        .lb{
+            left: 0px;
+            bottom: 0;
+        }
+        .rt{
+            right: 0px;
+            top: 0;
+        }
+        .rb{
+            right: 0;
+            bottom: 0px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oBox = document.getElementById('box');
+            var oL = document.getElementById('l');
+            var oR = document.getElementById('r');
+            var oT = document.getElementById('t');
+            var oB = document.getElementById('b');
+            var oLt = document.getElementById('lt');
+            var oLb = document.getElementById('lb');
+            var oRt = document.getElementById('rt');
+            var oRb = document.getElementById('rb');
+
+            oR.onmousedown=function(ev){
+                var oEvent =ev || event;
+                var oldX = oEvent.clientX;
+                var oldW = oBox.offsetWidth;
+                document.onmousemove=function(ev){
+                    var oEvent =ev || event;
+                    var target = oEvent.clientX-oldX;
+                    oBox.style.width=oldW+target+'px';
+                };
+                document.onmouseup=function(){
+                    document.onmousemove=null;
+                    document.onmouseup=null;
+                };
+                return false;
+            };
+            oB.onmousedown=function(ev){
+                var oEvent = ev || event;
+                var oldY = oEvent.clientY;
+                var oldH = oBox.offsetHeight;
+                document.onmousemove=function(ev){
+                    var oEvent = ev || event;
+                    var target = oEvent.clientY-oldY;
+                    oBox.style.height=oldH+target+'px';
+                };
+                document.onmouseup=function(){
+                    document.onmousemove=null;
+                    document.onmouseup=null;
+                };
+                return false;
+            };
+            oL.onmousedown=function(ev){
+                var oEvent = ev || event;
+                var oldX = oEvent.clientX;
+                var oldW = oBox.offsetWidth;
+                var oldL = oBox.offsetLeft;
+                document.onmousemove=function(ev){
+                    var oEvent = ev || event;
+                    var target = oldX-oEvent.clientX;
+                    var w = oldW+target;
+                    var l = oldL-target;
+                    oBox.style.width=w+'px';
+                    oBox.style.left=l+'px';
+                };
+                document.onmouseup=function(){
+                    document.onmousemove=null;
+                    document.onmouseup=null;
+                };
+                return false;
+            };
+            oT.onmousedown=function(ev){
+                var oEvent = ev || event;
+                var oldY = oEvent.clientY;
+                var oldH = oBox.offsetHeight;
+                var oldT = oBox.offsetTop;
+                document.onmousemove=function(ev){
+                    var oEvent = ev || event;
+                    var target = oldY-oEvent.clientY;
+                    oBox.style.height=oldH+target+'px';
+                    oBox.style.top=oldT-target+'px';
+                };
+                document.onmouseup=function(){
+                    document.onmousemove=null;
+                    document.onmouseup=null;
+                };
+                return false;
+            };
+
+
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div class="l" id="l"></div>
+        <div class="r" id="r"></div>
+        <div class="t" id="t"></div>
+        <div class="b" id="b"></div>
+        <div class="lt" id="lt"></div>
+        <div class="lb" id="lb"></div>
+        <div class="rt" id="rt"></div>
+        <div class="rb" id="rb"></div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

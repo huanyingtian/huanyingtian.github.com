@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+
+    </style>
+    <script>
+        var str = 'welcome to zhinengshe';
+        //Welcome To Zhinengshe
+        //1.把字符串切分成三个单词 放进一个数组；
+        var arr=str.split(' ');
+        var arr2=[];
+        //2.数组的每一项 0 welcome 1 to 2 zhinengshe第零个（首字母）变成大写
+        for(var i =0;i<arr.length;i++){
+            //alert(arr[i].charAt(0).toUpperCase())
+            //0 W 1 T 2 Z
+            //alert(arr[i].substring(1));
+            // 0 elcome 1 o 2 hinengshe
+             arr2.push(arr[i].charAt(0).toUpperCase()+arr[i].substring(1));
+            //0 Welcome 1 To 2 Zhinengshe
+
+        }
+        var str2 = arr2.join(' ');
+        alert(str2);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

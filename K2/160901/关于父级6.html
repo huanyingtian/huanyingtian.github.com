@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            background: #9a38cc;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+        #boxparent{
+            width: 400px;
+            height: 400px;
+            background: #cc4573;
+            margin:100px;
+            position: relative;
+        }
+        #boxparent2{
+            width: 300px;
+            height: 300px;
+            background: #91cc59;
+        }
+    </style>
+    <script>
+        //获取绝对位置
+        function getPos(obj){
+            var l = 0;//声明变量代表 绝对位置左边
+            var t = 0;//声明变量代表 绝对位置上边
+            //不断的寻找 l t 改变obj的身份
+            while(obj){
+                l += obj.offsetLeft;
+                //l=0;
+                //l=l+obj.offsetLeft; l 100
+                //obj oBox.offsetParent
+                //l=l+obj.offsetLeft l 100 obj oBox.offsetParent.offsetLeft
+                // l 200 //
+                // l=l+obj.offsetLeft;
+
+                t += obj.offsetTop;
+                obj=obj.offsetParent;
+            }
+            return {left:l,top:t};
+        }
+        window.onload=function(){
+            var oBox = document.getElementById('box');
+            oBox.onclick=function(){
+
+                //getPos(想获取谁的绝对位置) -> {left:offsetleft,top:offsetTop;}
+                alert(getPos(oBox).left);
+            };
+        };
+    </script>
+</head>
+<body>
+<div id="boxparent">
+    <div id="boxparent2">
+        <div id="box"></div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

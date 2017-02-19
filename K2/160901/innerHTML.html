@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        *{
+            margin:0;padding: 0;;
+        }
+        .box{
+        }
+        ul{
+            width: 280px;
+            border: 2px solid #ccc;
+            float: left;
+            margin: 10px;
+        }
+        li{
+            list-style: none;
+        }
+
+    </style>
+    <script>
+        window.onload=function(){
+            var oBox =document.getElementById('box');
+            var oBtn = document.getElementById('btn');
+            var oH3 = document.getElementById('h33');
+            oH3.onclick=function(){
+                alert(1);
+            };
+            oBtn.onclick=function(){
+                oBox.innerHTML+='<h2>22222</h2>';
+                //先清空 然后赋值
+            };
+        };
+    </script>
+</head>
+<body>
+<input type="button" value="aaa" id="btn"/>
+    <div id="box">
+        <h3 id="h33">33333</h3>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

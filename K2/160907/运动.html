@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            left: 100px;
+            top: 0;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            var timer=null;
+            oDiv.onclick=function(){
+                //准备一些东西
+                //总距离
+                var dis = 300-0;
+                //总次数
+                var count = Math.floor(1000/30);
+                //每次走多少
+                var step = dis/count;
+                //当前走了几次
+                var n =0;
+                timer=setInterval(function(){
+                    n++;
+                    oDiv.style.left=n*step+'px';
+                    if(n==count){
+//                        alert('走完了');
+                        clearInterval(timer);
+                    }
+                },30);
+            };
+        };
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            document.onkeydown=function(ev){
+                var oBox = document.getElementById('box');
+                var oEvent = ev || event;
+                // ctrl 17
+                // s 83
+                if(oEvent.ctrlKey&&oEvent.keyCode==83){
+                    return false;
+                }
+            };
+        };
+    </script>
+</head>
+<body>
+    <p>阿萨德按时按时打算按时打算的</p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

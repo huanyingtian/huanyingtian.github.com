@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        #box{
+            float: left;
+        }
+        #box div{
+            width: 200px;
+            height: 200px;
+            border:1px solid #ccc;
+            display: none;
+        }
+        #box .on{
+            background: red;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oBox = document.getElementById('box');
+            var aBtn = oBox.getElementsByTagName('input');
+            var aDiv = oBox.getElementsByTagName('div');
+            var oL = document.getElementById('left');
+            var oR = document.getElementById('right');
+            var iNow=0;
+            var timer=null;
+            function tab(){
+                for(var i=0;i<aBtn.length;i++){
+                    aBtn[i].className='';
+                    aDiv[i].style.display='none';
+                }
+                aBtn[iNow].className='on';
+                aDiv[iNow].style.display='block';
+            }
+            for(var i=0;i<aBtn.length;i++){
+                aBtn[i].index=i;
+                aBtn[i].onclick=function(){
+                    iNow=this.index;
+                    tab();
+                };
+            }
+            oR.onclick=function(){
+                iNow++;
+                if(iNow==3){
+                    iNow=0;
+                }
+                tab();
+            };
+            oL.onclick=function(){
+                iNow--;
+                if(iNow<0){
+                    iNow=2;
+                }
+                tab();
+            };
+            timer=setInterval(function(){
+                iNow++;
+                if(iNow==3){
+                    iNow=0;
+                }
+                tab();
+            },800);
+            oBox.onmouseover=function(){
+                clearInterval(timer);
+            };
+            oBox.onmouseout=function(){
+                timer=setInterval(function(){
+                    iNow++;
+                    if(iNow==3){
+                        iNow=0;
+                    }
+                    tab();
+                },800);
+            };
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <a href="javascript:;" id="left">←</a>
+        <input type="button" class="on" value="aaa"/>
+        <input type="button" value="bbb"/>
+        <input type="button" value="ccc"/>
+        <a href="javascript:;" id="right">→</a>
+        <div style="display: block;">111</div>
+        <div>222</div>
+        <div>333</div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
