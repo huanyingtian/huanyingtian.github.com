@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>关键词排名查询</title>
+<style type="text/css">
+body{padding:0;margin:0;border:0;}
+#main{width:800px;text-align:center;padding:0px;margin:0px;font-size:12px;margin:0 auto;margin-top:20px;}
+.rank_list{border-collapse:collapse;border-spacing:0;margin-top:10px;}
+.rank_list a{text-decoration:none;color:#636363;}
+.rank_list a:visited{color:#636363;}
+.rank_list a:hover{color:#0d8c21;text-decoration:underline;}
+.rank_list td span.key{color:#0268a1;}
+.rank_title{width:100%;height:30px;line-height:32px;font-size:18px;text-align:center;color:#0d8c21;}
+#rank_title1{color:#0268a1;font-weight:bold;}
+#rank_title2{font-size:14px;border:1px solid #b4d3e6;background:#ecf5fb;}
+#rank_title2 span{padding-left:10px;color:#666;}
+.rank_list tr td{
+	border:1px solid #b4d3e6;
+	padding:0;
+	margin:0px;
+	line-height:26px;
+	height:26px;
+	text-align:center;
+	}
+.rank_list tr th{
+	border:1px solid #b4d3e6;
+	padding:0;
+	margin:0px;
+	line-height:28px;
+	height:28px;
+	text-align:center;	
+	}
+.thead{color:#0268a1;}
+.thead span{font-weight:bold;font-size:14px;}
+</style>
+</head>
+<body>
+<div id="main">
+<div id="rank_title1" class="rank_title">关键词排名监测结果</div>
+<div id="rank_title2" class="rank_title"><span>公司名称：<%{rank_name}%></span><span>网址：<%{rank_url}%></span><span>时间：<%{rank_date}%></span></div>
+<%{rank_content}%>
+</div>
+</body>
+</html>

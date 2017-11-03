@@ -1,0 +1,157 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body {line-height: 1;}
+ol, ul ,li {list-style: none;list-style-type:none;}
+em{font-style:normal;}
+table {border-collapse: collapse;border-spacing: 0;}
+iframe {display: block;}
+body {font: 12px/1.5 Arial,"宋体",sans-serif;}
+a:focus {outline: 1px dotted;}
+h1 {font-size: 12px;font-weight:400;}
+h3 {font-size:14px;font-weight:bold;}
+ol {list-style: decimal;}
+
+.clearfix{
+	display:block;
+    zoom:1;
+}
+.clearfix:after{
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+}
+.clear{
+    clear:both;
+}
+a{
+    color:#444;
+    text-decoration:none;
+}
+a:hover{
+    text-decoration:none;
+}
+
+/*主体样式*/
+#main{
+	width:1022px;
+	margin:0 auto;
+	text-align:center;
+	border:1px solid #e2e2e2;padding:10px;margin-top:15px;
+	}
+#left{
+	width:160px;
+	float:left;
+	display:inline;
+	background:#efefef;
+	padding-top:10px;
+	padding-bottom:10px;
+	height:450px;
+	}
+#right{
+	width:820px;
+	float:right;
+	display:inline;
+	}
+.nav_list{padding-left:20px;}
+.nav_list li{line-height:40px;height:40px;}
+.nav_list li a{font:14px/40px "微软雅黑","黑体","宋体";display:block;height:40px;font-weight:bold;background-position:15px center;background-repeat:no-repeat;
+outline:0;}
+.nav_list li a:hover{background-position:15px center;background-repeat:no-repeat;}
+.nav_list li a.vedio{background-image:url(./images/icon_vedio1.gif);}
+.nav_list li a.vedio:hover{background-image:url(./images/icon_vedio2.gif);}
+.nav_list li a.tool{background-image:url(./images/icon_tool1.gif);}
+.nav_list li a.tool:hover{background-image:url(./images/icon_tool2.gif);}
+.nav_list li a.game{background-image:url(./images/icon_game1.gif);}
+.nav_list li a.game:hover{background-image:url(./images/icon_game2.gif);}
+.nav_list li a:hover{background-color:#fff;color:#f36237;}
+.nav_list li a.vedio_hover{background-image:url(./images/icon_vedio2.gif);background-color:#fff;color:#f36237;}
+.nav_list li a.tool_hover{background-image:url(./images/icon_tool2.gif);background-color:#fff;color:#f36237;}
+.nav_list li a.game_hover{background-image:url(./images/icon_game2.gif);background-color:#fff;color:#f36237;}
+
+#right ul.ico_img{}
+#right .ico_img li{float:left;width:19%;text-align:left;margin-bottom:8px;}
+#right .ico_img li a{display:block;width:95px;text-align:center;}
+#right .ico_img li a.name{height:32px;line-height:32px;text-align:center;;width:95px;}
+#right .ico_img li a.name:hover{text-decoration:underline;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1 @@
+<?php $copyr="true"; ?>

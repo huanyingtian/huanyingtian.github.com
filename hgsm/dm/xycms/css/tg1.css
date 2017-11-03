@@ -1,0 +1,47 @@
+@charset "utf-8";
+/* CSS Document */
+.clearboth{
+clear:both;
+}
+.main{
+border:#cde6ff 1px solid;
+background-color:#f2f9fd;
+padding:20px;
+}
+.title1{
+color:#333333;
+font-size:14px;
+font-weight:bold;
+text-align:left;
+line-height:30px;
+padding-left:20px;
+}
+.content{
+background-color:#fff;
+border:#cde6ff 1px solid;
+padding:10px;
+margin-top:10px;
+}
+.extendElse ul{
+list-style-type:none;
+}
+.extendElse ul li{
+float:left;
+}
+.extendElse ul li.help{
+float:right;
+padding-right:40px;
+}
+.extendElse p{
+font-size:12px;
+line-height:24px;
+}
+.extendElse hr{
+border:#989898 1px dashed;
+height:1px;
+}
+.extendElse ul li.title{
+color:#ff9800;
+font0-size:20px;
+font-weight:bold;
+}

@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+body#login{ background:#668c03;}
+#login-wrap{width:914px;height:640px;background:url(../images/login_b3.jpg) no-repeat;margin:0 auto;position: relative;}
+
+#top{background:url(../images/top3.jpg) 0 0 repeat-x;border-color:#4e8908;}
+#navs{background:#73bc0e;color:#fff;}
+#navs li.current a{background:#4e8908;color:#fff;}
+#navs li a:hover{background:#4e8908;}
+dl.menu dd a:hover{color:#56730a;}
+dl.menu dd.current a{background:#f1f1f1; color:#56730a;border-right:3px solid #56730a;}
+
+/*登录界面*/
+.login-main h1 {border-color:#668c03;}
+#loginFrm .admin_login {background:#668c03;-webkit-box-shadow:inset 0 -4px 0 #526f07;box-shadow:inset 0 -4px 0 #526f07;}
+#loginFrm .admin_login:hover{background:#526f07;}
+#loginFrm input:focus{border-color:#668c03;}
+
+.copyright{color:#eee;}
+.copyright a{color:#eee;}

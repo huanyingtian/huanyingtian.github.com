@@ -1,0 +1,89 @@
+@CHARSET "UTF-8";
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video, input  {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+	text-align:center;
+}
+html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {
+    -webkit-text-size-adjust: none;
+	text-align:left;
+	 
+}
+ 
+
+header, menu, nav, section, article, aside {
+display: block;
+}
+a{-webkit-tap-highlight:rgba(0,0,0,0);color:#333;text-decoration:none;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    font-family:"Microsoft yahei","微软雅黑","Tahoma","Verdana","Arial","sans-serif";color:#333;
+    overflow: auto;
+    background: aliceblue;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+
+ins {
+    text-decoration: none;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+*{-webkit-box-sizing: border-box;-moz-box-sizing: border-box; -ms-box-sizing: border-box;-o-box-sizing: border-box;x-sizing: border-box;}
+.clearfix:after{content: ".";display: block;height: 0;clear: both;overflow: hidden;visibility: hidden;}
+.clearfix{zoom:1}
+@CHARSET "UTF-8";
+html{margin:0;padding:0;border:0;}
+body,div,span,object,iframe,h1,h2,h3,h4,p,blockquote,pre,a,address,code,b,em,img,
+dl,dt,dd,ol,ul,li,fieldset,form,label,footer,
+header,hgroup,nav,section
+{margin:0;padding:0;border:0;}
+body{background:#eeeeee;color:#666;position:relative;font-size:100%;font:12px/1.5 宋体,arial,sans-serif;vertical-align:baseline}
+a{text-decoration:none;outline:none;}
+a:link{color:#333;}
+a:visited{color:#666;}
+a:hover,a:active,a:focus{color:#e87518;text-decoration:none;outline:none;}
+
+input{padding:0;margin:0;}
+img{border:none;background:none;vertical-align:middle;}
+ul,ol,li{list-style-type:none;}
+select,input,img,select{vertical-align:middle;}
+table{border-collapse:collapse;border-spacing:0}
+table, th, td {vertical-align: middle}
+.clearfix:after{content: ".";display: block;height: 0;clear: both;overflow: hidden;visibility: hidden;}
+.clearfix{zoom:1}
+.clearboth{height:0px;line-height:0px;overflow:hidden;clear:both;font-size:0px;}
+
+h1,h2,h3,h4{font-size:12px;font-weight:bold;}
+hr {border: 0;border-top:1px solid #ccc;height:0;}
