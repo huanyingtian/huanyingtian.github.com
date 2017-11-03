@@ -1,1 +1,0 @@
-<!--{extends file="$tplpath/template.tpl"}-->
